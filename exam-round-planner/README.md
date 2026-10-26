@@ -2,6 +2,18 @@
 
 A study planner that anyone can use for any set of classes. It runs as a [Claude artifact](https://claude.ai), so each person signs in with their own Claude account and gets a private plan.
 
+## Try it
+
+**[Open the Exam Round Planner →](https://claude.ai/artifact/A2D8pjgkBdvgu7UeMyG8ua)**
+
+1. Open the link and sign in to Claude (a free account works; generating plans and materials uses your own Claude usage).
+2. Start a round, add your classes and exam times, and upload your files.
+3. Your rounds, files and plan are private to you. Nobody else who uses the planner can see them, including its owner.
+
+If the page says you can't save, ask Hennah for Contributor access.
+
+**Don't download `index.html` to use it.** Opened as a plain file it can't load, because it needs claude.ai for sign-in, storage and Claude. To run your own independent copy, ask Claude Code to publish `exam-round-planner/index.html` as an artifact with the `db`, `user`, `sample` and `downloads` capabilities.
+
 ## What it does
 
 1. **Exam rounds.** Create one round per exam period (midterms, finals). A new round can bring over your classes, files and still-shaky concepts from the last one.
