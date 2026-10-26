@@ -50,6 +50,10 @@ textarea { resize: vertical; width: 100%; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
 .notice { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--warn); border-radius: var(--r); padding: 12px 16px; display: flex; gap: 12px; justify-content: space-between; align-items: flex-start; }
 .notice button { flex: 0 0 auto; }
+.demo-banner { padding: 14px 18px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; border-left: 4px solid var(--accent); font-size: 14px; }
+.demo-banner > div { flex: 1 1 320px; }
+.demo-banner a { text-decoration: none; white-space: nowrap; }
+.compose.demo textarea, .compose.demo .btn { opacity: .6; }
 
 /* header */
 .top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; }
@@ -331,6 +335,7 @@ textarea { resize: vertical; width: 100%; }
     </div>
   </header>
 
+  <div id="demo-slot"></div>
   <div id="notice" class="notice" hidden><span id="notice-text"></span><button type="button" class="del" id="notice-x" aria-label="Dismiss">✕</button></div>
 
   <section class="card welcome" id="welcome" hidden></section>
@@ -463,7 +468,7 @@ textarea { resize: vertical; width: 100%; }
     unsubs: [], filter: "all", logFilter: "all", showGot: false,
     today: localISO(new Date()), selected: null, openMat: null,
     showSetup: null, job: null, srcText: new Map(), busySrc: new Map(), files: new Map(),
-    newRoundOpen: false,
+    newRoundOpen: false, demo: false,
   };
   const pending = new Map();
 
@@ -479,6 +484,7 @@ textarea { resize: vertical; width: 100%; }
   $("notice-x").addEventListener("click", () => { $("notice").hidden = true; });
   function writeFailed(err) {
     const code = err && err.code;
+    if (code === "invalid_argument" && !state.rounds.length) { enterDemo("readonly"); return; }
     if (code === "invalid_argument") { state.canWrite = false; showNotice("This view can't save changes. Ask the person who shared this planner to give you Contributor access, then reload."); }
     else if (code === "quota_exceeded") showNotice("Storage is full. Delete an old round or some uploaded files, then try again.");
     else if (code === "resource_exhausted") showNotice("Too many changes at once. Wait a few seconds and try again.");
@@ -1046,7 +1052,7 @@ ${files}`;
   function renderWelcome() {
     const w = $("welcome");
     const first = state.roundsLoaded && !state.rounds.length;
-    w.hidden = !(state.db && state.uid && state.roundsLoaded && (first || state.newRoundOpen));
+    w.hidden = !!state.demo || !(state.db && state.uid && state.roundsLoaded && (first || state.newRoundOpen));
     if (w.hidden) return;
     w.replaceChildren();
     if (first) {
@@ -1105,7 +1111,7 @@ ${files}`;
       box.className = "card collapsed-setup";
       box.append(el("p", { text: `${state.courses.length} class${state.courses.length === 1 ? "" : "es"} · ${state.sources.length} file${state.sources.length === 1 ? "" : "s"} uploaded. Changed something? Re-rate topics or add files, then rebuild the plan.` }),
         el("div", { style: "display:flex;gap:8px;flex-wrap:wrap" },
-          state.canWrite ? el("button", { type: "button", class: "btn ghost", text: "Edit classes, files & topics", onclick: () => { state.showSetup = true; renderSetup(); } }) : null));
+          state.canWrite || state.demo ? el("button", { type: "button", class: "btn ghost", text: state.demo ? "See classes, files & topics" : "Edit classes, files & topics", onclick: () => { state.showSetup = true; renderSetup(); } }) : null));
       const bar = jobBar(); if (bar) box.append(bar);
       return;
     }
@@ -1116,7 +1122,7 @@ ${files}`;
     labels.forEach((l, i) => stepsEl.append(el("li", { class: steps[i] ? "ok" : i === nowIdx ? "now" : "", text: `${steps[i] ? "✓ " : `${i + 1}. `}${l}` })));
     box.append(el("div", { class: "setup-head" },
       el("div", {}, el("h2", { text: "Your classes" }), el("p", { class: "hint", text: "Add each class, upload its files, then let Claude find the topics for you to rate." })),
-      planned ? el("button", { type: "button", class: "btn ghost", text: "Hide setup", onclick: () => { state.showSetup = false; renderSetup(); } }) : null), stepsEl);
+      planned || state.demo ? el("button", { type: "button", class: "btn ghost", text: "Hide setup", onclick: () => { state.showSetup = false; renderSetup(); } }) : null), stepsEl);
 
     const rd = round() || {};
     if (state.canWrite) {
@@ -1140,7 +1146,7 @@ ${files}`;
     const go = el("div", { class: "go-row" });
     const ready = state.courses.some((c) => c.examTs && (c.topics || []).length);
     const unrated = state.courses.reduce((a, c) => a + (c.topics || []).filter((t) => !t.rating).length, 0);
-    go.append(el("p", { class: "hint", style: "margin:0;max-width:52ch", text: !state.sample ? "Claude isn't available in this view, so plans and materials can't be generated here." :
+    go.append(el("p", { class: "hint", style: "margin:0;max-width:52ch", text: state.demo ? "In your own round, this is where you build the plan and make all the materials in one go." : !state.sample ? "Claude isn't available in this view, so plans and materials can't be generated here." :
       !ready ? "Once a class has an exam time and topics, you can build your plan." :
       unrated ? `${unrated} topic${unrated === 1 ? "" : "s"} still unrated. Rating them makes the plan and materials focus where you need it.` :
       "Ready. The plan runs from today to your last exam. Making everything takes a few minutes and uses your Claude usage." }));
@@ -1455,7 +1461,7 @@ ${files}`;
     const actions = el("div", { class: "actions" });
     if (m) {
       if (m.hidden && !m.revealed) {
-        actions.append(el("div", { class: "gate" }, "Finished the mock?", el("button", { type: "button", class: "link-btn", text: "Yes, show the answers", disabled: !state.canWrite || null, onclick: async () => { try { await col("materials").doc(m.id).update({ revealed: true }); openMat({ ...m, revealed: true }); } catch (e) { writeFailed(e); } } })));
+        actions.append(el("div", { class: "gate" }, "Finished the mock?", el("button", { type: "button", class: "link-btn", text: "Yes, show the answers", disabled: (!state.canWrite && !state.demo) || null, onclick: async () => { if (state.demo) { m.revealed = true; renderMats(); openMat(m); return; } try { await col("materials").doc(m.id).update({ revealed: true }); openMat({ ...m, revealed: true }); } catch (e) { writeFailed(e); } } })));
       } else {
         actions.append(el("button", { type: "button", class: "btn ghost", text: "Open", onclick: () => openMat(m) }));
         if (state.dl) actions.append(el("button", { type: "button", class: "link-btn", text: "Download .md", onclick: (e) => downloadMd(m, e.currentTarget) }));
@@ -1614,13 +1620,14 @@ ${files}`;
   }
 
   function renderAll() {
+    $("demo-slot").replaceChildren(...(state.demo ? [demoBanner()] : []));
     renderHeader(); renderWelcome();
     const on = !!state.activeRound;
     $("desk").hidden = !on;
     renderSetup(); renderExams();
     if (on) { renderDays(); renderDay(); renderMats(); renderLog(); }
     renderTutorCourses();
-    $("tutor-open").hidden = !(tutor.sample && on) || !$("tutor").hidden;
+    $("tutor-open").hidden = !((tutor.sample || state.demo) && on) || !$("tutor").hidden;
   }
 
   // ---------- tutor ----------
@@ -1897,7 +1904,7 @@ ${upcomingTasks()}`;
 
   async function send(text) {
     text = (text || "").trim();
-    if (!text || tutor.busy || !tutor.sample || !state.activeRound) return;
+    if (!text || tutor.busy || !tutor.sample || !state.activeRound || state.demo) return;
     if (!tutor.turns.length) chatEl().replaceChildren();
     const img = tutor.img;
     const om = state.openMat && !$("reader").hidden ? state.openMat : null;
@@ -1946,14 +1953,20 @@ ${upcomingTasks()}`;
     const om = state.openMat && !$("reader").hidden ? state.openMat : null;
     if (om && om.course) $("tutor-course").value = om.course;
     else if (state.filter !== "all" && $("tutor-course").value === "any") $("tutor-course").value = state.filter;
-    if (!chatEl().childElementCount || (om && !tutor.turns.length)) renderHistory();
+    if (!chatEl().childElementCount || (om && !tutor.turns.length) || state.demo) renderHistory();
+    if (state.demo) {
+      chatEl().prepend(el("div", { class: "msg err", text: "Example conversation. In your own planner, the tutor quizzes you, checks your answers and logs what you miss." }));
+      $("compose").classList.add("demo");
+      $("tutor-input").disabled = true; $("tutor-send").disabled = true;
+      $("tutor-input").placeholder = "Chat is off in the example round";
+    }
     updateCtx();
-    $("tutor-input").focus();
+    if (!state.demo) $("tutor-input").focus();
   }
   function closeTutor() {
     $("tutor").hidden = true;
     document.body.classList.remove("tutor-on");
-    $("tutor-open").hidden = !tutor.sample;
+    $("tutor-open").hidden = !(tutor.sample || state.demo);
     (!$("reader").hidden ? $("reader-ask") : $("tutor-open")).focus();
   }
   $("tutor-open").addEventListener("click", openTutor);
@@ -1973,6 +1986,273 @@ ${upcomingTasks()}`;
     send(`Feynman teach-back: ${concept}`);
   }
 
+  // ---------- demo round (for viewers who can't save) ----------
+  const REPO_URL = "https://github.com/hennahemran-design/hennahemran-design/tree/main/exam-round-planner";
+  function makeDemo() {
+    const at = (n, h, m = 0) => { const d = new Date(); d.setDate(d.getDate() + n); d.setHours(h, m, 0, 0); return d.getTime(); };
+    const T = (name, detail, rating) => ({ id: uid8(), name, detail, rating });
+    const courses = [
+      { id: "dm-micro", name: "Intermediate Microeconomics", color: 0, examTs: at(4, 19), created: "1",
+        summary: "Game theory: static and dynamic games of complete information, and Bayesian games. Problems are worked by hand.",
+        examFormat: "75 minutes, closed book. Four long problems like the homework, plus one short definitions question.",
+        notes: "Professor said the midterm covers HW 1–2 and lectures 1–9.",
+        topics: [T("Best responses and pure-strategy Nash equilibrium", "Find every pure NE in a 2×2 or 3×3 game, or show there are none", "green"),
+          T("Strict and weak dominance, IESDS", "Eliminate dominated strategies in the right order, including domination by a mix", "yellow"),
+          T("Mixed-strategy Nash equilibrium", "Use the indifference principle to solve 2×2 and 3×3 games", "red"),
+          T("Extensive form and subgame perfection", "Draw the tree, find subgames, solve by backward induction", "yellow"),
+          T("Stackelberg competition", "Leader–follower quantities with linear demand", "green"),
+          T("Static Bayesian games", "Type-contingent strategies and pure Bayesian NE", "red")] },
+      { id: "dm-stats", name: "Statistics for Data Science", color: 1, examTs: at(5, 16, 30), created: "2",
+        summary: "Probability, sampling distributions, confidence intervals, hypothesis tests and simple regression, using R.",
+        examFormat: "Multiple choice where more than one answer can be right, plus two short-answer problems with R output to interpret.",
+        notes: "",
+        topics: [T("Sampling distributions and the CLT", "Explain why x̄ is approximately normal and what its SE means", "green"),
+          T("Confidence intervals", "Build and interpret a 95% CI; know what changes its width", "yellow"),
+          T("Hypothesis tests and p-values", "State H₀/H₁, read a p-value correctly, Type I vs II errors", "red"),
+          T("Simple linear regression", "Interpret slope, R² and the coefficient table from lm()", "yellow"),
+          T("Correlation vs causation", "Spot confounders and reverse causality in a study design", "green")] },
+      { id: "dm-py", name: "Intro Programming in Python", color: 2, examTs: at(6, 19), created: "3",
+        summary: "Python basics through pandas and matplotlib in Jupyter notebooks.",
+        examFormat: "A 45-minute notebook exam: write functions and pandas code, then make one labeled chart. It must run top to bottom.",
+        notes: "Last quiz I lost points for charts without units.",
+        topics: [T("Functions and control flow", "if/elif/else, loops, return values (never return None by accident)", "green"),
+          T("pandas selection and filtering", ".loc vs .iloc, boolean masks, sort_values", "yellow"),
+          T("groupby and merge", "Split-apply-combine and joining two DataFrames", "red"),
+          T("matplotlib charts", "Axis labels with units, titles that state the finding, legends", "yellow")] },
+    ];
+    for (const c of courses) { const d = new Date(c.examTs); c.examAt = `${localISO(d)}T${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`; }
+    const day = (n) => addDays(state.today, n);
+    const k = (c, minutes, text, ref, done) => ({ id: uid8(), kind: "task", course: c, minutes, text, ref: ref || null, done: !!done });
+    const brk = () => ({ id: uid8(), kind: "break", course: "", minutes: 10, text: "Break: stand up, water, no phone", done: false });
+    const ex = (c) => ({ id: "exam-" + c.id, kind: "exam", course: c.id, minutes: 0, text: `${c.name} exam · ${new Date(c.examTs).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}`, done: false });
+    const days = new Map([
+      [day(0), { title: "Diagnose the red topics", tasks: [
+        k("dm-micro", 45, "Study guide: read the Mixed-strategy NE section, then work Practice 1–2 without notes", "guide", true),
+        k("dm-stats", 30, "Flashcards: hypothesis tests and p-values. Say each answer out loud and re-do the ones you miss", "cards", true),
+        brk(),
+        k("dm-py", 50, "Study guide: groupby and merge. Type out the worked example yourself, then do Practice 1", "guide"),
+        k("dm-micro", 25, "Concept log: review your shaky Micro concepts and explain each rule out loud", "log")] }],
+      [day(1), { title: "Micro problems + Stats intervals", tasks: [
+        k("dm-micro", 60, "Bayesian games: work the guide's practice questions, then draw the extensive form from memory", "guide"),
+        brk(),
+        k("dm-stats", 45, "Confidence intervals: draw a concept map linking SE, n, confidence level and interval width", "guide"),
+        k("dm-py", 30, "Flashcards: pandas selection (.loc vs .iloc, masks)", "cards")] }],
+      [day(2), { title: "Micro mock exam", tasks: [
+        k("dm-micro", 75, "Timed mock exam: 75 minutes, closed book, phone in another room", "mock"),
+        k("dm-micro", 40, "Grade the mock with the answer key and add every miss to the concept log", "key"),
+        brk(),
+        k("dm-stats", 40, "Regression output: interpret slope, SE and R² in the guide's lm() table, out loud", "guide")] }],
+      [day(3), { title: "Light day before Micro", tasks: [
+        k("dm-micro", 30, "Flashcards: all Micro cards, twice", "cards"),
+        k("dm-micro", 20, "Feynman teach-back: explain the indifference principle to an imaginary friend", "log"),
+        k("dm-stats", 75, "Timed mock exam: 75 minutes", "mock"),
+        k("dm-stats", 30, "Grade the Stats mock with the key and log every miss", "key")] }],
+      [day(4), { title: "Micro exam day", tasks: [
+        k("dm-micro", 20, "Warm-up: re-read the cheat sheet at the end of the study guide", "guide"),
+        k("dm-py", 60, "Timed mock exam in a fresh notebook; Restart & Run All before you stop", "mock"),
+        ex(courses[0])] }],
+      [day(5), { title: "Stats exam day", tasks: [
+        k("dm-stats", 25, "Warm-up: flashcards on p-values and Type I vs Type II errors", "cards"),
+        ex(courses[1]),
+        k("dm-py", 45, "Grade the Python mock with the key; fix every cell that failed", "key")] }],
+      [day(6), { title: "Python exam day", tasks: [
+        k("dm-py", 30, "Warm-up: rebuild one chart with units, title and legend from memory", "guide"),
+        ex(courses[2])] }],
+    ]);
+    const now = new Date().toISOString();
+    const C = (course, concept, know, trap, rule, seen) => ({ id: "dc" + uid8(), course, concept, know, trap, rule, seenIn: seen, status: "shaky", by: "tutor", created: now, updated: now });
+    const concepts = [
+      C("dm-micro", "Mixed NE: whose payoffs set whose probabilities",
+        "In a mixed equilibrium, each player mixes so that the **other** player is indifferent between their pure strategies. So Player 1's probabilities come from Player 2's payoffs, and the other way around.",
+        "Used Player 1's own payoffs to solve for Player 1's mix.", "My mix makes YOU indifferent: use the other player's payoffs.", ["Homework 1 Q11", "Tutor quiz"]),
+      C("dm-stats", "What a p-value is (and isn't)",
+        "A p-value is the probability of seeing data at least this extreme **if H₀ were true**. It is not the probability that H₀ is true, and a large p-value doesn't prove H₀.",
+        "Read p = 0.03 as \"a 3% chance the null is true\".", "p = P(data this extreme | H₀), never P(H₀ | data).", ["Quiz 2 Q4"]),
+      C("dm-py", "Charts need units and a finding",
+        "Axis labels name the variable **and** its unit, e.g. \"Unemployment rate (percentage points)\". The title states what the chart shows, not just what's plotted.",
+        "Labeled the axis \"rate\" with no unit and titled the chart \"Line plot\".", "Every axis gets a unit; every title gets a finding.", ["Quiz 3 Q2"]),
+    ];
+    concepts.push({ ...C("dm-micro", "IESDS order doesn't matter for strict dominance", "With **strict** dominance you can delete dominated strategies in any order and end up with the same result. With weak dominance, the order can change what survives.", "Thought you had to delete Player 1's strategies first.", "Strict: any order. Weak: order matters.", ["Mock exam Q2"]), status: "got" });
+    const mat = (c, kind, body) => ({ id: `${c}-${kind}`, course: c, kind, title: `${courses.find((x) => x.id === c).name}: ${KINDS[kind].title}`, body, hidden: !!KINDS[kind].hidden, revealed: false, made: now });
+    const mats = [
+      mat("dm-micro", "guide", `# Intermediate Microeconomics: study guide
+
+## How this exam works
+75 minutes, closed book. Expect four long problems like the homework. Show your best-response marks, because the grader gives method points.
+
+## 🔴 Mixed-strategy Nash equilibrium
+
+**What to know.** If a player mixes, every strategy they put weight on must give them the same expected payoff. So you solve for **Player 2's** probabilities using **Player 1's** payoffs, and the other way around.
+
+**Worked example.** Matching pennies with stakes:
+
+| | L | R |
+|---|---|---|
+| **U** | 3, −3 | −1, 1 |
+| **D** | −1, 1 | 1, −1 |
+
+Let Player 2 play L with probability q. Player 1 is indifferent when 3q − (1 − q) = −q + (1 − q), so 4q − 1 = 1 − 2q, which gives **q = 1/3**. Using Player 2's payoffs, p = 1/3 by the same steps. The NE is (1/3 U, 2/3 D; 1/3 L, 2/3 R).
+
+**Traps.**
+- Solving for your own mix with your own payoffs.
+- Forgetting to check for pure NE first.
+
+**Practice.**
+
+1. In the game above, change the payoff at (U, L) to 5, −5. What is the new q?
+
+<details><summary>Answer</summary>
+
+5q − (1 − q) = 1 − 2q, so 6q − 1 = 1 − 2q, and q = 1/4. Player 1's payoffs moved, so **Player 2's** mix changes.
+
+</details>
+
+## 🔴 Static Bayesian games
+
+**What to know.** Nature picks the informed player's type first. A strategy for the informed player is a full plan, one action per type (TT, TB, BT, BB). The uninformed player best-responds to expected payoffs.
+
+…
+
+## Cheat sheet
+- Pure NE: underline best responses. Player 1 compares down columns, Player 2 across rows.
+- Mixed NE: indifference, using the other player's payoffs.
+- SPNE: backward induction from the last mover.
+`),
+      mat("dm-micro", "cards", `# Intermediate Microeconomics flashcards
+
+## Nash equilibrium
+
+### 1. What makes a strategy profile a Nash equilibrium?
+<details><summary>Show answer</summary>
+
+Every player is playing a best response to the others' strategies, so nobody gains by deviating alone.
+
+</details>
+
+### 2. Can a strictly dominated strategy ever be played in a NE?
+<details><summary>Show answer</summary>
+
+No. Every NE survives iterated elimination of strictly dominated strategies.
+
+</details>
+
+## Mixed strategies
+
+### 3. Whose payoffs determine Player 1's mixing probabilities?
+<details><summary>Show answer</summary>
+
+Player 2's. Player 1 mixes to make Player 2 indifferent.
+
+</details>
+`),
+      mat("dm-micro", "mock", `# Intermediate Microeconomics: mock midterm
+
+**Time:** 75 minutes · **Closed book** · 100 points
+
+**1. (25 pts)** Find all pure-strategy Nash equilibria of the game below, or explain why there are none.
+
+| | L | C | R |
+|---|---|---|---|
+| **U** | 2, 1 | 0, 0 | 1, 3 |
+| **M** | 1, 2 | 3, 1 | 0, 0 |
+| **D** | 0, 0 | 1, 3 | 2, 2 |
+
+**2. (25 pts)** Apply IESDS to the game in Question 1, allowing domination by mixed strategies. Show each step.
+
+**3. (25 pts)** Two firms face P = 120 − Q with marginal cost 0. Firm 1 chooses quantity first, then Firm 2. Find the subgame-perfect equilibrium quantities.
+
+**4. (25 pts)** With probability 0.3 Player 1 is "tough" and with probability 0.7 "weak"…
+`),
+      mat("dm-micro", "key", `# Mock midterm: answer key
+
+**1.** Underline best responses. Player 1 best-responds with U to L, M to C and D to R; Player 2 best-responds with R to U, L to M and C to D. No cell is underlined for both players, so **there is no pure-strategy NE**.
+**Tests:** finding pure NE, including the case where there are none. **Common trap:** stopping at the first cell that looks stable.
+
+**3.** Firm 2's best response is q₂ = (120 − q₁)/2. Firm 1 maximizes q₁(120 − q₁ − q₂) = q₁(120 − q₁)/2, so **q₁ = 60** and **q₂ = 30**.
+**Tests:** backward induction in a Stackelberg game.
+`),
+      mat("dm-stats", "guide", `# Statistics for Data Science: study guide
+
+## 🔴 Hypothesis tests and p-values
+
+**What to know.** A p-value is P(data at least this extreme | H₀). Small p means the data would be surprising if H₀ were true.
+
+| | H₀ true | H₀ false |
+|---|---|---|
+| **Reject H₀** | Type I error (α) | Correct |
+| **Don't reject** | Correct | Type II error (β) |
+
+**Practice.** A test gives p = 0.20. A classmate says "so the null is probably true." What's wrong with that?
+
+<details><summary>Answer</summary>
+
+A large p-value only means the data are consistent with H₀. It isn't evidence that H₀ is true, and the test may simply lack power.
+
+</details>
+`),
+      mat("dm-stats", "cards", `# Statistics flashcards
+
+### 1. What does a 95% confidence interval mean?
+<details><summary>Show answer</summary>
+
+If we repeated the sampling many times, about 95% of the intervals built this way would contain the true parameter.
+
+</details>
+`),
+      mat("dm-py", "guide", `# Intro Programming in Python: study guide
+
+## 🔴 groupby and merge
+
+\`\`\`python
+avg = df.groupby("region")["sales"].mean()
+both = orders.merge(customers, on="customer_id", how="left")
+\`\`\`
+
+**Trap:** forgetting \`how="left"\` drops orders with no matching customer.
+`),
+    ];
+    const sources = [
+      ["dm-micro", "Syllabus.pdf", "pdf", 6200], ["dm-micro", "Lecture 1-9 slides.pptx", "pptx", 84000], ["dm-micro", "Homework 1 (graded).pdf", "pdf", 9100, true], ["dm-micro", "Homework 2.docx", "docx", 5400],
+      ["dm-stats", "Syllabus.pdf", "pdf", 5800], ["dm-stats", "Lecture notes.pdf", "pdf", 120000], ["dm-stats", "Quiz 2 photo.jpg", "image", 2300, true],
+      ["dm-py", "Quiz 3.ipynb", "notebook", 7700], ["dm-py", "Homework 4.html", "html", 12000], ["dm-py", "Flashcards (pasted)", "text", 3100],
+    ].map(([course, name, kind, chars, tr], i) => ({ id: "ds" + i, course, name, kind, chars, transcribed: kind === "image" || undefined, added: String(i) }));
+    const chat = [
+      { role: "user", content: "Quiz me on mixed strategies" },
+      { role: "assistant", content: "Sure. Here's one:\n\n| | L | R |\n|---|---|---|\n| **U** | 4, 1 | 0, 3 |\n| **D** | 1, 2 | 2, 0 |\n\nThere's no pure NE. What probability **q** does Player 2 put on L in the mixed equilibrium?" },
+      { role: "user", content: "q = 1/2, because 1p + 2(1 − p) = 3p gives 1/2" },
+      { role: "assistant", content: "Your equation is right, but it gives **p**, Player 1's mix: Player 2's payoffs set Player 1's probabilities. So p = 1/2 on U.\n\nFor **q**, make Player 1 indifferent using Player 1's payoffs: 4q = 1q + 2(1 − q), so 4q = 2 − q and **q = 2/5**.\n\nThat's the same mix-up as Homework 1 Q11, so I've marked it as missed again in your concept log. Want another one?" },
+    ];
+    return { round: { id: "demo", name: "Example: Fall midterms", created: "1" }, courses, days, concepts, mats, sources, chat };
+  }
+
+  function enterDemo(reason) {
+    if (state.demo) return;
+    const d = makeDemo();
+    state.demo = reason || "readonly";
+    state.canWrite = false;
+    state.unsubs.forEach((u) => { try { u(); } catch (e) {} });
+    state.unsubs = [];
+    state.rounds = [d.round]; state.roundsLoaded = true; state.activeRound = "demo";
+    state.courses = d.courses; state.days = d.days; state.concepts = d.concepts; state.mats = d.mats; state.sources = d.sources;
+    state.loaded = { courses: true, days: true, concepts: true, mats: true, sources: true };
+    state.showSetup = false; state.selected = state.today;
+    tutor.turns = d.chat; tutor.chatRef = null;
+    $("notice").hidden = true;
+    setSync("off", "Example · read-only");
+    renderAll();
+  }
+  function demoBanner() {
+    const msg = state.demo === "offline"
+      ? "This copy isn't running on claude.ai, so it can't save a plan of its own."
+      : state.demo === "signin"
+        ? "Sign in to claude.ai to make your own plan."
+        : "Saving your own plan needs Contributor access, which the planner's owner can only give to people in their Claude organization.";
+    return el("section", { class: "card demo-banner", "aria-label": "About this example" },
+      el("div", {}, el("b", { text: "Example round with sample classes. " }), msg,
+        " Everything here is read-only: open the materials, browse the days, and see how setup works."),
+      el("a", { href: REPO_URL, target: "_blank", rel: "noopener", class: "btn ghost", text: "See the code on GitHub" }));
+  }
+
   // ---------- boot ----------
   renderAll();
   setInterval(() => {
@@ -1984,8 +2264,7 @@ ${upcomingTasks()}`;
     const claude = window.claude;
     const db = claude && claude.use ? await claude.use("db").catch(() => null) : null;
     if (!db) {
-      setSync("off", "Offline");
-      showNotice("Your planner can't load here. Open this page on claude.ai while signed in.");
+      enterDemo("offline");
       return;
     }
     state.db = db;
@@ -1993,13 +2272,12 @@ ${upcomingTasks()}`;
     try { user = await claude.use("user"); } catch (e) {}
     const uid = user && user.id ? await user.id().catch(() => null) : null;
     if (!uid) {
-      setSync("off", "Not signed in");
-      showNotice("Sign in to claude.ai to get your own private planner, then reload this page.");
+      enterDemo("signin");
       return;
     }
     state.uid = uid;
     try { const can = user.can ? await user.can("data.write") : null; if (can === false) state.canWrite = false; } catch (e) {}
-    if (!state.canWrite) showNotice("You can look around, but you can't save a plan yet. Ask the person who shared this planner to give you Contributor access, then reload.");
+    if (!state.canWrite) { enterDemo("readonly"); return; }
 
     const sample = await claude.use("sample").catch(() => null);
     if (sample) {
