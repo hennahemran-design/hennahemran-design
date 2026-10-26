@@ -6,13 +6,32 @@ A study planner that anyone can use for any set of classes. It runs as a [Claude
 
 **[Open the Exam Round Planner →](https://claude.ai/artifact/A2D8pjgkBdvgu7UeMyG8ua)**
 
-1. Open the link and sign in to Claude (a free account works; generating plans and materials uses your own Claude usage).
-2. Start a round, add your classes and exam times, and upload your files.
-3. Your rounds, files and plan are private to you. Nobody else who uses the planner can see them, including its owner.
+- **Visitors**, for example from outside my organization: you'll need to sign in to Claude. You'll then see a read-only example round with sample classes, where you can browse the plan, open the study guides and answer keys, and look at the concept log and an example tutor chat.
+- **Classmates** with Contributor access: start a round, add your classes and exam times, and upload your files. Your rounds, files and plan stay private to you. Making plans and materials uses your own Claude usage.
 
-If the page says you can't save, ask Hennah for Contributor access.
+**Don't download `index.html` to use it.** Opened as a plain file, it can only show the example round, because sign-in, storage and Claude all come from claude.ai. To run your own independent copy, ask Claude Code to publish `exam-round-planner/index.html` as an artifact with the `db`, `user`, `sample` and `downloads` capabilities.
 
-**Don't download `index.html` to use it.** Opened as a plain file it can't load, because it needs claude.ai for sign-in, storage and Claude. To run your own independent copy, ask Claude Code to publish `exam-round-planner/index.html` as an artifact with the `db`, `user`, `sample` and `downloads` capabilities.
+## Screenshots
+
+**A day in the plan**, with exam countdowns and progress for each class:
+
+![Day-by-day plan with exam countdowns](screenshots/1-plan.png)
+
+**Classes, files and topics.** Claude finds the topics in your uploads, and you rate each one:
+
+![A class with uploaded files and rated topics](screenshots/2-classes-and-topics.png)
+
+**Generated study guide**, with worked examples and practice answers hidden until you open them:
+
+![Study guide in the reader](screenshots/3-study-guide.png)
+
+**Concept log.** Each concept you missed, the trap, and a rule to remember:
+
+![Concept log](screenshots/4-concept-log.png)
+
+**Tutor.** It quizzes you, explains what went wrong, and logs the miss:
+
+![Tutor chat](screenshots/5-tutor.png)
 
 ## What it does
 
