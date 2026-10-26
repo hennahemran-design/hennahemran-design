@@ -1,0 +1,2036 @@
+<title>Exam Round Planner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: header with round switcher, a setup card (classes, files, topics), exam countdowns, then the desk: day planner + concept log (left), materials shelf (right). Stacks on phones. */
+:root {
+  --bg: #eef2f5; --surface: #ffffff; --sunk: #e4e9ee; --ink: #17212c; --muted: #586473; --line: #d3dbe3;
+  --accent: #1f4f8a; --accent-ink: #ffffff; --done: #2f7d45; --warn: #9a5b00; --bad: #b3261e;
+  --k0: #5a47c2; --k0s: #ebe8fb; --k1: #0c7f73; --k1s: #dff3f0; --k2: #a8660a; --k2s: #fbefd9;
+  --k3: #b03a5b; --k3s: #f8e3ea; --k4: #2a6fb0; --k4s: #e1edf9; --k5: #4d7a1f; --k5s: #e8f2dc;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161c; --surface: #19212a; --sunk: #222c37; --ink: #e6ecf2; --muted: #9aa7b5; --line: #2f3a46;
+    --accent: #7fb0ec; --accent-ink: #0d1620; --done: #6fcf8a; --warn: #f0b25a; --bad: #ff8a80;
+    --k0: #a99bff; --k0s: #2a2550; --k1: #4fd0c0; --k1s: #143a36; --k2: #f0b25a; --k2s: #3d2c12;
+    --k3: #f28aa8; --k3s: #45202c; --k4: #8cc0f5; --k4s: #1a3550; --k5: #a5d36b; --k5s: #27391a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161c; --surface: #19212a; --sunk: #222c37; --ink: #e6ecf2; --muted: #9aa7b5; --line: #2f3a46;
+  --accent: #7fb0ec; --accent-ink: #0d1620; --done: #6fcf8a; --warn: #f0b25a; --bad: #ff8a80;
+  --k0: #a99bff; --k0s: #2a2550; --k1: #4fd0c0; --k1s: #143a36; --k2: #f0b25a; --k2s: #3d2c12;
+  --k3: #f28aa8; --k3s: #45202c; --k4: #8cc0f5; --k4s: #1a3550; --k5: #a5d36b; --k5s: #27391a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 96px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input, select, textarea { font: inherit; font-size: 14px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0; }
+textarea { resize: vertical; width: 100%; }
+.btn { border: 0; background: var(--accent); color: var(--accent-ink); padding: 7px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--line); }
+.btn:disabled { opacity: .5; cursor: default; }
+.link-btn { border: 0; background: none; color: var(--accent); cursor: pointer; padding: 0; font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+.link-btn:disabled { color: var(--muted); cursor: default; text-decoration: none; }
+.del { border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 13px; padding: 0; }
+.empty { color: var(--muted); padding: 16px 8px; margin: 0; }
+.hint { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.notice { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--warn); border-radius: var(--r); padding: 12px 16px; display: flex; gap: 12px; justify-content: space-between; align-items: flex-start; }
+.notice button { flex: 0 0 auto; }
+
+/* header */
+.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.top h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.01em; }
+.top .sub { color: var(--muted); margin-top: 4px; }
+.top .right { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.sync { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+.sync i { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); display: inline-block; }
+.sync.live i { background: var(--done); }
+.sync.off i { background: var(--warn); }
+.round-pick { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
+.round-pick select { font-weight: 700; color: var(--ink); max-width: 220px; }
+
+/* welcome */
+.welcome { padding: 28px; display: grid; gap: 16px; max-width: 720px; }
+.welcome h2 { font-size: 26px; }
+.welcome ol { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.row-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.row-form input[type="text"] { flex: 1 1 220px; }
+.check-line { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: var(--muted); }
+
+/* setup */
+.setup { padding: 20px; display: grid; gap: 18px; }
+.setup-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline; }
+.setup-head h2 { font-size: 22px; }
+.steps { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.steps li { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 99px; background: var(--sunk); color: var(--muted); }
+.steps li.ok { background: color-mix(in srgb, var(--done) 16%, transparent); color: var(--done); }
+.steps li.now { background: var(--accent); color: var(--accent-ink); }
+.prefs { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; font-size: 13px; color: var(--muted); }
+.prefs input[type="number"] { width: 70px; }
+.prefs input[type="text"] { flex: 1 1 260px; }
+.prefs label { display: inline-flex; gap: 6px; align-items: center; }
+.classes { display: grid; gap: 14px; }
+.cls { border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 8px; padding: 14px 16px; display: grid; gap: 12px; }
+.cls-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.cls-head input.name { font-family: var(--f-display); font-weight: 700; font-size: 18px; flex: 1 1 200px; background: transparent; border-color: transparent; padding-left: 4px; }
+.cls-head input.name:hover, .cls-head input.name:focus { border-color: var(--line); background: var(--bg); }
+.cls-head label { font-size: 13px; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; }
+.cls h4 { margin: 0; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-family: var(--f-body); }
+.files { display: flex; flex-wrap: wrap; gap: 6px; }
+.file { display: inline-flex; gap: 6px; align-items: center; font-size: 12.5px; background: var(--sunk); border-radius: 99px; padding: 3px 4px 3px 10px; max-width: 100%; }
+.file .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+.file .meta { color: var(--muted); font-variant-numeric: tabular-nums; }
+.file.warn { background: color-mix(in srgb, var(--warn) 14%, transparent); }
+.file.busy { opacity: .7; }
+.file button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 15px; line-height: 1; padding: 0 5px; }
+.file-actions { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-size: 13px; }
+.upload { font-size: 13px; color: var(--accent); cursor: pointer; font-weight: 700; display: inline-flex; gap: 6px; align-items: center; border: 1px dashed var(--accent); border-radius: 8px; padding: 5px 12px; }
+.upload input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.upload:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cls.drag { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.paste { display: grid; gap: 6px; }
+.paste .row-form input { flex: 1 1 200px; }
+.topics { display: grid; gap: 6px; }
+.topic { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 6px 0; border-top: 1px solid var(--line); }
+.topic:first-child { border-top: 0; }
+.topic .tn { font-weight: 700; font-size: 14px; overflow-wrap: anywhere; }
+.topic .td { grid-column: 1 / 2; font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.rate { display: inline-flex; gap: 4px; grid-row: 1 / span 2; grid-column: 2; align-items: center; }
+.rate button { border: 1px solid var(--line); background: transparent; border-radius: 99px; padding: 2px 8px; font-size: 13px; cursor: pointer; white-space: nowrap; }
+.rate button[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--bg); }
+.rate .del { font-size: 16px; padding: 0 4px; }
+.cls-summary { font-size: 13.5px; margin: 0; }
+.cls-summary b { font-weight: 700; }
+.weak { border: 1px dashed var(--line); border-radius: 8px; padding: 8px 12px; font-size: 13px; display: grid; gap: 6px; }
+.weak ul { margin: 0; padding-left: 18px; }
+.add-cls { display: grid; grid-template-columns: minmax(0, 1fr) 220px auto; gap: 8px; border-top: 1px dashed var(--line); padding-top: 16px; align-items: end; }
+.add-cls label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+.go-row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 16px; }
+.go-row .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.job { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; font-size: 14px; background: color-mix(in srgb, var(--accent) 10%, transparent); border-radius: 8px; padding: 10px 14px; }
+.job .spin { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--accent); border-right-color: transparent; animation: spin 0.9s linear infinite; flex: 0 0 auto; }
+.job .txt { flex: 1 1 200px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.collapsed-setup { padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.collapsed-setup p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* exam strip */
+.exams { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.exam { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 10px; border-top: 4px solid var(--c); }
+.exam h2 { font-size: 19px; font-weight: 700; overflow-wrap: anywhere; }
+.exam .when { color: var(--muted); font-size: 13px; }
+.exam .count { font-family: var(--f-mono); font-size: 26px; font-variant-numeric: tabular-nums; color: var(--c); white-space: nowrap; }
+.exam .count small { font-size: 13px; color: var(--muted); }
+.bar { height: 8px; background: var(--sunk); border-radius: 99px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--c); width: 0; transition: width .4s ease; }
+.exam .meta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.exam.over .count { color: var(--muted); font-size: 18px; }
+
+/* desk */
+.desk { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
+.main-col { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; min-width: 0; }
+.day, .setup, .elog, .shelf, .cls { grid-template-columns: minmax(0, 1fr); }
+.days { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.day-chip { flex: 0 0 auto; min-width: 64px; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 8px; cursor: pointer; text-align: center; display: grid; gap: 2px; }
+.day-chip .dow { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.day-chip .dt { font-family: var(--f-display); font-weight: 700; font-size: 17px; }
+.day-chip .pips { display: flex; gap: 2px; justify-content: center; min-height: 6px; }
+.day-chip .pips b { width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.day-chip .pips b.on { background: var(--done); }
+.day-chip.exam-day { border-color: var(--muted); }
+.day-chip.today .dow { color: var(--accent); font-weight: 700; }
+.day-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.day-chip[aria-pressed="true"] .dow { color: var(--accent-ink); opacity: .85; }
+.day-chip[aria-pressed="true"] .pips b { background: color-mix(in srgb, var(--accent-ink) 35%, transparent); }
+.day-chip[aria-pressed="true"] .pips b.on { background: var(--accent-ink); }
+.day { padding: 20px; display: grid; gap: 16px; }
+.day-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline; }
+.day-head h2 { font-size: 24px; font-weight: 700; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.day-head .time { font-family: var(--f-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button { border: 1px solid var(--line); background: transparent; border-radius: 99px; padding: 3px 12px; font-size: 13px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.task { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 12px; padding: 12px 8px; border-radius: 8px; align-items: start; }
+.task + .task { border-top: 1px solid var(--line); border-radius: 0; }
+.task .check { width: 24px; height: 24px; border-radius: 6px; border: 2px solid var(--muted); background: transparent; cursor: pointer; display: grid; place-items: center; padding: 0; margin-top: 1px; }
+.task .check svg { width: 14px; height: 14px; opacity: 0; }
+.task.done .check { background: var(--done); border-color: var(--done); }
+.task.done .check svg { opacity: 1; }
+.task .check svg path { stroke: var(--surface); }
+.task .body { display: grid; gap: 6px; min-width: 0; }
+.task .txt { overflow-wrap: anywhere; }
+.task.done .txt { color: var(--muted); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--muted) 60%, transparent); }
+.task .tags { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.tag { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border-radius: 99px; background: var(--cs, var(--sunk)); color: var(--c, var(--muted)); }
+.task .mins { font-family: var(--f-mono); font-size: 13px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.task.exam { background: var(--sunk); border-radius: 8px; }
+.task.exam .txt { font-family: var(--f-display); font-weight: 700; font-size: 17px; }
+.task.exam + .task, .task + .task.exam { border-top: 0; }
+.add { display: grid; grid-template-columns: minmax(0, 1fr) 140px 80px auto; gap: 8px; border-top: 1px dashed var(--line); padding-top: 16px; }
+
+/* shelf */
+.shelf { padding: 20px; display: grid; gap: 18px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); max-height: calc(100vh - 32px); overflow-y: auto; }
+.shelf h2 { font-size: 20px; }
+.group { display: grid; gap: 8px; }
+.group h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; font-family: var(--f-body); color: var(--c); overflow-wrap: anywhere; }
+.mat { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: grid; gap: 4px; }
+.mat .t { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.mat .t b { font-weight: 700; }
+.mat p { margin: 0; font-size: 13px; color: var(--muted); }
+.pill { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 99px; white-space: nowrap; }
+.pill.ready { background: color-mix(in srgb, var(--done) 16%, transparent); color: var(--done); }
+.pill.waiting { background: color-mix(in srgb, var(--warn) 16%, transparent); color: var(--warn); }
+.pill.none { background: var(--sunk); color: var(--muted); }
+.mat .actions { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 4px; }
+.gate { font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--muted); }
+
+/* reader */
+.reader { position: fixed; inset: 0; background: color-mix(in srgb, var(--ink) 45%, transparent); display: grid; place-items: stretch center; padding: calc(env(safe-area-inset-top, 0px) + 16px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px); z-index: 20; }
+.reader .sheet { background: var(--surface); border-radius: var(--r); width: min(860px, 100%); display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; border: 1px solid var(--line); }
+.reader header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.reader header h2 { font-size: 18px; }
+.reader .doc { overflow-y: auto; padding: 8px 28px 40px; }
+.doc h1 { font-size: 26px; margin: 20px 0 8px; }
+.doc h2 { font-size: 21px; margin: 28px 0 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.doc h3 { font-size: 17px; margin: 20px 0 6px; }
+.doc p, .doc li { max-width: 70ch; }
+.doc .tbl { overflow-x: auto; margin: 12px 0; }
+.doc table { border-collapse: collapse; font-size: 14px; min-width: 100%; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+.doc th { background: var(--sunk); }
+.doc pre { background: var(--sunk); padding: 12px 14px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.45; }
+.doc code { font-family: var(--f-mono); font-size: .92em; }
+.doc :not(pre) > code { background: var(--sunk); padding: 1px 5px; border-radius: 4px; }
+.doc blockquote { margin: 12px 0; padding: 4px 16px; border-left: 3px solid var(--accent); color: var(--muted); }
+.doc details { border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; margin: 8px 0 14px; max-width: 70ch; }
+.doc summary { cursor: pointer; font-weight: 700; color: var(--accent); font-size: 14px; }
+.doc details[open] summary { margin-bottom: 6px; }
+.doc hr { border: 0; border-top: 1px solid var(--line); margin: 24px 0; }
+
+/* concept log */
+.elog { padding: 20px; display: grid; gap: 16px; }
+.elog-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: baseline; }
+.elog-head h2 { font-size: 22px; }
+.elog-head .count { font-family: var(--f-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar-row { display: flex; flex-wrap: wrap; gap: 8px 12px; justify-content: space-between; align-items: center; }
+.toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
+.errs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.err { border: 1px solid var(--line); border-left: 4px solid var(--c, var(--line)); border-radius: 8px; padding: 12px 14px; display: grid; gap: 8px; }
+.err.got { opacity: .72; }
+.err .src { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: flex-start; justify-content: space-between; }
+.err .ctl { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.err .ctl .mark { padding: 4px 12px; font-size: 13px; }
+.err .c-title { display: grid; gap: 4px; min-width: 0; }
+.err .c-title h3 { font-size: 16px; font-weight: 700; overflow-wrap: anywhere; }
+.err .c-body { display: grid; gap: 8px; font-size: 14px; min-width: 0; }
+.err .c-know p { margin: 0 0 6px; } .err .c-know p:last-child { margin-bottom: 0; }
+.err .c-know pre { background: var(--sunk); padding: 8px 10px; border-radius: 6px; overflow-x: auto; font-size: 12.5px; margin: 6px 0; }
+.err .c-know code { font-family: var(--f-mono); font-size: .9em; }
+.err .c-trap { margin: 0; color: var(--muted); }
+.err .c-rule { margin: 0; font-weight: 700; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.c-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.err .c-seen { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.err .c-seen .chip { font-size: 12px; background: var(--sunk); color: var(--muted); border-radius: 99px; padding: 1px 8px; }
+.by-tutor { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: .04em; }
+.eform { display: grid; gap: 8px; border-top: 1px dashed var(--line); padding-top: 16px; }
+.eform .two { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px; }
+.eform input, .eform select, .eform textarea { width: 100%; }
+.eform .go { display: flex; justify-content: flex-end; }
+
+/* tutor */
+.tutor-fab { position: fixed; right: 20px; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); z-index: 30; border: 0; border-radius: 99px; background: var(--accent); color: var(--accent-ink); font-weight: 700; padding: 12px 20px; box-shadow: 0 6px 20px color-mix(in srgb, var(--ink) 25%, transparent); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+.tutor-fab svg { width: 18px; height: 18px; }
+.tutor { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100%); z-index: 25; background: var(--surface); border-left: 1px solid var(--line); display: grid; grid-template-rows: auto minmax(0, 1fr) auto; box-shadow: -10px 0 30px color-mix(in srgb, var(--ink) 18%, transparent); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+.tutor > header { display: grid; gap: 8px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.tutor > header .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.tutor > header h2 { font-size: 19px; }
+.tutor > header p { margin: 0; font-size: 12px; color: var(--muted); }
+.tutor .hdr-btns { display: flex; gap: 6px; }
+.tutor .hdr-btns button { font-size: 13px; padding: 4px 10px; }
+.chat { overflow-y: auto; padding: 16px; display: grid; gap: 12px; align-content: start; }
+.msg { max-width: 92%; padding: 10px 12px; border-radius: 12px; font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; min-width: 0; }
+.msg.user { justify-self: end; background: var(--accent); color: var(--accent-ink); border-bottom-right-radius: 4px; white-space: pre-wrap; }
+.msg.bot { justify-self: start; background: var(--sunk); border-bottom-left-radius: 4px; }
+.msg.bot p { margin: 0 0 8px; } .msg.bot p:last-child { margin-bottom: 0; }
+.msg.bot ul, .msg.bot ol { margin: 4px 0 8px; padding-left: 20px; }
+.msg.bot pre { background: var(--surface); padding: 8px 10px; border-radius: 6px; overflow-x: auto; font-size: 12.5px; }
+.msg.bot code { font-family: var(--f-mono); font-size: .9em; }
+.msg.bot .tbl { overflow-x: auto; } .msg.bot table { border-collapse: collapse; font-size: 13px; } .msg.bot th, .msg.bot td { border: 1px solid var(--line); padding: 4px 6px; }
+.msg.err { justify-self: stretch; background: transparent; border: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.note { justify-self: start; font-size: 12px; font-weight: 700; color: var(--done); background: color-mix(in srgb, var(--done) 12%, transparent); padding: 4px 10px; border-radius: 99px; }
+.note.mark { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.thinking { color: var(--muted); font-style: italic; }
+.starters { display: flex; flex-wrap: wrap; gap: 6px; }
+.starters button { border: 1px solid var(--line); background: var(--surface); border-radius: 99px; padding: 5px 12px; font-size: 13px; cursor: pointer; text-align: left; }
+.compose { border-top: 1px solid var(--line); padding: 12px 16px; display: grid; gap: 8px; }
+.compose textarea { padding: 9px 11px; border-radius: 10px; resize: none; min-height: 44px; max-height: 160px; }
+.compose .row { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+.compose .left { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.compose select { font-size: 13px; padding: 4px 8px; max-width: 160px; }
+.attach { font-size: 13px; color: var(--accent); cursor: pointer; font-weight: 700; }
+.attach input { display: none; }
+.ctx-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.ctx-chip { font-size: 12px; color: var(--muted); }
+.ctx-chip b { color: var(--ink); }
+.sel-chip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; font-size: 12px; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--ink); border-radius: 99px; padding: 2px 4px 2px 10px; }
+.sel-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 260px; }
+.sel-chip button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 15px; line-height: 1; padding: 0 4px; }
+.dict-tip { margin: 0; font-size: 12px; color: var(--muted); }
+.dict-tip kbd { font-family: var(--f-mono); font-size: 11px; border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; background: var(--sunk); }
+.chip-img { font-size: 12px; background: var(--sunk); border-radius: 99px; padding: 2px 8px; }
+@media (min-width: 900px) { body.tutor-on .reader { padding-right: calc(min(440px, 100%) + 20px); } }
+
+@media (max-width: 900px) {
+  .desk { grid-template-columns: minmax(0, 1fr); }
+  .shelf { position: static; max-height: none; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 20px 16px 96px; gap: 18px; }
+  .exams { grid-template-columns: minmax(0, 1fr); }
+  .add { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .add input[type="text"] { grid-column: 1 / -1; }
+  .add-cls { grid-template-columns: minmax(0, 1fr); }
+  .eform .two { grid-template-columns: minmax(0, 1fr); }
+  .reader .doc { padding: 4px 18px 32px; }
+  .day, .setup, .elog, .shelf { padding: 16px; }
+  .topic { grid-template-columns: minmax(0, 1fr); }
+  .rate { grid-row: auto; grid-column: 1; }
+  .tutor { width: 100%; border-left: 0; }
+  .tutor-fab { right: 16px; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px); }
+}
+@media (prefers-reduced-motion: reduce) { .bar > span { transition: none; } .job .spin { animation: none; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Exam Round Planner</h1>
+      <div class="sub" id="sub">Upload your classwork, rate your topics, and get a day-by-day plan with study materials.</div>
+    </div>
+    <div class="right">
+      <label class="round-pick" id="round-pick" hidden>Round <select id="round-select" aria-label="Exam round"></select></label>
+      <button type="button" class="btn ghost" id="new-round-btn" hidden>New round</button>
+      <button type="button" class="btn ghost" id="jump-log" hidden>Concept log</button>
+      <div class="sync" id="sync"><i></i><span>Connecting…</span></div>
+    </div>
+  </header>
+
+  <div id="notice" class="notice" hidden><span id="notice-text"></span><button type="button" class="del" id="notice-x" aria-label="Dismiss">✕</button></div>
+
+  <section class="card welcome" id="welcome" hidden></section>
+  <section class="card" id="setup" hidden></section>
+  <section class="exams" id="exams" aria-label="Exam countdowns" hidden></section>
+
+  <div class="desk" id="desk" hidden>
+    <div class="main-col">
+      <main class="card">
+        <div style="padding: 16px 16px 0;"><nav class="days" id="days" aria-label="Choose a day"></nav></div>
+        <section class="day" id="day"></section>
+      </main>
+      <section class="card elog" id="elog" aria-label="Concept log"></section>
+    </div>
+    <aside class="card shelf" id="shelf" aria-label="Study materials">
+      <div>
+        <h2>Materials</h2>
+        <p class="hint">Made from your files and topic ratings. Answer keys stay hidden until you say you've finished the mock.</p>
+      </div>
+      <div id="mats"></div>
+    </aside>
+  </div>
+</div>
+
+<button type="button" class="tutor-fab" id="tutor-open" hidden aria-haspopup="dialog">
+  <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  Ask the tutor
+</button>
+
+<aside class="tutor" id="tutor" hidden role="dialog" aria-modal="false" aria-labelledby="tutor-title">
+  <header>
+    <div class="row">
+      <h2 id="tutor-title">Tutor</h2>
+      <div class="hdr-btns">
+        <button type="button" class="btn ghost" id="tutor-new">New chat</button>
+        <button type="button" class="btn ghost" id="tutor-close">Close</button>
+      </div>
+    </div>
+    <p>Ask for explanations, a quiz, or a check on your answer. It reads your uploaded files, adds what you miss to your concept log, and can move blocks in your plan.</p>
+  </header>
+  <div class="chat" id="chat" aria-live="polite"></div>
+  <form class="compose" id="compose">
+    <div class="ctx-row" id="ctx-row" hidden>
+      <span class="ctx-chip" id="ctx-chip"></span>
+      <span class="sel-chip" id="sel-chip" hidden><span id="sel-text"></span><button type="button" id="sel-clear" aria-label="Don't ask about the selected text">×</button></span>
+    </div>
+    <p class="dict-tip">To talk instead of type, use your device's dictation: the 🎤 on your phone keyboard, <kbd>Fn</kbd> twice on a Mac, or <kbd>Win</kbd>+<kbd>H</kbd> on Windows. It works well for Feynman teach-backs.</p>
+    <textarea id="tutor-input" rows="2" placeholder="e.g. Quiz me on my red topics" aria-label="Message the tutor"></textarea>
+    <div class="row">
+      <div class="left">
+        <label for="tutor-course">Class</label>
+        <select id="tutor-course"></select>
+        <label class="attach" id="attach-wrap" hidden>Add photo<input type="file" id="tutor-img" accept="image/*"></label>
+        <span class="chip-img" id="img-chip" hidden></span>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button type="button" class="btn ghost" id="tutor-stop" hidden>Stop</button>
+        <button type="submit" class="btn" id="tutor-send">Send</button>
+      </div>
+    </div>
+  </form>
+</aside>
+
+<div class="reader" id="reader" hidden role="dialog" aria-modal="true" aria-labelledby="reader-title">
+  <div class="sheet">
+    <header>
+      <h2 id="reader-title"></h2>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" id="reader-ask" type="button" hidden>Ask the tutor about this</button>
+        <button class="btn ghost" id="reader-close" type="button">Close</button>
+      </div>
+    </header>
+    <article class="doc" id="reader-doc"></article>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script>
+(() => {
+  // ---------- helpers ----------
+  const $ = (id) => document.getElementById(id);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === "class") n.className = v;
+      else if (k === "text") n.textContent = v;
+      else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v === true ? "" : v);
+    }
+    for (const kid of kids) if (kid != null && kid !== false) n.append(kid);
+    return n;
+  };
+  const fmtMins = (m) => (m >= 60 ? `${Math.floor(m / 60)}h${m % 60 ? " " + (m % 60) + "m" : ""}` : `${m}m`);
+  const localISO = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const addDays = (iso, n) => { const d = new Date(iso + "T12:00:00"); d.setDate(d.getDate() + n); return localISO(d); };
+  const dayLabel = (iso) => {
+    const d = new Date(iso + "T12:00:00");
+    return { dow: d.toLocaleDateString("en-US", { weekday: "short" }), dt: `${d.getMonth() + 1}/${d.getDate()}`, long: d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" }) };
+  };
+  const fmtExam = (ts) => new Date(ts).toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const uid8 = () => Math.random().toString(36).slice(2, 10);
+  const enc = new TextEncoder();
+  const bytes = (s) => enc.encode(s).length;
+  function clipBytes(s, max) {
+    if (bytes(s) <= max) return s;
+    let lo = 0, hi = s.length;
+    while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (bytes(s.slice(0, mid)) <= max) lo = mid; else hi = mid - 1; }
+    return s.slice(0, lo);
+  }
+  const RATING = { green: "🟢 Confident", yellow: "🟡 Shaky", red: "🔴 Lost" };
+  const KINDS = {
+    guide: { title: "Study guide", note: "Every topic explained, worked examples, traps, practice questions with hidden answers, and a cheat sheet." },
+    cards: { title: "Flashcards", note: "Active-recall cards. Say the answer out loud before you open it." },
+    mock:  { title: "Mock exam", note: "Timed and closed-book, modeled on your past exams and quizzes." },
+    key:   { title: "Mock answer key", note: "Worked answers, plus what each question tests.", hidden: true },
+  };
+
+  // ---------- state ----------
+  const state = {
+    db: null, uid: null, canWrite: true, sample: null, caps: null, dl: null,
+    profileRef: null, rounds: [], roundsLoaded: false, activeRound: null,
+    courses: [], days: new Map(), concepts: [], mats: [], sources: [],
+    loaded: { courses: false, days: false, concepts: false, mats: false, sources: false },
+    unsubs: [], filter: "all", logFilter: "all", showGot: false,
+    today: localISO(new Date()), selected: null, openMat: null,
+    showSetup: null, job: null, srcText: new Map(), busySrc: new Map(), files: new Map(),
+    newRoundOpen: false,
+  };
+  const pending = new Map();
+
+  const roundRef = () => state.profileRef.collection("rounds").doc(state.activeRound);
+  const col = (name) => roundRef().collection(name);
+  const round = () => state.rounds.find((r) => r.id === state.activeRound) || null;
+  const courseById = (id) => state.courses.find((c) => c.id === id);
+  const cvar = (c) => { const i = c ? (c.color ?? 0) % 6 : null; return i == null ? "" : `--c: var(--k${i}); --cs: var(--k${i}s)`; };
+  const examCourses = () => state.courses.filter((c) => c.examTs).sort((a, b) => a.examTs - b.examTs);
+
+  function setSync(kind, text) { const s = $("sync"); s.className = "sync " + kind; s.lastElementChild.textContent = text; }
+  function showNotice(msg) { $("notice-text").textContent = msg; $("notice").hidden = false; }
+  $("notice-x").addEventListener("click", () => { $("notice").hidden = true; });
+  function writeFailed(err) {
+    const code = err && err.code;
+    if (code === "invalid_argument") { state.canWrite = false; showNotice("This view can't save changes. Ask the person who shared this planner to give you Contributor access, then reload."); }
+    else if (code === "quota_exceeded") showNotice("Storage is full. Delete an old round or some uploaded files, then try again.");
+    else if (code === "resource_exhausted") showNotice("Too many changes at once. Wait a few seconds and try again.");
+    else showNotice("That change didn't save. Check your connection and try again.");
+    renderAll();
+  }
+  function sampleErrMsg(code) {
+    switch (code) {
+      case "not_granted": case "sampling_disabled": case "not_declared": case "capability_disabled": case "capability_removed":
+        return "Claude isn't allowed to run on this page. You can allow it from this page's permissions, then try again.";
+      case "rate_limited": return "You've hit a Claude usage limit. Wait a bit, then try again.";
+      case "session_expired": return "Your session expired. Sign in to claude.ai again, then reload.";
+      case "refused": return "Claude couldn't do that with these files. Try removing a file or rewording your notes.";
+      case "prompt_too_large": return "That's too much text at once. Remove a few files and try again.";
+      case "invalid_json": return "Claude's answer came back in the wrong shape. Try again.";
+      case "image_rejected": return "That image couldn't be read. Try a JPG or PNG.";
+      case "images_unavailable": return "Reading photos and scanned pages isn't available in this view.";
+      case "empty_completion": return "Claude didn't write anything. Try again.";
+      default: return "The connection to Claude dropped. Try again.";
+    }
+  }
+
+  // ---------- file reading ----------
+  const TEXT_EXT = /\.(txt|md|markdown|csv|tsv|py|r|rmd|qmd|tex|json|do|m|jl|sql|js|ts|java|c|cpp|h|sas|stata|log)$/i;
+  if (window.pdfjsLib && !window.pdfjsLib.GlobalWorkerOptions.workerSrc && !window.pdfjsWorker) {
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+
+  async function pdfText(buf) {
+    const pdf = await window.pdfjsLib.getDocument({ data: new Uint8Array(buf), isEvalSupported: false }).promise;
+    const out = [];
+    for (let p = 1; p <= pdf.numPages; p++) {
+      const page = await pdf.getPage(p);
+      const tc = await page.getTextContent();
+      let s = "";
+      for (const it of tc.items) s += (it.str || "") + (it.hasEOL ? "\n" : " ");
+      out.push(`[page ${p}]\n` + s.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim());
+      page.cleanup();
+    }
+    const text = out.join("\n\n");
+    const letters = (text.match(/[A-Za-z]/g) || []).length;
+    return { pdf, text, pages: pdf.numPages, scanned: letters < 60 * pdf.numPages };
+  }
+  async function pdfPageImages(pdf, maxPages) {
+    const blobs = [];
+    for (let p = 1; p <= Math.min(pdf.numPages, maxPages); p++) {
+      const page = await pdf.getPage(p);
+      const vp1 = page.getViewport({ scale: 1 });
+      const scale = Math.min(2.2, 1600 / Math.max(vp1.width, vp1.height));
+      const vp = page.getViewport({ scale });
+      const cv = document.createElement("canvas");
+      cv.width = Math.round(vp.width); cv.height = Math.round(vp.height);
+      const ctx = cv.getContext("2d");
+      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, cv.width, cv.height);
+      await page.render({ canvasContext: ctx, viewport: vp }).promise;
+      blobs.push(await new Promise((res) => cv.toBlob(res, "image/jpeg", 0.85)));
+      page.cleanup();
+    }
+    return blobs;
+  }
+  async function pptxText(buf) {
+    const zip = await window.JSZip.loadAsync(buf);
+    const slides = Object.keys(zip.files).filter((n) => /^ppt\/slides\/slide\d+\.xml$/.test(n))
+      .sort((a, b) => parseInt(a.match(/\d+/)[0], 10) - parseInt(b.match(/\d+/)[0], 10));
+    const out = [];
+    for (const [i, n] of slides.entries()) {
+      const xml = new DOMParser().parseFromString(await zip.file(n).async("string"), "application/xml");
+      const paras = [...xml.getElementsByTagName("a:p")].map((p) => [...p.getElementsByTagName("a:t")].map((t) => t.textContent).join("")).filter(Boolean);
+      out.push(`[slide ${i + 1}]\n` + paras.join("\n"));
+    }
+    return out.join("\n\n");
+  }
+  function ipynbText(str) {
+    const nb = JSON.parse(str);
+    return (nb.cells || []).map((c) => {
+      const src = Array.isArray(c.source) ? c.source.join("") : String(c.source || "");
+      if (c.cell_type === "code") {
+        const outs = (c.outputs || []).map((o) => Array.isArray(o.text) ? o.text.join("") : (o.data && o.data["text/plain"] ? [].concat(o.data["text/plain"]).join("") : "")).join("").slice(0, 1500);
+        return "```python\n" + src + "\n```" + (outs.trim() ? "\nOutput:\n" + outs : "");
+      }
+      return src;
+    }).join("\n\n");
+  }
+  function htmlText(str) {
+    const d = new DOMParser().parseFromString(str, "text/html");
+    d.querySelectorAll("script,style,noscript").forEach((n) => n.remove());
+    return (d.body ? d.body.innerText || d.body.textContent : "").replace(/\n{3,}/g, "\n\n").trim();
+  }
+
+  // Returns {kind, text, pages?, needsVision?: "pdf"|"image", pdf?, image?} or throws {msg}
+  async function extract(name, blob) {
+    const low = name.toLowerCase();
+    if (/\.(heic|heif)$/.test(low)) throw { msg: "HEIC photos can't be read in a browser. Export the photo as JPG or PNG and upload it again." };
+    if (/\.pdf$/.test(low)) {
+      if (!window.pdfjsLib) throw { msg: "The PDF reader didn't load. Reload the page and try again." };
+      const r = await pdfText(await blob.arrayBuffer());
+      return { kind: "pdf", text: r.scanned ? "" : r.text, pages: r.pages, needsVision: r.scanned ? "pdf" : null, pdf: r.pdf };
+    }
+    if (/\.docx$/.test(low)) {
+      if (!window.mammoth) throw { msg: "The Word reader didn't load. Reload the page and try again." };
+      const r = await window.mammoth.extractRawText({ arrayBuffer: await blob.arrayBuffer() });
+      return { kind: "docx", text: r.value.replace(/\n{3,}/g, "\n\n").trim() };
+    }
+    if (/\.doc$/.test(low)) throw { msg: "Old .doc files can't be read. Save it as .docx or PDF and upload again." };
+    if (/\.pptx$/.test(low)) return { kind: "pptx", text: await pptxText(await blob.arrayBuffer()) };
+    if (/\.ppt$/.test(low)) throw { msg: "Old .ppt files can't be read. Save it as .pptx or PDF and upload again." };
+    if (/\.ipynb$/.test(low)) return { kind: "notebook", text: ipynbText(await blob.text()) };
+    if (/\.html?$/.test(low)) return { kind: "html", text: htmlText(await blob.text()) };
+    if (TEXT_EXT.test(low)) return { kind: "text", text: (await blob.text()).trim() };
+    if (/\.(png|jpe?g|webp|gif)$/.test(low) || (blob.type || "").startsWith("image/")) return { kind: "image", text: "", needsVision: "image", image: blob };
+    throw { msg: `${name}: this file type can't be read. Use PDF, Word (.docx), PowerPoint (.pptx), notebooks, text or photos.` };
+  }
+
+  async function visionTranscribe(blobs, name, signal) {
+    const lim = state.caps && state.caps.images;
+    if (!state.sample || !lim) throw { code: "images_unavailable" };
+    const per = Math.max(1, Math.min(lim.maxCount || 1, 8));
+    const out = [];
+    for (let i = 0; i < blobs.length; i += per) {
+      const batch = blobs.slice(i, i + per);
+      const first = i + 1;
+      const res = await state.sample(
+        `These ${batch.length} image(s) are ${blobs.length > 1 ? `pages ${first}–${first + batch.length - 1} of` : ""} a student's course file "${name}" (a scan or photo of notes, homework, a quiz or an exam). Transcribe ALL the text exactly, in reading order, including handwriting, question numbers, answer choices, any grades or marks the grader wrote, and the instructor's comments. Write equations in plain text or Unicode, tables as Markdown tables, and describe any graph or diagram in one bracketed line, e.g. [Figure: game tree with Player 1 choosing L or R]. Start each page with "[page N]" using the page numbers above. Output only the transcription.`,
+        { images: batch, signal, cache: false });
+      out.push(res.text.trim());
+    }
+    return out.join("\n\n");
+  }
+
+  const MAX_SRC_BYTES = 200000;
+  async function saveSource(course, name, kind, text, extra = {}) {
+    const id = "s" + uid8();
+    const full = text || "";
+    const clipped = clipBytes(full, MAX_SRC_BYTES);
+    const meta = { course, name: name.slice(0, 160), kind, chars: clipped.length, trimmed: clipped.length < full.length, added: new Date().toISOString(), ...extra };
+    await col("sourcetext").doc(id).set({ text: clipped });
+    await col("sources").doc(id).set(meta);
+    state.srcText.set(id, clipped);
+    return id;
+  }
+
+  async function handleFiles(course, fileList) {
+    if (!state.canWrite) return;
+    const files = [...fileList];
+    const queue = [];
+    for (const f of files) {
+      if (/\.zip$/i.test(f.name)) {
+        try {
+          const zip = await window.JSZip.loadAsync(await f.arrayBuffer());
+          for (const [n, entry] of Object.entries(zip.files)) {
+            if (entry.dir || /(^|\/)(__MACOSX|\.)/.test(n)) continue;
+            const base = n.split("/").pop();
+            if (!/\.(pdf|docx|pptx|ipynb|html?|png|jpe?g|webp|txt|md|csv|py|r|rmd|tex)$/i.test(base)) continue;
+            queue.push({ name: base, blob: await entry.async("blob") });
+          }
+        } catch (e) { showNotice(`${f.name} couldn't be opened as a zip file.`); }
+      } else queue.push({ name: f.name, blob: f });
+    }
+    if (queue.length > 40) { showNotice(`That's ${queue.length} files. Only the first 40 were added. Upload the rest in another batch.`); queue.length = 40; }
+    const problems = [];
+    for (const q of queue) {
+      const tmp = "tmp-" + uid8();
+      state.busySrc.set(tmp, { course, name: q.name, status: "Reading…" });
+      renderSetup();
+      try {
+        const r = await extract(q.name, q.blob);
+        if (r.needsVision) {
+          if (!(state.caps && state.caps.images)) {
+            await saveSource(course, q.name, r.kind, "", { pages: r.pages || null, unread: true });
+            problems.push(`${q.name} is ${r.kind === "image" ? "a photo" : "a scanned PDF"}. Reading those needs Claude's image reading, which isn't available in this view.`);
+          } else {
+            state.busySrc.get(tmp).status = r.kind === "image" ? "Claude is reading the photo…" : `Claude is reading ${Math.min(r.pages, 30)} scanned pages…`;
+            renderSetup();
+            const blobs = r.kind === "image" ? [r.image] : await pdfPageImages(r.pdf, 30);
+            const text = await visionTranscribe(blobs, q.name);
+            await saveSource(course, q.name, r.kind, text, { pages: r.pages || null, transcribed: true });
+            if (r.pages > 30) problems.push(`${q.name}: only the first 30 of its ${r.pages} scanned pages were read.`);
+          }
+        } else {
+          if (!r.text || r.text.length < 20) problems.push(`${q.name} didn't have any readable text.`);
+          else await saveSource(course, q.name, r.kind, r.text, { pages: r.pages || null });
+        }
+        if (r.pdf) r.pdf.destroy();
+      } catch (e) {
+        if (e && e.msg) problems.push(e.msg);
+        else if (e && (e.code === "invalid_argument" || e.code === "quota_exceeded")) { writeFailed(e); break; }
+        else if (e && e.code && e.code !== "cancelled") problems.push(`${q.name}: ${sampleErrMsg(e.code)}`);
+        else problems.push(`${q.name} couldn't be read.`);
+      } finally {
+        state.busySrc.delete(tmp);
+        renderSetup();
+      }
+    }
+    if (problems.length) showNotice(problems.join(" "));
+  }
+
+  async function getSourceText(id) {
+    if (state.srcText.has(id)) return state.srcText.get(id);
+    const snap = await col("sourcetext").doc(id).get();
+    const t = snap.exists ? String(snap.data().text || "") : "";
+    state.srcText.set(id, t);
+    return t;
+  }
+  async function packSources(courseId, budget) {
+    const srcs = state.sources.filter((s) => s.course === courseId && s.chars > 0);
+    if (!srcs.length) return "(No files uploaded for this class.)";
+    const texts = await Promise.all(srcs.map(async (s) => ({ s, t: await getSourceText(s.id) })));
+    // Share the budget: small files go in whole, big ones split what's left.
+    let left = budget - texts.length * 120;
+    const sorted = texts.slice().sort((a, b) => a.t.length - b.t.length);
+    const alloc = new Map();
+    sorted.forEach((x, i) => { const share = Math.floor(left / (sorted.length - i)); const n = Math.min(bytes(x.t), share); alloc.set(x.s.id, n); left -= n; });
+    return texts.map(({ s, t }) => {
+      const cut = clipBytes(t, alloc.get(s.id));
+      return `=== FILE: ${s.name} (${s.kind}${cut.length < t.length ? ", trimmed" : ""}) ===\n${cut}`;
+    }).join("\n\n");
+  }
+
+  // ---------- jobs (Claude generation) ----------
+  async function runJob(label, fn) {
+    if (state.job || !state.sample) return;
+    const ctl = new AbortController();
+    state.job = { label, ctl, step: "" };
+    renderSetup(); renderMats();
+    try { await fn(ctl.signal, (step) => { state.job.step = step; renderJob(); }); }
+    catch (e) {
+      const code = e && e.code;
+      if (code === "cancelled") {}
+      else if (code === "invalid_argument" || code === "quota_exceeded" || code === "resource_exhausted") writeFailed(e);
+      else if (e && e.msg) showNotice(e.msg);
+      else showNotice(sampleErrMsg(code));
+    } finally {
+      state.job = null;
+      renderAll();
+    }
+  }
+  function renderJob() {
+    document.querySelectorAll(".job .txt").forEach((n) => { n.textContent = state.job ? `${state.job.label}${state.job.step ? ": " + state.job.step : ""}` : ""; });
+  }
+  function jobBar() {
+    if (!state.job) return null;
+    return el("div", { class: "job", role: "status" }, el("span", { class: "spin", "aria-hidden": "true" }),
+      el("span", { class: "txt", text: `${state.job.label}${state.job.step ? ": " + state.job.step : ""}` }),
+      el("button", { type: "button", class: "btn ghost", text: "Stop", onclick: () => state.job && state.job.ctl.abort() }));
+  }
+
+  function courseBrief(c, withTopics = true) {
+    const lines = [`Class id ${c.id}: "${c.name}"`];
+    if (c.examTs) lines.push(`Exam: ${fmtExam(c.examTs)}`);
+    if (c.summary) lines.push(`What the course covers: ${c.summary}`);
+    if (c.examFormat) lines.push(`Likely exam format: ${c.examFormat}`);
+    if (c.notes) lines.push(`Student's notes about this class/exam: ${c.notes}`);
+    if (withTopics && Array.isArray(c.topics) && c.topics.length) {
+      lines.push("Topics and the student's self-rating:");
+      for (const t of c.topics) lines.push(`  - ${t.name}${t.detail ? " — " + t.detail : ""} [${t.rating ? RATING[t.rating] : "not rated"}]`);
+    }
+    return lines.join("\n");
+  }
+  function shakyConceptsFor(cid, n = 30) {
+    return state.concepts.filter((e) => e.status !== "got" && (!cid || e.course === cid)).slice(0, n)
+      .map((e) => `- (${courseById(e.course)?.name || "General"}) ${e.concept}: ${e.rule || ""}`).join("\n") || "(none yet)";
+  }
+
+  async function findTopics(c, signal, step) {
+    step && step(`reading ${c.name}`);
+    const files = await packSources(c.id, 190000);
+    const prompt = `You are helping a university student prepare for an exam in the class "${c.name}"${c.examTs ? ` on ${fmtExam(c.examTs)}` : ""}.
+${c.notes ? `The student's notes about this class and exam: ${c.notes}\n` : ""}
+Below are the files they uploaded for this class: syllabi, lecture notes or slides, homework, quizzes and past exams. Work out what this exam will most likely test.
+
+Reply with only a JSON object, no prose, in exactly this shape:
+{"summary": "2-3 sentences: what the course covers, the level, and any software or language used",
+ "examFormat": "what the exam will probably look like (question types, length, open/closed book, cumulative or not), based on the syllabus, past exams and quizzes; say 'Not clear from the files' if unknown",
+ "topics": [{"name": "short topic name (max 8 words)", "detail": "one line: exactly what the student must be able to do", "sources": "which file(s) cover it"}],
+ "weakSpots": [{"concept": "short concept name", "know": "2-3 self-contained sentences on what to know", "trap": "the mistake the student made", "rule": "one-line rule", "seenIn": "file and question, e.g. Quiz 3 Q2"}]}
+
+Rules: 8 to 16 topics, in the order the course teaches them, specific enough to study (not "Chapter 3"). Only include a weakSpot when graded work in the files shows the student actually lost points or the grader marked something wrong; otherwise return an empty array. Each weakSpot must make sense on its own, without the original question.
+
+FILES
+${files}`;
+    const r = await state.sample.json(prompt, { signal });
+    const topics = (Array.isArray(r && r.topics) ? r.topics : []).filter((t) => t && t.name).slice(0, 20)
+      .map((t) => ({ id: uid8(), name: String(t.name).slice(0, 120), detail: String(t.detail || "").slice(0, 300), sources: String(t.sources || "").slice(0, 200), rating: null }));
+    if (!topics.length) throw { msg: `Claude didn't find any topics for ${c.name}. Add a syllabus or more notes and try again.` };
+    // Keep ratings the student already gave for topics with the same name.
+    const prev = new Map((c.topics || []).map((t) => [t.name.toLowerCase(), t.rating]));
+    for (const t of topics) if (prev.get(t.name.toLowerCase())) t.rating = prev.get(t.name.toLowerCase());
+    const weak = (Array.isArray(r.weakSpots) ? r.weakSpots : []).filter((w) => w && w.concept).slice(0, 12)
+      .map((w) => ({ concept: String(w.concept).slice(0, 200), know: String(w.know || "").slice(0, 2000), trap: String(w.trap || "").slice(0, 400), rule: String(w.rule || "").slice(0, 300), seenIn: String(w.seenIn || "").slice(0, 120) }));
+    await col("courses").doc(c.id).update({ topics, summary: String(r.summary || "").slice(0, 800), examFormat: String(r.examFormat || "").slice(0, 800), weakSpots: weak, analyzedAt: new Date().toISOString() });
+  }
+
+  async function buildPlan(signal, step) {
+    const rd = round();
+    const exams = examCourses().filter((c) => c.examTs > Date.now());
+    if (!exams.length) throw { msg: "Add an upcoming exam date to at least one class first." };
+    const start = state.today;
+    const lastExam = localISO(new Date(exams[exams.length - 1].examTs));
+    const leftovers = [];
+    for (const [d, day] of state.days) if (d < start) for (const t of day.tasks || []) if (t.kind === "task" && !t.done) leftovers.push(`- ${d} (${courseById(t.course)?.name || "general"}): ${t.text}`);
+    const doneLater = [];
+    for (const [d, day] of state.days) if (d >= start) for (const t of day.tasks || []) if (t.kind === "task" && t.done) doneLater.push(`- ${courseById(t.course)?.name || "general"}: ${t.text}`);
+    step && step("asking Claude for a day-by-day plan");
+    const prompt = `Build a day-by-day study plan for a university student with ${exams.length} upcoming exam${exams.length > 1 ? "s" : ""}.
+Today is ${dayLabel(start).long}, ${start}. Plan every day from ${start} through ${lastExam}.
+Time available: about ${rd.hoursWeekday ?? 4} hours on weekdays and ${rd.hoursWeekend ?? 5} hours on weekends.${rd.constraints ? `\nThe student's schedule notes: ${rd.constraints}` : ""}
+
+CLASSES
+${exams.map((c) => courseBrief(c)).join("\n\n")}
+
+STUDY MATERIALS each class has (or will have) in the planner, which tasks can point to with "ref":
+- "guide": study guide with explanations, worked examples and practice questions
+- "cards": flashcards for active recall
+- "mock": a timed mock exam modeled on past exams
+- "key": the mock's answer key (only AFTER the mock is taken)
+- "log": the student's concept log of missed concepts (review and teach-back)
+
+CONCEPTS THE STUDENT HAS MISSED (still shaky)
+${shakyConceptsFor(null)}
+${leftovers.length ? `\nUNFINISHED TASKS FROM EARLIER DAYS (reschedule if still useful)\n${leftovers.slice(0, 30).join("\n")}\n` : ""}${doneLater.length ? `\nALREADY DONE (don't repeat)\n${doneLater.slice(0, 30).join("\n")}\n` : ""}
+HOW TO PLAN
+- Every task says exactly what to do, with a concrete method: e.g. "Flashcards: go through all cards for X, say each answer out loud, re-do the ones you miss", "Work practice questions 1-4 in the study guide's section on X without notes, then check", "Feynman teach-back: explain X out loud as if to a friend, then check against the guide", "Draw a concept map linking X, Y and Z from memory", "Timed mock exam (60 min, closed book)", "Review the mock with the answer key and log every miss in the concept log".
+- Give 🔴 topics the most time, then 🟡; 🟢 topics get a quick review. Use spaced repetition: come back to each red/yellow topic on at least two different days.
+- Schedule each class's mock exam 2-4 days before its exam, with the answer-key review the same or next day.
+- Interleave classes, but weight the days before each exam toward that class. The day before an exam is lighter: review and flashcards, no new material.
+- On an exam day, only a short warm-up for that exam before it starts; nothing for a class after its exam.
+- Tasks are 15 to 120 minutes. Keep each day's total close to the time available. Put a short break between long blocks as a task with course "break" and minutes 10-15.
+
+Reply with only JSON, no prose:
+{"days": [{"date": "YYYY-MM-DD", "title": "short theme for the day", "tasks": [{"course": "<class id or break>", "minutes": 45, "text": "what to do", "ref": "guide|cards|mock|key|log or omit"}]}]}`;
+    const r = await state.sample.json(prompt, { signal, modelTier: "default" });
+    const ids = new Set(exams.map((c) => c.id));
+    const out = new Map();
+    for (const d of Array.isArray(r && r.days) ? r.days : []) {
+      const date = String(d && d.date || "");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || date < start || date > lastExam) continue;
+      const tasks = (Array.isArray(d.tasks) ? d.tasks : []).filter((t) => t && t.text).slice(0, 14).map((t) => {
+        const isBreak = t.course === "break";
+        const course = ids.has(t.course) ? t.course : isBreak ? "" : "";
+        return { id: uid8(), kind: isBreak ? "break" : "task", course, minutes: Math.max(0, Math.min(240, parseInt(t.minutes, 10) || 0)), text: String(t.text).slice(0, 500), ref: ["guide", "cards", "mock", "key", "log"].includes(t.ref) ? t.ref : null, done: false };
+      });
+      out.set(date, { title: String(d.title || "").slice(0, 120), tasks });
+    }
+    if (!out.size) throw { msg: "Claude's plan didn't have any usable days. Try again." };
+    step && step("saving your plan");
+    // Merge: keep done and custom tasks from today on; drop the old generated ones.
+    const dates = new Set([...out.keys(), ...[...state.days.keys()].filter((d) => d >= start)]);
+    for (const c of exams) dates.add(localISO(new Date(c.examTs)));
+    for (const date of [...dates].sort()) {
+      const old = state.days.get(date);
+      const keep = (old ? old.tasks || [] : []).filter((t) => t.kind !== "exam" && (t.done || t.custom));
+      const fresh = out.get(date);
+      const examsToday = exams.filter((c) => localISO(new Date(c.examTs)) === date)
+        .map((c) => ({ id: "exam-" + c.id, kind: "exam", course: c.id, minutes: 0, text: `${c.name} exam · ${new Date(c.examTs).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}`, done: false }));
+      const tasks = [...keep, ...(fresh ? fresh.tasks : []), ...examsToday];
+      const title = fresh ? fresh.title : examsToday.length ? "Exam day" : old ? old.title : "";
+      if (!tasks.length) { if (old) await col("days").doc(date).delete(); continue; }
+      await writeDay(date, { title, tasks });
+    }
+    await roundRef().update({ plannedAt: new Date().toISOString() });
+    state.selected = start;
+  }
+
+  async function makeMaterial(c, kind, signal, step) {
+    step && step(`${KINDS[kind].title.toLowerCase()} for ${c.name}`);
+    const files = await packSources(c.id, kind === "key" ? 120000 : 150000);
+    const shaky = shakyConceptsFor(c.id, 20);
+    const common = `${courseBrief(c)}
+
+CONCEPTS THIS STUDENT HAS MISSED BEFORE
+${shaky}
+
+Write in clear Markdown with headings. Write math in plain text or Unicode (no LaTeX). Use Markdown tables for payoff matrices, data and comparisons, and fenced code blocks for code. Write every question and problem out in full so the student never has to look anything up in another file. Base the content on the course's own notation, methods and software as shown in the files. If the files contain homework that might still be graded, don't reproduce its solutions: write new problems modeled on it with different numbers.`;
+    let prompt;
+    if (kind === "guide") prompt = `Write a study guide for this student's upcoming exam.
+
+${common}
+
+STRUCTURE
+1. A short "How this exam works" section (format, timing, what to expect).
+2. One section per topic, ordered 🔴 first, then 🟡, then 🟢 (🟢 topics get a short recap only). Each 🔴/🟡 topic has: **What to know** (definitions, formulas, procedures, explained plainly), **Worked example** (fully solved, modeled on the course materials), **Traps** (common mistakes, including any from the concept list above), and **Practice** (2-3 questions, each followed by its answer inside <details><summary>Answer</summary> ... </details> with blank lines around the answer text).
+3. A one-page cheat sheet at the end.
+
+FILES
+${files}`;
+    else if (kind === "cards") prompt = `Write 30-45 flashcards for this student's upcoming exam, weighted toward 🔴 and 🟡 topics and the concepts they have missed.
+
+${common}
+
+FORMAT, exactly, for each card (numbered, grouped under a "## Topic" heading per topic):
+### 1. The question or prompt
+<details><summary>Show answer</summary>
+
+The answer, short and complete (1-4 sentences, a formula, or a tiny table).
+
+</details>
+
+Mix card types: definitions, "why does…", "what happens if…", compare/contrast, spot-the-mistake, and short calculations. Output only the cards, starting with a one-line "# ${c.name} flashcards" title.
+
+FILES
+${files}`;
+    else if (kind === "mock") prompt = `Write a mock exam for this student, modeled as closely as possible on the format, length, difficulty and question style of their real past exams and quizzes in the files. Weight it toward 🔴 and 🟡 topics while still covering the whole exam scope.
+
+${common}
+
+Start with a title, the time limit and point values, and instructions (closed book unless the real exam is open book). Number every question. Include everything needed (data tables, code, payoff matrices, setups). DO NOT include any answers, hints or solutions: the answer key is written separately.
+
+FILES
+${files}`;
+    else if (kind === "key") {
+      const mock = state.mats.find((m) => m.id === `${c.id}-mock`);
+      if (!mock || !mock.body) throw { msg: `Make the ${c.name} mock exam first.` };
+      prompt = `Write the answer key for this mock exam.
+
+${common}
+
+For every question, in order: the full worked answer (show the steps a grader expects), a line "**Tests:** ..." naming the concept, and a line "**Common trap:** ..." where relevant. End with a short "If you missed…" table mapping each question to the topic to review.
+
+THE MOCK EXAM
+${clipBytes(mock.body, 60000)}
+
+FILES (for the course's conventions)
+${files}`;
+    }
+    const res = await state.sample(prompt, { signal, onText: ({ text }) => { if (state.job) { state.job.step = `writing the ${KINDS[kind].title.toLowerCase()} for ${c.name} (${Math.round(text.length / 1000)}k characters)`; renderJob(); } } });
+    const body = clipBytes(res.text, 230000);
+    const doc = { course: c.id, kind, title: `${c.name}: ${KINDS[kind].title}`, body, hidden: !!KINDS[kind].hidden, revealed: false, truncated: !!res.truncated, made: new Date().toISOString() };
+    const id = `${c.id}-${kind}`;
+    await col("materials").doc(id).set(doc);
+    // The snapshot lands a moment later; the answer key step needs the mock now.
+    state.mats = [...state.mats.filter((m) => m.id !== id), { id, ...doc }];
+  }
+
+  async function makeAllFor(c, signal, step) {
+    for (const k of ["guide", "cards", "mock", "key"]) { if (signal.aborted) return; await makeMaterial(c, k, signal, step); }
+  }
+
+  // ---------- day writes ----------
+  const dayChains = new Map();
+  function writeDay(date, data) {
+    state.days.set(date, data);
+    const prev = dayChains.get(date) || Promise.resolve();
+    const p = prev.catch(() => {}).then(() => col("days").doc(date).set({ title: data.title || "", tasks: data.tasks }));
+    dayChains.set(date, p);
+    return p;
+  }
+  async function toggleTask(date, t) {
+    const day = state.days.get(date); if (!day) return;
+    const tasks = day.tasks.map((x) => (x.id === t.id ? { ...x, done: !x.done, doneAt: !x.done ? new Date().toISOString() : null } : x));
+    const prev = day;
+    pending.set("d:" + date, true);
+    renderAll();
+    try { await writeDay(date, { ...day, tasks }); renderAll(); }
+    catch (e) { state.days.set(date, prev); writeFailed(e); }
+    finally { pending.delete("d:" + date); }
+  }
+  async function removeTask(date, t) {
+    const day = state.days.get(date); if (!day) return;
+    try { await writeDay(date, { ...day, tasks: day.tasks.filter((x) => x.id !== t.id) }); renderAll(); } catch (e) { writeFailed(e); }
+  }
+  async function addTask(date, task) {
+    const day = state.days.get(date) || { title: "", tasks: [] };
+    const t = { id: uid8(), kind: "task", done: false, custom: true, ref: null, ...task };
+    await writeDay(date, { ...day, tasks: [...(day.tasks || []), t] });
+    renderAll();
+    return t;
+  }
+  async function moveTask(fromDate, id, toDate) {
+    const from = state.days.get(fromDate); if (!from) throw new Error("No such day " + fromDate);
+    const t = (from.tasks || []).find((x) => x.id === id); if (!t) throw new Error("No task " + id + " on " + fromDate);
+    if (fromDate === toDate) return t;
+    await writeDay(fromDate, { ...from, tasks: from.tasks.filter((x) => x.id !== id) });
+    const to = state.days.get(toDate) || { title: "", tasks: [] };
+    await writeDay(toDate, { ...to, tasks: [...(to.tasks || []), { ...t, custom: true }] });
+    renderAll();
+    return t;
+  }
+
+  // ---------- rounds ----------
+  async function createRound(name, copyFrom) {
+    const id = "r" + Date.now().toString(36);
+    const data = { name: name.slice(0, 80), created: new Date().toISOString(), hoursWeekday: 4, hoursWeekend: 5, constraints: "" };
+    const ref = state.profileRef.collection("rounds").doc(id);
+    await ref.set(data);
+    if (copyFrom) {
+      const from = state.profileRef.collection("rounds").doc(copyFrom);
+      const cs = await from.collection("courses").get();
+      for (const d of cs.docs) {
+        const c = d.data();
+        await ref.collection("courses").doc(d.id).set({ name: c.name, color: c.color ?? 0, notes: c.notes || "", summary: c.summary || "", examFormat: "", topics: [], weakSpots: [], examAt: "", examTs: null, created: c.created || new Date().toISOString() });
+      }
+      const ss = await from.collection("sources").get();
+      for (const d of ss.docs) {
+        const t = await from.collection("sourcetext").doc(d.id).get();
+        if (t.exists) await ref.collection("sourcetext").doc(d.id).set(t.data());
+        await ref.collection("sources").doc(d.id).set(d.data());
+      }
+      const ks = await from.collection("concepts").get();
+      for (const d of ks.docs) if (d.data().status !== "got") await ref.collection("concepts").doc(d.id).set(d.data());
+    }
+    await state.profileRef.set({ activeRound: id });
+  }
+  async function deleteRound(id) {
+    const ref = state.profileRef.collection("rounds").doc(id);
+    for (const name of ["courses", "days", "concepts", "materials", "sources", "sourcetext"]) {
+      const s = await ref.collection(name).get();
+      for (const d of s.docs) await ref.collection(name).doc(d.id).delete();
+    }
+    await state.profileRef.collection("chats").doc(id).delete().catch(() => {});
+    await ref.delete();
+    const rest = state.rounds.filter((r) => r.id !== id).sort((a, b) => String(b.created).localeCompare(String(a.created)));
+    await state.profileRef.set({ activeRound: rest[0] ? rest[0].id : "" });
+  }
+
+  function subscribeRound() {
+    state.unsubs.forEach((u) => { try { u(); } catch (e) {} });
+    state.unsubs = [];
+    state.courses = []; state.days = new Map(); state.concepts = []; state.mats = []; state.sources = [];
+    state.loaded = { courses: false, days: false, concepts: false, mats: false, sources: false };
+    state.srcText = new Map(); state.showSetup = null; state.openMat = null;
+    tutor.turns = []; tutor.chatRef = null;
+    if (!state.activeRound) { renderAll(); return; }
+    const onErr = () => { setSync("off", "Sync stopped"); showNotice("Your planner stopped syncing. Reload the page to reconnect."); };
+    const sub = (name, fn) => state.unsubs.push(col(name).onSnapshot((snap) => { fn(snap.docs.map((d) => ({ id: d.id, ...d.data() }))); state.loaded[name === "materials" ? "mats" : name] = true; setSync("live", "Saved and syncing"); renderAll(); }, onErr));
+    sub("courses", (docs) => { state.courses = docs.sort((a, b) => String(a.created || "").localeCompare(String(b.created || ""))); });
+    sub("days", (docs) => {
+      const m = new Map();
+      for (const d of docs) m.set(d.id, pending.has("d:" + d.id) && state.days.get(d.id) ? state.days.get(d.id) : { title: d.title || "", tasks: Array.isArray(d.tasks) ? d.tasks : [] });
+      state.days = m;
+    });
+    sub("concepts", (docs) => { state.concepts = docs.map((e) => (pending.has("e:" + e.id) ? { ...e, status: state.concepts.find((x) => x.id === e.id)?.status ?? e.status } : e)); });
+    sub("materials", (docs) => { state.mats = docs; });
+    sub("sources", (docs) => { state.sources = docs.sort((a, b) => String(a.added || "").localeCompare(String(b.added || ""))); });
+    tutor.chatRef = state.profileRef.collection("chats").doc(state.activeRound);
+    tutor.chatRef.get().then((snap) => {
+      if (snap.exists && Array.isArray(snap.data().turns)) tutor.turns = snap.data().turns.filter((t) => t && t.content && (t.role === "user" || t.role === "assistant"));
+      if (!$("tutor").hidden) renderHistory();
+    }).catch(() => {});
+    renderAll();
+  }
+
+  // ---------- header ----------
+  function renderHeader() {
+    const has = state.roundsLoaded && state.rounds.length > 0;
+    $("round-pick").hidden = !has;
+    $("new-round-btn").hidden = !has || !state.canWrite;
+    $("jump-log").hidden = !state.activeRound;
+    const sel = $("round-select");
+    sel.replaceChildren();
+    for (const r of state.rounds.slice().sort((a, b) => String(b.created).localeCompare(String(a.created)))) sel.append(el("option", { value: r.id, text: r.name || "Untitled round" }));
+    if (state.activeRound) sel.value = state.activeRound;
+    const rd = round();
+    const ex = examCourses();
+    $("sub").textContent = rd
+      ? (ex.length ? `${rd.name} · ${ex.map((c) => c.name).join(", ")} · ${dayLabel(localISO(new Date(ex[0].examTs))).dt} – ${dayLabel(localISO(new Date(ex[ex.length - 1].examTs))).dt}` : `${rd.name} · add your classes and exam times to get started`)
+      : "Upload your classwork, rate your topics, and get a day-by-day plan with study materials.";
+    const shakyAll = state.concepts.filter((e) => e.status !== "got").length;
+    $("jump-log").textContent = state.loaded.concepts ? `Concept log · ${shakyAll} shaky` : "Concept log";
+  }
+  $("round-select").addEventListener("change", async (e) => {
+    try { await state.profileRef.set({ activeRound: e.target.value }); } catch (err) { writeFailed(err); }
+  });
+  $("new-round-btn").addEventListener("click", () => { state.newRoundOpen = true; renderWelcome(); $("welcome").scrollIntoView({ behavior: "smooth", block: "start" }); const i = $("round-name"); if (i) i.focus(); });
+
+  function renderWelcome() {
+    const w = $("welcome");
+    const first = state.roundsLoaded && !state.rounds.length;
+    w.hidden = !(state.db && state.uid && state.roundsLoaded && (first || state.newRoundOpen));
+    if (w.hidden) return;
+    w.replaceChildren();
+    if (first) {
+      w.append(el("h2", { text: "Plan your next round of exams" }),
+        el("p", { style: "margin:0", text: "A round is one exam period, like midterms or finals. Everything you add stays private to your account." }),
+        el("ol", {},
+          el("li", { text: "Add each class and its exam date and time." }),
+          el("li", { text: "Upload what you have: syllabus, lecture slides or notes, homework, quizzes and past exams (PDF, Word, PowerPoint, notebooks, text or photos)." }),
+          el("li", { text: "Claude finds the topics. Rate each one 🟢 confident, 🟡 shaky or 🔴 lost." }),
+          el("li", { text: "Get a day-by-day plan plus a study guide, flashcards, a mock exam and an answer key for each class, and a tutor that tracks what you miss." })));
+    } else {
+      w.append(el("h2", { text: "Start a new round" }), el("p", { style: "margin:0", text: "Your current round stays as it is. Switch between rounds from the menu at the top." }));
+    }
+    if (!state.canWrite) { w.append(el("p", { class: "hint", text: "You can't save here yet. Ask the person who shared this planner to give you Contributor access, then reload." })); return; }
+    const f = el("form", { class: "row-form" });
+    const name = el("input", { type: "text", id: "round-name", placeholder: "Round name, e.g. Fall 2026 finals", maxlength: "80", required: true, "aria-label": "Round name" });
+    f.append(name, el("button", { type: "submit", class: "btn", text: "Start round" }));
+    let copy = null;
+    if (!first) {
+      copy = el("input", { type: "checkbox", id: "copy-classes" });
+      copy.checked = true;
+      f.append(el("label", { class: "check-line", for: "copy-classes" }, copy, `Bring over my classes, files and shaky concepts from “${round()?.name || "this round"}”`));
+      f.append(el("button", { type: "button", class: "btn ghost", text: "Cancel", onclick: () => { state.newRoundOpen = false; renderWelcome(); } }));
+    }
+    f.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!name.value.trim()) return;
+      const btn = f.querySelector('button[type="submit"]'); btn.disabled = true; btn.textContent = "Creating…";
+      try { await createRound(name.value.trim(), copy && copy.checked ? state.activeRound : null); state.newRoundOpen = false; }
+      catch (err) { writeFailed(err); btn.disabled = false; btn.textContent = "Start round"; }
+    });
+    w.append(f);
+  }
+
+  // ---------- setup ----------
+  function stepState() {
+    const cs = state.courses;
+    const s1 = cs.length > 0 && cs.every((c) => c.examTs);
+    const s2 = cs.length > 0 && cs.every((c) => state.sources.some((s) => s.course === c.id));
+    const s3 = cs.length > 0 && cs.every((c) => (c.topics || []).length && c.topics.every((t) => t.rating));
+    const s4 = [...state.days.values()].some((d) => (d.tasks || []).some((t) => t.kind === "task"));
+    const s5 = cs.length > 0 && cs.every((c) => state.mats.some((m) => m.course === c.id));
+    return [s1, s2, s3, s4, s5];
+  }
+
+  function renderSetup() {
+    const box = $("setup");
+    box.hidden = !state.activeRound;
+    if (box.hidden) return;
+    box.replaceChildren();
+    if (!state.loaded.courses) { box.append(el("p", { class: "empty", style: "padding:20px", text: "Loading your classes…" })); return; }
+    const steps = stepState();
+    const planned = steps[3];
+    const open = state.showSetup ?? !planned;
+    if (!open) {
+      box.className = "card collapsed-setup";
+      box.append(el("p", { text: `${state.courses.length} class${state.courses.length === 1 ? "" : "es"} · ${state.sources.length} file${state.sources.length === 1 ? "" : "s"} uploaded. Changed something? Re-rate topics or add files, then rebuild the plan.` }),
+        el("div", { style: "display:flex;gap:8px;flex-wrap:wrap" },
+          state.canWrite ? el("button", { type: "button", class: "btn ghost", text: "Edit classes, files & topics", onclick: () => { state.showSetup = true; renderSetup(); } }) : null));
+      const bar = jobBar(); if (bar) box.append(bar);
+      return;
+    }
+    box.className = "card setup";
+    const labels = ["Classes & exam times", "Files", "Rate topics", "Plan", "Materials"];
+    const nowIdx = steps.findIndex((s) => !s);
+    const stepsEl = el("ol", { class: "steps", "aria-label": "Setup progress" });
+    labels.forEach((l, i) => stepsEl.append(el("li", { class: steps[i] ? "ok" : i === nowIdx ? "now" : "", text: `${steps[i] ? "✓ " : `${i + 1}. `}${l}` })));
+    box.append(el("div", { class: "setup-head" },
+      el("div", {}, el("h2", { text: "Your classes" }), el("p", { class: "hint", text: "Add each class, upload its files, then let Claude find the topics for you to rate." })),
+      planned ? el("button", { type: "button", class: "btn ghost", text: "Hide setup", onclick: () => { state.showSetup = false; renderSetup(); } }) : null), stepsEl);
+
+    const rd = round() || {};
+    if (state.canWrite) {
+      const wk = el("input", { type: "number", min: "0", max: "16", step: "0.5", value: String(rd.hoursWeekday ?? 4), "aria-label": "Study hours on weekdays" });
+      const we = el("input", { type: "number", min: "0", max: "16", step: "0.5", value: String(rd.hoursWeekend ?? 5), "aria-label": "Study hours on weekends" });
+      const cons = el("input", { type: "text", value: rd.constraints || "", maxlength: "400", placeholder: "Schedule notes, e.g. work Tue/Thu evenings, nothing Sunday morning", "aria-label": "Schedule notes" });
+      const save = async (patch) => { try { await roundRef().update(patch); } catch (e) { writeFailed(e); } };
+      wk.addEventListener("change", () => save({ hoursWeekday: Math.max(0, Math.min(16, parseFloat(wk.value) || 0)) }));
+      we.addEventListener("change", () => save({ hoursWeekend: Math.max(0, Math.min(16, parseFloat(we.value) || 0)) }));
+      cons.addEventListener("change", () => save({ constraints: cons.value.trim().slice(0, 400) }));
+      box.append(el("div", { class: "prefs" }, el("label", {}, "Hours a weekday", wk), el("label", {}, "Hours a weekend day", we), cons));
+    }
+
+    const list = el("div", { class: "classes" });
+    if (!state.courses.length) list.append(el("p", { class: "empty", text: "No classes yet. Add your first one below." }));
+    for (const c of state.courses) list.append(renderClass(c));
+    box.append(list);
+    if (state.canWrite) box.append(renderAddClass());
+
+    const bar = jobBar();
+    const go = el("div", { class: "go-row" });
+    const ready = state.courses.some((c) => c.examTs && (c.topics || []).length);
+    const unrated = state.courses.reduce((a, c) => a + (c.topics || []).filter((t) => !t.rating).length, 0);
+    go.append(el("p", { class: "hint", style: "margin:0;max-width:52ch", text: !state.sample ? "Claude isn't available in this view, so plans and materials can't be generated here." :
+      !ready ? "Once a class has an exam time and topics, you can build your plan." :
+      unrated ? `${unrated} topic${unrated === 1 ? "" : "s"} still unrated. Rating them makes the plan and materials focus where you need it.` :
+      "Ready. The plan runs from today to your last exam. Making everything takes a few minutes and uses your Claude usage." }));
+    if (state.canWrite && state.sample) {
+      go.append(el("div", { class: "btns" },
+        el("button", { type: "button", class: "btn ghost", text: planned ? "Rebuild plan" : "Build my plan", disabled: !ready || !!state.job || null, onclick: () => runJob("Building your plan", (sig, step) => buildPlan(sig, step)) }),
+        el("button", { type: "button", class: "btn", text: "Build plan + all materials", disabled: !ready || !!state.job || null, onclick: () => runJob("Making everything", async (sig, step) => {
+          await buildPlan(sig, step);
+          for (const c of examCourses()) { if (sig.aborted) break; if ((c.topics || []).length) await makeAllFor(c, sig, step); }
+          state.showSetup = false;
+        }) })));
+    }
+    box.append(go);
+    if (bar) box.append(bar);
+  }
+
+  function renderClass(c) {
+    const card = el("div", { class: "cls", style: cvar(c) });
+    const w = state.canWrite;
+    const name = el("input", { type: "text", class: "name", value: c.name || "", maxlength: "80", "aria-label": "Class name", disabled: !w || null });
+    name.addEventListener("change", async () => { const v = name.value.trim(); if (!v) { name.value = c.name; return; } try { await col("courses").doc(c.id).update({ name: v }); } catch (e) { writeFailed(e); } });
+    const when = el("input", { type: "datetime-local", value: c.examAt || "", "aria-label": `${c.name} exam date and time`, disabled: !w || null });
+    when.addEventListener("change", async () => { const ts = when.value ? new Date(when.value).getTime() : null; try { await col("courses").doc(c.id).update({ examAt: when.value, examTs: ts }); } catch (e) { writeFailed(e); } });
+    card.append(el("div", { class: "cls-head" }, name, el("label", {}, "Exam", when),
+      w ? el("button", { type: "button", class: "del", text: "Remove class", onclick: () => removeClass(c) }) : null));
+
+    const notes = el("textarea", { rows: "2", maxlength: "1500", placeholder: "Anything about the exam: format, what's covered, open or closed book, what the professor emphasized, what you struggle with", "aria-label": `${c.name} notes`, disabled: !w || null });
+    notes.value = c.notes || "";
+    notes.addEventListener("change", async () => { try { await col("courses").doc(c.id).update({ notes: notes.value.trim().slice(0, 1500) }); } catch (e) { writeFailed(e); } });
+    card.append(notes);
+
+    // files
+    const srcs = state.sources.filter((s) => s.course === c.id);
+    const busy = [...state.busySrc.values()].filter((b) => b.course === c.id);
+    const files = el("div", { class: "files" });
+    for (const s of srcs) {
+      const warn = s.unread || s.trimmed;
+      files.append(el("span", { class: "file" + (warn ? " warn" : ""), title: s.unread ? "Couldn't be read in this view" : s.trimmed ? "Very long, so only the first part is used" : s.name },
+        el("span", { class: "nm", text: s.name }),
+        el("span", { class: "meta", text: s.unread ? "unread" : `${s.chars >= 1000 ? Math.round(s.chars / 1000) + "k" : s.chars} chars${s.trimmed ? ", trimmed" : ""}${s.transcribed ? ", read by Claude" : ""}` }),
+        w ? el("button", { type: "button", "aria-label": "Remove " + s.name, text: "×", onclick: () => removeSource(s) }) : null));
+    }
+    for (const b of busy) files.append(el("span", { class: "file busy" }, el("span", { class: "nm", text: b.name }), el("span", { class: "meta", text: b.status })));
+    card.append(el("h4", { text: `Files (${srcs.length})` }));
+    if (srcs.length || busy.length) card.append(files);
+    if (w) {
+      const inp = el("input", { type: "file", multiple: true, accept: ".pdf,.docx,.pptx,.ipynb,.html,.htm,.txt,.md,.csv,.py,.r,.R,.Rmd,.tex,.zip,image/*" });
+      inp.addEventListener("change", () => { if (inp.files.length) handleFiles(c.id, inp.files); inp.value = ""; });
+      const pasteWrap = el("div", { class: "paste", hidden: true });
+      const pName = el("input", { type: "text", placeholder: "Name, e.g. Quizlet set or Lecture 5 notes", maxlength: "120", "aria-label": "Name for pasted text" });
+      const pText = el("textarea", { rows: "5", placeholder: "Paste notes, flashcards, a problem set…", "aria-label": "Pasted text" });
+      pasteWrap.append(pText, el("div", { class: "row-form" }, pName, el("button", { type: "button", class: "btn", text: "Add text", onclick: async () => {
+        const t = pText.value.trim(); if (t.length < 20) return;
+        try { await saveSource(c.id, pName.value.trim() || "Pasted text", "text", t); pText.value = ""; pName.value = ""; pasteWrap.hidden = true; } catch (e) { writeFailed(e); }
+      } }), el("button", { type: "button", class: "btn ghost", text: "Cancel", onclick: () => { pasteWrap.hidden = true; } })));
+      card.append(el("div", { class: "file-actions" },
+        el("label", { class: "upload" }, "Upload files", inp),
+        el("button", { type: "button", class: "link-btn", text: "Paste text instead", onclick: () => { pasteWrap.hidden = false; pText.focus(); } }),
+        el("span", { class: "hint", style: "margin:0", text: "PDF, Word, PowerPoint, notebooks, text, photos or a .zip. Drop files here too." })), pasteWrap);
+      card.addEventListener("dragover", (e) => { e.preventDefault(); card.classList.add("drag"); });
+      card.addEventListener("dragleave", () => card.classList.remove("drag"));
+      card.addEventListener("drop", (e) => { e.preventDefault(); card.classList.remove("drag"); if (e.dataTransfer.files.length) handleFiles(c.id, e.dataTransfer.files); });
+    }
+
+    // topics
+    const topics = c.topics || [];
+    card.append(el("h4", { text: topics.length ? `Topics: rate each one (${topics.filter((t) => t.rating).length}/${topics.length} rated)` : "Topics" }));
+    if (c.summary || c.examFormat) card.append(el("p", { class: "cls-summary" }, c.summary ? c.summary + " " : "", c.examFormat ? el("span", {}, el("b", { text: "Exam format: " }), c.examFormat) : null));
+    if (topics.length) {
+      const tl = el("div", { class: "topics" });
+      for (const t of topics) {
+        const rate = el("div", { class: "rate", role: "group", "aria-label": `Rate ${t.name}` });
+        for (const [k, lbl] of Object.entries(RATING)) rate.append(el("button", { type: "button", "aria-pressed": String(t.rating === k), title: lbl, text: lbl.split(" ")[0] + " " + lbl.split(" ")[1], disabled: !w || null, onclick: () => rateTopic(c, t.id, t.rating === k ? null : k) }));
+        if (w) rate.append(el("button", { type: "button", class: "del", "aria-label": "Remove topic " + t.name, text: "×", onclick: () => removeTopic(c, t.id) }));
+        tl.append(el("div", { class: "topic" }, el("span", { class: "tn", text: t.name }), rate, t.detail ? el("span", { class: "td", text: t.detail }) : null));
+      }
+      card.append(tl);
+    }
+    if (w) {
+      const row = el("div", { class: "row-form" });
+      const nt = el("input", { type: "text", placeholder: "Add a topic yourself", maxlength: "120", "aria-label": "New topic" });
+      row.append(nt, el("button", { type: "button", class: "btn ghost", text: "Add topic", onclick: async () => { const v = nt.value.trim(); if (!v) return; try { await col("courses").doc(c.id).update({ topics: [...topics, { id: uid8(), name: v, detail: "", rating: null }] }); } catch (e) { writeFailed(e); } } }));
+      if (state.sample) row.append(el("button", { type: "button", class: topics.length ? "btn ghost" : "btn", disabled: !!state.job || null,
+        text: topics.length ? "Find topics again" : srcs.length ? "Find topics in my files" : "Find topics from the class name",
+        onclick: () => runJob(`Finding topics for ${c.name}`, (sig, step) => findTopics(c, sig, step)) }));
+      card.append(row);
+    }
+
+    const weak = (c.weakSpots || []).filter((wk) => !state.concepts.some((e) => e.concept === wk.concept));
+    if (weak.length && w) {
+      card.append(el("div", { class: "weak" },
+        el("b", { text: `Claude spotted ${weak.length} mistake${weak.length === 1 ? "" : "s"} in your graded work` }),
+        el("ul", {}, ...weak.map((wk) => el("li", { text: `${wk.concept}${wk.seenIn ? ` (${wk.seenIn})` : ""}` }))),
+        el("div", {}, el("button", { type: "button", class: "btn ghost", text: "Add them to my concept log", onclick: () => addWeak(c, weak) }))));
+    }
+    return card;
+  }
+
+  function renderAddClass() {
+    const f = el("form", { class: "add-cls", "aria-label": "Add a class" });
+    const name = el("input", { type: "text", placeholder: "e.g. Intermediate Microeconomics", maxlength: "80", required: true });
+    const when = el("input", { type: "datetime-local" });
+    f.append(el("label", {}, "Class name", name), el("label", {}, "Exam date and time", when), el("button", { type: "submit", class: "btn", text: "Add class" }));
+    f.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const v = name.value.trim(); if (!v) return;
+      const used = new Set(state.courses.map((c) => c.color));
+      let color = 0; while (used.has(color) && color < 5) color++;
+      const id = "c" + uid8();
+      try {
+        await col("courses").doc(id).set({ name: v, examAt: when.value || "", examTs: when.value ? new Date(when.value).getTime() : null, color, notes: "", topics: [], weakSpots: [], created: new Date().toISOString() });
+        name.value = ""; when.value = "";
+      } catch (err) { writeFailed(err); }
+    });
+    return f;
+  }
+
+  async function rateTopic(c, tid, rating) {
+    const topics = (c.topics || []).map((t) => (t.id === tid ? { ...t, rating } : t));
+    c.topics = topics; renderSetup();
+    try { await col("courses").doc(c.id).update({ topics }); } catch (e) { writeFailed(e); }
+  }
+  async function removeTopic(c, tid) {
+    try { await col("courses").doc(c.id).update({ topics: (c.topics || []).filter((t) => t.id !== tid) }); } catch (e) { writeFailed(e); }
+  }
+  async function removeSource(s) {
+    if (!confirm(`Remove ${s.name}?`)) return;
+    try { await col("sources").doc(s.id).delete(); await col("sourcetext").doc(s.id).delete(); state.srcText.delete(s.id); } catch (e) { writeFailed(e); }
+  }
+  async function removeClass(c) {
+    if (!confirm(`Remove ${c.name}, its files and its materials? Its tasks stay in the plan until you rebuild it.`)) return;
+    try {
+      for (const s of state.sources.filter((x) => x.course === c.id)) { await col("sources").doc(s.id).delete(); await col("sourcetext").doc(s.id).delete(); }
+      for (const m of state.mats.filter((x) => x.course === c.id)) await col("materials").doc(m.id).delete();
+      await col("courses").doc(c.id).delete();
+    } catch (e) { writeFailed(e); }
+  }
+  async function addWeak(c, list) {
+    const now = new Date().toISOString();
+    try {
+      for (const wk of list) await col("concepts").add({ course: c.id, concept: wk.concept, know: wk.know, trap: wk.trap, rule: wk.rule, seenIn: wk.seenIn ? [wk.seenIn] : [], status: "shaky", by: "tutor", created: now, updated: now });
+    } catch (e) { writeFailed(e); }
+  }
+
+  // ---------- exams ----------
+  function tasksFor(cid) {
+    const out = [];
+    for (const day of state.days.values()) for (const t of day.tasks || []) if (t.kind === "task" && t.course === cid) out.push(t);
+    return out;
+  }
+  function renderExams() {
+    const wrap = $("exams");
+    const ex = examCourses();
+    wrap.hidden = !state.activeRound || !ex.length;
+    if (wrap.hidden) return;
+    wrap.replaceChildren();
+    const now = Date.now();
+    for (const c of ex) {
+      const ts = tasksFor(c.id);
+      const done = ts.filter((t) => t.done);
+      const minsLeft = ts.filter((t) => !t.done).reduce((a, t) => a + (t.minutes || 0), 0);
+      const pct = ts.length ? Math.round((done.length / ts.length) * 100) : 0;
+      const diff = c.examTs - now;
+      let count;
+      if (diff <= 0) count = el("div", { class: "count", text: "Done" });
+      else {
+        const d = Math.floor(diff / 86400000), h = Math.floor((diff % 86400000) / 3600000), m = Math.floor((diff % 3600000) / 60000);
+        count = el("div", { class: "count" }, d > 0 ? `${d}d ${h}h` : `${h}h ${m}m`, el("small", { text: " to go" }));
+      }
+      wrap.append(el("article", { class: "exam" + (diff <= 0 ? " over" : ""), style: cvar(c) },
+        el("div", {}, el("h2", { text: c.name }), el("div", { class: "when", text: fmtExam(c.examTs) })),
+        count,
+        el("div", { class: "bar", role: "progressbar", "aria-label": `${c.name} prep progress`, "aria-valuemin": "0", "aria-valuemax": "100", "aria-valuenow": String(pct) }, el("span", { style: `width:${pct}%` })),
+        el("div", { class: "meta", text: ts.length ? `${done.length} of ${ts.length} study blocks done · ${fmtMins(minsLeft)} left` : "No study blocks yet" })));
+    }
+  }
+
+  // ---------- days ----------
+  function planDates() {
+    const dates = [...state.days.keys()].filter((d) => (state.days.get(d).tasks || []).length).sort();
+    if (!dates.length) return [];
+    const first = dates[0] < state.today ? dates[0] : state.today < dates[0] ? state.today : dates[0];
+    const last = dates[dates.length - 1];
+    const out = [];
+    for (let d = first; d <= last && out.length < 120; d = addDays(d, 1)) out.push(d);
+    return out;
+  }
+  function renderDays() {
+    const nav = $("days");
+    nav.replaceChildren();
+    const dates = planDates();
+    if (!dates.length) { nav.hidden = true; return; }
+    nav.hidden = false;
+    if (!state.selected || !dates.includes(state.selected)) state.selected = dates.includes(state.today) ? state.today : state.today < dates[0] ? dates[0] : dates[dates.length - 1];
+    for (const iso of dates) {
+      const lbl = dayLabel(iso);
+      const ts = (state.days.get(iso)?.tasks || []).filter((t) => t.kind === "task");
+      const isExam = (state.days.get(iso)?.tasks || []).some((t) => t.kind === "exam");
+      const pips = el("span", { class: "pips", "aria-hidden": "true" });
+      ts.slice(0, 8).forEach((t) => pips.append(el("b", { class: t.done ? "on" : "" })));
+      const doneN = ts.filter((t) => t.done).length;
+      nav.append(el("button", {
+        type: "button", class: "day-chip" + (iso === state.today ? " today" : "") + (isExam ? " exam-day" : ""),
+        "aria-pressed": String(iso === state.selected), "aria-label": `${lbl.long}${iso === state.today ? " (today)" : ""}${isExam ? ", exam day" : ""}, ${doneN} of ${ts.length} done`,
+        onclick: () => { state.selected = iso; renderDays(); renderDay(); },
+      }, el("span", { class: "dow", text: iso === state.today ? "Today" : lbl.dow }), el("span", { class: "dt", text: lbl.dt }), pips));
+    }
+    const cur = nav.querySelector('[aria-pressed="true"]');
+    if (cur) cur.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }
+
+  const CHECK = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function renderDay() {
+    const sec = $("day");
+    sec.replaceChildren();
+    if (!state.loaded.days) { sec.append(el("p", { class: "empty", text: "Loading your plan…" })); return; }
+    const dates = planDates();
+    if (!dates.length) {
+      sec.append(el("div", { class: "day-head" }, el("div", {}, el("div", { class: "eyebrow", text: "Your plan" }), el("h2", { text: "No plan yet" }))),
+        el("p", { class: "empty", style: "padding:0", text: state.courses.length ? "Add exam times, find and rate your topics above, then press Build my plan." : "Start by adding your classes above." }));
+      return;
+    }
+    const iso = state.selected;
+    const lbl = dayLabel(iso);
+    const day = state.days.get(iso) || { title: "", tasks: [] };
+    const all = day.tasks || [];
+    const shown = state.filter === "all" ? all : all.filter((t) => t.course === state.filter || !t.course);
+    const work = all.filter((t) => t.kind === "task");
+    const total = work.reduce((a, t) => a + (t.minutes || 0), 0);
+    const left = work.filter((t) => !t.done).reduce((a, t) => a + (t.minutes || 0), 0);
+    sec.append(el("div", { class: "day-head" },
+      el("div", {}, el("div", { class: "eyebrow", text: lbl.long + (iso === state.today ? " · today" : "") }), el("h2", { text: day.title || (all.length ? "Study day" : "Free day") })),
+      el("div", { class: "time", text: `${fmtMins(total)} planned · ${fmtMins(left)} left` })));
+    if (state.courses.length > 1) {
+      const filters = el("div", { class: "filters", role: "group", "aria-label": "Filter by class" });
+      for (const k of ["all", ...state.courses.map((c) => c.id)]) {
+        filters.append(el("button", { type: "button", "aria-pressed": String(state.filter === k), text: k === "all" ? "Everything" : courseById(k).name, onclick: () => { state.filter = k; renderDay(); } }));
+      }
+      sec.append(filters);
+    }
+    const list = el("ul", { class: "tasks" });
+    if (!all.length) list.append(el("li", { class: "empty", text: "Nothing planned for this day. Add a block below." }));
+    else if (!shown.length) list.append(el("li", { class: "empty", text: "Nothing for this class today. Pick Everything to see the full day." }));
+    for (const t of shown) list.append(renderTask(iso, t));
+    sec.append(list);
+    if (state.canWrite) sec.append(renderAdd(iso));
+  }
+
+  function renderTask(iso, t) {
+    const li = el("li", { class: `task ${t.kind || "task"}${t.done ? " done" : ""}` });
+    if (t.kind === "task") {
+      const box = el("button", { type: "button", class: "check", role: "checkbox", "aria-checked": String(!!t.done), "aria-label": (t.done ? "Mark not done: " : "Mark done: ") + t.text, disabled: !state.canWrite || null, onclick: () => toggleTask(iso, t) });
+      box.innerHTML = CHECK;
+      li.append(box);
+    } else li.append(el("span", { "aria-hidden": "true" }));
+    const tags = el("div", { class: "tags" });
+    const c = courseById(t.course);
+    if (c) tags.append(el("span", { class: "tag", style: cvar(c), text: c.name }));
+    if (t.ref === "log") tags.append(el("button", { type: "button", class: "link-btn", text: "Open concept log", onclick: () => openLog(t.course || "all") }));
+    else if (t.ref && c) {
+      const m = state.mats.find((x) => x.id === `${c.id}-${t.ref}`);
+      if (m) tags.append(el("button", { type: "button", class: "link-btn", text: `Open ${KINDS[t.ref].title.toLowerCase()}`, onclick: () => openMat(m) }));
+      else if (KINDS[t.ref]) tags.append(el("span", { class: "hint", style: "margin:0", text: `${KINDS[t.ref].title} not made yet` }));
+    }
+    if ((t.custom || t.kind === "task") && state.canWrite && t.kind !== "exam") tags.append(el("button", { type: "button", class: "del", text: "Remove", "aria-label": "Remove " + t.text, onclick: () => removeTask(iso, t) }));
+    li.append(el("div", { class: "body" }, el("div", { class: "txt", text: t.text }), tags.childElementCount ? tags : null));
+    li.append(el("span", { class: "mins", text: t.minutes ? fmtMins(t.minutes) : "" }));
+    return li;
+  }
+  function renderAdd(iso) {
+    const form = el("form", { class: "add", "aria-label": "Add a study block" });
+    const txt = el("input", { type: "text", placeholder: "Add a study block for this day", "aria-label": "What to study", maxlength: "300", required: true });
+    const sel = el("select", { "aria-label": "Class" });
+    for (const c of state.courses) sel.append(el("option", { value: c.id, text: c.name }));
+    sel.append(el("option", { value: "", text: "General" }));
+    if (state.filter !== "all") sel.value = state.filter;
+    const mins = el("input", { type: "number", min: "0", max: "600", step: "5", placeholder: "min", "aria-label": "Minutes" });
+    form.append(txt, sel, mins, el("button", { class: "btn", type: "submit", text: "Add" }));
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = txt.value.trim(); if (!text) return;
+      try { await addTask(iso, { course: sel.value, minutes: Math.max(0, Math.min(600, parseInt(mins.value, 10) || 0)), text }); txt.value = ""; mins.value = ""; }
+      catch (err) { writeFailed(err); }
+    });
+    return form;
+  }
+
+  // ---------- materials ----------
+  function renderMats() {
+    const box = $("mats");
+    box.replaceChildren();
+    if (!state.loaded.mats || !state.loaded.courses) { box.append(el("p", { class: "empty", text: "Loading materials…" })); return; }
+    if (!state.courses.length) { box.append(el("p", { class: "empty", text: "Add a class to get study materials for it." })); return; }
+    const wrap = el("div", { style: "display:grid;gap:18px" });
+    for (const c of state.courses) {
+      const g = el("div", { class: "group", style: cvar(c) }, el("h3", { text: c.name }));
+      const canMake = state.sample && state.canWrite && (c.topics || []).length;
+      for (const k of Object.keys(KINDS)) g.append(renderMat(c, k, canMake));
+      if (canMake && !state.mats.some((m) => m.course === c.id)) g.append(el("button", { type: "button", class: "btn", text: "Make all four", disabled: !!state.job || null, onclick: () => runJob(`Making ${c.name} materials`, (sig, step) => makeAllFor(c, sig, step)) }));
+      else if (!(c.topics || []).length) g.append(el("p", { class: "hint", style: "margin:0", text: "Find topics for this class first (in Your classes)." }));
+      wrap.append(g);
+    }
+    box.append(wrap);
+    const bar = jobBar(); if (bar) box.prepend(bar);
+  }
+  function renderMat(c, kind, canMake) {
+    const m = state.mats.find((x) => x.id === `${c.id}-${kind}`);
+    const K = KINDS[kind];
+    const card = el("div", { class: "mat" },
+      el("div", { class: "t" }, el("b", { text: K.title }), el("span", { class: "pill " + (m ? "ready" : "none"), text: m ? "Ready" : "Not made yet" })),
+      el("p", { text: m && m.truncated ? "This one was cut short. Remake it for the full version." : K.note }));
+    const actions = el("div", { class: "actions" });
+    if (m) {
+      if (m.hidden && !m.revealed) {
+        actions.append(el("div", { class: "gate" }, "Finished the mock?", el("button", { type: "button", class: "link-btn", text: "Yes, show the answers", disabled: !state.canWrite || null, onclick: async () => { try { await col("materials").doc(m.id).update({ revealed: true }); openMat({ ...m, revealed: true }); } catch (e) { writeFailed(e); } } })));
+      } else {
+        actions.append(el("button", { type: "button", class: "btn ghost", text: "Open", onclick: () => openMat(m) }));
+        if (state.dl) actions.append(el("button", { type: "button", class: "link-btn", text: "Download .md", onclick: (e) => downloadMd(m, e.currentTarget) }));
+      }
+      if (canMake) actions.append(el("button", { type: "button", class: "link-btn", text: "Remake", disabled: !!state.job || null, onclick: () => { if (confirm(`Replace your ${K.title.toLowerCase()} for ${c.name} with a new one?`)) runJob(`Remaking ${c.name} ${K.title.toLowerCase()}`, (sig, step) => makeMaterial(c, kind, sig, step)); } }));
+    } else if (canMake) {
+      const needMock = kind === "key" && !state.mats.some((x) => x.id === `${c.id}-mock`);
+      actions.append(el("button", { type: "button", class: "link-btn", text: needMock ? "Make the mock first" : "Make it", disabled: needMock || !!state.job || null, onclick: () => runJob(`Making ${c.name} ${K.title.toLowerCase()}`, (sig, step) => makeMaterial(c, kind, sig, step)) }));
+    }
+    if (actions.childElementCount) card.append(actions);
+    return card;
+  }
+  async function downloadMd(m, btn) {
+    if (!state.dl) return;
+    const label = btn.textContent;
+    try {
+      await state.dl.save({ filename: m.title.replace(/[\\/:*?"<>|]+/g, " ").replace(/\s+/g, " ").trim() + ".md", data: m.body || "" });
+      btn.textContent = "Saved ✓"; setTimeout(() => { btn.textContent = label; }, 2500);
+    } catch (e) {
+      const code = e && e.code;
+      if (code === "declined") {}
+      else if (code === "rate_limited") showNotice("A download prompt is already open. Finish that one, then try again.");
+      else showNotice("Downloads aren't available in this view.");
+    }
+  }
+
+  // ---------- reader ----------
+  let lastFocus = null;
+  function openMat(m) {
+    if (m.hidden && !m.revealed) { $("shelf").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    lastFocus = document.activeElement;
+    $("reader-title").textContent = m.title;
+    const doc = $("reader-doc");
+    doc.replaceChildren(...mdHTML(m.body || "", false).childNodes);
+    $("reader").hidden = false;
+    doc.scrollTop = 0;
+    state.openMat = m;
+    $("reader-ask").hidden = !tutor.sample;
+    updateCtx();
+    $("reader-close").focus();
+  }
+  function closeReader() {
+    $("reader").hidden = true;
+    state.openMat = null;
+    clearSel();
+    updateCtx();
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+  }
+  $("reader-ask").addEventListener("click", () => openTutor());
+  $("reader-close").addEventListener("click", closeReader);
+  $("jump-log").addEventListener("click", () => openLog(state.logFilter));
+  $("reader").addEventListener("click", (e) => { if (e.target.id === "reader") closeReader(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!$("tutor").hidden) closeTutor();
+    else if (!$("reader").hidden) closeReader();
+  });
+
+  // ---------- concept log ----------
+  function openLog(course) {
+    state.logFilter = course && (course === "all" || courseById(course)) ? course : "all";
+    state.showGot = false;
+    renderLog();
+    $("elog").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function renderLog() {
+    const sec = $("elog");
+    sec.replaceChildren();
+    if (state.logFilter !== "all" && !courseById(state.logFilter)) state.logFilter = "all";
+    const inCourse = state.concepts.filter((e) => state.logFilter === "all" || e.course === state.logFilter);
+    const shaky = inCourse.filter((e) => e.status !== "got");
+    const got = inCourse.length - shaky.length;
+    sec.append(el("div", { class: "elog-head" },
+      el("div", {}, el("h2", { text: "Concept log" }),
+        el("p", { class: "hint", text: "Concepts you've missed, what to know about each, and the trap that caught you. Mark one Got it once you can explain it without looking." })),
+      el("div", { class: "count", text: state.loaded.concepts ? `${shaky.length} shaky · ${got} got it` : "" })));
+    const filters = el("div", { class: "filters", role: "group", "aria-label": "Concept log class" });
+    for (const k of ["all", ...state.courses.map((c) => c.id)]) {
+      const n = state.concepts.filter((e) => e.status !== "got" && (k === "all" || e.course === k)).length;
+      filters.append(el("button", { type: "button", "aria-pressed": String(state.logFilter === k), text: (k === "all" ? "All classes" : courseById(k).name) + (state.loaded.concepts ? ` ${n}` : ""), onclick: () => { state.logFilter = k; renderLog(); } }));
+    }
+    const tg = el("label", { class: "toggle" });
+    const cb = el("input", { type: "checkbox" });
+    cb.checked = state.showGot;
+    cb.addEventListener("change", () => { state.showGot = cb.checked; renderLog(); });
+    tg.append(cb, "Show ones I've got");
+    sec.append(el("div", { class: "bar-row" }, filters, tg));
+    const list = el("ul", { class: "errs" });
+    const rows = (state.showGot ? inCourse : shaky).slice().sort((a, b) => (a.status === "got") - (b.status === "got") || String(b.updated || b.created || "").localeCompare(String(a.updated || a.created || "")));
+    if (!state.loaded.concepts) list.append(el("li", { class: "empty", text: "Loading your concept log…" }));
+    else if (!inCourse.length) list.append(el("li", { class: "empty", text: "No concepts yet. When you miss something, add it below or tell the tutor and it will add it for you." }));
+    else if (!rows.length) list.append(el("li", { class: "empty", text: "Nothing shaky left here. Nice work. Tick “Show ones I've got” to review everything." }));
+    for (const e of rows) list.append(renderErr(e));
+    sec.append(list);
+    if (state.canWrite && state.courses.length) sec.append(renderErrForm());
+  }
+  function renderErr(e) {
+    const isGot = e.status === "got";
+    const c = courseById(e.course);
+    const li = el("li", { class: "err" + (isGot ? " got" : ""), style: cvar(c) });
+    const ctl = el("div", { class: "ctl" });
+    ctl.append(el("span", { class: "pill " + (isGot ? "ready" : "waiting"), text: isGot ? "Got it ✓" : "Still shaky" }));
+    if (state.canWrite) {
+      ctl.append(el("button", { type: "button", class: isGot ? "btn ghost mark" : "btn mark", text: isGot ? "Move back to shaky" : "Mark as got it", onclick: () => setErrStatus(e, isGot ? "shaky" : "got") }));
+      if (tutor.sample) ctl.append(el("button", { type: "button", class: "link-btn", text: "Teach it back", onclick: () => teachBack(e.concept, e.course) }));
+      ctl.append(el("button", { type: "button", class: "del", text: "Delete", "aria-label": "Delete concept: " + (e.concept || ""), onclick: () => col("concepts").doc(e.id).delete().catch(writeFailed) }));
+    }
+    li.append(el("div", { class: "src" },
+      el("div", { class: "c-title" },
+        el("div", { class: "tags" }, el("span", { class: "tag", style: cvar(c), text: c ? c.name : "General" }), e.by === "tutor" ? el("span", { class: "by-tutor", text: "added by Claude" }) : null),
+        el("h3", { text: e.concept || "Untitled concept" })), ctl));
+    const body = el("div", { class: "c-body" });
+    if (e.know) body.append(el("div", { class: "c-know" }, mdHTML(e.know)));
+    if (e.trap) body.append(el("p", { class: "c-trap" }, el("b", { text: "The trap: " }), e.trap));
+    if (e.rule) body.append(el("p", { class: "c-rule" }, el("span", { class: "c-label", text: "Rule" }), e.rule));
+    const seen = Array.isArray(e.seenIn) ? e.seenIn : [];
+    if (seen.length) {
+      const chips = el("div", { class: "c-seen" }, el("span", { class: "c-label", text: seen.length > 1 ? `Missed ${seen.length}×` : "Came up in" }));
+      for (const x of seen) chips.append(el("span", { class: "chip", text: String(x) }));
+      body.append(chips);
+    }
+    li.append(body);
+    return li;
+  }
+  function renderErrForm() {
+    const f = el("form", { class: "eform", "aria-label": "Add a concept" });
+    const sel = el("select", { "aria-label": "Class" });
+    for (const c of state.courses) sel.append(el("option", { value: c.id, text: c.name }));
+    sel.value = state.logFilter !== "all" ? state.logFilter : state.filter !== "all" ? state.filter : state.courses[0].id;
+    const name = el("input", { type: "text", placeholder: "Concept, e.g. Mixed strategies: whose payoffs set whose probabilities", "aria-label": "Concept", maxlength: "200", required: true });
+    const know = el("textarea", { rows: "3", placeholder: "What to know about it, in a way that makes sense without the original question", "aria-label": "What to know", maxlength: "2000", required: true });
+    const trap = el("input", { type: "text", placeholder: "The trap: what I mixed up (optional)", "aria-label": "The trap", maxlength: "400" });
+    const rule = el("input", { type: "text", placeholder: "One-line rule to remember", "aria-label": "One-line rule", maxlength: "300", required: true });
+    const seen = el("input", { type: "text", placeholder: "Where it came up, e.g. Quiz 2 Q3 (optional)", "aria-label": "Where it came up", maxlength: "120" });
+    f.append(el("h3", { style: "font-size:15px", text: "Add a concept" }), el("div", { class: "two" }, sel, name), know, trap, rule, seen, el("div", { class: "go" }, el("button", { class: "btn", type: "submit", text: "Add to concept log" })));
+    f.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      if (!name.value.trim() || !know.value.trim() || !rule.value.trim()) return;
+      const now = new Date().toISOString();
+      try {
+        await col("concepts").add({ course: sel.value, concept: name.value.trim(), know: know.value.trim(), trap: trap.value.trim(), rule: rule.value.trim(), seenIn: seen.value.trim() ? [seen.value.trim()] : [], status: "shaky", created: now, updated: now });
+        name.value = know.value = trap.value = rule.value = seen.value = "";
+        name.focus();
+      } catch (err) { writeFailed(err); }
+    });
+    return f;
+  }
+  async function setErrStatus(e, status) {
+    if (pending.has("e:" + e.id)) return;
+    const prev = e.status;
+    e.status = status; renderLog(); renderHeader();
+    pending.set("e:" + e.id, true);
+    try { await col("concepts").doc(e.id).update({ status, updated: new Date().toISOString() }); }
+    catch (err) { e.status = prev; writeFailed(err); }
+    finally { pending.delete("e:" + e.id); }
+  }
+
+  function renderAll() {
+    renderHeader(); renderWelcome();
+    const on = !!state.activeRound;
+    $("desk").hidden = !on;
+    renderSetup(); renderExams();
+    if (on) { renderDays(); renderDay(); renderMats(); renderLog(); }
+    renderTutorCourses();
+    $("tutor-open").hidden = !(tutor.sample && on) || !$("tutor").hidden;
+  }
+
+  // ---------- tutor ----------
+  const tutor = { sel: "", sample: null, tools: false, images: false, turns: [], busy: false, ctl: null, img: null, chatRef: null, saving: Promise.resolve() };
+
+  function renderTutorCourses() {
+    const s = $("tutor-course");
+    const cur = s.value;
+    s.replaceChildren(el("option", { value: "any", text: "Any" }), ...state.courses.map((c) => el("option", { value: c.id, text: c.name })));
+    s.value = [...s.options].some((o) => o.value === cur) ? cur : "any";
+  }
+
+  function upcomingTasks() {
+    const out = [];
+    for (const d of [...state.days.keys()].sort()) {
+      if (d < state.today || d > addDays(state.today, 6)) continue;
+      for (const t of state.days.get(d).tasks || []) if (t.kind === "task") out.push(`- [${t.done ? "x" : " "}] ${d} id=${t.id} (${courseById(t.course)?.name || "general"}, ${t.minutes || 0}m) ${t.text}`);
+    }
+    return out.slice(0, 50).join("\n") || "(no plan yet)";
+  }
+
+  function tutorRules() {
+    const now = new Date();
+    const shaky = state.concepts.filter((e) => e.status !== "got").slice(0, 40).map((e) => `- [${e.id}] (${courseById(e.course)?.name || e.course}) ${e.concept} :: rule: ${e.rule || ""}`).join("\n") || "(none)";
+    const got = state.concepts.filter((e) => e.status === "got").slice(0, 30).map((e) => `- [${e.id}] (${courseById(e.course)?.name || e.course}) ${e.concept}`).join("\n") || "(none)";
+    const mats = state.mats.map((m) => `- ${m.id}: ${m.title}${m.hidden && !m.revealed ? " [ANSWER KEY — student has NOT finished the mock; never reveal]" : m.hidden ? " [answer key — student finished the mock]" : ""}`).join("\n") || "(none yet)";
+    const srcs = state.sources.filter((s) => s.chars > 0).map((s) => `- src:${s.id}: ${s.name} (${courseById(s.course)?.name || ""}, ${s.kind})`).join("\n") || "(none)";
+    const focus = $("tutor-course").value;
+    const om = state.openMat && !$("reader").hidden ? state.openMat : null;
+    const openCtx = om ? `\nWHAT THE STUDENT HAS OPEN RIGHT NOW
+They are reading "${om.title}" (material id ${om.id}). When they say "this", "here" or "this question", they mean this material. This is what's on their screen:
+"""
+${visibleExcerpt()}
+"""
+Call read_material with id ${om.id} if you need other parts of it.\n` : "";
+    return `You are the study tutor inside a student's exam planner. It is now ${now.toLocaleString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" })}. This exam round is "${round()?.name || ""}".
+
+CLASSES (use these ids in tools)
+${state.courses.map((c) => courseBrief(c)).join("\n\n") || "(no classes yet)"}
+${focus !== "any" && courseById(focus) ? `\nThe student picked ${courseById(focus).name} (id ${focus}) for this conversation; assume questions are about it unless clearly not.\n` : ""}
+HOW TO TUTOR
+- Be warm, direct and brief: short paragraphs, plain words, a concrete example when it helps. Write math in plain text or Unicode (no LaTeX). Use markdown tables for matrices and data.
+- Prefer making them think: when they ask to be quizzed, ask ONE question at a time and wait. When they answer, say clearly whether it's right, then explain why in two or three sentences.
+- Ground answers in their own course files: call read_material (with a query) on their uploaded files (ids starting src:) or study materials to match their course's notation, methods and software rather than guessing.
+- Focus on 🔴 and 🟡 topics and their shaky concepts when they ask what to study.
+- If they ask you to do homework they'll hand in for a grade, coach with hints, explain the method, and make up a similar problem with different numbers instead of giving final answers. If they show their own work, check each step.
+- Never reveal answer-key content the list below marks as not yet allowed.
+- If the student quotes a passage they selected, answer about that passage specifically.
+- They can change their plan through you: use move_task or add_task when they ask (e.g. "move X to a lighter day": pick the day with the fewest planned minutes before that class's exam).
+
+FEYNMAN TEACH-BACK MODE
+- If the message is "Feynman teach-back: pick one of my shaky concepts", choose one SHAKY concept (preferring the class they picked and the exam coming soonest) and run the teach-back on it.
+- When a message starts with "Feynman teach-back:", name the concept in one line and ask them to explain it as if teaching a friend who missed class: what it is, why it matters, and an example. Ask nothing else yet, and give no hints.
+- Their next message is their explanation. It may be dictated, so ignore filler words and transcription slips; judge the ideas.
+- Reply with: (1) **What you nailed**, 1–2 bullets; (2) **Gaps or mistakes**, 1–3 specific bullets; (3) **A cleaner way to say it**, 2–3 plain sentences; (4) **one follow-up question** on the biggest gap.
+- For each real gap, use log_concept, or concept_missed_again if it's already logged. If the explanation was complete and correct and the concept was SHAKY, call mark_concept with status "got".
+
+THE CONCEPT LOG (you maintain it for them)
+- Organized by CONCEPT, not by question. Each entry names a concept, explains what to know, names the trap, and gives a one-line rule. Write it so it makes complete sense a week later WITHOUT the original question.
+- When they answer wrong, show a misconception, or say they don't understand a specific idea, call log_concept once for that concept and tell them in one short line. Don't log typos or guesses they immediately fix.
+- If the concept is already listed below, call concept_missed_again with its id instead of adding a duplicate.
+- When they correctly answer, cold, a question that tests one of their SHAKY concepts, call mark_concept with status "got" and tell them.
+
+SHAKY CONCEPTS (id, class, concept, rule)
+${shaky}
+
+CONCEPTS ALREADY MARKED GOT IT
+${got}
+${openCtx}
+STUDY MATERIALS (ids for read_material)
+${mats}
+
+UPLOADED COURSE FILES (ids for read_material)
+${srcs}
+
+PLAN FOR THE NEXT 7 DAYS (task ids for move_task)
+${upcomingTasks()}`;
+  }
+
+  const TOOLS = () => {
+    const ids = state.courses.map((c) => c.id);
+    const needWrite = () => { if (!state.canWrite) throw new Error("This view is read-only."); };
+    return [
+      {
+        name: "log_concept",
+        description: "Add a concept the student got wrong to their concept log. One call per distinct concept; write it so it makes sense without the original question.",
+        inputSchema: { type: "object", properties: {
+          course: { type: "string", enum: ids.length ? ids : ["none"], description: "Class id" },
+          concept: { type: "string", description: "Short name of the concept" },
+          know: { type: "string", description: "What the student needs to know, 2-4 self-contained sentences. Markdown allowed." },
+          trap: { type: "string", description: "The misconception that caught them, one sentence" },
+          rule: { type: "string", description: "One-line rule to remember" },
+          seen_in: { type: "string", description: "Where it came up, e.g. 'Tutor quiz' or 'Mock Q3'" },
+        }, required: ["course", "concept", "know", "trap", "rule"] },
+        async execute(input) {
+          needWrite();
+          const course = ids.includes(String(input.course)) ? String(input.course) : ids[0];
+          const now = new Date().toISOString();
+          const doc = { course, by: "tutor", status: "shaky", created: now, updated: now,
+            concept: String(input.concept || "Concept").slice(0, 200), know: String(input.know || "").slice(0, 2000),
+            trap: String(input.trap || "").slice(0, 400), rule: String(input.rule || "").slice(0, 300), seenIn: [String(input.seen_in || "Tutor chat").slice(0, 120)] };
+          const ref = await col("concepts").add(doc);
+          addNote("Added to your concept log: " + doc.concept);
+          return { id: ref.id, logged: true };
+        },
+      },
+      {
+        name: "concept_missed_again",
+        description: "Record that the student missed a concept already in their log: adds where it came up and sets it back to shaky.",
+        inputSchema: { type: "object", properties: { id: { type: "string" }, seen_in: { type: "string" } }, required: ["id"] },
+        async execute(input) {
+          needWrite();
+          const e = state.concepts.find((x) => x.id === String(input.id));
+          if (!e) throw new Error("No concept with id " + input.id);
+          const seenIn = (Array.isArray(e.seenIn) ? e.seenIn.slice() : []).concat(String(input.seen_in || "Tutor chat").slice(0, 120)).slice(-12);
+          await col("concepts").doc(e.id).update({ status: "shaky", seenIn, updated: new Date().toISOString() });
+          addNote("Missed again, back to shaky: " + e.concept, "mark");
+          return { id: e.id, status: "shaky", times: seenIn.length };
+        },
+      },
+      {
+        name: "mark_concept",
+        description: "Set an existing concept's status to 'got' (student now answers it correctly, cold) or 'shaky'.",
+        inputSchema: { type: "object", properties: { id: { type: "string" }, status: { type: "string", enum: ["got", "shaky"] } }, required: ["id", "status"] },
+        async execute(input) {
+          needWrite();
+          const status = input.status === "got" ? "got" : "shaky";
+          const e = state.concepts.find((x) => x.id === String(input.id));
+          if (!e) throw new Error("No concept with id " + input.id);
+          await col("concepts").doc(e.id).update({ status, updated: new Date().toISOString() });
+          addNote((status === "got" ? "Marked Got it: " : "Moved back to shaky: ") + e.concept, "mark");
+          return { id: e.id, status };
+        },
+      },
+      {
+        name: "read_material",
+        description: "Read a study material or an uploaded course file by id. With 'query', returns only the sections that mention those words (best for lookups); without it, returns the start of the document.",
+        inputSchema: { type: "object", properties: { id: { type: "string" }, query: { type: "string", description: "Optional words to search for" } }, required: ["id"] },
+        async execute(input) {
+          const id = String(input.id || "");
+          let body;
+          if (id.startsWith("src:")) {
+            const s = state.sources.find((x) => x.id === id.slice(4));
+            if (!s) throw new Error("No file with id " + id);
+            body = await getSourceText(s.id);
+          } else {
+            const m = state.mats.find((x) => x.id === id);
+            if (!m || !m.body) throw new Error("No material with id " + id);
+            if (m.hidden && !m.revealed) throw new Error("The student hasn't finished the mock yet, so the answer key is locked.");
+            body = String(m.body);
+          }
+          const q = String(input.query || "").toLowerCase().split(/\W+/).filter((w) => w.length > 2);
+          if (!q.length) return body.slice(0, 14000);
+          const parts = body.split(/\n(?=#{1,3} )|\n(?=\[(?:page|slide) \d+\])|\n\n/);
+          const hits = parts.map((p, i) => { const lp = p.toLowerCase(); return { i, p, s: q.reduce((a, w) => a + (lp.includes(w) ? 100 : 0) + Math.min(5, lp.split(w).length - 1), 0) }; })
+            .filter((x) => x.s > 0).sort((a, b) => b.s - a.s).slice(0, 8).sort((a, b) => a.i - b.i).map((x) => x.p);
+          return (hits.join("\n\n") || "No sections matched; try other words or omit query.").slice(0, 14000);
+        },
+      },
+      {
+        name: "move_task",
+        description: "Move one task in the student's plan to another day.",
+        inputSchema: { type: "object", properties: { from_date: { type: "string", description: "YYYY-MM-DD" }, id: { type: "string", description: "Task id" }, to_date: { type: "string", description: "YYYY-MM-DD" } }, required: ["from_date", "id", "to_date"] },
+        async execute(input) {
+          needWrite();
+          const to = String(input.to_date || "");
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(to)) throw new Error("to_date must be YYYY-MM-DD");
+          const t = await moveTask(String(input.from_date), String(input.id), to);
+          addNote(`Moved to ${dayLabel(to).long}: ${t.text.slice(0, 60)}`, "mark");
+          return { moved: true, to };
+        },
+      },
+      {
+        name: "add_task",
+        description: "Add a study block to the student's plan.",
+        inputSchema: { type: "object", properties: { date: { type: "string", description: "YYYY-MM-DD" }, course: { type: "string", enum: ids.length ? ids : ["none"] }, minutes: { type: "number" }, text: { type: "string", description: "Exactly what to do" } }, required: ["date", "text"] },
+        async execute(input) {
+          needWrite();
+          const date = String(input.date || "");
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("date must be YYYY-MM-DD");
+          const t = await addTask(date, { course: ids.includes(String(input.course)) ? String(input.course) : "", minutes: Math.max(0, Math.min(600, parseInt(input.minutes, 10) || 0)), text: String(input.text || "").slice(0, 300) });
+          addNote(`Added to ${dayLabel(date).long}: ${t.text.slice(0, 60)}`, "mark");
+          return { added: true, id: t.id };
+        },
+      },
+    ];
+  };
+
+  const chatEl = () => $("chat");
+  function scrollChat() { const c = chatEl(); c.scrollTop = c.scrollHeight; }
+  function mdHTML(text, breaks = true) {
+    const div = document.createElement("div");
+    if (window.marked && window.DOMPurify) {
+      div.innerHTML = DOMPurify.sanitize(marked.parse(text || "", { gfm: true, breaks }));
+      div.querySelectorAll("table").forEach((t) => { const w = document.createElement("div"); w.className = "tbl"; t.replaceWith(w); w.append(t); });
+      div.querySelectorAll("a[href]").forEach((a) => { if (!/^https?:/i.test(a.getAttribute("href"))) a.replaceWith(document.createTextNode(a.textContent)); else a.target = "_blank"; });
+    } else div.append(el("pre", { style: "white-space:pre-wrap", text: text || "" }));
+    return div;
+  }
+  function addMsg(role, text) {
+    const m = el("div", { class: "msg " + (role === "user" ? "user" : role === "err" ? "err" : "bot") });
+    if (role === "assistant") m.append(mdHTML(text)); else m.textContent = text;
+    chatEl().append(m); scrollChat();
+    return m;
+  }
+  function addNote(text, kind) { chatEl().append(el("div", { class: "note" + (kind ? " " + kind : ""), text })); scrollChat(); }
+
+  function visibleExcerpt() {
+    const doc = $("reader-doc");
+    const box = doc.getBoundingClientRect();
+    const parts = []; let n = 0; let heading = "";
+    for (const ch of doc.children) {
+      const r = ch.getBoundingClientRect();
+      if (r.bottom < box.top) { if (/^H[1-3]$/.test(ch.tagName)) heading = ch.innerText.trim(); continue; }
+      if (r.top > box.bottom) break;
+      const t = (ch.innerText || "").trim();
+      if (!t) continue;
+      parts.push(t); n += t.length;
+      if (n > 3500) break;
+    }
+    const txt = parts.join("\n\n").slice(0, 3800);
+    return (heading && !txt.startsWith(heading) ? "(section: " + heading + ")\n" : "") + (txt || "(the top of the document)");
+  }
+  function updateCtx() {
+    const om = state.openMat && !$("reader").hidden ? state.openMat : null;
+    const chip = $("ctx-chip");
+    chip.replaceChildren();
+    if (om) chip.append("Looking at: ", el("b", { text: om.title }));
+    $("sel-chip").hidden = !tutor.sel;
+    if (tutor.sel) $("sel-text").textContent = "Selected: “" + tutor.sel.slice(0, 80) + (tutor.sel.length > 80 ? "…" : "") + "”";
+    $("ctx-row").hidden = !om && !tutor.sel;
+  }
+  function clearSel() { tutor.sel = ""; updateCtx(); }
+  document.addEventListener("selectionchange", () => {
+    const sel = window.getSelection && window.getSelection();
+    if (!sel || sel.isCollapsed || $("reader").hidden) return;
+    const node = sel.anchorNode;
+    if (!node || !$("reader-doc").contains(node)) return;
+    const t = sel.toString().trim();
+    if (t.length < 3) return;
+    tutor.sel = t.slice(0, 1500);
+    updateCtx();
+  });
+  $("sel-clear").addEventListener("click", clearSel);
+
+  function renderStarters() {
+    const c = chatEl();
+    c.replaceChildren();
+    const om = state.openMat && !$("reader").hidden ? state.openMat : null;
+    const s = el("div", { class: "starters" });
+    let ideas;
+    if (om) {
+      c.append(el("div", { class: "msg bot" }, mdHTML(`I can see you have **${om.title}** open. Ask about the part on your screen, or highlight a passage first and then ask about it.`)));
+      ideas = ["Explain the part I'm looking at more simply", "Quiz me on this section", "Feynman teach-back: the section I'm looking at", "Give me a similar practice problem to this one", "Check my answer to a question here"];
+    } else {
+      c.append(el("div", { class: "msg bot" }, mdHTML("Hi! I can explain a concept, quiz you, or check an answer you've written. I've read your uploaded files. When you miss something I'll add it to your concept log, and when you get a shaky one right I'll mark it **Got it**.\n\nWhat do you want to work on?")));
+      ideas = ["What should I study right now?", "Quiz me on my 🔴 topics", "Feynman teach-back: pick one of my shaky concepts", "Explain the hardest topic on my list simply", "Move today's unfinished blocks to lighter days"];
+    }
+    for (const q of ideas) s.append(el("button", { type: "button", text: q, onclick: () => { if (om && om.course) $("tutor-course").value = om.course; send(q); } }));
+    c.append(s);
+  }
+  function renderHistory() {
+    if (!tutor.turns.length) { renderStarters(); return; }
+    chatEl().replaceChildren();
+    for (const t of tutor.turns) addMsg(t.role, t.content);
+  }
+  function saveChat() {
+    if (!tutor.chatRef || !state.canWrite) return;
+    const ref = tutor.chatRef;
+    const turns = tutor.turns.slice(-40).map((t) => ({ role: t.role, content: String(t.content).slice(0, 6000) }));
+    tutor.saving = tutor.saving.then(() => ref.set({ turns, updated: new Date().toISOString() })).catch(() => {});
+  }
+  function setBusy(b) { tutor.busy = b; $("tutor-send").disabled = b; $("tutor-stop").hidden = !b; }
+
+  async function send(text) {
+    text = (text || "").trim();
+    if (!text || tutor.busy || !tutor.sample || !state.activeRound) return;
+    if (!tutor.turns.length) chatEl().replaceChildren();
+    const img = tutor.img;
+    const om = state.openMat && !$("reader").hidden ? state.openMat : null;
+    const quoted = tutor.sel ? `About this passage I selected${om ? ` in "${om.title}"` : ""}:\n> ${tutor.sel.replace(/\n+/g, "\n> ")}\n\n` : "";
+    const shown = quoted + (img ? text + "\n\n(attached a photo)" : text);
+    tutor.turns.push({ role: "user", content: shown });
+    addMsg("user", shown);
+    $("tutor-input").value = "";
+    clearImg();
+    if (tutor.sel) clearSel();
+    const bubble = addMsg("assistant", "");
+    bubble.replaceChildren(el("span", { class: "thinking", text: "Thinking…" }));
+    setBusy(true);
+    tutor.ctl = new AbortController();
+    const history = tutor.turns.slice(-16);
+    while (history.length && history[0].role !== "user") history.shift();
+    const input = [{ role: "user", content: tutorRules() + "\n\n---\nThe conversation with the student starts now." }, ...history];
+    const opts = { cache: false, signal: tutor.ctl.signal, onText: ({ text: t }) => { bubble.replaceChildren(mdHTML(t)); scrollChat(); } };
+    if (tutor.tools && state.courses.length) opts.tools = TOOLS();
+    if (img && tutor.images) opts.images = img;
+    try {
+      const res = await tutor.sample(input, opts);
+      bubble.replaceChildren(mdHTML(res.text));
+      tutor.turns.push({ role: "assistant", content: res.text });
+      if (res.truncated) addMsg("err", "That answer was cut short. Ask a narrower question to get the rest.");
+    } catch (e) {
+      const code = e && e.code;
+      if (e && e.text) { bubble.replaceChildren(mdHTML(e.text)); tutor.turns.push({ role: "assistant", content: e.text }); }
+      else bubble.remove();
+      if (code === "cancelled") {}
+      else if (code === "tools_unavailable") { tutor.tools = false; addMsg("err", "This view can't update your concept log from the tutor. Send your message again to get an answer without logging."); }
+      else addMsg("err", sampleErrMsg(code));
+    } finally {
+      setBusy(false);
+      tutor.ctl = null;
+      saveChat();
+      scrollChat();
+    }
+  }
+  function clearImg() { tutor.img = null; const f = $("tutor-img"); if (f) f.value = ""; $("img-chip").hidden = true; }
+
+  function openTutor() {
+    $("tutor").hidden = false;
+    $("tutor-open").hidden = true;
+    document.body.classList.add("tutor-on");
+    const om = state.openMat && !$("reader").hidden ? state.openMat : null;
+    if (om && om.course) $("tutor-course").value = om.course;
+    else if (state.filter !== "all" && $("tutor-course").value === "any") $("tutor-course").value = state.filter;
+    if (!chatEl().childElementCount || (om && !tutor.turns.length)) renderHistory();
+    updateCtx();
+    $("tutor-input").focus();
+  }
+  function closeTutor() {
+    $("tutor").hidden = true;
+    document.body.classList.remove("tutor-on");
+    $("tutor-open").hidden = !tutor.sample;
+    (!$("reader").hidden ? $("reader-ask") : $("tutor-open")).focus();
+  }
+  $("tutor-open").addEventListener("click", openTutor);
+  $("tutor-close").addEventListener("click", closeTutor);
+  $("tutor-stop").addEventListener("click", () => tutor.ctl?.abort());
+  $("tutor-new").addEventListener("click", () => { if (tutor.busy) return; tutor.turns = []; saveChat(); renderStarters(); });
+  $("compose").addEventListener("submit", (e) => { e.preventDefault(); send($("tutor-input").value); });
+  $("tutor-input").addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send($("tutor-input").value); } });
+  $("tutor-img").addEventListener("change", (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return clearImg();
+    tutor.img = f; const chip = $("img-chip"); chip.textContent = "📷 " + f.name.slice(0, 24); chip.hidden = false;
+  });
+  function teachBack(concept, course) {
+    openTutor();
+    if (course && courseById(course)) $("tutor-course").value = course;
+    send(`Feynman teach-back: ${concept}`);
+  }
+
+  // ---------- boot ----------
+  renderAll();
+  setInterval(() => {
+    const t = localISO(new Date());
+    if (t !== state.today) { state.today = t; renderAll(); } else renderExams();
+  }, 60000);
+
+  (async () => {
+    const claude = window.claude;
+    const db = claude && claude.use ? await claude.use("db").catch(() => null) : null;
+    if (!db) {
+      setSync("off", "Offline");
+      showNotice("Your planner can't load here. Open this page on claude.ai while signed in.");
+      return;
+    }
+    state.db = db;
+    let user = null;
+    try { user = await claude.use("user"); } catch (e) {}
+    const uid = user && user.id ? await user.id().catch(() => null) : null;
+    if (!uid) {
+      setSync("off", "Not signed in");
+      showNotice("Sign in to claude.ai to get your own private planner, then reload this page.");
+      return;
+    }
+    state.uid = uid;
+    try { const can = user.can ? await user.can("data.write") : null; if (can === false) state.canWrite = false; } catch (e) {}
+    if (!state.canWrite) showNotice("You can look around, but you can't save a plan yet. Ask the person who shared this planner to give you Contributor access, then reload.");
+
+    const sample = await claude.use("sample").catch(() => null);
+    if (sample) {
+      state.sample = sample; tutor.sample = sample;
+      try { const lim = await sample.limits(); state.caps = lim; tutor.tools = !!lim.tools; tutor.images = !!lim.images; } catch (e) {}
+      $("attach-wrap").hidden = !tutor.images;
+    }
+    claude.use("downloads").then((dl) => { if (dl) { state.dl = dl; renderMats(); } }).catch(() => {});
+
+    state.profileRef = db.doc(`data/users/${uid}/profile`);
+    const onErr = () => { setSync("off", "Sync stopped"); showNotice("Your planner stopped syncing. Reload the page to reconnect."); };
+    let profileActive = null;
+    const pick = () => {
+      let want = profileActive && state.rounds.some((r) => r.id === profileActive) ? profileActive : null;
+      if (!want && state.rounds.length) want = state.rounds.slice().sort((a, b) => String(b.created).localeCompare(String(a.created)))[0].id;
+      if (want !== state.activeRound) { state.activeRound = want; subscribeRound(); }
+      else renderAll();
+    };
+    let gotRounds = false, gotProfile = false;
+    state.profileRef.onSnapshot((snap) => {
+      profileActive = snap.exists ? snap.data().activeRound || null : null;
+      gotProfile = true;
+      if (gotRounds) pick();
+    }, onErr);
+    state.profileRef.collection("rounds").onSnapshot((snap) => {
+      state.rounds = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+      state.roundsLoaded = true;
+      gotRounds = true;
+      setSync("live", "Saved and syncing");
+      if (gotProfile) pick(); else renderAll();
+    }, onErr);
+  })();
+})();
+</script>
