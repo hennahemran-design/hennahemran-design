@@ -65,6 +65,7 @@ def clean(text: str) -> str:
     for a, b in _DOTTED:
         text = text.replace(a, b)
     text = re.sub(r"\bmoisturis(er|ing|ers)\b", r"moisturiz\1", text)
+    text = re.sub(r"(\w)'s\b", r"\1", text)  # "the ordinary's serum" -> "the ordinary serum"
     for pat, joined in _KEEP:
         text = pat.sub(joined, text)
     return text
