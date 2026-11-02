@@ -61,9 +61,13 @@ def previous_weeks(wid: str, data_dir: Path, n: int) -> list[tuple[str, dict | N
 def collect(start: datetime, end: datetime, args, recent: bool) -> tuple[list[dict], dict]:
     s, e = int(start.timestamp()), int(end.timestamp())
     docs, counts = [], {"reddit_archive": 0, "reddit": 0, "bluesky": 0}
+    days = [(t, min(t + 86400, e)) for t in range(s, e, 86400)]
     for sub in SUBREDDITS:
-        got = sources.arctic_shift(sub, s, e, "posts", args.post_pages, args.pause)
-        got += sources.arctic_shift(sub, s, e, "comments", args.comment_pages, args.pause)
+        got = []
+        # sample every day of the week evenly, so busy subreddits aren't cut off mid-week
+        for ds, de in days:
+            got += sources.arctic_shift(sub, ds, de, "posts", args.post_pages, args.pause)
+            got += sources.arctic_shift(sub, ds, de, "comments", args.comment_pages, args.pause)
         counts["reddit_archive"] += len(got)
         log(f"  r/{sub}: {len(got)} from the archive")
         docs += got
@@ -102,12 +106,14 @@ def past_score(key: str, week: dict | None) -> float:
     return best
 
 
-def rank_category(products: list[dict], cat: str, prev: list[tuple[str, dict | None]]) -> list[dict]:
+def rank_category(products: list[dict], cat: str, prev: list[tuple[str, dict | None]],
+                  coverage: float = 1.0) -> list[dict]:
+    """coverage: share of the week collected so far, so a part week is compared fairly."""
     have_prev = [w for _, w in prev[-4:] if w]
     pool = [p for p in products if p["category"] == cat]
     ranked = []
     for p in pool:
-        base = (sum(past_score(p["key"], w) for w in have_prev) / len(have_prev)) if have_prev else None
+        base = (coverage * sum(past_score(p["key"], w) for w in have_prev) / len(have_prev)) if have_prev else None
         if base is None:
             growth = 0.0
         else:
@@ -190,8 +196,10 @@ def build_week(wid: str, args, data_dir: Path, now: datetime, amazon_cache: dict
         },
     }
 
+    coverage = min(1.0, max((stop - start).total_seconds() / (7 * 86400), 1 / 7))
+    week["stats"]["days_covered"] = round(coverage * 7, 1)
     for cat in ("skincare", "makeup"):
-        top = rank_category(products, cat, prev)
+        top = rank_category(products, cat, prev, coverage)
         items = []
         for p in top:
             info = wa.describe(p)
@@ -249,6 +257,7 @@ def write_index(data_dir: Path):
             "week": w["week"], "start": w["start"], "end": w["end"], "partial": w.get("partial", False),
             "generated_at": w.get("generated_at"),
             "docs": w["stats"]["posts"] + w["stats"]["comments"],
+            "days": w["stats"].get("days_covered", 7),
             "top": {c: [x["name"] for x in w.get(c, [])] for c in ("skincare", "makeup")},
         })
     (data_dir / "index.json").write_text(json.dumps(
@@ -264,9 +273,9 @@ def main(argv=None):
     ap.add_argument("--no-live", action="store_true", help="skip reddit.com, Google and Amazon")
     ap.add_argument("--no-bluesky", action="store_true", help="skip Bluesky")
     ap.add_argument("--bluesky-pages", type=int, default=2, help="pages of 100 Bluesky posts per search")
-    ap.add_argument("--post-pages", type=int, default=2, help="pages of 100 posts per subreddit")
-    ap.add_argument("--comment-pages", type=int, default=6, help="pages of 100 comments per subreddit")
-    ap.add_argument("--pause", type=float, default=1.0, help="seconds between archive requests")
+    ap.add_argument("--post-pages", type=int, default=1, help="pages of 100 posts per subreddit per day")
+    ap.add_argument("--comment-pages", type=int, default=2, help="pages of 100 comments per subreddit per day")
+    ap.add_argument("--pause", type=float, default=0.7, help="seconds between archive requests")
     ap.add_argument("--fixture", help="read docs from this JSON file instead of the internet")
     ap.add_argument("--data-dir", default=str(DATA))
     args = ap.parse_args(argv)

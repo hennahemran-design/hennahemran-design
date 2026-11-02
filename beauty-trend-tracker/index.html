@@ -461,9 +461,9 @@ async function start() {
   const weeks = state.index.weeks;
   $("#week").innerHTML = weeks.map(w => `<option value="${w.week}">${weekLabel(w)}${w.partial ? " (in progress)" : ""}</option>`).join("");
   if (!weeks.some(w => w.week === state.week)) {
-    // open on the newest complete week unless the current one already has a fair amount of data
+    // open on the newest complete week until the current one has at least 3 days of data
     const cur = weeks[0];
-    state.week = cur.partial && weeks[1] && cur.docs < weeks[1].docs * 0.4 ? weeks[1].week : cur.week;
+    state.week = cur.partial && weeks[1] && (cur.days ?? 7) < 3 ? weeks[1].week : cur.week;
   }
   $("#week").addEventListener("change", e => { state.week = e.target.value; render(); });
   $("#older").addEventListener("click", () => { const i = weeks.findIndex(w => w.week === state.week); if (i < weeks.length - 1) { state.week = weeks[i + 1].week; render(); } });

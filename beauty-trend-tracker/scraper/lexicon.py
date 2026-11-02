@@ -108,6 +108,18 @@ GENERIC_AFTER_BRAND = {
     "website", "site", "sale", "sales", "pr", "haul", "dupes", "dupe", "collection", "range",
     "version", "one", "ones", "stores", "counter", "account", "packaging", "customer", "team",
     "lol", "x", "vs", "and", "or", "&", "but", "too", "also", "is", "are", "was", "were",
+    "gwp", "brush", "brushes", "mini", "minis", "set", "sets", "kit", "gift", "gifts", "sample",
+    "samples", "palettes", "launch", "launches", "releases", "release", "event", "order",
+}
+
+# A name that is only a brand plus one of these is a category, not a product ("NARS Palette").
+CATEGORY_WORDS = {
+    "palette", "palettes", "cream", "creams", "moisturizer", "moisturizers", "cleanser", "cleansers",
+    "sunscreen", "sunscreens", "spf", "serum", "serums", "toner", "toners", "lip", "lips", "lipstick",
+    "lipsticks", "gloss", "foundation", "concealer", "blush", "bronzer", "highlighter", "mascara",
+    "eyeliner", "liner", "primer", "powder", "setting", "spray", "brow", "brows", "skincare", "makeup",
+    "lotion", "oil", "balm", "mask", "masks", "face", "eye", "eyes", "cheek", "tint", "tints",
+    "essence", "gel", "wash", "pads", "pad", "body", "sun", "retinol", "stick", "sticks", "stuff",
 }
 
 STOPWORDS = set("""
@@ -136,14 +148,20 @@ BEAUTY_GENERIC = set("""
 skin face product products routine makeup skincare face's using use apply applied applying
 wear wearing wore put bottle tube price color colour shade shades formula look looks brand
 help helps helped hair body thanks thank post comment people sub reddit edit update
+luck else last found keep weird helpful removed question questions follow bad missing gave
+helping step top similar well perfect size work works worked worth link links amazon sephora
+ulta target store stores buy bought recommend recommendation recommendations nice cute
+favorite favourite fav ones also pretty little lot advice please anyone help idea ideas
+monday tuesday wednesday thursday friday saturday sunday morning night tonight today
 """.split())
 
 # Words that end a product name when they follow it.
-NAME_BREAKERS = STOPWORDS | {
+NAME_BREAKERS = (STOPWORDS | {
     "honestly", "personally", "tbh", "imo", "lately", "recently", "today", "yesterday",
     "everyday", "daily", "though", "instead", "alone", "together", "first", "last", "next",
     "again", "already", "anymore", "forever", "worth", "dupe", "dupes", "vs", "versus",
-}
+    "authentic", "fake", "fakes", "original", "real", "legit", "review", "reviews", "haul",
+}) - {"me"}  # keep "Fit Me", "Kiss Me"
 
 # Keyword groups. Each entry: label shown on the site -> list of regex patterns.
 RECOMMENDED_FOR = {

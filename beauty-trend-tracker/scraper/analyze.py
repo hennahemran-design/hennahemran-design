@@ -15,11 +15,11 @@ import re
 from collections import Counter, defaultdict
 
 from lexicon import (
-    BEAUTY_GENERIC, BRANDS, COMPLAINTS, GENERIC_AFTER_BRAND, MAKEUP_TYPES, NAME_BREAKERS, NEGATIVE,
+    BEAUTY_GENERIC, BRANDS, CATEGORY_WORDS, COMPLAINTS, GENERIC_AFTER_BRAND, MAKEUP_TYPES, NAME_BREAKERS, NEGATIVE,
     PEOPLE_LIKE, POSITIVE, RECOMMENDED_FOR, SKINCARE_TYPES, STOPWORDS, SUBREDDITS,
 )
 
-MAX_NAME_WORDS = 5
+MAX_NAME_WORDS = 6
 MIN_THREADS = 3          # a product needs this many separate threads to be ranked
 TOP_N = 5
 
@@ -41,7 +41,7 @@ _BRAND_RE = re.compile(
 _BRAND_WORDS = {w for a in BRANDS for w in re.split(r"[\s\-]+", a)}
 
 _UPPER = {"spf", "pm", "am", "bha", "aha", "pha", "hd", "cc", "bb", "uv", "xl", "ha", "c",
-          "spf30", "spf40", "spf50", "spf50+", "b5", "b3", "lrp", "ii", "iii", "sk-ii"}
+          "spf30", "spf40", "spf50", "spf50+", "b5", "b3", "lrp", "ii", "iii", "sk-ii", "sa", "pa"}
 
 _GROUPS = {
     "recommended_for": {k: [re.compile(p) for p in v] for k, v in RECOMMENDED_FOR.items()},
@@ -63,6 +63,7 @@ def clean(text: str) -> str:
     # brand names with dots would otherwise be cut by the sentence splitter
     for a, b in _DOTTED:
         text = text.replace(a, b)
+    text = re.sub(r"\bmoisturis(er|ing|ers)\b", r"moisturiz\1", text)
     return text
 
 
@@ -205,6 +206,8 @@ class WeekAnalysis:
         merged: dict[str, dict] = {}
         for node, doc_ids in chosen:
             brand, tokens = node[0], node[1:]
+            if len(tokens) == 1 and (tokens[0] in CATEGORY_WORDS or tokens[0].isdigit()):
+                continue  # "CeraVe Moisturizer" names a category, not one product
             cat = _category(tokens, self.cat_votes[node[:2]])
             if cat is None:
                 continue
