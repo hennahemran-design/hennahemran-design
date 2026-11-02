@@ -43,11 +43,12 @@ def _get(url, params=None, headers=None, tries=4, pause=2.0, timeout=30):
     return None
 
 
-# ---------------------------------------------------------------- Reddit via PullPush
-# PullPush is a public Reddit archive that can search any date range, which is what
-# lets the tracker fill in past weeks.
+# ---------------------------------------------------------------- Reddit via Arctic Shift
+# Arctic Shift (https://arctic-shift.photon-reddit.com) is a public Reddit archive that can
+# search any date range, which is what lets the tracker fill in past weeks. reddit.com and
+# PullPush both refuse requests from GitHub's servers; Arctic Shift doesn't.
 
-PULLPUSH = "https://api.pullpush.io/reddit/search/{kind}/"
+ARCTIC = "https://arctic-shift.photon-reddit.com/api/{kind}/search"
 
 
 def _doc_from_post(p: dict) -> dict:
@@ -80,12 +81,12 @@ def _doc_from_comment(c: dict) -> dict:
     }
 
 
-def pullpush(subreddit: str, start: int, end: int, kind: str, pages: int, pause: float) -> list[dict]:
+def arctic_shift(subreddit: str, start: int, end: int, kind: str, pages: int, pause: float) -> list[dict]:
+    """kind is "posts" or "comments". Pages back from the end of the window, newest first."""
     out, before = [], end
     for _ in range(pages):
-        r = _get(PULLPUSH.format(kind=kind), params={
-            "subreddit": subreddit, "after": start, "before": before,
-            "size": 100, "sort": "desc", "sort_type": "created_utc",
+        r = _get(ARCTIC.format(kind=kind), params={
+            "subreddit": subreddit, "after": start, "before": before, "limit": 100, "sort": "desc",
         }, pause=pause)
         time.sleep(pause)
         if r is None:
@@ -97,19 +98,66 @@ def pullpush(subreddit: str, start: int, end: int, kind: str, pages: int, pause:
         if not items:
             break
         for it in items:
-            if kind == "comment" and it.get("body") in ("[deleted]", "[removed]"):
+            if kind == "comments" and it.get("body") in ("[deleted]", "[removed]"):
                 continue
-            out.append(_doc_from_comment(it) if kind == "comment" else _doc_from_post(it))
+            out.append(_doc_from_comment(it) if kind == "comments" else _doc_from_post(it))
         oldest = min(int(it.get("created_utc") or end) for it in items)
-        if oldest <= start or len(items) < 100:
+        if oldest <= start or len(items) < 100 or oldest >= before:
             break
         before = oldest
     return out
 
 
+# ---------------------------------------------------------------- Bluesky
+# Public post search, no account needed. Adds people outside Reddit.
+
+BLUESKY = "https://api.bsky.app/xrpc/app.bsky.feed.searchPosts"
+BLUESKY_QUERIES = ["skincare", "skin care", "makeup", "sunscreen", "moisturizer", "serum",
+                   "foundation", "blush", "lip gloss", "mascara", "concealer", "sephora haul"]
+
+
+def bluesky(start: int, end: int, pages: int, pause: float) -> list[dict]:
+    from datetime import datetime, timezone
+    iso = lambda t: datetime.fromtimestamp(t, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    out = []
+    for q in BLUESKY_QUERIES:
+        cursor = None
+        for _ in range(pages):
+            params = {"q": q, "since": iso(start), "until": iso(end), "limit": 100, "sort": "top", "lang": "en"}
+            if cursor:
+                params["cursor"] = cursor
+            r = _get(BLUESKY, params=params, pause=pause, tries=2)
+            time.sleep(pause)
+            if r is None:
+                break
+            try:
+                data = r.json()
+            except ValueError:
+                break
+            for p in data.get("posts", []):
+                rec = p.get("record") or {}
+                handle = (p.get("author") or {}).get("handle", "")
+                rkey = p.get("uri", "").rsplit("/", 1)[-1]
+                out.append({
+                    "id": p.get("uri"), "kind": "post", "sub": "Bluesky", "text": rec.get("text") or "",
+                    "score": int(p.get("likeCount") or 0) + int(p.get("repostCount") or 0),
+                    "thread": p.get("uri"),
+                    "url": f"https://bsky.app/profile/{handle}/post/{rkey}" if handle else None,
+                    "created": 0,
+                })
+            cursor = data.get("cursor")
+            if not cursor:
+                break
+    return out
+
+
 # ---------------------------------------------------------------- Reddit directly
-# Used for the newest weeks, which the archive may not have caught up on yet.
-# Set REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET (a free "script" app) for reliable access.
+# Only used when REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET are set (reddit.com blocks
+# anonymous requests from GitHub's servers). Covers the newest days the archive may lack.
+
+def reddit_enabled() -> bool:
+    return bool(os.environ.get("REDDIT_CLIENT_ID") and os.environ.get("REDDIT_CLIENT_SECRET"))
+
 
 def _reddit_base() -> tuple[str, dict]:
     cid, secret = os.environ.get("REDDIT_CLIENT_ID"), os.environ.get("REDDIT_CLIENT_SECRET")

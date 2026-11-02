@@ -19,8 +19,9 @@ A website that shows the **top 5 trending skincare and makeup products each week
 
 | Source | What it gives | Weeks |
 |---|---|---|
-| [PullPush](https://pullpush.io) Reddit archive | Posts and comments from r/SkincareAddiction, r/AsianBeauty, r/30PlusSkinCare, r/SkincareAddicts, r/MakeupAddiction, r/drugstoreMUA, r/MakeupRehab, r/BeautyGuruChatter, r/Sephora and r/Ulta | Any week, so past weeks can be filled in |
-| reddit.com | The same subreddits, for the newest days the archive may not have yet | Last ~9 days |
+| [Arctic Shift](https://arctic-shift.photon-reddit.com) Reddit archive | Posts and comments from r/SkincareAddiction, r/AsianBeauty, r/30PlusSkinCare, r/SkincareAddicts, r/MakeupAddiction, r/drugstoreMUA, r/MakeupRehab, r/BeautyGuruChatter, r/Sephora and r/Ulta | Any week, so past weeks can be filled in |
+| [Bluesky](https://bsky.app) search | Popular posts about skincare, makeup, sunscreen, foundation, blush and similar | Any week |
+| reddit.com (optional) | The newest days, if you add Reddit API keys (see Setup) | Last ~9 days |
 | Google autocomplete | Searches people type next to each product name | Newest week |
 | Amazon Movers & Shakers | Products whose sales rank jumped most | Newest week, when Amazon allows it |
 
@@ -28,7 +29,7 @@ A website that shows the **top 5 trending skincare and makeup products each week
 
 **How trending is scored.** *Buzz* = separate threads mentioning the product, plus 0.4 for each extra post or comment, plus a small boost for upvotes. The ranking multiplies buzz by its growth against the product's average over the previous 4 weeks, so products that suddenly take off beat products that are always popular. A product needs at least 3 separate threads to rank.
 
-**Limits.** This tracks what beauty Reddit is talking about, which leans toward enthusiasts and isn't a measure of sales. The keyword groups are word lists, so sarcasm and negation ("not lightweight at all") can be miscounted. Product names are only found for brands in the list.
+**Limits.** This tracks what beauty Reddit and Bluesky are talking about, which leans toward enthusiasts and isn't a measure of sales. The keyword groups are word lists, so sarcasm and negation ("not lightweight at all") can be miscounted. Product names are only found for brands in the list.
 
 ## How it runs
 
@@ -45,7 +46,7 @@ The site is plain HTML and JavaScript with no build step. It reads those JSON fi
 
 1. **Turn on Pages:** Settings → Pages → Source: **GitHub Actions**.
 2. **Allow the Action to save data:** Settings → Actions → General → Workflow permissions → **Read and write**.
-3. *(Optional, recommended)* Reddit often blocks GitHub's servers. Create a free "script" app at <https://www.reddit.com/prefs/apps> and add its id and secret as repository secrets named `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET`. Without them, the tracker relies on the PullPush archive.
+3. *(Optional)* reddit.com refuses anonymous requests from GitHub's servers, so by default the tracker reads Reddit through the Arctic Shift archive, which can lag by a day or so. To also read reddit.com directly, create a "script" app at <https://www.reddit.com/prefs/apps> and add its id and secret as repository secrets named `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET`.
 
 To collect data right away, or to go further back: Actions → **Beauty trend scrape** → **Run workflow**, then set *weeks* (for example `12`).
 

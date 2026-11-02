@@ -173,8 +173,8 @@ footer p { max-width: 760px; }
 </main>
 
 <footer class="wrap">
-  <p><b>How it works.</b> Every Monday and Thursday a scraper reads posts and comments from beauty subreddits (r/SkincareAddiction, r/MakeupAddiction, r/AsianBeauty, r/drugstoreMUA, r/Sephora and others). It finds product names by spotting a brand and reading the words after it. A product's <i>buzz</i> counts the separate threads that mention it, plus extra comments and upvotes. Products rank by buzz, weighted up when buzz is growing compared with the four weeks before. The keywords come from the sentences around each mention. <i>Google searches</i> are Google's autocomplete suggestions for the product name, collected for the newest week only.</p>
-  <p>Weeks run Monday to Sunday (UTC). The current week is marked <span class="pill">in progress</span> until it ends. Quotes link back to the original Reddit threads.</p>
+  <p><b>How it works.</b> Every Monday and Thursday a scraper reads posts and comments from beauty subreddits (r/SkincareAddiction, r/MakeupAddiction, r/AsianBeauty, r/drugstoreMUA, r/Sephora and others, through the Arctic Shift Reddit archive), plus beauty posts on Bluesky. It finds product names by spotting a brand and reading the words after it. A product's <i>buzz</i> counts the separate threads that mention it, plus extra comments and upvotes. Products rank by buzz, weighted up when buzz is growing compared with the four weeks before. The keywords come from the sentences around each mention. <i>Google searches</i> are Google's autocomplete suggestions for the product name, collected for the newest week only.</p>
+  <p>Weeks run Monday to Sunday (UTC). The current week is marked <span class="pill">in progress</span> until it ends. Quotes link back to the original posts.</p>
 </footer>
 
 <script>
@@ -208,6 +208,7 @@ async function loadWeek(id) {
 }
 
 // ---------- small pieces ----------
+const srcName = s => s === "Bluesky" ? "Bluesky" : "r/" + esc(s);
 function deltaHTML(p) {
   if (p.is_new) return `<span class="pill">New this week</span>`;
   if (p.change_pct == null) return `<span class="none">first tracked week</span>`;
@@ -270,17 +271,17 @@ function sentimentHTML(s) {
 
 function productCard(p) {
   const k = p.keywords || {};
-  const subs = Object.entries(p.subreddits || {}).map(([s, n]) => `r/${esc(s)} (${n})`).join(", ");
+  const subs = Object.entries(p.subreddits || {}).map(([s, n]) => `${srcName(s)} (${n})`).join(", ");
   const search = k.search_terms && k.search_terms.length
     ? `<div class="kw"><h4>Google searches</h4><div class="chips">${k.search_terms.slice(0, 8).map(t => `<a class="chip search" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(t)}">${esc(t)}</a>`).join("")}</div></div>` : "";
-  const quotes = (p.quotes || []).map(q => `<blockquote>“${esc(q.text)}”${q.url ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">r/${esc(q.sub)} · ${q.score} upvotes ↗</a>` : ""}</blockquote>`).join("");
+  const quotes = (p.quotes || []).map(q => `<blockquote>“${esc(q.text)}”${q.url ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${srcName(q.sub)} · ${q.score} ${q.sub === "Bluesky" ? "likes" : "upvotes"} ↗</a>` : ""}</blockquote>`).join("");
   return `<article class="card product">
     <div class="phead">
       <div class="rank">${p.rank}</div>
       <div><h3 class="pname">${esc(p.name)}</h3><div class="pbrand">${esc(p.brand)}</div></div>
       <div class="trend">${sparkline(p.history || [], p.name)}<div>${deltaHTML(p)}</div></div>
     </div>
-    <div class="stats"><span><b>${p.threads}</b> threads</span><span><b>${p.mentions}</b> posts &amp; comments</span><span><b>${p.upvotes.toLocaleString()}</b> upvotes</span><span>buzz <b>${p.score.toFixed(1)}</b></span></div>
+    <div class="stats"><span><b>${p.threads}</b> threads</span><span><b>${p.mentions}</b> posts &amp; comments</span><span><b>${p.upvotes.toLocaleString()}</b> upvotes &amp; likes</span><span>buzz <b>${p.score.toFixed(1)}</b></span></div>
     <div class="kwgrid">
       <div class="kw"><h4>Recommended for</h4>${chips(k.recommended_for)}</div>
       <div class="kw"><h4>What people like</h4>${chips(k.people_like)}</div>
@@ -431,8 +432,10 @@ async function runLookup() {
 function renderMeta() {
   const m = state.index.weeks.find(w => w.week === state.week);
   loadWeek(state.week).then(w => {
-    const subs = Object.values(w.stats.subreddits || {}).filter(Boolean).length;
-    $("#meta").innerHTML = `${m.partial ? `<span class="pill">in progress</span> ` : ""}Week of <b>${weekLabel(m)}</b> · from <b>${w.stats.posts.toLocaleString()}</b> posts and <b>${w.stats.comments.toLocaleString()}</b> comments in ${subs} subreddits · updated ${new Date(w.generated_at).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" })}`;
+    const sr = w.stats.subreddits || {};
+    const subs = Object.entries(sr).filter(([k, v]) => v && k !== "Bluesky").length;
+    const sky = sr.Bluesky ? ` and Bluesky` : "";
+    $("#meta").innerHTML = `${m.partial ? `<span class="pill">in progress</span> ` : ""}Week of <b>${weekLabel(m)}</b> · from <b>${w.stats.posts.toLocaleString()}</b> posts and <b>${w.stats.comments.toLocaleString()}</b> comments from ${subs} subreddits${sky} · updated ${new Date(w.generated_at).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" })}`;
   });
 }
 function render() {

@@ -60,18 +60,23 @@ def previous_weeks(wid: str, data_dir: Path, n: int) -> list[tuple[str, dict | N
 # ---------------------------------------------------------------- collect
 def collect(start: datetime, end: datetime, args, recent: bool) -> tuple[list[dict], dict]:
     s, e = int(start.timestamp()), int(end.timestamp())
-    docs, counts = [], {"pullpush": 0, "reddit": 0}
+    docs, counts = [], {"reddit_archive": 0, "reddit": 0, "bluesky": 0}
     for sub in SUBREDDITS:
-        got = sources.pullpush(sub, s, e, "submission", args.post_pages, args.pause)
-        got += sources.pullpush(sub, s, e, "comment", args.comment_pages, args.pause)
-        counts["pullpush"] += len(got)
-        log(f"  r/{sub}: {len(got)} from archive")
+        got = sources.arctic_shift(sub, s, e, "posts", args.post_pages, args.pause)
+        got += sources.arctic_shift(sub, s, e, "comments", args.comment_pages, args.pause)
+        counts["reddit_archive"] += len(got)
+        log(f"  r/{sub}: {len(got)} from the archive")
         docs += got
-        if recent:
-            direct = sources.reddit_direct(sub, s, e, pause=max(1.0, args.pause / 2))
+        if recent and sources.reddit_enabled():
+            direct = sources.reddit_direct(sub, s, e, pause=1.0)
             counts["reddit"] += len(direct)
             log(f"  r/{sub}: {len(direct)} from reddit.com")
             docs += direct
+    if not args.no_bluesky:
+        sky = sources.bluesky(s, e, args.bluesky_pages, args.pause)
+        counts["bluesky"] = len(sky)
+        log(f"  Bluesky: {len(sky)} posts")
+        docs += sky
     return docs, counts
 
 
@@ -177,7 +182,7 @@ def build_week(wid: str, args, data_dir: Path, now: datetime, amazon_cache: dict
             "posts": sum(d["kind"] == "post" for d in wa.docs),
             "comments": sum(d["kind"] == "comment" for d in wa.docs),
             "subreddits": dict(sorted(
-                {s: sum(d.get("sub") == s for d in wa.docs) for s in SUBREDDITS}.items(),
+                {s: sum(d.get("sub") == s for d in wa.docs) for s in [*SUBREDDITS, "Bluesky"]}.items(),
                 key=lambda kv: -kv[1])),
             "sources": counts,
             "products_found": len(products),
@@ -256,10 +261,12 @@ def main(argv=None):
     ap.add_argument("--week", help="build only this ISO week, e.g. 2026-W44")
     ap.add_argument("--refresh", action="store_true", help="rebuild weeks that already exist")
     ap.add_argument("--no-current", action="store_true", help="skip the week in progress")
-    ap.add_argument("--no-live", action="store_true", help="archive only: skip reddit.com, Google and Amazon")
+    ap.add_argument("--no-live", action="store_true", help="skip reddit.com, Google and Amazon")
+    ap.add_argument("--no-bluesky", action="store_true", help="skip Bluesky")
+    ap.add_argument("--bluesky-pages", type=int, default=2, help="pages of 100 Bluesky posts per search")
     ap.add_argument("--post-pages", type=int, default=2, help="pages of 100 posts per subreddit")
-    ap.add_argument("--comment-pages", type=int, default=4, help="pages of 100 comments per subreddit")
-    ap.add_argument("--pause", type=float, default=3.0, help="seconds between archive requests")
+    ap.add_argument("--comment-pages", type=int, default=6, help="pages of 100 comments per subreddit")
+    ap.add_argument("--pause", type=float, default=1.0, help="seconds between archive requests")
     ap.add_argument("--fixture", help="read docs from this JSON file instead of the internet")
     ap.add_argument("--data-dir", default=str(DATA))
     args = ap.parse_args(argv)
