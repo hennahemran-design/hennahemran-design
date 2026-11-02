@@ -99,8 +99,8 @@ def _continuation(rest: str) -> list[str]:
             break
         if not out and tok in GENERIC_AFTER_BRAND:
             break
-        if _BRAND_RE.fullmatch(tok) and out:
-            break
+        if out and _BRAND_RE.fullmatch(tok) and tok not in SKINCARE_TYPES | MAKEUP_TYPES:
+            break  # a second brand starts here (but "essence" is also a product word)
         out.append(tok)
         if len(out) >= MAX_NAME_WORDS:
             break

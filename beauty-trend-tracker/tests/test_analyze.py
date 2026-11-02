@@ -46,6 +46,9 @@ def test_mentions_stop_at_breakers():
     assert got[0][0] == "CeraVe"
     assert got[0][1] == ("moisturizing", "cream")
     assert list(find_mentions(clean("CeraVe products are fine"))) == []
+    got = list(find_mentions(clean("Haruharu Wonder black rice probiotics barrier essence, love it")))
+    assert got[0][1][-1] == "essence"
+    assert list(find_mentions(clean("Maybelline Fit Me foundation")))[0][1] == ("fit", "me", "foundation")
 
 
 def test_products_found_and_categorized():
