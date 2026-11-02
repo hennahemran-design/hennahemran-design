@@ -61,7 +61,14 @@ def _doc_from_post(p: dict) -> dict:
         "thread": "t3_" + str(p.get("id")),
         "url": "https://www.reddit.com" + p["permalink"] if p.get("permalink") else None,
         "created": int(p.get("created_utc") or 0),
+        "mod": _is_mod(p),
     }
+
+
+def _is_mod(it: dict) -> bool:
+    """Moderator notices and AutoModerator replies repeat the same rules text everywhere."""
+    return (it.get("author") == "AutoModerator" or it.get("distinguished") == "moderator"
+            or bool(it.get("stickied")))
 
 
 def _doc_from_comment(c: dict) -> dict:
@@ -78,6 +85,7 @@ def _doc_from_comment(c: dict) -> dict:
         "thread": link or None,
         "url": "https://www.reddit.com" + permalink if permalink else None,
         "created": int(c.get("created_utc") or 0),
+        "mod": _is_mod(c),
     }
 
 
@@ -100,7 +108,9 @@ def arctic_shift(subreddit: str, start: int, end: int, kind: str, pages: int, pa
         for it in items:
             if kind == "comments" and it.get("body") in ("[deleted]", "[removed]"):
                 continue
-            out.append(_doc_from_comment(it) if kind == "comments" else _doc_from_post(it))
+            doc = _doc_from_comment(it) if kind == "comments" else _doc_from_post(it)
+            if not doc["mod"]:
+                out.append(doc)
         oldest = min(int(it.get("created_utc") or end) for it in items)
         if oldest <= start or len(items) < 100 or oldest >= before:
             break
@@ -267,23 +277,31 @@ def amazon_movers(category: str, limit: int = 10) -> list[dict]:
         log(f"  ! Amazon {category}: blocked or unavailable")
         return []
     html = r.text
-    out = []
-    # each grid item has an image whose alt text is the product name
-    for block in re.split(r'id="gridItemRoot"', html)[1:]:
-        alt = re.search(r'<img[^>]+alt="([^"]{8,})"', block)
-        link = re.search(r'href="(/[^"]*/dp/[A-Z0-9]{10})', block)
-        change = re.search(r'(\d[\d,]*)%', block)
-        if not alt:
-            continue
-        name = unescape(alt.group(1)).strip()
+    out, seen = [], set()
+
+    def add(name, href, change):
+        name = unescape(name).strip()
+        if len(name) < 8 or name.lower() in seen:
+            return
+        seen.add(name.lower())
         short = re.split(r"\s[|\-–]\s|,\s", name)[0][:90]
-        out.append({
-            "rank": len(out) + 1,
-            "name": short,
-            "full_name": name,
-            "rank_change_pct": int(change.group(1).replace(",", "")) if change else None,
-            "url": "https://www.amazon.com" + link.group(1) if link else AMAZON[category],
-        })
+        out.append({"rank": len(out) + 1, "name": short, "full_name": name,
+                    "rank_change_pct": int(change.replace(",", "")) if change else None,
+                    "url": "https://www.amazon.com" + href if href else AMAZON[category]})
+
+    blocks = re.split(r'id="gridItemRoot"|data-asin="[A-Z0-9]{10}"', html)[1:]
+    for block in blocks:
+        alt = re.search(r'<img[^>]+alt="([^"]{8,})"', block)
+        if alt:
+            link = re.search(r'href="(/[^"]*?/dp/[A-Z0-9]{10})', block)
+            change = re.search(r'(\d[\d,]*)%', block[:4000])
+            add(alt.group(1), link.group(1) if link else None, change.group(1) if change else None)
         if len(out) >= limit:
             break
+    if not out:  # layout changed: fall back to any product image that links to a product page
+        for m in re.finditer(r'href="(/[^"]*?/dp/[A-Z0-9]{10})[^"]*"[^>]*>\s*(?:<[^>]+>\s*)*<img[^>]+alt="([^"]{8,})"', html):
+            add(m.group(2), m.group(1), None)
+            if len(out) >= limit:
+                break
+    log(f"  Amazon {category}: {len(out)} movers" + ("" if out else f" (page {len(html)} bytes, layout not recognised)"))
     return out

@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scraper"))
 
-from analyze import WeekAnalysis, find_mentions, clean  # noqa: E402
+from analyze import WeekAnalysis, display_name, find_mentions, clean  # noqa: E402
 import scrape  # noqa: E402
 
 
@@ -48,7 +48,14 @@ def test_mentions_stop_at_breakers():
     assert list(find_mentions(clean("CeraVe products are fine"))) == []
     got = list(find_mentions(clean("Haruharu Wonder black rice probiotics barrier essence, love it")))
     assert got[0][1][-1] == "essence"
-    assert list(find_mentions(clean("Maybelline Fit Me foundation")))[0][1] == ("fit", "me", "foundation")
+    brand, cont, _ = list(find_mentions(clean("Maybelline Fit Me foundation")))[0]
+    assert display_name(brand, cont) == "Maybelline Fit Me Foundation"
+
+
+def test_moderator_notices_skipped():
+    import sources
+    assert sources._doc_from_comment({"id": "x", "body": "rules", "author": "AutoModerator"})["mod"]
+    assert not sources._doc_from_post({"id": "y", "title": "hi", "author": "someone"})["mod"]
 
 
 def test_products_found_and_categorized():

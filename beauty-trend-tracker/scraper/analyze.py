@@ -15,7 +15,7 @@ import re
 from collections import Counter, defaultdict
 
 from lexicon import (
-    BEAUTY_GENERIC, BRANDS, CATEGORY_WORDS, COMPLAINTS, GENERIC_AFTER_BRAND, MAKEUP_TYPES, NAME_BREAKERS, NEGATIVE,
+    BEAUTY_GENERIC, BRANDS, CATEGORY_WORDS, COMPLAINTS, KEEP_PHRASES, GENERIC_AFTER_BRAND, MAKEUP_TYPES, NAME_BREAKERS, NEGATIVE,
     PEOPLE_LIKE, POSITIVE, RECOMMENDED_FOR, SKINCARE_TYPES, STOPWORDS, SUBREDDITS,
 )
 
@@ -26,7 +26,8 @@ TOP_N = 5
 _URL = re.compile(r"https?://\S+|www\.\S+")
 _MD = re.compile(r"[*_~>`#]+|\[([^\]]*)\]\([^)]*\)")
 _SENT_SPLIT = re.compile(r"(?<=[.!?])\s+|\n+|;\s*")
-_TOKEN = re.compile(r"[a-z0-9][a-z0-9'+%\-]*")
+_TOKEN = re.compile(r"[a-z0-9][a-z0-9'+%\-_]*")
+_KEEP = [(re.compile(r"\b" + re.escape(p) + r"\b"), p.replace(" ", "_")) for p in KEEP_PHRASES]
 _WORD = re.compile(r"[a-z][a-z'\-]{2,}")
 # A product name stops at punctuation other than spaces and hyphens.
 _NAME_STOP = re.compile(r"[,()\[\]:\"!?.;/|\n]|\s-\s|\s+\+\s+")
@@ -64,6 +65,8 @@ def clean(text: str) -> str:
     for a, b in _DOTTED:
         text = text.replace(a, b)
     text = re.sub(r"\bmoisturis(er|ing|ers)\b", r"moisturiz\1", text)
+    for pat, joined in _KEEP:
+        text = pat.sub(joined, text)
     return text
 
 
@@ -79,12 +82,12 @@ def display_name(brand: str, tokens: tuple[str, ...]) -> str:
         elif re.fullmatch(r"\d+%?|[\d.]+", t):
             words.append(t)
         else:
-            words.append("-".join(p[:1].upper() + p[1:] for p in t.split("-")))
+            words.append(" ".join("-".join(p[:1].upper() + p[1:] for p in w.split("-")) for w in t.split("_")))
     return f"{brand} {' '.join(words)}".strip()
 
 
 def product_key(brand: str, tokens: tuple[str, ...]) -> str:
-    return f"{brand.lower()}|{' '.join(tokens)}"
+    return f"{brand.lower()}|{' '.join(tokens).replace('_', ' ')}"
 
 
 def _continuation(rest: str) -> list[str]:
@@ -256,7 +259,7 @@ class WeekAnalysis:
     @staticmethod
     def _terms(text: str) -> set[str]:
         """Single words and two-word phrases. Phrases only join words that sit side by side."""
-        words = [w.strip("'-") for w in _WORD.findall(text)]
+        words = [w.strip("'-") for w in _WORD.findall(text.replace("_", " "))]
         ok = [bool(w) and w not in STOPWORDS and w not in _BRAND_WORDS for w in words]
         terms = {w for w, k in zip(words, ok) if k and w not in BEAUTY_GENERIC}
         for (a, ka), (b, kb) in zip(zip(words, ok), zip(words[1:], ok[1:])):
@@ -362,7 +365,7 @@ class WeekAnalysis:
     def describe(self, product: dict) -> dict:
         ctx = self.contexts(product)
         # drop the product's own name so "Zero Pore Pads" doesn't count as "pores"
-        name = " ".join(product["tokens"])
+        name = " ".join(product["tokens"])  # cleaned text keeps "fit_me" joined, same as tokens
         texts = [t.replace(name, " ") for t in ctx.values()]
         groups = self.keyword_groups(texts)
         subs = Counter(self.docs[i].get("sub") for i in product["_docs"])

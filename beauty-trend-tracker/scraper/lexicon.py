@@ -54,6 +54,7 @@ BRANDS = {
     "ilia": "ILIA", "glossier": "Glossier", "rare beauty": "Rare Beauty",
     "fenty beauty": "Fenty Beauty", "fenty": "Fenty Beauty", "charlotte tilbury": "Charlotte Tilbury",
     "huda beauty": "Huda Beauty", "nars": "NARS", "maybelline": "Maybelline",
+    "l'oreal paris": "L'Oréal", "loreal paris": "L'Oréal", "purito seoul": "Purito",
     "l'oreal": "L'Oréal", "loreal": "L'Oréal", "l'oréal": "L'Oréal", "elf": "e.l.f.",
     "e.l.f.": "e.l.f.", "e.l.f": "e.l.f.", "milani": "Milani", "nyx": "NYX",
     "covergirl": "CoverGirl", "revlon": "Revlon", "wet n wild": "wet n wild",
@@ -80,6 +81,13 @@ BRANDS = {
     "kaja": "KAJA", "lancer": "Lancer", "fwee": "fwee", "wakemake": "Wakemake",
     "dear dahlia": "Dear Dahlia", "laka": "Laka", "unleashia": "Unleashia",
 }
+
+# Product names that contain small words the name reader would otherwise stop at.
+KEEP_PHRASES = [
+    "fit me", "born this way", "sky high", "lash sensational", "stay all day", "kiss me",
+    "lash princess", "touche eclat", "love me", "glow on", "dew it", "on the glow",
+    "power of plums", "made in", "all over", "pillow talk", "in the buff", "out of office",
+]
 
 # Words that tell us what kind of product a phrase is.
 SKINCARE_TYPES = {
@@ -153,6 +161,8 @@ helping step top similar well perfect size work works worked worth link links am
 ulta target store stores buy bought recommend recommendation recommendations nice cute
 favorite favourite fav ones also pretty little lot advice please anyone help idea ideas
 monday tuesday wednesday thursday friday saturday sunday morning night tonight today
+personally live recently several takes suggestions suggestion com category genuinely find
+switch long dry thing removed reply replies thread comments update edit added ago guys
 """.split())
 
 # Words that end a product name when they follow it.
