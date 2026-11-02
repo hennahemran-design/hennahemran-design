@@ -86,7 +86,7 @@ nav.tabs button[aria-selected="true"] { color: var(--text); border-color: var(--
 .kwgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px 20px; margin: 12px 0 0 56px; }
 .kw h4 { margin: 0 0 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chip { background: var(--chip); border-radius: 99px; padding: 3px 10px; font-size: 13px; white-space: nowrap; }
+.chip { background: var(--chip); border-radius: 99px; padding: 3px 10px; font-size: 13px; max-width: 100%; overflow-wrap: anywhere; }
 .chip small { color: var(--muted); margin-left: 4px; }
 .chip.neg { background: transparent; border: 1px dashed var(--line); }
 .chip.search { background: transparent; border: 1px solid var(--line); }
@@ -208,6 +208,15 @@ async function loadWeek(id) {
 }
 
 // ---------- small pieces ----------
+// "cosrx snail mucin for acne" -> "… for acne": the product name is already on the card
+function searchTail(term, name) {
+  const t = term.toLowerCase(), words = name.toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+  let rest = t.replace(/[^a-z0-9+ ]/g, " ").split(/\s+/).filter(Boolean);
+  let i = 0;
+  while (i < rest.length && i < words.length && rest[i] === words[i]) i++;
+  if (i < 2 || i === rest.length) return term;
+  return "… " + rest.slice(i).join(" ");
+}
 const srcName = s => s === "Bluesky" ? "Bluesky" : "r/" + esc(s);
 function deltaHTML(p) {
   if (p.is_new) return `<span class="pill">New this week</span>`;
@@ -273,7 +282,7 @@ function productCard(p) {
   const k = p.keywords || {};
   const subs = Object.entries(p.subreddits || {}).map(([s, n]) => `${srcName(s)} (${n})`).join(", ");
   const search = k.search_terms && k.search_terms.length
-    ? `<div class="kw"><h4>Google searches</h4><div class="chips">${k.search_terms.slice(0, 8).map(t => `<a class="chip search" target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(t)}">${esc(t)}</a>`).join("")}</div></div>` : "";
+    ? `<div class="kw"><h4>Google searches</h4><div class="chips">${k.search_terms.slice(0, 8).map(t => `<a class="chip search" target="_blank" rel="noopener" title="${esc(t)}" href="https://www.google.com/search?q=${encodeURIComponent(t)}">${esc(searchTail(t, p.name))}</a>`).join("")}</div></div>` : "";
   const quotes = (p.quotes || []).map(q => `<blockquote>“${esc(q.text)}”${q.url ? `<a href="${esc(q.url)}" target="_blank" rel="noopener">${srcName(q.sub)} · ${q.score} ${q.sub === "Bluesky" ? "likes" : "upvotes"} ↗</a>` : ""}</blockquote>`).join("");
   return `<article class="card product">
     <div class="phead">

@@ -80,6 +80,21 @@ BRANDS = {
     "hermes": "Hermès", "tom ford": "Tom Ford", "sisley": "Sisley", "byredo": "Byredo",
     "kaja": "KAJA", "lancer": "Lancer", "fwee": "fwee", "wakemake": "Wakemake",
     "dear dahlia": "Dear Dahlia", "laka": "Laka", "unleashia": "Unleashia",
+    "tony moly": "Tony Moly", "tonymoly": "Tony Moly", "dot & key": "Dot & Key", "dot and key": "Dot & Key",
+    "skintific": "Skintific", "illiyoon": "Illiyoon", "pyunkang yul": "Pyunkang Yul", "vichy": "Vichy",
+    "elemis": "Elemis", "makeup revolution": "Makeup Revolution", "revolution beauty": "Makeup Revolution",
+    "the face shop": "The Face Shop", "etude": "Etude", "etude house": "Etude", "missha": "Missha",
+    "klairs": "Klairs", "dear klairs": "Klairs", "benton": "Benton", "goodal": "Goodal",
+    "ma:nyo": "Ma:nyo", "manyo": "Ma:nyo", "d'alba": "d'Alba", "dalba": "d'Alba", "banila co": "Banila Co",
+    "heimish": "Heimish", "jumiso": "Jumiso", "celimax": "Celimax", "vt cosmetics": "VT Cosmetics",
+    "cos de baha": "Cos De BAHA", "acwell": "Acwell", "frudia": "Frudia", "hada labo": "Hada Labo",
+    "melano cc": "Melano CC", "rohto": "Rohto", "canmake": "Canmake", "kate tokyo": "KATE",
+    "cetaphil pro": "Cetaphil", "garnier": "Garnier", "nivea": "Nivea",
+    "simple skincare": "Simple", "burt's bees": "Burt's Bees", "carmex": "Carmex",
+    "summer fridays lip": "Summer Fridays", "wonderskin": "Wonderskin", "soft services": "Soft Services",
+    "necessaire": "Nécessaire", "nécessaire": "Nécessaire", "glossier you": "Glossier", "caudalie": "Caudalie", "embryolisse": "Embryolisse",
+    "nuxe": "Nuxe", "la roche": "La Roche-Posay", "medik8": "Medik8", "allies of skin": "Allies of Skin",
+    "biossance": "Biossance", "farmacy": "Farmacy", "sol de janiero": "Sol de Janeiro", "bondi sands": "Bondi Sands", "isdin": "ISDIN", "altruist": "Altruist",
 }
 
 # Product names that contain small words the name reader would otherwise stop at.
@@ -262,10 +277,16 @@ POSITIVE = [
     r"\brecommend\w*\b", r"\bfavou?rite\b", r"\bfave\b", r"\bbest\b", r"\brepurchas\w*\b",
     r"\bgame ?changer\b", r"\bworks\b", r"\bgreat\b", r"\bperfect\b", r"\bgorgeous\b",
     r"\bbeautiful\b", r"\bincredible\b", r"\bworth\b", r"\bglad\b", r"\bimpressed\b", r"\bsaved\b",
+    r"\b(really|i|definitely) like\b", r"\bliked\b", r"\bgood\b", r"\bhelped\b", r"\bhelps\b",
+    r"\bstaple\b", r"\bgo-?to\b", r"\bswear by\b", r"\bnice\b", r"\bfan of\b", r"\bfavs?\b",
+    r"\bcleared\b", r"\bgorgeous\b", r"\bstunning\b", r"\bpretty\b", r"\bobsess\w*\b",
 ]
 NEGATIVE = [
     r"\bhate\b", r"\bbroke me out\b", r"\breturn(ed|ing)?\b", r"\bdisappoint\w*\b", r"\bworst\b",
     r"\bwaste\b", r"\birritat\w*\b", r"\bburn(ed|s|ing)?\b", r"\bawful\b", r"\bmeh\b",
     r"\boverrated\b", r"\boverhyped\b", r"\bterrible\b", r"\bregret\b", r"\bnot worth\b",
     r"\bcakey\b", r"\bdidn'?t work\b", r"\bdoesn'?t work\b", r"\bunderwhelm\w*\b", r"\bugh\b",
+    r"\bnot a fan\b", r"\bdidn'?t like\b", r"\bdon'?t like\b", r"\bbroke out\b", r"\bstopped using\b",
+    r"\bbad\b", r"\bsticky\b", r"\bgreasy\b", r"\bpilling\b", r"\bpills\b", r"\bpatchy\b",
+    r"\bbreaks? me out\b", r"\bnot worth\b", r"\bmeh\b", r"\bdupe is better\b", r"\bannoying\b",
 ]

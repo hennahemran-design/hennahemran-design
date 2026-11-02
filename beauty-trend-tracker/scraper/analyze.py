@@ -98,8 +98,8 @@ def _continuation(rest: str) -> list[str]:
     out: list[str] = []
     for tok in _TOKEN.findall(rest):
         tok = tok.strip("'-")
-        if not tok or tok in NAME_BREAKERS:
-            break
+        if not tok or tok in NAME_BREAKERS or (len(tok) == 1 and tok not in "cbek" and not tok.isdigit()):
+            break  # a stray letter is usually a possessive ("the ordinary's" -> "the ordinary s")
         if not out and tok in GENERIC_AFTER_BRAND:
             break
         if out and _BRAND_RE.fullmatch(tok) and tok not in SKINCARE_TYPES | MAKEUP_TYPES:
