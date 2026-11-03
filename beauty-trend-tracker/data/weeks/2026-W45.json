@@ -3,51 +3,454 @@
  "start": "2026-11-02",
  "end": "2026-11-08",
  "partial": true,
- "generated_at": "2026-11-02T21:44:42+00:00",
+ "generated_at": "2026-11-03T17:39:47+00:00",
  "stats": {
-  "posts": 1083,
-  "comments": 1708,
+  "posts": 1682,
+  "comments": 2851,
   "subreddits": {
-   "Bluesky": 562,
-   "Sephora": 298,
-   "SkincareAddicts": 295,
-   "SkincareAddiction": 260,
-   "30PlusSkinCare": 251,
-   "Ulta": 248,
-   "MakeupAddiction": 248,
-   "BeautyGuruChatter": 204,
-   "AsianBeauty": 187,
-   "drugstoreMUA": 132,
-   "MakeupRehab": 106
+   "Bluesky": 805,
+   "Sephora": 598,
+   "SkincareAddiction": 528,
+   "MakeupAddiction": 527,
+   "30PlusSkinCare": 504,
+   "AsianBeauty": 328,
+   "Ulta": 314,
+   "SkincareAddicts": 271,
+   "BeautyGuruChatter": 260,
+   "drugstoreMUA": 257,
+   "MakeupRehab": 141
   },
   "sources": {
-   "reddit_archive": 2229,
+   "reddit_archive": 3728,
    "reddit": 0,
-   "bluesky": 583
+   "bluesky": 827
   },
-  "products_found": 67,
+  "products_found": 131,
   "compared_weeks": [
    "2026-W41",
    "2026-W42",
    "2026-W43",
    "2026-W44"
   ],
-  "days_covered": 1.0
+  "days_covered": 1.7
  },
  "skincare": [
   {
    "rank": 1,
+   "key": "cerave|sa cleanser",
+   "name": "CeraVe SA Cleanser",
+   "brand": "CeraVe",
+   "category": "skincare",
+   "score": 9.71,
+   "trend_score": 23.3,
+   "mentions": 9,
+   "threads": 8,
+   "upvotes": 8,
+   "baseline": 1.13,
+   "change_pct": 759,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W37",
+     "score": null
+    },
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 5.97
+    },
+    {
+     "week": "2026-W40",
+     "score": 2.82
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 4.9
+    },
+    {
+     "week": "2026-W43",
+     "score": 9.72
+    },
+    {
+     "week": "2026-W44",
+     "score": 3.62
+    },
+    {
+     "week": "2026-W45",
+     "score": 9.71
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "acne",
+      "count": 2,
+      "share": 0.222
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "cream fake",
+      "count": 2,
+      "lift": 335.9
+     },
+     {
+      "term": "smoothing cream",
+      "count": 2,
+      "lift": 251.9
+     },
+     {
+      "term": "back",
+      "count": 2,
+      "lift": 7.7
+     }
+    ],
+    "search_terms": [
+     "cerave sa cleanser bar",
+     "cerave sa cleanser travel size",
+     "cerave sa cleanser review",
+     "cerave sa cleanser for oily skin",
+     "cerave sa cleanser ingredients",
+     "cerave sa cleanser for rough & bumpy skin",
+     "cerave sa cleanser reddit",
+     "cerave sa cleanser 16 oz",
+     "cerave sa cleanser percentage",
+     "cerave sa cleanser for dry skin",
+     "cerave sa cleanser for body",
+     "cerave sa cleanser for keratosis pilaris"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.111,
+    "neutral": 0.889,
+    "negative": 0.0,
+    "n": 9
+   },
+   "quotes": [
+    {
+     "text": "For CC I found the CeraVe SA too stripping especially used everyday. I kept noticing new cc’s after using it. Your skin barrier might be irritated/damaged and that’s why you’re getting both clogged pores and oily skin (your skin can’t shed well because it’s da…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm4bud/product_question_cerave_sa_cleanser/19s1l37kmiuf4/",
+     "score": 2,
+     "sub": "SkincareAddiction",
+     "kind": "comment"
+    },
+    {
+     "text": "Cerave SA original or fake ? [removed]",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xlt95x/cerave_sa_original_or_fake/",
+     "score": 1,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    },
+    {
+     "text": "…acteria and basically sending it into overdrive. I’ve just started using Cerave SA cleanser on my chest and back in the shower at night. Using Uriage Thermal Spray on my chest. A ‘light’ moisturiser - Cerave Moisturising Lotion. Not sure if that’ll be enough.…",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xlx6xw/help_with_b12_acne_c_acnes_bacteria_acneiform/",
+     "score": 1,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 6,
+    "30PlusSkinCare": 2,
+    "SkincareAddicts": 1
+   }
+  },
+  {
+   "rank": 2,
+   "key": "rom&nd|glasting color gloss cream nude edition",
+   "name": "Rom&nd Glasting Color Gloss Cream Nude Edition",
+   "brand": "Rom&nd",
+   "category": "skincare",
+   "score": 5.02,
+   "trend_score": 8.91,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 533,
+   "baseline": 0.65,
+   "change_pct": 676,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W37",
+     "score": null
+    },
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 3.72
+    },
+    {
+     "week": "2026-W40",
+     "score": 2.45
+    },
+    {
+     "week": "2026-W41",
+     "score": 2.52
+    },
+    {
+     "week": "2026-W42",
+     "score": 2.38
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 5.54
+    },
+    {
+     "week": "2026-W45",
+     "score": 5.02
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "beans",
+      "count": 2,
+      "lift": 755.7
+     },
+     {
+      "term": "bebe",
+      "count": 2,
+      "lift": 604.5
+     },
+     {
+      "term": "swatches",
+      "count": 2,
+      "lift": 120.9
+     }
+    ],
+    "search_terms": []
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "Swatches of Romand Glasting Color Gloss Cream Nude Edition in 24 Cream Bebe and 25 Cream Beans",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xm8rcv/swatches_of_romand_glasting_color_gloss_cream/",
+     "score": 530,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    },
+    {
+     "text": "…to finished! I think it'll be empty by next update 🤞 Next week will be a Romand Glasting Melting Balm, but I'm undecided on which one - maybe Dear Apple.",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xlif8h/use_your_stash_1_lip_a_week_law_215_nov_2026/19s0l6nxxomhx/",
+     "score": 2,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    },
+    {
+     "text": "Swatches of Romand Glasting Color Gloss Cream Nude Edition in 24 Cream Bebe and 25 Cream Beans",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xm8o0e/swatches_of_romand_glasting_color_gloss_cream/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "AsianBeauty": 2,
+    "MakeupRehab": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "medik8|crystal retinal",
+   "name": "Medik8 Crystal Retinal",
+   "brand": "Medik8",
+   "category": "skincare",
+   "score": 5.07,
+   "trend_score": 8.47,
+   "mentions": 4,
+   "threads": 4,
+   "upvotes": 8,
+   "baseline": 1.03,
+   "change_pct": 394,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W37",
+     "score": null
+    },
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 6.67
+    },
+    {
+     "week": "2026-W41",
+     "score": 4.69
+    },
+    {
+     "week": "2026-W42",
+     "score": 4.72
+    },
+    {
+     "week": "2026-W43",
+     "score": 2.62
+    },
+    {
+     "week": "2026-W44",
+     "score": 4.53
+    },
+    {
+     "week": "2026-W45",
+     "score": 5.07
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "damaged barrier",
+      "count": 3,
+      "share": 0.75
+     },
+     {
+      "label": "sensitive skin",
+      "count": 1,
+      "share": 0.25
+     },
+     {
+      "label": "sun protection",
+      "count": 1,
+      "share": 0.25
+     },
+     {
+      "label": "large pores",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "people_like": [
+     {
+      "label": "hydrating",
+      "count": 1,
+      "share": 0.25
+     },
+     {
+      "label": "results / it works",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "complaints": [
+     {
+      "label": "broke me out",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "trending_alongside": [
+     {
+      "term": "medik",
+      "count": 4,
+      "lift": 755.7
+     },
+     {
+      "term": "tretinoin",
+      "count": 2,
+      "lift": 66.7
+     },
+     {
+      "term": "barrier",
+      "count": 2,
+      "lift": 42.8
+     },
+     {
+      "term": "moisturizer",
+      "count": 2,
+      "lift": 10.9
+     }
+    ],
+    "search_terms": [
+     "medik8 crystal retinal 3",
+     "medik8 crystal retinal 6",
+     "medik8 crystal retinal ceramide eye",
+     "medik8 crystal retinal 10",
+     "medik8 crystal retinal ceramide eye 3",
+     "medik8 crystal retinal 1",
+     "medik8 crystal retinal review",
+     "medik8 crystal retinal 20",
+     "medik8 crystal retinal eye cream",
+     "medik8 crystal retinal for acne",
+     "medik8 crystal retinal for neck",
+     "medik8 crystal retinal for beginners"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.25,
+    "neutral": 0.75,
+    "negative": 0.0,
+    "n": 4
+   },
+   "quotes": [
+    {
+     "text": "…ecommend starting a retinoid again, I’ve been slowly ramping up with the Medik8 crystal retinal level 1 and it’s already made a huge difference for me with my clogged pores. I have mild keratosis pilaris on my arms though and I guess when I damage my barrier i…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm409t/routine_help_slow_progress_on_ccs_feb_to_nov_26/19s1ic91gukhs/",
+     "score": 3,
+     "sub": "SkincareAddiction",
+     "kind": "comment"
+    },
+    {
+     "text": "…u get to every night. With my sensitive / recovering skin I’ve found the Medik8 crystal retinal to be the gentlest and still effective. But the goal is to eventually use tretinoin again. Good luck, and your eyes are so pretty! Edit: Forgot to add, if you’re no…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm4bud/product_question_cerave_sa_cleanser/19s1l37kmiuf4/",
+     "score": 2,
+     "sub": "SkincareAddiction",
+     "kind": "comment"
+    },
+    {
+     "text": "…→ Tatcha Matcha Cleanse → hydrating toners/essences → targeted serums → Medik8 Crystal Retinal 6 on scheduled nights → barrier-supporting moisturizer. Weekly treatments: Tatcha Clarifying Clay Mask 1–2 times weekly as needed for congestion, preferably on non-…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xmmz8l/haul_tj_maxx_ive_got_my_eyes_on_you/",
+     "score": 2,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 3,
+    "30PlusSkinCare": 1
+   }
+  },
+  {
+   "rank": 4,
    "key": "cerave|resurfacing retinol serum",
    "name": "CeraVe Resurfacing Retinol Serum",
    "brand": "CeraVe",
    "category": "skincare",
    "score": 4.69,
-   "trend_score": 8.51,
+   "trend_score": 8.13,
    "mentions": 4,
    "threads": 4,
    "upvotes": 4,
-   "baseline": 0.34,
-   "change_pct": 1272,
+   "baseline": 0.59,
+   "change_pct": 690,
    "is_new": false,
    "history": [
     {
@@ -106,32 +509,32 @@
      {
       "term": "remove dark",
       "count": 3,
-      "lift": 523.5
+      "lift": 850.1
      },
      {
       "term": "dark spots",
       "count": 3,
-      "lift": 161.1
+      "lift": 309.1
      },
      {
       "term": "sensitive",
       "count": 4,
-      "lift": 59.4
+      "lift": 58.1
      }
     ],
     "search_terms": [
-     "cerave resurfacing retinol serum vs cerave skin renewing retinol serum",
      "cerave resurfacing retinol serum review",
-     "cerave resurfacing retinol serum how to use",
      "cerave resurfacing retinol serum before and after",
      "cerave resurfacing retinol serum percentage",
-     "cerave resurfacing retinol serum vs la roche posay retinol b3 serum",
-     "cerave resurfacing retinol serum how much retinol",
-     "cerave resurfacing retinol serum how often to use",
-     "cerave resurfacing retinol serum vs neutrogena rapid wrinkle repair",
-     "cerave resurfacing retinol serum for milia",
-     "cerave resurfacing retinol serum for stretch marks",
-     "cerave resurfacing retinol serum for closed comedones"
+     "cerave resurfacing retinol serum reddit",
+     "cerave resurfacing retinol serum how to use",
+     "cerave resurfacing retinol serum ingredients",
+     "cerave resurfacing retinol serum amazon",
+     "cerave resurfacing retinol serum walmart",
+     "cerave resurfacing retinol serum 1 oz",
+     "cerave resurfacing retinol serum for post acne marks",
+     "cerave resurfacing retinol serum for post-acne marks and skin texture",
+     "cerave resurfacing retinol serum for acne scars"
     ]
    },
    "sentiment": {
@@ -142,22 +545,22 @@
    },
    "quotes": [
     {
-     "text": "How well is CeraVe Resurfacing Retinol Serum on sensitive skin and how many days it takes for it to remove dark spots on face? [removed]",
-     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm8kh2/how_well_is_cerave_resurfacing_retinol_serum_on/",
-     "score": 1,
-     "sub": "SkincareAddiction",
-     "kind": "post"
-    },
-    {
-     "text": "How well is CeraVe Resurfacing Retinol Serum on sensitive skin and how many days it takes for it to remove dark spots on face? [removed]",
-     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm8j7z/how_well_is_cerave_resurfacing_retinol_serum_on/",
-     "score": 1,
-     "sub": "SkincareAddiction",
-     "kind": "post"
-    },
-    {
      "text": "How well is CeraVe Resurfacing Retinol Serum on sensitive skin and how many days it takes to remove hyperpigmentation marks on skin? [removed]",
      "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm8yc3/how_well_is_cerave_resurfacing_retinol_serum_on/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "How well is CeraVe Resurfacing Retinol Serum on sensitive skin and how many days it takes for it to remove dark spots on face? [removed]",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm8ooa/how_well_is_cerave_resurfacing_retinol_serum_on/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "How well is CeraVe Resurfacing Retinol Serum on sensitive skin and how many days it takes for it to remove dark spots on face? [removed]",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm8kh2/how_well_is_cerave_resurfacing_retinol_serum_on/",
      "score": 1,
      "sub": "SkincareAddiction",
      "kind": "post"
@@ -168,290 +571,18 @@
    }
   },
   {
-   "rank": 2,
-   "key": "cerave|sa cleanser",
-   "name": "CeraVe SA Cleanser",
-   "brand": "CeraVe",
-   "category": "skincare",
-   "score": 4.69,
-   "trend_score": 8.04,
-   "mentions": 4,
-   "threads": 4,
-   "upvotes": 4,
-   "baseline": 0.65,
-   "change_pct": 620,
-   "is_new": false,
-   "history": [
-    {
-     "week": "2026-W37",
-     "score": null
-    },
-    {
-     "week": "2026-W38",
-     "score": null
-    },
-    {
-     "week": "2026-W39",
-     "score": 5.97
-    },
-    {
-     "week": "2026-W40",
-     "score": 2.82
-    },
-    {
-     "week": "2026-W41",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W42",
-     "score": 4.9
-    },
-    {
-     "week": "2026-W43",
-     "score": 9.72
-    },
-    {
-     "week": "2026-W44",
-     "score": 3.62
-    },
-    {
-     "week": "2026-W45",
-     "score": 4.69
-    }
-   ],
-   "keywords": {
-    "recommended_for": [
-     {
-      "label": "acne",
-      "count": 2,
-      "share": 0.5
-     },
-     {
-      "label": "oily skin",
-      "count": 1,
-      "share": 0.25
-     },
-     {
-      "label": "texture",
-      "count": 1,
-      "share": 0.25
-     }
-    ],
-    "people_like": [],
-    "complaints": [],
-    "trending_alongside": [
-     {
-      "term": "back",
-      "count": 2,
-      "lift": 16.8
-     }
-    ],
-    "search_terms": [
-     "cerave sa cleanser vs acne control cleanser",
-     "cerave sa cleanser bar",
-     "cerave sa cleanser vs cetaphil sa cleanser",
-     "cerave sa cleanser bar for rough and bumpy skin review",
-     "cerave sa cleanser vs foaming cleanser",
-     "cerave sa cleanser what percent salicylic acid",
-     "cerave sa cleanser travel size",
-     "cerave sa cleanser bar for rough & bumpy skin",
-     "cerave sa cleanser vs sa body wash",
-     "cerave sa cleanser for oily skin",
-     "cerave sa cleanser for rough & bumpy skin",
-     "cerave sa cleanser for seborrheic dermatitis"
-    ]
-   },
-   "sentiment": {
-    "positive": 0.25,
-    "neutral": 0.75,
-    "negative": 0.0,
-    "n": 4
-   },
-   "quotes": [
-    {
-     "text": "CeraVe SA Cleanser, helping or not? [removed]",
-     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm4313/cerave_sa_cleanser_helping_or_not/",
-     "score": 1,
-     "sub": "SkincareAddiction",
-     "kind": "post"
-    },
-    {
-     "text": "[Product Question] CeraVe SA Cleanser Beginning of October I finally had a solid skincare routine down that has prevented me from getting pimples. But, I had still been dealing with a texture forehead (closed comedones) & a very oily forehead. I thought I woul…",
-     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm4bud/product_question_cerave_sa_cleanser/",
-     "score": 1,
-     "sub": "SkincareAddiction",
-     "kind": "post"
-    },
-    {
-     "text": "…acteria and basically sending it into overdrive. I’ve just started using Cerave SA cleanser on my chest and back in the shower at night. Using Uriage Thermal Spray on my chest. A ‘light’ moisturiser - Cerave Moisturising Lotion. Not sure if that’ll be enough.…",
-     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xlx6xw/help_with_b12_acne_c_acnes_bacteria_acneiform/",
-     "score": 1,
-     "sub": "30PlusSkinCare",
-     "kind": "post"
-    }
-   ],
-   "subreddits": {
-    "SkincareAddiction": 3,
-    "30PlusSkinCare": 1
-   }
-  },
-  {
-   "rank": 3,
-   "key": "la roche-posay|cicaplast baume b5",
-   "name": "La Roche-Posay Cicaplast Baume B5",
-   "brand": "La Roche-Posay",
-   "category": "skincare",
-   "score": 4.92,
-   "trend_score": 7.36,
-   "mentions": 4,
-   "threads": 4,
-   "upvotes": 7,
-   "baseline": 1.63,
-   "change_pct": 201,
-   "is_new": false,
-   "history": [
-    {
-     "week": "2026-W37",
-     "score": null
-    },
-    {
-     "week": "2026-W38",
-     "score": null
-    },
-    {
-     "week": "2026-W39",
-     "score": 9.96
-    },
-    {
-     "week": "2026-W40",
-     "score": 6.35
-    },
-    {
-     "week": "2026-W41",
-     "score": 7.55
-    },
-    {
-     "week": "2026-W42",
-     "score": 24.88
-    },
-    {
-     "week": "2026-W43",
-     "score": 3.0
-    },
-    {
-     "week": "2026-W44",
-     "score": 10.27
-    },
-    {
-     "week": "2026-W45",
-     "score": 4.92
-    }
-   ],
-   "keywords": {
-    "recommended_for": [
-     {
-      "label": "lips",
-      "count": 1,
-      "share": 0.25
-     },
-     {
-      "label": "large pores",
-      "count": 1,
-      "share": 0.25
-     },
-     {
-      "label": "damaged barrier",
-      "count": 1,
-      "share": 0.25
-     }
-    ],
-    "people_like": [
-     {
-      "label": "hydrating",
-      "count": 1,
-      "share": 0.25
-     },
-     {
-      "label": "results / it works",
-      "count": 1,
-      "share": 0.25
-     }
-    ],
-    "complaints": [],
-    "trending_alongside": [
-     {
-      "term": "gel",
-      "count": 2,
-      "lift": 23.3
-     },
-     {
-      "term": "balm",
-      "count": 2,
-      "lift": 21.5
-     }
-    ],
-    "search_terms": [
-     "la roche-posay cicaplast baume b5+",
-     "la roche-posay cicaplast baume b5 how to use",
-     "la roche-posay cicaplast baume b5 balm soothing",
-     "la roche-posay cicaplast baume b5 soothing therapeutic multi purpose cream for dry skin 1.35 oz",
-     "la roche-posay cicaplast baume b5 ingredients",
-     "la roche-posay cicaplast baume b5 reviews",
-     "la roche-posay cicaplast baume b5+ ultra repairing soothing balm",
-     "la roche-posay cicaplast baume b5 soothing therapeutic multi purpose cream",
-     "la roche-posay cicaplast baume b5 dupe",
-     "la roche-posay cicaplast baume b5 serum",
-     "la roche-posay cicaplast baume b5 for eczema",
-     "la roche-posay cicaplast baume b5 for acne"
-    ]
-   },
-   "sentiment": {
-    "positive": 0.5,
-    "neutral": 0.5,
-    "negative": 0.0,
-    "n": 4
-   },
-   "quotes": [
-    {
-     "text": "…otion 13. ✅ ACO Gentle Cleanser 14. ACO Gentle Cleanse Oil 15. ✅ La Roche Posay Cicaplast Baume B5 16. Head & Shoulders Apple Fresh Shampoo",
-     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xlrlwk/10_by_winter_update_3/19s0yyb1kgrgk/",
-     "score": 4,
-     "sub": "MakeupRehab",
-     "kind": "comment"
-    },
-    {
-     "text": "Maybe I will try the gel method. I haven’t tried this one yet. The only thing that helps is Lanolin and the LRP Cicaplast balm, but these just alleviate the issue a little bit, it’s not like I’m free from chapped lips. Thank you 🩵",
-     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xl5yv0/my_dry_lips_saving_grace/19s0nahxjxbic/",
-     "score": 1,
-     "sub": "30PlusSkinCare",
-     "kind": "comment"
-    },
-    {
-     "text": "…rie) and I even add another moisturizer over that to lock it in (La roche posay cicaplast b5+ at night and Embryolisse as a base for makeup so usually during the day).",
-     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xm07rs/best_hydrating_products_for_dry_redness_prone_skin/19s1bnzp04sh1/",
-     "score": 1,
-     "sub": "30PlusSkinCare",
-     "kind": "comment"
-    }
-   ],
-   "subreddits": {
-    "30PlusSkinCare": 3,
-    "MakeupRehab": 1
-   }
-  },
-  {
-   "rank": 4,
+   "rank": 5,
    "key": "cerave|moisturizing cream",
    "name": "CeraVe Moisturizing Cream",
    "brand": "CeraVe",
    "category": "skincare",
-   "score": 4.87,
-   "trend_score": 7.06,
-   "mentions": 4,
-   "threads": 4,
+   "score": 5.92,
+   "trend_score": 7.95,
+   "mentions": 5,
+   "threads": 5,
    "upvotes": 7,
-   "baseline": 1.8,
-   "change_pct": 170,
+   "baseline": 3.13,
+   "change_pct": 89,
    "is_new": false,
    "history": [
     {
@@ -488,27 +619,21 @@
     },
     {
      "week": "2026-W45",
-     "score": 4.87
+     "score": 5.92
     }
    ],
    "keywords": {
-    "recommended_for": [
-     {
-      "label": "dry skin",
-      "count": 1,
-      "share": 0.25
-     }
-    ],
+    "recommended_for": [],
     "people_like": [
      {
       "label": "packaging",
       "count": 2,
-      "share": 0.5
+      "share": 0.4
      },
      {
-      "label": "hydrating",
+      "label": "fragrance-free",
       "count": 1,
-      "share": 0.25
+      "share": 0.2
      }
     ],
     "complaints": [],
@@ -516,512 +641,86 @@
      {
       "term": "packaging removed",
       "count": 2,
-      "lift": 465.3
+      "lift": 604.5
      },
      {
       "term": "different packaging",
       "count": 2,
-      "lift": 465.3
+      "lift": 604.5
      },
      {
       "term": "authentic",
       "count": 2,
-      "lift": 349.0
+      "lift": 362.7
+     },
+     {
+      "term": "vaseline",
+      "count": 2,
+      "lift": 78.9
      }
     ],
     "search_terms": [
      "cerave moisturizing cream for face",
-     "cerave moisturizing cream vs intensive moisturizing cream",
      "cerave moisturizing cream for oily skin",
-     "cerave moisturizing cream vs daily moisturizing lotion",
-     "cerave moisturizing cream vs cetaphil moisturizing cream",
      "cerave moisturizing cream ingredients",
      "cerave moisturizing cream vs lotion",
+     "cerave moisturizing cream costco",
      "cerave moisturizing cream for dry skin",
      "cerave moisturizing cream with spf",
+     "cerave moisturizing cream walmart",
+     "cerave moisturizing cream with pump",
      "cerave moisturizing cream for tattoo",
      "cerave moisturizing cream for eczema",
-     "cerave moisturizing cream for face review"
+     "cerave moisturizing cream for baby"
     ]
    },
    "sentiment": {
     "positive": 0.0,
     "neutral": 1.0,
     "negative": 0.0,
-    "n": 4
+    "n": 5
    },
    "quotes": [
     {
-     "text": "Help with Moisturiser for greasy skin type I've been trying so many combinations for so long, and I need some suggestions. I have relatively greasy & sensitive skin with rosacea. I want to keep my routine simple, and I'm struggling with the moisturiser. I want…",
-     "url": "https://www.reddit.com/r/SkincareAddicts/comments/1xm25ss/help_with_moisturiser_for_greasy_skin_type/",
-     "score": 3,
-     "sub": "SkincareAddicts",
-     "kind": "post"
-    },
-    {
      "text": "I think you need a better post-shower routine. Try Cerave Moisturizing Cream (NOT the lotion) or something similar. Follow up with something occlusive that would reduce water loss like Vaseline, Aquaphor or body oil. Make sure you apply on damp skin.",
      "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xm0zuv/misc_medically_required_hot_showers_are_ruining/19s1k9c6z7d8g/",
-     "score": 3,
+     "score": 4,
      "sub": "SkincareAddiction",
      "kind": "comment"
     },
     {
-     "text": "Is my CeraVe Moisturizing Cream authentic, or is it just different packaging? [removed]",
-     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xltfqo/is_my_cerave_moisturizing_cream_authentic_or_is/",
+     "text": "…in vanicream, i'd stop that and grab plain vaseline or a fragrance-free cerave moisturizing cream instead.",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xmgvdb/acne_skin_freaking_out/19s25trje1rwl/",
      "score": 1,
-     "sub": "30PlusSkinCare",
+     "sub": "SkincareAddiction",
+     "kind": "comment"
+    },
+    {
+     "text": "…ribed by my doctor) hypochlorous acid spray when i’m not using benzaclin cerave moisturizing cream sunscreen",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xmwcsi/deep_undereye_wrinkle_in_my_early_20s_antiaging/",
+     "score": 1,
+     "sub": "SkincareAddiction",
      "kind": "post"
     }
    ],
    "subreddits": {
-    "30PlusSkinCare": 2,
-    "SkincareAddicts": 1,
-    "SkincareAddiction": 1
-   }
-  },
-  {
-   "rank": 5,
-   "key": "la roche-posay|double repair moisturizer 27",
-   "name": "La Roche-Posay Double Repair Moisturizer 27",
-   "brand": "La Roche-Posay",
-   "category": "skincare",
-   "score": 4.35,
-   "trend_score": 7.02,
-   "mentions": 4,
-   "threads": 4,
-   "upvotes": 2,
-   "baseline": 0.8,
-   "change_pct": 447,
-   "is_new": false,
-   "history": [
-    {
-     "week": "2026-W37",
-     "score": null
-    },
-    {
-     "week": "2026-W38",
-     "score": null
-    },
-    {
-     "week": "2026-W39",
-     "score": 8.37
-    },
-    {
-     "week": "2026-W40",
-     "score": 4.79
-    },
-    {
-     "week": "2026-W41",
-     "score": 5.71
-    },
-    {
-     "week": "2026-W42",
-     "score": 7.96
-    },
-    {
-     "week": "2026-W43",
-     "score": 3.81
-    },
-    {
-     "week": "2026-W44",
-     "score": 4.79
-    },
-    {
-     "week": "2026-W45",
-     "score": 4.35
-    }
-   ],
-   "keywords": {
-    "recommended_for": [
-     {
-      "label": "dry skin",
-      "count": 2,
-      "share": 0.5
-     },
-     {
-      "label": "hyperpigmentation",
-      "count": 1,
-      "share": 0.25
-     },
-     {
-      "label": "sensitive skin",
-      "count": 1,
-      "share": 0.25
-     },
-     {
-      "label": "redness / rosacea",
-      "count": 1,
-      "share": 0.25
-     }
-    ],
-    "people_like": [],
-    "complaints": [],
-    "trending_alongside": [
-     {
-      "term": "steps routine",
-      "count": 2,
-      "lift": 465.3
-     },
-     {
-      "term": "routine total",
-      "count": 2,
-      "lift": 465.3
-     },
-     {
-      "term": "category bea",
-      "count": 2,
-      "lift": 465.3
-     },
-     {
-      "term": "acid serum",
-      "count": 3,
-      "lift": 261.8
-     },
-     {
-      "term": "zomartglobal com",
-      "count": 2,
-      "lift": 279.2
-     },
-     {
-      "term": "hyaluronic acid",
-      "count": 2,
-      "lift": 99.7
-     },
-     {
-      "term": "nov",
-      "count": 2,
-      "lift": 99.7
-     },
-     {
-      "term": "cleanser",
-      "count": 2,
-      "lift": 18.1
-     }
-    ],
-    "search_terms": []
-   },
-   "sentiment": {
-    "positive": 1.0,
-    "neutral": 0.0,
-    "negative": 0.0,
-    "n": 4
-   },
-   "quotes": [
-    {
-     "text": "…and fade dark spots. Niacinamide is in a lot of products - I use La roche Posay double toleraine moisturizer bc it has that. Anua has a good azelaic acid serum.",
-     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xlmxor/hi_what_can_i_do_about_dark_patches_around_my/19s0zenu4bzic/",
-     "score": 1,
-     "sub": "30PlusSkinCare",
-     "kind": "comment"
-    },
-    {
-     "text": "…I love as someone with very sensitive very red skin (rosacea.) **La Roche Posay Double Toleriene Lotion** (this is what I think of as my base. If I’m too tired to do anything else I use a makeup remover wipe and slap this on. 10/10 I can tell a difference arou…",
-     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xm07rs/best_hydrating_products_for_dry_redness_prone_skin/19s1b8lfvgs2q/",
-     "score": 1,
-     "sub": "30PlusSkinCare",
-     "kind": "comment"
-    },
-    {
-     "text": "…y Cleanser $21.99 + Good Molecules Hyaluronic Acid Serum $9.99 + La Roche-Posay Double Repair Moisturizer $27.99. zomartglobal.com/category/bea... Shop Now — zomartglobal.com",
-     "url": "https://bsky.app/profile/zomartmarketplace.bsky.social/post/3mzcrqp4iyk26",
-     "score": 0,
-     "sub": "Bluesky",
-     "kind": "post"
-    }
-   ],
-   "subreddits": {
-    "30PlusSkinCare": 2,
-    "Bluesky": 2
+    "SkincareAddiction": 3,
+    "30PlusSkinCare": 2
    }
   }
  ],
  "makeup": [
   {
    "rank": 1,
-   "key": "fenty beauty|gloss bomb stix",
-   "name": "Fenty Beauty Gloss Bomb Stix",
-   "brand": "Fenty Beauty",
-   "category": "makeup",
-   "score": 6.12,
-   "trend_score": 11.53,
-   "mentions": 4,
-   "threads": 3,
-   "upvotes": 106,
-   "baseline": 0.9,
-   "change_pct": 578,
-   "is_new": false,
-   "history": [
-    {
-     "week": "2026-W37",
-     "score": null
-    },
-    {
-     "week": "2026-W38",
-     "score": null
-    },
-    {
-     "week": "2026-W39",
-     "score": 5.76
-    },
-    {
-     "week": "2026-W40",
-     "score": 4.35
-    },
-    {
-     "week": "2026-W41",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W42",
-     "score": 15.98
-    },
-    {
-     "week": "2026-W43",
-     "score": 9.3
-    },
-    {
-     "week": "2026-W44",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W45",
-     "score": 6.12
-    }
-   ],
-   "keywords": {
-    "recommended_for": [],
-    "people_like": [
-     {
-      "label": "glowy / dewy",
-      "count": 1,
-      "share": 0.25
-     }
-    ],
-    "complaints": [],
-    "trending_alongside": [],
-    "search_terms": [
-     "fenty beauty gloss bomb stix high-shine gloss stick",
-     "fenty beauty gloss bomb stix fussy",
-     "fenty beauty gloss bomb stix caviar crystalz",
-     "fenty beauty gloss bomb stix how many carats",
-     "fenty beauty gloss bomb stix high-shine gloss stick in how many carats",
-     "fenty beauty gloss bomb stix spice cold",
-     "fenty beauty gloss bomb stix rose amber",
-     "fenty beauty gloss bomb stix hot chocolit",
-     "fenty beauty gloss bomb stix swatches",
-     "fenty beauty gloss bomb stix in the shade two lip kiss",
-     "fenty beauty gloss bomb stix in riri",
-     "fenty beauty gloss bomb stix in how many carats"
-    ]
-   },
-   "sentiment": {
-    "positive": 0.5,
-    "neutral": 0.5,
-    "negative": 0.0,
-    "n": 4
-   },
-   "quotes": [
-    {
-     "text": "…can replace my MBM skin enhancer which pans way too fast) Saie Eyeshadow Fenty Gloss Bomb Stix Huda Beauty Mini Easy Bake Setting Powder One/Size Mini Powder Melt Setting Spray Dae Desert Detox Clarifying Shampoo Sephora Favourites Holiday Must Haves",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xm4k0q/my_biggest_rouge_haul_ever/",
-     "score": 67,
-     "sub": "Sephora",
-     "kind": "post"
-    },
-    {
-     "text": "…in syrup) Here’s what i ended up ordering. I’ve been wanting to try the lawless gloss for a while. I have a fenty gloss bomb stix in blaz’d donut. I love it so much I grabbed another color to try. I haven’t used a blush stick before, but i got a sample of the…",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xm0cuc/so_thankful_for_a_shared_rouge_code/",
-     "score": 31,
-     "sub": "Sephora",
-     "kind": "post"
-    },
-    {
-     "text": "…. 9. ⁠⁠⁠Clio Chiffon Blur Tint \\[22 Red Flush Plum\\] x6/15. 10. ⁠⁠⁠FENTY Beauty Gloss Bomb Universal Lip Luminizer \\[01 FENTY Glow\\] - Pan. X16.",
-     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xlrlwk/10_by_winter_update_3/19s156t9zlf5w/",
-     "score": 3,
-     "sub": "MakeupRehab",
-     "kind": "comment"
-    }
-   ],
-   "subreddits": {
-    "Sephora": 3,
-    "MakeupRehab": 1
-   }
-  },
-  {
-   "rank": 2,
-   "key": "dior|lip glow",
-   "name": "Dior Lip Glow",
-   "brand": "Dior",
-   "category": "makeup",
-   "score": 4.47,
-   "trend_score": 8.47,
-   "mentions": 3,
-   "threads": 3,
-   "upvotes": 27,
-   "baseline": 0.0,
-   "change_pct": null,
-   "is_new": true,
-   "history": [
-    {
-     "week": "2026-W37",
-     "score": null
-    },
-    {
-     "week": "2026-W38",
-     "score": null
-    },
-    {
-     "week": "2026-W39",
-     "score": 7.31
-    },
-    {
-     "week": "2026-W40",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W41",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W42",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W43",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W44",
-     "score": 0.0
-    },
-    {
-     "week": "2026-W45",
-     "score": 4.47
-    }
-   ],
-   "keywords": {
-    "recommended_for": [
-     {
-      "label": "events / weddings",
-      "count": 2,
-      "share": 0.667
-     },
-     {
-      "label": "olive / undertone match",
-      "count": 1,
-      "share": 0.333
-     },
-     {
-      "label": "hot / humid weather",
-      "count": 1,
-      "share": 0.333
-     }
-    ],
-    "people_like": [
-     {
-      "label": "sheer / light coverage",
-      "count": 2,
-      "share": 0.667
-     },
-     {
-      "label": "long-lasting",
-      "count": 1,
-      "share": 0.333
-     },
-     {
-      "label": "repurchase",
-      "count": 1,
-      "share": 0.333
-     }
-    ],
-    "complaints": [],
-    "trending_alongside": [
-     {
-      "term": "wedding",
-      "count": 2,
-      "lift": 372.3
-     },
-     {
-      "term": "cherry",
-      "count": 2,
-      "lift": 186.1
-     },
-     {
-      "term": "sheer",
-      "count": 2,
-      "lift": 124.1
-     },
-     {
-      "term": "balm",
-      "count": 2,
-      "lift": 28.6
-     },
-     {
-      "term": "oil",
-      "count": 2,
-      "lift": 21.4
-     }
-    ],
-    "search_terms": [
-     "dior lip glow oil",
-     "dior lip glow butter",
-     "dior lip glow balm",
-     "dior lip glow color reviver balm",
-     "dior lip glow 001",
-     "dior lip glow reno",
-     "dior lip glow rosewood",
-     "dior lip glow oil color reviver cherry oil",
-     "dior lip glow dupe",
-     "dior lip balm for phone",
-     "dior lip balm for men",
-     "dior lip gloss for phone"
-    ]
-   },
-   "sentiment": {
-    "positive": 0.667,
-    "neutral": 0.333,
-    "negative": 0.0,
-    "n": 3
-   },
-   "quotes": [
-    {
-     "text": "…s natural, and wears gracefully wish they would come out with olive shades Dior Lip Glow Butter Balm shade Black Cherry- I have gone through a few of the lip maximizers in mahogany so any shade that looks similar calls my name love a black cherry that doesn't…",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xm49we/are_we_feeling_alive_my_friends/",
-     "score": 17,
-     "sub": "Sephora",
-     "kind": "post"
-    },
-    {
-     "text": "Feedback on these lippies? **Any feedback on these lippies?** For reference, i am fair skinned and neutral toned. I wear makeup occassionaly but when i do, i like the glitter and shine. Last year i got super late in finding out about Dior’s limited edition seq…",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xlpb70/feedback_on_these_lippies/",
-     "score": 9,
-     "sub": "Sephora",
-     "kind": "post"
-    },
-    {
-     "text": "Sephora Sale: Which Lip product should I get??🤔 I'm Rouge and it's the last day to shop early...I'm torn between these for myself: \\- Prada Lip Balm in Wisteria Gleams (love the Wisteria Collection!) \\- Dior Lip Oil in Cherry \\*sheer finish (love this). \\- Dio…",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xm91t7/sephora_sale_which_lip_product_should_i_get/",
-     "score": 1,
-     "sub": "Sephora",
-     "kind": "post"
-    }
-   ],
-   "subreddits": {
-    "Sephora": 3
-   }
-  },
-  {
-   "rank": 3,
    "key": "fenty beauty|diamond bomb",
    "name": "Fenty Beauty Diamond Bomb",
    "brand": "Fenty Beauty",
    "category": "makeup",
-   "score": 4.42,
-   "trend_score": 8.33,
-   "mentions": 3,
-   "threads": 3,
-   "upvotes": 23,
+   "score": 9.68,
+   "trend_score": 28.42,
+   "mentions": 6,
+   "threads": 6,
+   "upvotes": 271,
    "baseline": 0.0,
    "change_pct": null,
    "is_new": true,
@@ -1060,26 +759,62 @@
     },
     {
      "week": "2026-W45",
-     "score": 4.42
+     "score": 9.68
     }
    ],
    "keywords": {
     "recommended_for": [],
     "people_like": [
      {
-      "label": "pigmented",
-      "count": 1,
+      "label": "worth the hype",
+      "count": 2,
       "share": 0.333
      }
     ],
     "complaints": [],
-    "trending_alongside": [],
+    "trending_alongside": [
+     {
+      "term": "compare space",
+      "count": 2,
+      "lift": 503.8
+     },
+     {
+      "term": "space cowboy",
+      "count": 2,
+      "lift": 377.8
+     },
+     {
+      "term": "shimmers",
+      "count": 2,
+      "lift": 167.9
+     },
+     {
+      "term": "subtle",
+      "count": 2,
+      "lift": 137.4
+     },
+     {
+      "term": "silky",
+      "count": 2,
+      "lift": 94.5
+     },
+     {
+      "term": "pencil",
+      "count": 2,
+      "lift": 32.2
+     },
+     {
+      "term": "blush",
+      "count": 2,
+      "lift": 8.0
+     }
+    ],
     "search_terms": [
      "fenty beauty diamond bomb highlighter",
      "fenty beauty diamond bomb all-over diamond veil",
      "fenty beauty diamond bomb mini",
-     "fenty beauty diamond bomb dupe",
      "fenty beauty diamond bomb how many carats",
+     "fenty beauty diamond bomb dupe",
      "fenty beauty diamond bomb pink ice",
      "fenty beauty diamond bomb lavender luvr",
      "fenty beauty diamond bomb rose rave",
@@ -1090,52 +825,53 @@
     ]
    },
    "sentiment": {
-    "positive": 0.0,
-    "neutral": 1.0,
+    "positive": 0.5,
+    "neutral": 0.5,
     "negative": 0.0,
-    "n": 3
+    "n": 6
    },
    "quotes": [
+    {
+     "text": "Why Did Fenty Diamond Bomb Do This on Airplane? Fenty Beauty Diamond Bomb in How Many Carats. Took it on an Airplane in my carry-on. It like compressed in on itself/shrunk. it's still usable, it's not rock-hard, still has some squish to it, but it's noticeably…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xm9owk/why_did_fenty_diamond_bomb_do_this_on_airplane/",
+     "score": 229,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…shade and light contour kit, colourpop heart blush “4 ever yours”, fenty beauty diamond bomb, fenty beauty “wattabrat” highlight, revolution beauty bronzer, elf eyeliner, essence lash princess mascara, juvia’s place egypt xl lashes, colourpop blowin’ smoke pal…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xmbq8b/back_to_purple_hair/",
+     "score": 18,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
     {
      "text": "…ism FX Moisturizer Ofra Bronzer Pinklipps Contour Stick Pat McGrath Blush Fenty Diamond Bomb Highlighter Haus Labs Brow Pencil Too Faced Hangover RX Setting Spray",
      "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xlitpm/look_for_lady_luck_costume/",
      "score": 11,
      "sub": "MakeupAddiction",
      "kind": "post"
-    },
-    {
-     "text": "…ring shaped one ) is a flat glitter with no background pigment - close to fenty diamond bomb.",
-     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xltqtl/removed_by_moderator/19s0x1jxsz4dh/",
-     "score": 11,
-     "sub": "AsianBeauty",
-     "kind": "comment"
-    },
-    {
-     "text": "Why Did Fenty Diamond Bomb Do This on Airplane? Fenty Beauty Diamond Bomb in How Many Carats. Took it on an Airplane in my carry-on. It like compressed in on itself/shrunk. it's still usable, it's not rock-hard, still has some squish to it, but it's noticeably…",
-     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xm9owk/why_did_fenty_diamond_bomb_do_this_on_airplane/",
-     "score": 1,
-     "sub": "MakeupAddiction",
-     "kind": "post"
     }
    ],
    "subreddits": {
-    "MakeupAddiction": 2,
+    "MakeupAddiction": 4,
+    "Sephora": 1,
     "AsianBeauty": 1
    }
   },
   {
-   "rank": 4,
-   "key": "e.l.f.|power grip",
-   "name": "e.l.f. Power Grip",
-   "brand": "e.l.f.",
+   "rank": 2,
+   "key": "maybelline|fit me",
+   "name": "Maybelline Fit Me",
+   "brand": "Maybelline",
    "category": "makeup",
-   "score": 5.45,
-   "trend_score": 7.95,
-   "mentions": 3,
-   "threads": 3,
-   "upvotes": 198,
-   "baseline": 2.16,
-   "change_pct": 152,
+   "score": 11.91,
+   "trend_score": 22.25,
+   "mentions": 9,
+   "threads": 8,
+   "upvotes": 63,
+   "baseline": 4.05,
+   "change_pct": 194,
    "is_new": false,
    "history": [
     {
@@ -1148,160 +884,317 @@
     },
     {
      "week": "2026-W39",
-     "score": 5.64
+     "score": 9.27
     },
     {
      "week": "2026-W40",
-     "score": 22.41
+     "score": 2.52
     },
     {
      "week": "2026-W41",
-     "score": 14.45
+     "score": 12.12
     },
     {
      "week": "2026-W42",
-     "score": 13.34
+     "score": 25.49
     },
     {
      "week": "2026-W43",
-     "score": 21.67
+     "score": 2.93
     },
     {
      "week": "2026-W44",
-     "score": 11.14
+     "score": 24.84
     },
     {
      "week": "2026-W45",
-     "score": 5.45
+     "score": 11.91
     }
    ],
    "keywords": {
-    "recommended_for": [
-     {
-      "label": "oily skin",
-      "count": 1,
-      "share": 0.333
-     },
-     {
-      "label": "combination skin",
-      "count": 1,
-      "share": 0.333
-     },
-     {
-      "label": "large pores",
-      "count": 1,
-      "share": 0.333
-     },
-     {
-      "label": "sun protection",
-      "count": 1,
-      "share": 0.333
-     },
-     {
-      "label": "no-makeup look",
-      "count": 1,
-      "share": 0.333
-     }
-    ],
+    "recommended_for": [],
     "people_like": [
      {
-      "label": "glowy / dewy",
-      "count": 1,
-      "share": 0.333
+      "label": "matte finish",
+      "count": 4,
+      "share": 0.444
      },
      {
+      "label": "affordable",
+      "count": 2,
+      "share": 0.222
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "matte poreless",
+      "count": 3,
+      "lift": 377.8
+     },
+     {
+      "term": "pressed powder",
+      "count": 2,
+      "lift": 72.0
+     },
+     {
+      "term": "foundation",
+      "count": 5,
+      "lift": 11.6
+     },
+     {
+      "term": "high",
+      "count": 2,
+      "lift": 18.3
+     },
+     {
+      "term": "concealer",
+      "count": 3,
+      "lift": 12.6
+     },
+     {
+      "term": "liner",
+      "count": 2,
+      "lift": 14.4
+     },
+     {
+      "term": "black",
+      "count": 2,
+      "lift": 13.8
+     },
+     {
+      "term": "setting",
+      "count": 2,
+      "lift": 12.3
+     }
+    ],
+    "search_terms": [
+     "maybelline fit me foundation",
+     "maybelline fit me powder",
+     "maybelline fit me concealer",
+     "maybelline fit me loose powder",
+     "maybelline fit me matte + poreless",
+     "maybelline fit me pressed powder",
+     "maybelline fit me loose finishing powder",
+     "maybelline fit me foundation shades",
+     "maybelline fit me blush",
+     "maybelline fit me for dry skin",
+     "maybelline fit me for oily skin",
+     "maybelline fit me for dark skin"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.111,
+    "neutral": 0.889,
+    "negative": 0.0,
+    "n": 9
+   },
+   "quotes": [
+    {
+     "text": "Halloween Leopard Kitty!!! My job let me go earlier in October so unfortunately my original costume plans went out the window🫠 Decided to be a sexy cat because ik im hot and it was free 😛 products! face: elf matte putty primer Maybelline fit me matte foundatio…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xmi4zn/halloween_leopard_kitty/",
+     "score": 26,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "My fallen angel look 🖤🪽 **Makeup product references – Fallen Angel look 🖤** **Mascara:** Maybelline Lash Sensational Sky High – Very Black **Graphic eyeliner:** NYX Epic Ink Liner – Black **Foundation:** Maybelline Fit Me Matte + Poreless – exact shade unknown…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xmsegr/my_fallen_angel_look/",
+     "score": 22,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "I got a bit of progress! 1. **Urban Decay Naked Cowboy palette**: Goal: use once a week. Used the last two weeks. 2. **Sugarpill Fun Size palette:** Goal: use once a week or hit pan. Used several times. 4. **Nars Tolede lipstick**: Goal: finish. Under 1/4 left…",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xlrlwk/10_by_winter_update_3/19s11nb5wx43n/",
+     "score": 3,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 6,
+    "MakeupRehab": 2,
+    "Sephora": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "nyx|epic ink liner",
+   "name": "NYX Epic Ink Liner",
+   "brand": "NYX",
+   "category": "makeup",
+   "score": 9.92,
+   "trend_score": 22.1,
+   "mentions": 6,
+   "threads": 6,
+   "upvotes": 358,
+   "baseline": 1.7,
+   "change_pct": 485,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W37",
+     "score": null
+    },
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 7.85
+    },
+    {
+     "week": "2026-W40",
+     "score": 12.12
+    },
+    {
+     "week": "2026-W41",
+     "score": 5.63
+    },
+    {
+     "week": "2026-W42",
+     "score": 9.51
+    },
+    {
+     "week": "2026-W43",
+     "score": 8.88
+    },
+    {
+     "week": "2026-W44",
+     "score": 3.33
+    },
+    {
+     "week": "2026-W45",
+     "score": 9.92
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
       "label": "matte finish",
-      "count": 1,
+      "count": 2,
       "share": 0.333
      }
     ],
     "complaints": [],
     "trending_alongside": [
      {
-      "term": "setting spray",
+      "term": "linework",
       "count": 2,
-      "lift": 54.7
+      "lift": 302.3
      },
      {
-      "term": "primer",
+      "term": "smoke",
       "count": 2,
-      "lift": 53.2
+      "lift": 188.9
      },
      {
-      "term": "mascara",
-      "count": 2,
-      "lift": 24.5
+      "term": "black",
+      "count": 5,
+      "lift": 51.8
      },
      {
-      "term": "powder",
+      "term": "fair",
       "count": 2,
-      "lift": 18.2
+      "lift": 48.8
+     },
+     {
+      "term": "contour",
+      "count": 2,
+      "lift": 48.8
+     },
+     {
+      "term": "lipstick",
+      "count": 3,
+      "lift": 36.6
+     },
+     {
+      "term": "palette",
+      "count": 3,
+      "lift": 31.5
+     },
+     {
+      "term": "eyeshadow",
+      "count": 3,
+      "lift": 23.9
+     },
+     {
+      "term": "eyeliner",
+      "count": 2,
+      "lift": 28.0
+     },
+     {
+      "term": "matte",
+      "count": 2,
+      "lift": 24.8
      }
     ],
     "search_terms": [
-     "e.l.f. power grip primer",
-     "e.l.f. power grip + niacinamide primer",
-     "e.l.f. power grip dewy setting spray",
-     "e.l.f. power grip matte primer",
-     "e.l.f. power grip dewy setting spray reviews",
-     "e.l.f. power grip primer + 4 niacinamide",
-     "e.l.f. power grip hair gel",
-     "e.l.f. power grip primer ingredients",
-     "e.l.f. power grip + niacinamide",
-     "is e.l.f. power grip primer water based",
-     "is e.l.f. power grip primer water or silicone based",
-     "is e.l.f. power grip primer good for oily skin"
+     "nyx epic ink liner waterproof",
+     "nyx epic ink liner brown",
+     "nyx epic ink liner dark chocolate",
+     "nyx epic ink liner review",
+     "nyx epic ink liner glitz",
+     "nyx epic ink liner graham cracker",
+     "nyx epic ink liner black",
+     "nyx epic ink liner milk chocolate",
+     "nyx epic ink liner stick",
+     "nyx epic ink liner formula change",
+     "nyx epic ink liner in brown",
+     "nyx epic ink liner in black"
     ]
    },
    "sentiment": {
-    "positive": 0.0,
-    "neutral": 1.0,
+    "positive": 0.167,
+    "neutral": 0.833,
     "negative": 0.0,
-    "n": 3
+    "n": 6
    },
    "quotes": [
     {
-     "text": "…them blur my pores: Dior Velvet Veil, Tatcha Silk Canvas, e.l.f. Putty, e.l.f. Power Grip, NYX Face Glue, Perricone MD No Makeup Instant Blur, Huda Beauty blurring primer, essence Powder Grip, ONE/SIZE Secure The Blur and Oil Sucker, Caliray pore primer, and…",
-     "url": "https://www.reddit.com/r/SkincareAddicts/comments/1xlskcx/large_pores_nothing_helps_ideas/",
-     "score": 131,
-     "sub": "SkincareAddicts",
-     "kind": "post"
-    },
-    {
-     "text": "…lewkkkk, ugh!! products: ColourPop Smoke Show, Nyx Bare with Me concealer, Elf power grip primer, Elf halo glow setting powder & Airspun powder, Elf contour palette, Elf always rosy blush, Elf starlight glow highlighter, Maybelline SuperStay liquid lipstick i…",
-     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xlqyuc/black_catfelicia_hardy_makeup/",
-     "score": 66,
+     "text": "…up used : nyx Make Em Wonder in fair, Proaiir red and black airbrush paint, Nyx Epic Liner for all the linework in red and black, Uniqso contacts, P Louise Creatove Comeback pallet for red eyeshadow, sealed with proaiir sealer",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xm461a/wearing_headphones_with_horns_is_a_new_skill/",
+     "score": 230,
      "sub": "MakeupAddiction",
      "kind": "post"
     },
     {
-     "text": "…copic Mascara Sample - FINISH Item Beauty Mascara - FINISH (It’s very dry). ELF power grip setting spray - Hit half-point (I have hit the half-point in this)!! Beauty of Joseon Aqua Sunscreen - FINISH Curel Intensive Facial Moisturizer 40g - FINISH Tirtir Vita…",
-     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xkz4hh/eventually_is_now_check_in_1/19s0ecfmfjp7p/",
-     "score": 1,
-     "sub": "MakeupRehab",
-     "kind": "comment"
+     "text": "…n ground-breaker 117 & thrill seeker 285, L’Oreal Paris Telescopic mascara, Nyx Epic Ink Liner in black & Milani Make It Last original setting spray.",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xlqyuc/black_catfelicia_hardy_makeup/",
+     "score": 102,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…:** Maybelline Lash Sensational Sky High – Very Black **Graphic eyeliner:** NYX Epic Ink Liner – Black **Foundation:** Maybelline Fit Me Matte + Poreless – exact shade unknown **Eyeshadow & contour:** ColourPop Blowin’ Smoke Palette – black and grey shades",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xmsegr/my_fallen_angel_look/",
+     "score": 22,
+     "sub": "MakeupAddiction",
+     "kind": "post"
     }
    ],
    "subreddits": {
-    "MakeupRehab": 1,
-    "MakeupAddiction": 1,
-    "SkincareAddicts": 1
+    "MakeupAddiction": 5,
+    "MakeupRehab": 1
    }
   },
   {
-   "rank": 5,
-   "key": "ysl|blush 12 honeymoon",
-   "name": "YSL Blush 12 Honeymoon",
-   "brand": "YSL",
+   "rank": 4,
+   "key": "charlotte tilbury|setting spray",
+   "name": "Charlotte Tilbury Setting Spray",
+   "brand": "Charlotte Tilbury",
    "category": "makeup",
-   "score": 4.11,
-   "trend_score": 7.49,
-   "mentions": 3,
-   "threads": 3,
-   "upvotes": 16,
-   "baseline": 0.0,
-   "change_pct": null,
-   "is_new": true,
+   "score": 7.38,
+   "trend_score": 16.14,
+   "mentions": 5,
+   "threads": 5,
+   "upvotes": 67,
+   "baseline": 0.66,
+   "change_pct": 1018,
+   "is_new": false,
    "history": [
     {
      "week": "2026-W37",
@@ -1317,11 +1210,11 @@
     },
     {
      "week": "2026-W40",
-     "score": 0.0
+     "score": 4.93
     },
     {
      "week": "2026-W41",
-     "score": 0.0
+     "score": 2.91
     },
     {
      "week": "2026-W42",
@@ -1329,211 +1222,400 @@
     },
     {
      "week": "2026-W43",
-     "score": 0.0
+     "score": 2.95
     },
     {
      "week": "2026-W44",
-     "score": 0.0
+     "score": 4.79
     },
     {
      "week": "2026-W45",
-     "score": 4.11
+     "score": 7.38
     }
    ],
    "keywords": {
     "recommended_for": [],
-    "people_like": [],
+    "people_like": [
+     {
+      "label": "glowy / dewy",
+      "count": 1,
+      "share": 0.2
+     },
+     {
+      "label": "natural / skin-like",
+      "count": 1,
+      "share": 0.2
+     },
+     {
+      "label": "smudge / water-proof",
+      "count": 1,
+      "share": 0.2
+     }
+    ],
     "complaints": [],
     "trending_alongside": [
      {
-      "term": "velvet latte",
-      "count": 2,
-      "lift": 465.3
+      "term": "set",
+      "count": 3,
+      "lift": 41.9
      },
      {
-      "term": "lighting",
-      "count": 2,
-      "lift": 155.1
+      "term": "powder",
+      "count": 3,
+      "lift": 16.7
      }
     ],
     "search_terms": [
-     "ysl blush shade 12 honeymoon",
-     "ysl make me blush 12 honeymoon",
-     "yves saint laurent make me blush 12 honeymoon",
-     "ysl make me blush shade 12 honeymoon"
+     "charlotte tilbury setting spray dupe",
+     "charlotte tilbury setting spray mini",
+     "charlotte tilbury setting spray matte",
+     "charlotte tilbury setting spray review",
+     "charlotte tilbury setting spray ingredients",
+     "charlotte tilbury setting spray ulta",
+     "charlotte tilbury setting spray travel size",
+     "charlotte tilbury setting spray duo",
+     "charlotte tilbury setting spray sale",
+     "charlotte tilbury setting spray for oily skin",
+     "charlotte tilbury setting spray for acne prone skin",
+     "charlotte tilbury setting spray for dry skin"
     ]
    },
    "sentiment": {
-    "positive": 0.667,
-    "neutral": 0.333,
+    "positive": 0.2,
+    "neutral": 0.8,
     "negative": 0.0,
-    "n": 3
+    "n": 5
    },
    "quotes": [
     {
-     "text": "…r (restock) \\- Hourglass lighting powder (new to me) Also in my cart is the YSL blush (hot mauve or 44… not sure), MBM ethereal eyes palette, hourglass mood exposure blush, and Saie Ma Donna blush (I have grazie and love it). What do you think?!",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xm6sit/my_rouge_haul/",
-     "score": 13,
+     "text": "…with room for a few more. I currently have added a GWP sized Charlotte Tilbury setting spray and a GWP sized Charlotte Tilbury setting powder. Overall, I’m very pleased with the set and will get a lot of use out of it. My favorites from the set are the blush…",
+     "url": "https://www.reddit.com/r/Sephora/comments/1xlnx2l/everyday_icons_set/",
+     "score": 53,
      "sub": "Sephora",
      "kind": "post"
     },
     {
-     "text": "YSL Blush 12 Honeymoon vs 38 Velvet Latte Hi friends! Does anyone have these two blushes and can share swatches for them? I’m trying to see which one might be better for me but comparisons are hard to come by. I’d love natural lighting or flash if possible to…",
-     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xm3vgx/ysl_blush_12_honeymoon_vs_38_velvet_latte/",
-     "score": 2,
+     "text": "Any setting spray better than the Charlotte Tilbury one? I’ve been using the Charlotte Tilbury setting spray for years now. It’s definitely not transfer proof because I’ve seen my make up get onto clothing etc. But I find myself keep purchasing it because I li…",
+     "url": "https://www.reddit.com/r/Sephora/comments/1xmpxo5/any_setting_spray_better_than_the_charlotte/",
+     "score": 7,
+     "sub": "Sephora",
+     "kind": "post"
+    },
+    {
+     "text": "…Blush Charlotte Tilbury Loose or Compact Powder NARS Bronzer Charlotte Tilbury Setting Spray I really want my makeup to look hydrated, glowy, smooth, and skin-like rather than dry or textured. **A few questions:** Are any of these products potentially contrib…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xminrd/how_do_i_stop_looking_like_a_bumpy_highway/",
+     "score": 3,
      "sub": "MakeupAddiction",
-     "kind": "post"
-    },
-    {
-     "text": "YSL Blush 12 Honeymoon vs 38 Velvet Latte [removed]",
-     "url": "https://www.reddit.com/r/Sephora/comments/1xm3wi4/ysl_blush_12_honeymoon_vs_38_velvet_latte/",
-     "score": 1,
-     "sub": "Sephora",
      "kind": "post"
     }
    ],
    "subreddits": {
-    "Sephora": 2,
-    "MakeupAddiction": 1
+    "Sephora": 3,
+    "MakeupAddiction": 2
+   }
+  },
+  {
+   "rank": 5,
+   "key": "l'oréal|infallible",
+   "name": "L'Oréal Infallible",
+   "brand": "L'Oréal",
+   "category": "makeup",
+   "score": 11.75,
+   "trend_score": 15.99,
+   "mentions": 9,
+   "threads": 7,
+   "upvotes": 108,
+   "baseline": 7.3,
+   "change_pct": 61,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W37",
+     "score": null
+    },
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 26.13
+    },
+    {
+     "week": "2026-W40",
+     "score": 29.36
+    },
+    {
+     "week": "2026-W41",
+     "score": 43.25
+    },
+    {
+     "week": "2026-W42",
+     "score": 26.08
+    },
+    {
+     "week": "2026-W43",
+     "score": 30.79
+    },
+    {
+     "week": "2026-W44",
+     "score": 17.7
+    },
+    {
+     "week": "2026-W45",
+     "score": 11.75
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "matte finish",
+      "count": 4,
+      "share": 0.444
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "wear concealer",
+      "count": 2,
+      "lift": 201.5
+     },
+     {
+      "term": "fit",
+      "count": 2,
+      "lift": 38.8
+     },
+     {
+      "term": "matte",
+      "count": 3,
+      "lift": 24.8
+     },
+     {
+      "term": "coverage",
+      "count": 2,
+      "lift": 26.5
+     },
+     {
+      "term": "setting",
+      "count": 3,
+      "lift": 18.4
+     },
+     {
+      "term": "full",
+      "count": 2,
+      "lift": 12.0
+     },
+     {
+      "term": "spray",
+      "count": 2,
+      "lift": 11.3
+     },
+     {
+      "term": "foundation",
+      "count": 2,
+      "lift": 4.6
+     }
+    ],
+    "search_terms": [
+     "l'oréal infallible foundation shades",
+     "l'oréal infallible cushion foundation",
+     "l'oréal infallible full wear concealer",
+     "l'oréal infallible fresh wear",
+     "l'oréal infallible 24h fresh wear",
+     "l'oréal infallible concealer shades",
+     "l'oréal infallible spray",
+     "l'oréal infallible 3-second setting mist",
+     "l'oréal infallible concealer swatches",
+     "l oreal infallible foundation in a powder",
+     "l oreal infallible eyeshadow in amber rush",
+     "l oreal infallible foundation in a powder shades"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.222,
+    "neutral": 0.778,
+    "negative": 0.0,
+    "n": 9
+   },
+   "quotes": [
+    {
+     "text": "…un. 😭 What do we think? 💭 Products: Base - Huda Beauty Easy Blur Primer L’Oréal Infallible Cushion Foundation in 260W Estée Lauder Double Wear Concealer in Metamorphosis Blushing Bubbles Blush Palette Nyx Buttermelt Highlighter in U Butta Werk MAC Mineralize P…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xm2a7v/halloween/",
+     "score": 70,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "l’oréal infallible is the MOST full coverage. then the elf, but it can get clumpy creasy iykyk under the eyes so not so much for that. the milani concealer is almost full coverage but it does make the skin look pretty AND not much of any creasing. the fit me c…",
+     "url": "https://www.reddit.com/r/drugstoreMUA/comments/1xmrsud/which_drugstore_concealer_should_i_get_for_high/19s2ufwjrafc1/",
+     "score": 17,
+     "sub": "drugstoreMUA",
+     "kind": "comment"
+    },
+    {
+     "text": "Try L’Oreal Infallible 3 Second Setting Spray. It’s like f’ing hairspray for your face",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xmu9du/please_explain_setting_to_me_like_im_5/19s2zrrwpg0qp/",
+     "score": 4,
+     "sub": "MakeupAddiction",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 5,
+    "drugstoreMUA": 4
    }
   }
  ],
  "trending_keywords": [
   {
-   "label": "hydrating",
-   "count": 111,
-   "expected": 77.8,
-   "change_pct": 43,
+   "label": "packaging",
+   "count": 77,
+   "expected": 54.7,
+   "change_pct": 41,
    "group": "people_like"
   },
   {
-   "label": "glowy / dewy",
-   "count": 95,
-   "expected": 68.2,
-   "change_pct": 39,
-   "group": "people_like"
+   "label": "lips",
+   "count": 11,
+   "expected": 4.5,
+   "change_pct": 145,
+   "group": "recommended_for"
   },
   {
    "label": "smudge / water-proof",
-   "count": 25,
-   "expected": 14.8,
-   "change_pct": 69,
+   "count": 37,
+   "expected": 24.0,
+   "change_pct": 54,
    "group": "people_like"
-  },
-  {
-   "label": "hot / humid weather",
-   "count": 57,
-   "expected": 41.8,
-   "change_pct": 36,
-   "group": "recommended_for"
-  },
-  {
-   "label": "affordable",
-   "count": 82,
-   "expected": 63.8,
-   "change_pct": 28,
-   "group": "people_like"
-  },
-  {
-   "label": "no-makeup look",
-   "count": 13,
-   "expected": 7.3,
-   "change_pct": 79,
-   "group": "recommended_for"
   },
   {
    "label": "full coverage",
-   "count": 10,
-   "expected": 5.1,
-   "change_pct": 96,
-   "group": "people_like"
-  },
-  {
-   "label": "large pores",
-   "count": 55,
-   "expected": 42.1,
-   "change_pct": 31,
-   "group": "recommended_for"
-  },
-  {
-   "label": "matte finish",
-   "count": 64,
-   "expected": 51.3,
-   "change_pct": 25,
+   "count": 16,
+   "expected": 8.3,
+   "change_pct": 93,
    "group": "people_like"
   },
   {
    "label": "mature skin",
-   "count": 9,
-   "expected": 4.9,
-   "change_pct": 85,
+   "count": 14,
+   "expected": 7.9,
+   "change_pct": 77,
    "group": "recommended_for"
   },
   {
-   "label": "long-lasting",
-   "count": 32,
-   "expected": 24.0,
-   "change_pct": 33,
+   "label": "affordable",
+   "count": 124,
+   "expected": 103.7,
+   "change_pct": 20,
    "group": "people_like"
   },
   {
-   "label": "packaging",
-   "count": 39,
-   "expected": 33.7,
-   "change_pct": 16,
+   "label": "glowy / dewy",
+   "count": 131,
+   "expected": 110.7,
+   "change_pct": 18,
    "group": "people_like"
   },
   {
-   "label": "gentle",
-   "count": 53,
-   "expected": 47.0,
-   "change_pct": 13,
+   "label": "hydrating",
+   "count": 148,
+   "expected": 126.4,
+   "change_pct": 17,
    "group": "people_like"
   },
   {
-   "label": "beginners",
-   "count": 10,
-   "expected": 7.6,
-   "change_pct": 31,
+   "label": "fragrance-free",
+   "count": 15,
+   "expected": 10.4,
+   "change_pct": 45,
+   "group": "people_like"
+  },
+  {
+   "label": "large pores",
+   "count": 79,
+   "expected": 68.4,
+   "change_pct": 15,
    "group": "recommended_for"
+  },
+  {
+   "label": "dehydrated skin",
+   "count": 26,
+   "expected": 20.6,
+   "change_pct": 26,
+   "group": "recommended_for"
+  },
+  {
+   "label": "shade range",
+   "count": 25,
+   "expected": 20.2,
+   "change_pct": 24,
+   "group": "complaints"
+  },
+  {
+   "label": "dullness / glow",
+   "count": 42,
+   "expected": 37.8,
+   "change_pct": 11,
+   "group": "recommended_for"
+  },
+  {
+   "label": "creases",
+   "count": 11,
+   "expected": 8.9,
+   "change_pct": 24,
+   "group": "complaints"
   }
  ],
  "emerging_terms": [
   {
-   "label": "problem areas",
-   "count": 8,
-   "expected": 0.0,
-   "change_pct": null
+   "label": "paidlink amazonaffiliate",
+   "count": 24,
+   "expected": 5.0,
+   "change_pct": 384
   },
   {
-   "label": "next update",
-   "count": 11,
-   "expected": 0.9,
-   "change_pct": 1090
-  },
-  {
-   "label": "diamond gifts",
+   "label": "diamond bomb",
    "count": 7,
    "expected": 0.0,
    "change_pct": null
   },
   {
-   "label": "making blush",
-   "count": 10,
-   "expected": 0.8,
-   "change_pct": 1214
+   "label": "ring pop",
+   "count": 7,
+   "expected": 0.0,
+   "change_pct": null
   },
   {
-   "label": "heritage foundation",
-   "count": 20,
-   "expected": 4.4,
-   "change_pct": 352
+   "label": "scara dorada",
+   "count": 7,
+   "expected": 0.0,
+   "change_pct": null
   },
   {
-   "label": "masseter botox",
-   "count": 9,
-   "expected": 0.6,
-   "change_pct": 1428
+   "label": "hydrating serum",
+   "count": 18,
+   "expected": 4.0,
+   "change_pct": 345
+  },
+  {
+   "label": "pink frosting",
+   "count": 8,
+   "expected": 0.5,
+   "change_pct": 1487
+  },
+  {
+   "label": "next update",
+   "count": 11,
+   "expected": 1.5,
+   "change_pct": 633
+  },
+  {
+   "label": "problem areas",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
   },
   {
    "label": "slow progress",
@@ -1542,573 +1624,1038 @@
    "change_pct": null
   },
   {
-   "label": "paidlink amazonaffiliate",
-   "count": 15,
-   "expected": 3.1,
-   "change_pct": 392
+   "label": "butter balm",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
   },
   {
-   "label": "free gift",
+   "label": "dollar store",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "person btw",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "zomartglobal com",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "rouge haul",
+   "count": 8,
+   "expected": 0.6,
+   "change_pct": 1291
+  },
+  {
+   "label": "placed order",
    "count": 10,
-   "expected": 1.4,
-   "change_pct": 599
+   "expected": 1.5,
+   "change_pct": 580
   },
   {
-   "label": "diamond gift",
-   "count": 11,
-   "expected": 1.8,
-   "change_pct": 504
-  },
-  {
-   "label": "help identifying",
-   "count": 5,
-   "expected": 0.0,
-   "change_pct": null
-  },
-  {
-   "label": "biggest problem",
-   "count": 5,
-   "expected": 0.0,
-   "change_pct": null
-  },
-  {
-   "label": "single shadows",
-   "count": 5,
-   "expected": 0.0,
-   "change_pct": null
-  },
-  {
-   "label": "blank page",
-   "count": 5,
-   "expected": 0.0,
-   "change_pct": null
-  },
-  {
-   "label": "gift code",
-   "count": 5,
-   "expected": 0.0,
-   "change_pct": null
-  },
-  {
-   "label": "ten swipes",
-   "count": 5,
-   "expected": 0.0,
-   "change_pct": null
+   "label": "codes left",
+   "count": 7,
+   "expected": 0.5,
+   "change_pct": 1291
   }
  ],
  "keyword_counts": {
   "recommended_for": {
-   "acne": 139,
-   "hyperpigmentation": 39,
-   "olive / undertone match": 26,
-   "hormonal acne": 13,
-   "sensitive skin": 47,
-   "hot / humid weather": 57,
-   "combination skin": 11,
-   "fine lines & wrinkles": 27,
-   "redness / rosacea": 40,
-   "eczema": 12,
-   "mature skin": 9,
-   "lips": 3,
-   "blackheads": 5,
-   "large pores": 55,
-   "dullness / glow": 25,
-   "oily skin": 67,
-   "damaged barrier": 37,
-   "texture": 33,
-   "sun protection": 46,
-   "dry skin": 40,
-   "dehydrated skin": 15,
-   "fair skin": 10,
-   "cold weather": 19,
-   "dark circles": 31,
-   "oily lids": 4,
-   "beginners": 10,
-   "fungal acne": 4,
-   "no-makeup look": 13,
-   "events / weddings": 12,
+   "sensitive skin": 78,
+   "acne": 200,
+   "hormonal acne": 15,
+   "eczema": 19,
+   "dehydrated skin": 26,
+   "blackheads": 15,
+   "oily skin": 88,
+   "redness / rosacea": 67,
+   "damaged barrier": 53,
+   "hyperpigmentation": 47,
+   "olive / undertone match": 43,
+   "hot / humid weather": 72,
+   "combination skin": 22,
+   "fine lines & wrinkles": 39,
+   "mature skin": 14,
+   "lips": 11,
+   "large pores": 79,
+   "dullness / glow": 42,
+   "texture": 59,
+   "sun protection": 81,
+   "dry skin": 62,
+   "fair skin": 31,
+   "fungal acne": 7,
+   "cold weather": 29,
+   "dark circles": 54,
+   "oily lids": 1,
+   "beginners": 11,
+   "events / weddings": 20,
    "deep skin tones": 2,
-   "under makeup": 1,
-   "hooded eyes": 1
+   "hooded eyes": 3,
+   "no-makeup look": 11,
+   "under makeup": 2
   },
   "people_like": {
-   "hydrating": 111,
-   "fragrance-free": 6,
-   "results / it works": 78,
-   "glowy / dewy": 95,
-   "affordable": 82,
-   "holy grail": 19,
-   "pigmented": 28,
-   "gentle": 53,
-   "long-lasting": 32,
-   "great dupe": 17,
-   "worth the hype": 24,
-   "packaging": 39,
-   "matte finish": 64,
-   "repurchase": 15,
-   "smudge / water-proof": 25,
-   "sheer / light coverage": 15,
-   "non-greasy": 3,
+   "hydrating": 148,
+   "fragrance-free": 15,
+   "results / it works": 119,
+   "glowy / dewy": 131,
+   "affordable": 124,
+   "holy grail": 27,
+   "pigmented": 54,
+   "gentle": 70,
+   "long-lasting": 35,
+   "worth the hype": 40,
    "fast-absorbing": 3,
-   "blendable": 23,
+   "great dupe": 25,
+   "packaging": 77,
    "lightweight": 9,
-   "smells nice": 4,
-   "full coverage": 10,
-   "buildable": 5,
-   "natural / skin-like": 3
+   "full coverage": 16,
+   "repurchase": 26,
+   "blendable": 41,
+   "smells nice": 5,
+   "smudge / water-proof": 37,
+   "sheer / light coverage": 21,
+   "matte finish": 88,
+   "natural / skin-like": 7,
+   "doesn't pill": 1,
+   "buildable": 5
   },
   "complaints": {
-   "broke me out": 21,
-   "irritation / stinging": 66,
-   "fragrance": 18,
-   "greasy / sticky": 17,
-   "white cast": 6,
-   "drying": 25,
-   "too expensive": 13,
-   "formula change": 6,
-   "shade range": 10,
-   "cakey / patchy": 17,
-   "oxidizes": 1,
-   "creases": 1,
-   "fades fast": 3,
-   "pilling": 2,
-   "overhyped": 9
+   "irritation / stinging": 98,
+   "broke me out": 30,
+   "fragrance": 25,
+   "greasy / sticky": 32,
+   "white cast": 8,
+   "drying": 32,
+   "oxidizes": 6,
+   "too expensive": 20,
+   "formula change": 14,
+   "creases": 11,
+   "pilling": 12,
+   "shade range": 25,
+   "overhyped": 12,
+   "cakey / patchy": 25,
+   "fades fast": 5
   }
  },
  "term_counts": {
-  "setting spray": 33,
-  "azelaic acid": 23,
-  "heritage foundation": 20,
-  "paidlink amazonaffiliate": 15,
-  "holy grail": 14,
-  "hyaluronic acid": 13,
-  "full size": 13,
-  "dark spots": 12,
+  "setting spray": 58,
+  "azelaic acid": 52,
+  "acne prone": 28,
+  "paidlink amazonaffiliate": 24,
+  "eye cream": 22,
+  "heritage foundation": 21,
+  "salicylic acid": 20,
+  "hyaluronic acid": 20,
+  "holy grail": 19,
+  "setting powder": 19,
+  "vitamin serum": 18,
+  "cleansing oil": 18,
+  "hydrating serum": 18,
+  "oil cleanser": 17,
+  "rouge code": 17,
+  "full coverage": 16,
+  "full size": 16,
+  "loose powder": 16,
+  "current routine": 14,
+  "fine lines": 14,
+  "cool toned": 14,
+  "pressed powder": 13,
+  "diamond gift": 13,
+  "bsky social": 13,
   "gentle cleanser": 12,
-  "eye cream": 12,
-  "oil cleanser": 12,
-  "setting powder": 12,
-  "acne prone": 11,
-  "vitamin serum": 11,
-  "diamond gift": 11,
+  "might worth": 12,
+  "long lasting": 12,
+  "pls help": 12,
+  "dry patches": 12,
+  "liquid blush": 12,
+  "powder foundation": 12,
+  "facial moisturizer": 11,
+  "acne scars": 11,
+  "moisturizing cream": 11,
+  "micellar water": 11,
+  "tinted moisturizer": 11,
+  "brow gel": 11,
   "next update": 11,
-  "salicylic acid": 10,
-  "long lasting": 10,
-  "hydrating serum": 10,
-  "full coverage": 10,
+  "daily facial": 10,
+  "dark spots": 10,
+  "glycolic acid": 10,
+  "acid serum": 10,
+  "eyeshadow palette": 10,
+  "travel size": 10,
+  "placed order": 10,
+  "powder blush": 10,
+  "limited edition": 10,
   "free gift": 10,
-  "dollar tree": 10,
-  "making blush": 10,
-  "acne scars": 9,
-  "chemical peels": 9,
-  "eyeshadow palette": 9,
-  "cleansing oil": 9,
-  "loose powder": 9,
-  "masseter botox": 9,
-  "tinted moisturizer": 9,
-  "pressed powder": 9,
-  "rouge code": 9,
-  "brow gel": 9,
-  "tubing mascara": 9,
-  "hit pan": 9,
-  "problem areas": 8,
+  "shea butter": 9,
+  "large pores": 9,
+  "take care": 9,
+  "wear sunscreen": 9,
+  "double repair": 9,
+  "snail mucin": 9,
+  "social media": 9,
+  "dry shampoo": 9,
+  "care routine": 9,
+  "liquid lipstick": 9,
+  "powder blushes": 9,
+  "waterproof mascara": 9,
+  "product request": 8,
+  "hey everyone": 8,
+  "chemical peels": 8,
+  "around mouth": 8,
+  "dry sensitive": 8,
+  "closed comedones": 8,
   "retinol serum": 8,
-  "moisturizing cream": 8,
-  "fine lines": 8,
-  "blurring balm": 8,
-  "micellar water": 8,
-  "acid serum": 7,
-  "social media": 7,
+  "wear foundation": 8,
+  "hot water": 8,
+  "big difference": 8,
+  "jojoba oil": 8,
+  "black honey": 8,
+  "looking forward": 8,
+  "game changer": 8,
+  "rouge haul": 8,
+  "tubing mascara": 8,
+  "brow pencil": 8,
+  "pink frosting": 8,
+  "hit pan": 8,
+  "truth serum": 8,
+  "making blush": 8,
+  "weight loss": 7,
+  "milky toner": 7,
+  "witch hazel": 7,
+  "normal dry": 7,
+  "white cast": 7,
+  "hydrating cleanser": 7,
+  "fungal acne": 7,
+  "clogged pores": 7,
+  "double cleanse": 7,
+  "mini size": 7,
+  "body care": 7,
+  "body wash": 7,
+  "liquid eyeliner": 7,
+  "lash line": 7,
+  "eyeshadow primer": 7,
+  "diamond bomb": 7,
+  "acne marks": 7,
+  "dark circles": 7,
+  "come back": 7,
   "body lotion": 7,
-  "liquid lipstick": 7,
-  "diamond gifts": 7,
-  "bsky social": 7,
-  "large pores": 6,
-  "visible pores": 6,
-  "foaming cleanser": 6,
+  "codes left": 7,
+  "cream blush": 7,
+  "shade range": 7,
+  "eyebrow pencil": 7,
+  "pink blush": 7,
+  "ring pop": 7,
+  "scara dorada": 7,
+  "problem areas": 6,
+  "hormonal acne": 6,
+  "drink water": 6,
   "slow progress": 6,
-  "gel moisturizer": 6,
-  "milky toner": 6,
-  "might worth": 6,
-  "might help": 6,
-  "liquid eyeliner": 6,
-  "hand cream": 6,
-  "long term": 6,
-  "mini size": 6,
-  "eyeshadow stick": 6,
+  "hydrating toner": 6,
+  "gel cream": 6,
+  "sandwich method": 6,
+  "aha bha": 6,
+  "eye bags": 6,
+  "acid niacinamide": 6,
+  "body butter": 6,
+  "thin layer": 6,
+  "eye creams": 6,
+  "let dry": 6,
+  "thanks advance": 6,
+  "cushion foundation": 6,
+  "shade match": 6,
+  "color corrector": 6,
+  "last longer": 6,
+  "tranexamic acid": 6,
+  "tinted sunscreen": 6,
+  "butter balm": 6,
+  "around nose": 6,
+  "care products": 6,
+  "foundation stick": 6,
+  "sale haul": 6,
+  "cherry blossom": 6,
+  "gift set": 6,
+  "blurring balm": 6,
+  "airbrush flawless": 6,
+  "gloss bomb": 6,
   "body mist": 6,
-  "blush stick": 6,
-  "powder blush": 6,
-  "cream blush": 6,
-  "limited edition": 6,
-  "looking forward": 6,
-  "travel size": 6,
-  "waterproof mascara": 6,
-  "powder foundation": 6,
-  "around mouth": 5,
-  "help identifying": 5,
-  "biggest problem": 5,
-  "hormonal acne": 5,
-  "closed comedones": 5,
-  "shea butter": 5,
-  "drink water": 5,
+  "light medium": 6,
+  "dollar store": 6,
+  "dollar tree": 6,
+  "goal finish": 6,
+  "person btw": 6,
+  "zomartglobal com": 6,
+  "sebaceous filaments": 5,
   "cleansing balm": 5,
-  "white cast": 5,
+  "visible pores": 5,
+  "barrier repair": 5,
+  "spot treatment": 5,
+  "wear daily": 5,
+  "cost effective": 5,
   "may help": 5,
-  "aha bha": 5,
+  "chronic pain": 5,
   "body oil": 5,
-  "huge difference": 5,
-  "thin layer": 5,
-  "hydrating toner": 5,
-  "hard water": 5,
+  "red light": 5,
+  "hypochlorous acid": 5,
+  "small bumps": 5,
   "moisturizing lotion": 5,
-  "let dry": 5,
-  "double cleanse": 5,
-  "cushion foundation": 5,
+  "oil control": 5,
+  "nothing else": 5,
+  "tiny bumps": 5,
+  "hard water": 5,
+  "centella asiatica": 5,
+  "daily sunscreen": 5,
+  "coconut oil": 5,
+  "extremely dry": 5,
   "double eyelids": 5,
-  "dark circles": 5,
-  "glycolic acid": 5,
-  "nasolabial folds": 5,
-  "eye patches": 5,
-  "recently started": 5,
-  "thanks advance": 5,
-  "placed order": 5,
-  "gloss bomb": 5,
+  "similar finish": 5,
+  "sheet masks": 5,
+  "thanks everyone": 5,
+  "price tag": 5,
+  "cicaplast baume": 5,
+  "mixed reviews": 5,
+  "serum foundation": 5,
+  "acid gel": 5,
+  "benzoyl peroxide": 5,
+  "mineral sunscreen": 5,
+  "able find": 5,
+  "keep mind": 5,
+  "post history": 5,
+  "customer service": 5,
+  "victoria beckham": 5,
+  "water bottle": 5,
+  "double wear": 5,
+  "hair care": 5,
+  "eyeshadow stick": 5,
   "contour stick": 5,
-  "airbrush flawless": 5,
+  "blush stick": 5,
   "single shadows": 5,
-  "dry patches": 5,
-  "liquid blush": 5,
-  "liquid blushes": 5,
-  "blank page": 5,
-  "gift code": 5,
-  "ten swipes": 5,
-  "take care": 5,
+  "cart removed": 5,
+  "pillow talk": 5,
+  "drug store": 5,
+  "high school": 5,
+  "receive code": 5,
+  "setting powders": 5,
+  "staying power": 5,
+  "transfer proof": 5,
+  "concealer lips": 5,
+  "cream eyeshadow": 5,
+  "running low": 5,
+  "lose control": 5,
+  "free gifts": 5,
+  "eye shadow": 5,
+  "higher end": 5,
+  "max factor": 5,
+  "lash sensational": 5,
+  "eye palette": 5,
+  "eyeliner pencil": 5,
+  "sky high": 5,
+  "sensational sky": 5,
+  "putty primer": 5,
+  "baby oil": 5,
   "nail polish": 5,
+  "shopping addiction": 5,
   "goal hit": 5,
-  "goal finish": 5,
-  "person btw": 5,
-  "start retinol": 4,
-  "identifying biggest": 4,
-  "areas hyperpigmentation": 4,
-  "recently discovered": 4,
-  "dry sensitive": 4,
-  "growth factors": 4,
-  "serum sensitive": 4,
-  "resurfacing retinol": 4,
-  "facial cleanser": 4,
-  "contact dermatitis": 4,
-  "product request": 4,
+  "travels beautifully": 5,
+  "essential travels": 5,
+  "video videosoficialescmll": 5,
+  "lines removed": 4,
   "cystic acne": 4,
+  "daily moisturizer": 4,
+  "help identifying": 4,
+  "recently discovered": 4,
+  "biggest problem": 4,
+  "fragrance free": 4,
+  "growth factors": 4,
+  "resurfacing retinol": 4,
+  "serum sensitive": 4,
+  "facial cleanser": 4,
+  "chapped lips": 4,
+  "working well": 4,
+  "cotton pad": 4,
   "grocery store": 4,
-  "barrier repair": 4,
+  "cooked removed": 4,
+  "help improve": 4,
   "mandelic acid": 4,
-  "gel cream": 4,
-  "hydrating cleanser": 4,
-  "around chin": 4,
-  "leave white": 4,
-  "dark spot": 4,
-  "heating pads": 4,
-  "snail mucin": 4,
-  "clogged pores": 4,
-  "sandwich method": 4,
-  "facial moisturizer": 4,
+  "power liquid": 4,
+  "put moisturizer": 4,
+  "black rice": 4,
+  "shower head": 4,
+  "squalane oil": 4,
   "barrier cream": 4,
-  "moisture barrier": 4,
-  "lower back": 4,
-  "black honey": 4,
-  "shade match": 4,
-  "cool toned": 4,
-  "oily lids": 4,
-  "calming moisture": 4,
-  "price tag": 4,
-  "matte finish": 4,
-  "fungal acne": 4,
-  "deep cleansing": 4,
-  "korean brands": 4,
-  "benzoyl peroxide": 4,
+  "madagascar centella": 4,
+  "sun serum": 4,
+  "gel moisturizer": 4,
+  "zinc oxide": 4,
+  "peptide serum": 4,
+  "acid spray": 4,
+  "crystal retinal": 4,
+  "medik crystal": 4,
+  "sorry hear": 4,
+  "huge difference": 4,
+  "side note": 4,
+  "might suit": 4,
+  "nothing crazy": 4,
+  "thin layers": 4,
+  "oily acne": 4,
+  "sleep mask": 4,
+  "green tea": 4,
+  "real solution": 4,
+  "cold cream": 4,
   "night cream": 4,
-  "coming back": 4,
-  "able find": 4,
-  "eye area": 4,
-  "oil control": 4,
-  "take away": 4,
-  "cleanser hydrating": 4,
+  "post acne": 4,
+  "pimple patches": 4,
+  "retinal serum": 4,
+  "apply sunscreen": 4,
+  "let sit": 4,
+  "sun damage": 4,
+  "asiatica extract": 4,
+  "oil cleansing": 4,
+  "long term": 4,
+  "light moisturizer": 4,
+  "cause irritation": 4,
+  "body cream": 4,
+  "promo code": 4,
+  "hard find": 4,
+  "last forever": 4,
+  "completely different": 4,
+  "oily scalp": 4,
+  "blush shade": 4,
+  "cleansing foam": 4,
+  "high end": 4,
+  "light pink": 4,
+  "liquid foundation": 4,
+  "dry combo": 4,
+  "sensitive eyes": 4,
+  "active ingredients": 4,
+  "fingers crossed": 4,
+  "may ask": 4,
+  "blow dry": 4,
+  "huge fan": 4,
+  "combination acne": 4,
+  "deep cleansing": 4,
+  "drinking water": 4,
+  "laser treatments": 4,
+  "broken capillaries": 4,
+  "outer corner": 4,
+  "uneven tone": 4,
+  "hello guys": 4,
+  "facial structure": 4,
+  "worth checking": 4,
+  "came across": 4,
+  "appreciated thank": 4,
+  "dry lips": 4,
+  "spider veins": 4,
+  "might work": 4,
   "highly recommend": 4,
+  "oil cleansers": 4,
+  "recently started": 4,
+  "kose softymo": 4,
+  "matte foundation": 4,
   "foundation powder": 4,
-  "sale haul": 4,
-  "pls help": 4,
-  "gift set": 4,
-  "rouge haul": 4,
-  "bomb stix": 4,
-  "coverage foundation": 4,
-  "serum foundation": 4,
-  "body wash": 4,
-  "brow pencil": 4,
-  "stick blush": 4,
+  "translucent powder": 4,
+  "emphasize texture": 4,
+  "old version": 4,
+  "hydration serum": 4,
+  "powder melt": 4,
+  "influence deinfluence": 4,
+  "easy blend": 4,
+  "travel sized": 4,
+  "gift cards": 4,
+  "ethereal eyes": 4,
+  "brush set": 4,
+  "marc jacobs": 4,
+  "swatched store": 4,
+  "powder puff": 4,
+  "size setting": 4,
+  "foundation brush": 4,
+  "last minute": 4,
+  "clean girl": 4,
+  "complexion product": 4,
+  "hey guys": 4,
+  "brow products": 4,
   "cream contour": 4,
-  "neutral cool": 4,
-  "per order": 4,
-  "free gifts": 4,
-  "gifts code": 4,
+  "price point": 4,
+  "hair oil": 4,
+  "perfume samples": 4,
+  "matte lipstick": 4,
+  "black mascara": 4,
+  "gift code": 4,
+  "diamond gifts": 4,
+  "shape tape": 4,
   "vanilla salt": 4,
-  "free diamond": 4,
-  "around nose": 4,
-  "eye palette": 4,
+  "drugstore brand": 4,
+  "pencil liner": 4,
+  "finely milled": 4,
+  "wear concealer": 4,
+  "red lipstick": 4,
+  "epic ink": 4,
+  "grip primer": 4,
+  "power grip": 4,
+  "fit matte": 4,
+  "eyeliner brush": 4,
+  "bright pink": 4,
+  "fluffy brush": 4,
+  "rich moisturizer": 4,
+  "light neutral": 4,
+  "liquid eyeshadow": 4,
+  "swarovski crystals": 4,
   "project pan": 4,
-  "baby oil": 4,
-  "ring pop": 4,
-  "dollar store": 4,
-  "shopping addiction": 4,
-  "post history": 4,
+  "hand cream": 4,
   "usage goals": 4,
-  "body butter": 4,
-  "essential travels": 4,
-  "travels beautifully": 4,
+  "cream goal": 4,
+  "goal uses": 4,
+  "tinyurl com": 4,
+  "current price": 4,
+  "category bea": 4,
   "powder palette": 4,
-  "zomartglobal com": 4,
-  "touhou source": 4,
-  "media touhou": 4,
-  "match chest": 3,
-  "hyperpigmentation around": 3,
-  "regular chemical": 3,
-  "recommendations fade": 3,
+  "media umamusume": 4,
+  "umamusume source": 4,
+  "video scara": 4,
+  "smile lines": 3,
+  "smoothing cream": 3,
+  "near mouth": 3,
+  "paper towel": 3,
+  "thayers milky": 3,
+  "everyone hope": 3,
+  "contact dermatitis": 3,
+  "late teens": 3,
+  "another country": 3,
+  "areas hyperpigmentation": 3,
+  "retinol soon": 3,
   "pair eyes": 3,
+  "honest review": 3,
+  "different lighting": 3,
   "appreciate honest": 3,
   "recent pics": 3,
-  "pics different": 3,
-  "honest review": 3,
-  "fresh pair": 3,
-  "attached recent": 3,
   "eyes tell": 3,
-  "retinol soon": 3,
+  "regular chemical": 3,
+  "attached recent": 3,
+  "pics different": 3,
+  "start retinol": 3,
+  "hyperpigmentation around": 3,
   "planning start": 3,
-  "different lighting": 3,
+  "fresh pair": 3,
+  "match chest": 3,
+  "recommendations fade": 3,
+  "identifying biggest": 3,
   "chin pimples": 3,
   "cystic chin": 3,
   "moisturizer cream": 3,
-  "help acne": 3,
+  "anti aging": 3,
   "remove dark": 3,
-  "rosacea contact": 3,
-  "care line": 3,
-  "chapped lips": 3,
-  "red spots": 3,
-  "help improve": 3,
-  "spot treatment": 3,
-  "orbital bone": 3,
-  "normal dry": 3,
-  "cell turnover": 3,
-  "eye mask": 3,
-  "cruelty free": 3,
-  "back home": 3,
+  "alpha arbutin": 3,
+  "sun care": 3,
+  "entire life": 3,
+  "greatly appreciated": 3,
+  "overnight mask": 3,
+  "bha exfoliant": 3,
+  "routine cleanse": 3,
+  "foaming cleanser": 3,
+  "barrier support": 3,
+  "whitehead power": 3,
+  "cream moisturizer": 3,
+  "spf sunscreen": 3,
+  "small amount": 3,
+  "moisturizer occlusive": 3,
   "worth shot": 3,
+  "heavy moisturizer": 3,
+  "whole routine": 3,
+  "wearing spf": 3,
+  "water-fit sun": 3,
+  "hyalu-cica water-fit": 3,
+  "relief sun": 3,
+  "centella hyalu-cica": 3,
+  "natural light": 3,
+  "aqua rich": 3,
+  "althea cream": 3,
+  "shower chair": 3,
   "different treatment": 3,
   "hot showers": 3,
   "whatever reason": 3,
+  "blue lid": 3,
+  "generally speaking": 3,
+  "facial hair": 3,
   "different moisturizers": 3,
-  "tiny amount": 3,
-  "thayers milky": 3,
-  "wear spf": 3,
+  "second photo": 3,
+  "sulfur mask": 3,
+  "heating pads": 3,
+  "butylene glycol": 3,
+  "moisturizing gel": 3,
+  "ultra-light moisturizing": 3,
+  "moisturizer tube": 3,
   "worst part": 3,
-  "crystal retinal": 3,
-  "red light": 3,
-  "nothing crazy": 3,
-  "extremely dry": 3,
-  "colloidal oatmeal": 3,
-  "final rinse": 3,
-  "whole body": 3,
-  "hard come": 3,
-  "cleanser moisturizer": 3,
-  "basic routine": 3,
-  "saem mool": 3,
-  "jung saem": 3,
-  "cover cream": 3,
-  "perfect cover": 3,
-  "medium neutral": 3,
-  "liquid foundation": 3,
-  "dry combo": 3,
-  "sensitive eyes": 3,
-  "wanna say": 3,
-  "active ingredients": 3,
-  "type normal": 3,
-  "lash line": 3,
-  "eyeshadow primer": 3,
-  "last longer": 3,
-  "acid niacinamide": 3,
-  "matte highlighter": 3,
-  "contour palette": 3,
-  "diamond bomb": 3,
-  "tinted balm": 3,
-  "cream nice": 3,
-  "nice thick": 3,
+  "cell turnover": 3,
+  "already given": 3,
+  "light panel": 3,
+  "keratosis pilaris": 3,
+  "might start": 3,
+  "cleanser recs": 3,
+  "high-quality electric": 3,
+  "electric foot": 3,
+  "callus remover": 3,
+  "foot callus": 3,
+  "hydro boost": 3,
+  "moisturizer sunscreen": 3,
   "acne help": 3,
-  "side effects": 3,
-  "numbing cream": 3,
-  "hello guys": 3,
-  "scalp serum": 3,
-  "fake removed": 3,
-  "waste money": 3,
-  "term results": 3,
-  "original removed": 3,
-  "real life": 3,
-  "worth checking": 3,
-  "quite expensive": 3,
-  "dark patches": 3,
-  "patches around": 3,
-  "game changer": 3,
-  "black rice": 3,
-  "regular cleanser": 3,
-  "mineral sunscreen": 3,
-  "tinted sunscreen": 3,
-  "oil cleansers": 3,
+  "ponds cold": 3,
+  "lotion spf": 3,
+  "ice cream": 3,
+  "adapalene azelaic": 3,
+  "serum cream": 3,
+  "uneven texture": 3,
+  "serum moisturizer": 3,
+  "ole henriksen": 3,
+  "hydrating toners": 3,
+  "fermented dairy": 3,
+  "different brand": 3,
+  "meal prep": 3,
+  "personal preference": 3,
+  "forget apply": 3,
+  "water retention": 3,
+  "adult acne": 3,
+  "nothing wrong": 3,
+  "worth looking": 3,
+  "end looking": 3,
+  "kids sunscreen": 3,
+  "capric triglyceride": 3,
+  "caprylic capric": 3,
+  "might well": 3,
+  "zinc cream": 3,
+  "light cleansing": 3,
+  "sulfur cleanser": 3,
+  "essential oils": 3,
+  "might help": 3,
+  "serum hydrating": 3,
+  "cream instead": 3,
+  "slides around": 3,
+  "ingredient lists": 3,
+  "eyeshadow palettes": 3,
+  "hair fall": 3,
+  "cream bebe": 3,
+  "cream beans": 3,
+  "pimple marks": 3,
+  "take forever": 3,
+  "lasting power": 3,
+  "collagen production": 3,
+  "spend money": 3,
+  "double cleansing": 3,
+  "close match": 3,
+  "vitamin serums": 3,
+  "medium neutral": 3,
+  "higher coverage": 3,
+  "absolutely nothing": 3,
+  "wanna say": 3,
+  "white highlighter": 3,
+  "matte highlighter": 3,
+  "eyes start": 3,
+  "brow pen": 3,
+  "full price": 3,
+  "matte powder": 3,
+  "contour palette": 3,
+  "shimmer eyeshadow": 3,
+  "roche-posay cicaplast": 3,
+  "sensitive acne-prone": 3,
+  "family wedding": 3,
+  "clarifying shampoo": 3,
+  "lick lips": 3,
+  "cool undertone": 3,
+  "matte ones": 3,
+  "hard pass": 3,
+  "hot pink": 3,
   "sun protection": 3,
-  "light therapy": 3,
-  "eye masks": 3,
-  "please give": 3,
-  "give suggestions": 3,
-  "high school": 3,
-  "sun exposure": 3,
-  "marionette lines": 3,
-  "cotton pads": 3,
-  "power grip": 3,
-  "balm powder": 3,
-  "blurring primer": 3,
-  "dennis gross": 3,
-  "victoria beckham": 3,
-  "absolutely beautiful": 3,
-  "pore size": 3,
-  "translucent powder": 3,
-  "perfectly normal": 3,
-  "high end": 3,
-  "sleeping mask": 3,
-  "hair care": 3,
-  "bronzer stick": 3,
+  "sheet mask": 3,
   "holy grails": 3,
+  "product recs": 3,
+  "sleeping mask": 3,
+  "mineral powder": 3,
+  "toner retinol": 3,
+  "sunscreen daily": 3,
+  "extremely sensitive": 3,
+  "bumps forehead": 3,
+  "wondering whether": 3,
+  "oil night": 3,
+  "lines around": 3,
+  "thinking adding": 3,
+  "scalp serum": 3,
+  "original removed": 3,
+  "sting eyes": 3,
+  "keep coming": 3,
+  "help narrow": 3,
+  "original post": 3,
+  "blood vessels": 3,
+  "absolutely gorgeous": 3,
+  "seem find": 3,
+  "laser treatment": 3,
+  "please share": 3,
+  "health issues": 3,
+  "completely forgot": 3,
+  "coming back": 3,
+  "completely normal": 3,
+  "non existent": 3,
+  "acid tranexamic": 3,
+  "daily spf": 3,
+  "fucking stoked": 3,
+  "peeling lips": 3,
+  "timeless vitamin": 3,
+  "facial fat": 3,
+  "sun spots": 3,
+  "rose petal": 3,
+  "cream products": 3,
+  "dan cortibalm": 3,
+  "instant angel": 3,
+  "sun exposure": 3,
+  "softymo speedy": 3,
+  "bare minerals": 3,
+  "oily zone": 3,
+  "full beat": 3,
+  "peel pads": 3,
+  "cleanser hydrating": 3,
+  "dennis gross": 3,
+  "chemical exfoliant": 3,
+  "lactic acid": 3,
+  "everyone else": 3,
+  "absolutely beautiful": 3,
+  "comment section": 3,
+  "matte finish": 3,
+  "eye area": 3,
+  "spf moisturizer": 3,
+  "free share": 3,
+  "size mini": 3,
+  "gift bag": 3,
+  "items cart": 3,
+  "stay put": 3,
+  "luminous silk": 3,
+  "caffeine serum": 3,
+  "sample bag": 3,
+  "another order": 3,
+  "rouge sale": 3,
+  "take away": 3,
   "please let": 3,
+  "peter thomas": 3,
+  "thomas roth": 3,
+  "rouge codes": 3,
   "olive undertone": 3,
-  "price adjustment": 3,
+  "milk hydrogrip": 3,
   "powder translucent": 3,
-  "travel sized": 3,
-  "brush set": 3,
+  "ended brush": 3,
+  "eyebrow gel": 3,
+  "dual ended": 3,
+  "easy bake": 3,
+  "happy shopping": 3,
   "eau parfum": 3,
-  "marc jacobs": 3,
+  "leave-in conditioner": 3,
   "black cherry": 3,
-  "tint shade": 3,
-  "velvet latte": 3,
-  "cool palette": 3,
-  "cart removed": 3,
-  "color corrector": 3,
-  "sale started": 3,
+  "coverage foundation": 3,
+  "eye pencil": 3,
+  "toasted teddy": 3,
+  "multiple stick": 3,
+  "concealer shade": 3,
+  "cotton pads": 3,
+  "volume mascara": 3,
   "marc jacob": 3,
-  "clean girl": 3,
-  "complexion product": 3,
-  "free shipping": 3,
-  "pillow talk": 3,
+  "willing share": 3,
+  "spot concealing": 3,
+  "help pick": 3,
+  "brow product": 3,
+  "guys suggest": 3,
+  "satin finish": 3,
+  "stick blush": 3,
   "plumping gloss": 3,
   "holiday set": 3,
-  "items cart": 3,
-  "sale price": 3,
-  "different brands": 3,
-  "birthday gift": 3,
-  "fine hair": 3,
-  "blushes last": 3,
-  "cream blushes": 3,
-  "diamond exclusive": 3,
-  "hit diamond": 3,
-  "somewhere else": 3,
-  "eye shadow": 3,
-  "eyelash primer": 3,
-  "cream eyeshadow": 3,
-  "november birthday": 3,
-  "coupon code": 3,
-  "certain brands": 3,
-  "cart ready": 3,
-  "self care": 3,
-  "light neutral": 3,
-  "lipstick shade": 3,
-  "natural finish": 3,
+  "highlighter stick": 3,
+  "eye patches": 3,
   "glassy hibiscus": 3,
-  "completely different": 3,
+  "bronzer blush": 3,
+  "light reflecting": 3,
+  "discovery set": 3,
+  "code please": 3,
+  "holiday sets": 3,
+  "already spending": 3,
+  "foundation concealer": 3,
+  "perfume sample": 3,
+  "neutral olive": 3,
+  "space cowboy": 3,
+  "please influence": 3,
+  "natural finish": 3,
+  "high quality": 3,
+  "holiday season": 3,
+  "bonus points": 3,
+  "grab another": 3,
+  "purple blush": 3,
+  "cream powder": 3,
+  "powder finish": 3,
+  "cream blushes": 3,
+  "ube cream": 3,
+  "savings event": 3,
+  "allergic reaction": 3,
+  "silky rose": 3,
+  "old lady": 3,
+  "turn orange": 3,
+  "color payoff": 3,
+  "diamond members": 3,
+  "worst diamond": 3,
+  "gel eyeliner": 3,
+  "birthday gift": 3,
+  "wallet safe": 3,
+  "free diamond": 3,
+  "diamond welcome": 3,
+  "welcome gift": 3,
+  "tinted balm": 3,
+  "exec membership": 3,
+  "credit card": 3,
+  "hitting pan": 3,
+  "product page": 3,
+  "lash princess": 3,
+  "airspun powder": 3,
+  "lipstick shades": 3,
+  "specific product": 3,
+  "shade light": 3,
+  "lipstick shade": 3,
   "shadow stick": 3,
-  "cut crease": 3,
-  "blend bunny": 3,
-  "lash comb": 3,
-  "blow dryer": 3,
+  "red eyeshadow": 3,
   "ends lashes": 3,
   "warm neutral": 3,
-  "glowy primer": 3,
+  "fake lashes": 3,
   "corrector concealer": 3,
   "telescopic mascara": 3,
-  "growth serum": 3,
+  "ink liner": 3,
+  "false lashes": 3,
+  "loose setting": 3,
+  "ben nye": 3,
+  "orgasm blush": 3,
+  "blur tint": 3,
+  "pot concealer": 3,
+  "flower knows": 3,
+  "lash serum": 3,
+  "finish without": 3,
+  "finishing powder": 3,
+  "matte poreless": 3,
+  "high coverage": 3,
+  "repair moisturizer": 3,
+  "without looking": 3,
+  "called bare": 3,
+  "baby pink": 3,
+  "colour corrector": 3,
+  "playing around": 3,
+  "lightest shade": 3,
+  "enough lashes": 3,
+  "close enough": 3,
+  "exact shade": 3,
+  "natural features": 3,
+  "price range": 3,
+  "blue mascara": 3,
+  "omg thank": 3,
+  "pink powder": 3,
+  "gel liner": 3,
+  "water line": 3,
+  "trader joe": 3,
+  "drugstore mascara": 3,
   "warm tan": 3,
-  "liquid eyeshadow": 3,
-  "jojoba oil": 3,
+  "eraser cloth": 3,
+  "rinses clean": 3,
   "hard beat": 3,
-  "kose softymo": 3,
-  "swarovski crystals": 3,
-  "west virginia": 3,
-  "drugstore brand": 3,
+  "high mascara": 3,
+  "kiko milano": 3,
+  "korean brands": 3,
+  "fit concealer": 3,
+  "conceal perfect": 3,
+  "big lift": 3,
+  "gumball machine": 3,
+  "landfill coded": 3,
   "stocking stuffer": 3,
-  "putty primer": 3,
+  "food pantry": 3,
+  "cream finish": 3,
+  "brow glue": 3,
   "sample finish": 3,
-  "perfume samples": 3,
-  "hair oil": 3,
   "palette goal": 3,
+  "soap glory": 3,
   "uses left": 3,
+  "finish finished": 3,
   "blush goal": 3,
   "gel goal": 3,
-  "finish finished": 3,
-  "cream goal": 3,
-  "goal uses": 3,
+  "long haul": 3,
+  "foot cream": 3,
+  "end november": 3,
+  "three steps": 3,
+  "youtube com": 3,
   "blogspot com": 3,
-  "tinyurl com": 3,
   "haley stevens": 3,
+  "free wear": 3,
+  "everybody free": 3,
+  "enough sunscreen": 3,
   "put sunscreen": 3,
-  "rich moisturizer": 3,
-  "truth serum": 3
+  "fields active": 3,
+  "serum giveaway": 3,
+  "active hydration": 3,
+  "rodan fields": 3,
+  "silver hour": 3,
+  "hour piece": 3,
+  "unwind bundle": 3,
+  "gates foundation": 3,
+  "solid foundation": 3,
+  "asian dub": 3,
+  "dub foundation": 3,
+  "capit suicida": 3,
+  "wella professionals": 3
  },
  "all_products": {
-  "fenty beauty|gloss bomb stix": [
-   6.12,
-   3,
+  "maybelline|fit me": [
+   11.91,
+   8,
    "makeup",
-   "Fenty Beauty Gloss Bomb Stix"
-  ],
-  "e.l.f.|power grip": [
-   5.45,
-   3,
-   "makeup",
-   "e.l.f. Power Grip"
-  ],
-  "la roche-posay|cicaplast baume b5": [
-   4.92,
-   4,
-   "skincare",
-   "La Roche-Posay Cicaplast Baume B5"
+   "Maybelline Fit Me"
   ],
   "l'oréal|infallible": [
-   4.9,
-   3,
+   11.75,
+   7,
    "makeup",
    "L'Oréal Infallible"
   ],
+  "nyx|epic ink liner": [
+   9.92,
+   6,
+   "makeup",
+   "NYX Epic Ink Liner"
+  ],
+  "cerave|sa cleanser": [
+   9.71,
+   8,
+   "skincare",
+   "CeraVe SA Cleanser"
+  ],
+  "fenty beauty|diamond bomb": [
+   9.68,
+   6,
+   "makeup",
+   "Fenty Beauty Diamond Bomb"
+  ],
+  "charlotte tilbury|setting spray": [
+   7.38,
+   5,
+   "makeup",
+   "Charlotte Tilbury Setting Spray"
+  ],
+  "charlotte tilbury|pressed powder": [
+   7.13,
+   5,
+   "makeup",
+   "Charlotte Tilbury Pressed Powder"
+  ],
+  "rhode|pocket pair": [
+   6.31,
+   3,
+   "makeup",
+   "Rhode Pocket Pair"
+  ],
+  "maybelline|lash sensational sky high mascara": [
+   6.3,
+   5,
+   "makeup",
+   "Maybelline Lash Sensational Sky High Mascara"
+  ],
+  "e.l.f.|power grip primer": [
+   6.3,
+   4,
+   "makeup",
+   "e.l.f. Power Grip Primer"
+  ],
+  "nyx|professional makeup releases 60 lip": [
+   6.28,
+   3,
+   "makeup",
+   "NYX Professional Makeup Releases 60 Lip"
+  ],
   "saie|eyeshadow": [
-   4.88,
-   2,
+   6.17,
+   3,
    "makeup",
    "Saie Eyeshadow"
   ],
-  "cerave|moisturizing cream": [
-   4.87,
+  "hourglass|veil": [
+   6.02,
    4,
+   "makeup",
+   "Hourglass Veil"
+  ],
+  "cerave|moisturizing cream": [
+   5.92,
+   5,
    "skincare",
    "CeraVe Moisturizing Cream"
   ],
-  "cerave|sa cleanser": [
-   4.69,
+  "e.l.f.|halo glow": [
+   5.71,
+   4,
+   "makeup",
+   "e.l.f. Halo Glow"
+  ],
+  "rare beauty|soft pinch": [
+   5.47,
+   4,
+   "makeup",
+   "Rare Beauty Soft Pinch"
+  ],
+  "nars|light reflecting foundation": [
+   5.44,
+   4,
+   "makeup",
+   "NARS Light Reflecting Foundation"
+  ],
+  "dior|backstage glow maximizer": [
+   5.29,
+   4,
+   "makeup",
+   "Dior Backstage Glow Maximizer"
+  ],
+  "nars|liquid blush": [
+   5.17,
+   3,
+   "makeup",
+   "NARS Liquid Blush"
+  ],
+  "medik8|crystal retinal": [
+   5.07,
    4,
    "skincare",
-   "CeraVe SA Cleanser"
+   "Medik8 Crystal Retinal"
+  ],
+  "rom&nd|glasting color gloss cream nude edition": [
+   5.02,
+   3,
+   "skincare",
+   "Rom&nd Glasting Color Gloss Cream Nude Edition"
+  ],
+  "too faced|chocolate nudes": [
+   4.97,
+   4,
+   "makeup",
+   "Too Faced Chocolate Nudes"
+  ],
+  "cosrx|snail mucin": [
+   4.93,
+   3,
+   "skincare",
+   "COSRX Snail Mucin"
+  ],
+  "hada labo|shirojyun": [
+   4.83,
+   2,
+   "skincare",
+   "Hada Labo Shirojyun"
+  ],
+  "avène|cicalfate": [
+   4.72,
+   2,
+   "skincare",
+   "Avène Cicalfate"
   ],
   "cerave|resurfacing retinol serum": [
    4.69,
@@ -2116,233 +2663,413 @@
    "skincare",
    "CeraVe Resurfacing Retinol Serum"
   ],
-  "dior|lip glow": [
-   4.47,
+  "huda beauty|easy blur": [
+   4.59,
    3,
    "makeup",
-   "Dior Lip Glow"
+   "Huda Beauty Easy Blur"
   ],
-  "fenty beauty|diamond bomb": [
-   4.42,
+  "nyx|buttermelt": [
+   4.59,
    3,
    "makeup",
-   "Fenty Beauty Diamond Bomb"
+   "NYX Buttermelt"
   ],
-  "e.l.f.|halo glow": [
-   4.4,
+  "rhode|peptide lip tint": [
+   4.27,
    3,
    "makeup",
-   "e.l.f. Halo Glow"
+   "Rhode Peptide Lip Tint"
   ],
-  "la roche-posay|double repair moisturizer 27": [
-   4.35,
-   4,
-   "skincare",
-   "La Roche-Posay Double Repair Moisturizer 27"
-  ],
-  "skin1004|centella": [
-   4.34,
-   2,
-   "skincare",
-   "SKIN1004 Centella"
-  ],
-  "ysl|blush 12 honeymoon": [
-   4.11,
+  "chanel|rose lumiere": [
+   4.15,
    3,
    "makeup",
-   "YSL Blush 12 Honeymoon"
+   "Chanel Rose Lumiere"
   ],
-  "nyx|professional makeup releases 60 lip": [
-   4.0,
+  "fenty beauty|gloss bomb stix": [
+   4.05,
    2,
    "makeup",
-   "NYX Professional Makeup Releases 60 Lip"
-  ],
-  "danessa myricks|lightwork viii": [
-   3.72,
-   2,
-   "makeup",
-   "Danessa Myricks Lightwork Viii"
-  ],
-  "l'oréal|telescopic": [
-   3.65,
-   2,
-   "makeup",
-   "L'Oréal Telescopic"
-  ],
-  "rom&nd|glasting color gloss cream nude edition": [
-   3.62,
-   3,
-   "skincare",
-   "Rom&nd Glasting Color Gloss Cream Nude Edition"
-  ],
-  "e.l.f.|putty": [
-   3.62,
-   2,
-   "makeup",
-   "e.l.f. Putty"
-  ],
-  "tatcha|silk canvas": [
-   3.57,
-   2,
-   "skincare",
-   "Tatcha Silk Canvas"
-  ],
-  "danessa myricks|yummy skin blurring balm powder": [
-   3.5,
-   2,
-   "makeup",
-   "Danessa Myricks Yummy Skin Blurring Balm Powder"
-  ],
-  "dior|backstage": [
-   3.41,
-   2,
-   "makeup",
-   "Dior Backstage"
-  ],
-  "cosrx|snail mucin": [
-   3.38,
-   2,
-   "skincare",
-   "COSRX Snail Mucin"
-  ],
-  "tarte|shape tape": [
-   3.36,
-   2,
-   "makeup",
-   "Tarte Shape Tape"
+   "Fenty Beauty Gloss Bomb Stix"
   ],
   "nyx|lip lingerie": [
-   3.27,
+   4.03,
    2,
    "makeup",
    "NYX Lip Lingerie"
   ],
-  "nyx|epic ink": [
-   3.22,
-   2,
-   "makeup",
-   "NYX Epic Ink"
+  "good molecules|hyaluronic acid serum 9": [
+   4.0,
+   4,
+   "skincare",
+   "Good Molecules Hyaluronic Acid Serum 9"
   ],
-  "nyx|buttermelt": [
-   3.15,
-   2,
-   "makeup",
-   "NYX Buttermelt"
+  "skin1004|centella": [
+   3.97,
+   3,
+   "skincare",
+   "SKIN1004 Centella"
   ],
-  "rare beauty|soft": [
-   3.1,
+  "catrice|luminous skin foundation": [
+   3.95,
    2,
    "makeup",
-   "Rare Beauty Soft"
+   "Catrice Luminous Skin Foundation"
   ],
-  "maybelline|fit me": [
-   3.09,
+  "essence|camouflage concealer": [
+   3.95,
    2,
    "makeup",
-   "Maybelline Fit Me"
+   "essence Camouflage Concealer"
   ],
-  "haus labs|triclone": [
-   3.08,
+  "essence|contouring palette": [
+   3.95,
    2,
    "makeup",
-   "Haus Labs Triclone"
+   "essence Contouring Palette"
+  ],
+  "tarte|starlight highlight powder": [
+   3.95,
+   2,
+   "makeup",
+   "Tarte Starlight Highlight Powder"
+  ],
+  "catrice|glam": [
+   3.95,
+   2,
+   "makeup",
+   "Catrice Glam"
+  ],
+  "catrice|eyebrow pencil": [
+   3.95,
+   2,
+   "makeup",
+   "Catrice Eyebrow Pencil"
+  ],
+  "la roche-posay|toleraine": [
+   3.92,
+   3,
+   "skincare",
+   "La Roche-Posay Toleraine"
+  ],
+  "skin1004|madagascar centella hyalu-cica water-fit sun serum": [
+   3.92,
+   3,
+   "skincare",
+   "SKIN1004 Madagascar Centella Hyalu-Cica Water-Fit Sun Serum"
+  ],
+  "essence|lash princess": [
+   3.91,
+   3,
+   "makeup",
+   "essence Lash Princess"
+  ],
+  "tarte|shape tape": [
+   3.89,
+   2,
+   "makeup",
+   "Tarte Shape Tape"
+  ],
+  "l'oréal|telescopic": [
+   3.85,
+   2,
+   "makeup",
+   "L'Oréal Telescopic"
+  ],
+  "milani|conceal": [
+   3.81,
+   2,
+   "makeup",
+   "Milani Conceal"
+  ],
+  "milani|blur": [
+   3.77,
+   2,
+   "makeup",
+   "Milani Blur"
+  ],
+  "beauty of joseon|relief sun": [
+   3.69,
+   3,
+   "skincare",
+   "Beauty of Joseon Relief Sun"
+  ],
+  "dior|backstage skin tint": [
+   3.66,
+   2,
+   "makeup",
+   "Dior Backstage Skin Tint"
+  ],
+  "tarte|amazonian clay": [
+   3.66,
+   2,
+   "skincare",
+   "Tarte Amazonian Clay"
+  ],
+  "cerave|ultra-light moisturizing gel": [
+   3.52,
+   3,
+   "skincare",
+   "CeraVe Ultra-Light Moisturizing Gel"
+  ],
+  "cerave|moisturizing lotion": [
+   3.52,
+   3,
+   "skincare",
+   "CeraVe Moisturizing Lotion"
+  ],
+  "colourpop|blowin smoke palette": [
+   3.52,
+   2,
+   "makeup",
+   "ColourPop Blowin Smoke Palette"
+  ],
+  "nyx|bare": [
+   3.51,
+   2,
+   "makeup",
+   "NYX Bare"
+  ],
+  "e.l.f.|hydrating camo": [
+   3.47,
+   2,
+   "skincare",
+   "e.l.f. Hydrating Camo"
+  ],
+  "dior|lip glow": [
+   3.42,
+   2,
+   "makeup",
+   "Dior Lip Glow"
+  ],
+  "maybelline|color sensational": [
+   3.4,
+   3,
+   "makeup",
+   "Maybelline Color Sensational"
+  ],
+  "paula's choice|2% bha": [
+   3.35,
+   3,
+   "skincare",
+   "Paula's Choice 2% BHA"
+  ],
+  "estée lauder|double wear": [
+   3.34,
+   2,
+   "makeup",
+   "Estée Lauder Double Wear"
+  ],
+  "e.l.f.|matte": [
+   3.23,
+   2,
+   "makeup",
+   "e.l.f. Matte"
   ],
   "dieux|skin mercy": [
-   3.07,
+   3.19,
    2,
    "skincare",
    "Dieux Skin Mercy"
   ],
-  "nyx|epic liner": [
-   2.98,
-   1,
+  "nars|soft matte": [
+   3.17,
+   2,
    "makeup",
-   "NYX Epic Liner"
+   "NARS Soft Matte"
+  ],
+  "saie|glowy": [
+   3.15,
+   2,
+   "makeup",
+   "Saie Glowy"
+  ],
+  "haus labs|triclone": [
+   3.15,
+   2,
+   "makeup",
+   "Haus Labs Triclone"
+  ],
+  "purito|wonder releaf centella": [
+   3.14,
+   2,
+   "skincare",
+   "Purito Wonder Releaf Centella"
+  ],
+  "merit|flush balm": [
+   3.12,
+   2,
+   "makeup",
+   "Merit Flush Balm"
+  ],
+  "ysl|lash clash": [
+   3.1,
+   2,
+   "makeup",
+   "YSL Lash Clash"
+  ],
+  "e.l.f.|camo": [
+   3.07,
+   2,
+   "makeup",
+   "e.l.f. Camo"
+  ],
+  "fenty beauty|pro filt'r": [
+   3.02,
+   2,
+   "makeup",
+   "Fenty Beauty Pro Filt'r"
   ],
   "saie|slip tint": [
-   2.93,
+   3.01,
    2,
    "makeup",
    "Saie Slip Tint"
   ],
-  "vanicream|gentle": [
-   2.92,
-   2,
-   "skincare",
-   "Vanicream Gentle"
-  ],
   "haus labs|silently changed": [
-   2.92,
+   2.95,
    2,
    "makeup",
    "Haus Labs Silently Changed"
   ],
   "hince|raw": [
-   2.92,
+   2.95,
    2,
    "makeup",
    "Hince Raw"
   ],
-  "hourglass|veil": [
-   2.76,
+  "vanicream|gentle": [
+   2.83,
    2,
    "skincare",
-   "Hourglass Veil"
+   "Vanicream Gentle"
+  ],
+  "hourglass|phantom": [
+   2.81,
+   2,
+   "makeup",
+   "Hourglass Phantom"
+  ],
+  "la roche-posay|cicaplast baume b5+": [
+   2.8,
+   2,
+   "skincare",
+   "La Roche-Posay Cicaplast Baume B5+"
+  ],
+  "bioré|aqua rich": [
+   2.77,
+   2,
+   "skincare",
+   "Bioré Aqua Rich"
+  ],
+  "kosas|color": [
+   2.77,
+   2,
+   "makeup",
+   "Kosas Color"
+  ],
+  "laka|fruity": [
+   2.69,
+   2,
+   "makeup",
+   "Laka Fruity"
+  ],
+  "covergirl|clean": [
+   2.69,
+   2,
+   "makeup",
+   "CoverGirl Clean"
+  ],
+  "nars|orgasm blush": [
+   2.69,
+   2,
+   "makeup",
+   "NARS Orgasm Blush"
+  ],
+  "rhode|glazing milk": [
+   2.69,
+   2,
+   "skincare",
+   "Rhode Glazing Milk"
+  ],
+  "cetaphil|gentle cleanser": [
+   2.68,
+   2,
+   "skincare",
+   "Cetaphil Gentle Cleanser"
+  ],
+  "dior|lip oil": [
+   2.68,
+   2,
+   "makeup",
+   "Dior Lip Oil"
+  ],
+  "l'oréal|elvive": [
+   2.68,
+   2,
+   "makeup",
+   "L'Oréal Elvive"
   ],
   "charlotte tilbury|pillow talk": [
-   2.72,
+   2.66,
    2,
    "makeup",
    "Charlotte Tilbury Pillow Talk"
   ],
-  "nars|light": [
-   2.69,
-   2,
-   "makeup",
-   "NARS Light"
-  ],
-  "cetaphil|moisturizing": [
-   2.66,
-   2,
-   "skincare",
-   "Cetaphil Moisturizing"
-  ],
-  "medik8|crystal retinal": [
-   2.62,
-   2,
-   "skincare",
-   "Medik8 Crystal Retinal"
-  ],
-  "clio|kill": [
-   2.62,
-   2,
-   "makeup",
-   "CLIO Kill"
-  ],
   "neutrogena|hydroboost": [
-   2.58,
+   2.62,
    2,
    "skincare",
    "Neutrogena Hydroboost"
   ],
-  "charlotte tilbury|pressed": [
-   2.58,
+  "cosrx|bha": [
+   2.62,
    2,
-   "makeup",
-   "Charlotte Tilbury Pressed"
+   "skincare",
+   "COSRX BHA"
   ],
-  "kosas|cloud set": [
-   2.58,
+  "neutrogena|hydro boost": [
+   2.62,
    2,
-   "makeup",
-   "Kosas Cloud Set"
+   "skincare",
+   "Neutrogena Hydro Boost"
   ],
-  "mac|fix+": [
+  "tatcha|silk": [
+   2.62,
+   2,
+   "skincare",
+   "Tatcha Silk"
+  ],
+  "dieux|instant angel": [
+   2.62,
+   2,
+   "skincare",
+   "Dieux Instant Angel"
+  ],
+  "rohto|mentholatum": [
+   2.58,
+   2,
+   "skincare",
+   "Rohto Mentholatum"
+  ],
+  "la roche-posay|toleriane": [
+   2.58,
+   2,
+   "skincare",
+   "La Roche-Posay Toleriane"
+  ],
+  "la roche-posay|cicaplast baume b5": [
+   2.58,
+   2,
+   "skincare",
+   "La Roche-Posay Cicaplast Baume B5"
+  ],
+  "dior|lip duos": [
    2.58,
    2,
    "makeup",
-   "MAC Fix+"
+   "Dior Lip Duos"
   ],
   "charlotte tilbury|airbrush flawless setting spray": [
    2.58,
@@ -2350,53 +3077,125 @@
    "makeup",
    "Charlotte Tilbury Airbrush Flawless Setting Spray"
   ],
-  "maybelline|color sensational": [
+  "chanel|neige d'or illuminating powder": [
    2.58,
    2,
    "makeup",
-   "Maybelline Color Sensational"
+   "Chanel Neige D'or Illuminating Powder"
   ],
-  "l'oréal|elvive": [
+  "dior|sequin lip duos": [
    2.58,
    2,
    "makeup",
-   "L'Oréal Elvive"
+   "Dior Sequin Lip Duos"
   ],
-  "cetaphil|gentle cleanser": [
-   2.55,
+  "makeup by mario|f4": [
+   2.58,
    2,
-   "skincare",
-   "Cetaphil Gentle Cleanser"
+   "makeup",
+   "Makeup by Mario F4"
   ],
-  "la roche-posay|toleraine": [
+  "supergoop!|glow screen": [
+   2.58,
+   2,
+   "makeup",
+   "Supergoop! Glow Screen"
+  ],
+  "anua|3 ceramide panthenol": [
    2.52,
    2,
    "skincare",
-   "La Roche-Posay Toleraine"
+   "Anua 3 Ceramide Panthenol"
   ],
-  "nars|radiant": [
+  "the ordinary|natural moisturizing factors": [
+   2.52,
+   2,
+   "skincare",
+   "The Ordinary Natural Moisturizing Factors"
+  ],
+  "cerave|hydrating": [
+   2.52,
+   2,
+   "skincare",
+   "CeraVe Hydrating"
+  ],
+  "too faced|born this way": [
    2.52,
    2,
    "makeup",
-   "NARS Radiant"
+   "Too Faced Born This Way"
   ],
-  "beauty of joseon|glow": [
+  "fenty beauty|glow": [
+   2.52,
+   2,
+   "makeup",
+   "Fenty Beauty Glow"
+  ],
+  "bioderma|atoderm cream": [
    2.45,
    2,
    "skincare",
-   "Beauty of Joseon Glow"
+   "Bioderma Atoderm Cream"
   ],
-  "burt's bees|tinted balm": [
+  "cosrx|master pimple patches": [
    2.45,
    2,
    "skincare",
-   "Burt's Bees Tinted Balm"
+   "COSRX Master Pimple Patches"
   ],
-  "anua|niacinamide": [
+  "tatcha|indigo": [
    2.45,
    2,
    "skincare",
-   "Anua Niacinamide"
+   "Tatcha Indigo"
+  ],
+  "paula's choice|bha": [
+   2.45,
+   2,
+   "skincare",
+   "Paula's Choice BHA"
+  ],
+  "la roche-posay|lipikar": [
+   2.45,
+   2,
+   "skincare",
+   "La Roche-Posay Lipikar"
+  ],
+  "paula's choice|salicylic acid": [
+   2.45,
+   2,
+   "skincare",
+   "Paula's Choice Salicylic Acid"
+  ],
+  "ysl|blush 12 honeymoon": [
+   2.45,
+   2,
+   "makeup",
+   "YSL Blush 12 Honeymoon"
+  ],
+  "nyx|matte": [
+   2.45,
+   2,
+   "makeup",
+   "NYX Matte"
+  ],
+  "fenty beauty|match stix": [
+   2.45,
+   2,
+   "makeup",
+   "Fenty Beauty Match Stix"
+  ],
+  "cosrx|vitamin": [
+   2.45,
+   2,
+   "skincare",
+   "COSRX Vitamin"
+  ],
+  "e.l.f.|poreless putty primer": [
+   2.45,
+   2,
+   "makeup",
+   "e.l.f. Poreless Putty Primer"
   ],
   "burt's bees|lip balm": [
    2.45,
@@ -2404,47 +3203,65 @@
    "makeup",
    "Burt's Bees Lip Balm"
   ],
-  "cerave|sa smoothing cream": [
-   2.35,
-   2,
-   "skincare",
-   "CeraVe SA Smoothing Cream"
-  ],
   "aveeno|calm": [
    2.35,
    2,
    "skincare",
    "Aveeno Calm"
   ],
-  "cerave|moisturizing lotion": [
+  "la roche-posay|effaclar": [
    2.35,
    2,
    "skincare",
-   "CeraVe Moisturizing Lotion"
+   "La Roche-Posay Effaclar"
   ],
-  "beauty of joseon|aqua": [
+  "byoma|moisturizing": [
    2.35,
    2,
    "skincare",
-   "Beauty of Joseon Aqua"
+   "Byoma Moisturizing"
   ],
-  "farmacy|honey": [
+  "canmake|mermaid": [
    2.35,
    2,
    "skincare",
-   "Farmacy Honey"
+   "Canmake Mermaid"
   ],
-  "garnier|micellar": [
+  "torriden|dive": [
    2.35,
    2,
    "skincare",
-   "Garnier Micellar"
+   "Torriden Dive"
   ],
-  "saie|liquid": [
+  "dior|foundation stick": [
    2.35,
    2,
    "makeup",
-   "Saie Liquid"
+   "Dior Foundation Stick"
+  ],
+  "patrick ta|dream date": [
+   2.35,
+   2,
+   "makeup",
+   "Patrick Ta Dream Date"
+  ],
+  "patrick ta|shimmers": [
+   2.35,
+   2,
+   "makeup",
+   "Patrick Ta Shimmers"
+  ],
+  "makeup by mario|ethereal eyes": [
+   2.35,
+   2,
+   "makeup",
+   "Makeup by Mario Ethereal Eyes"
+  ],
+  "purito|centella": [
+   2.27,
+   2,
+   "skincare",
+   "Purito Centella"
   ],
   "clinique|happy": [
    2.27,
@@ -2452,11 +3269,17 @@
    "makeup",
    "Clinique Happy"
   ],
-  "maybelline|lash sensational": [
-   2.17,
+  "bioderma|atoderm intensive baume": [
+   2.15,
+   1,
+   "skincare",
+   "Bioderma Atoderm Intensive Baume"
+  ],
+  "la roche-posay|double repair moisturizer 27": [
+   2.0,
    2,
-   "makeup",
-   "Maybelline Lash Sensational"
+   "skincare",
+   "La Roche-Posay Double Repair Moisturizer 27"
   ],
   "la roche-posay|cleanser 21": [
    2.0,
@@ -2464,11 +3287,11 @@
    "skincare",
    "La Roche-Posay Cleanser 21"
   ],
-  "good molecules|hyaluronic acid serum 9": [
+  "the ordinary|niacinamide 10%": [
    2.0,
    2,
    "skincare",
-   "Good Molecules Hyaluronic Acid Serum 9"
+   "The Ordinary Niacinamide 10%"
   ]
  }
 }

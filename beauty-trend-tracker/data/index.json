@@ -1,28 +1,28 @@
 {
- "updated": "2026-11-02T22:29:09+00:00",
+ "updated": "2026-11-03T17:42:44+00:00",
  "weeks": [
   {
    "week": "2026-W45",
    "start": "2026-11-02",
    "end": "2026-11-08",
    "partial": true,
-   "generated_at": "2026-11-02T21:44:42+00:00",
-   "docs": 2791,
-   "days": 1.0,
+   "generated_at": "2026-11-03T17:39:47+00:00",
+   "docs": 4533,
+   "days": 1.7,
    "top": {
     "skincare": [
-     "CeraVe Resurfacing Retinol Serum",
      "CeraVe SA Cleanser",
-     "La Roche-Posay Cicaplast Baume B5",
-     "CeraVe Moisturizing Cream",
-     "La Roche-Posay Double Repair Moisturizer 27"
+     "Rom&nd Glasting Color Gloss Cream Nude Edition",
+     "Medik8 Crystal Retinal",
+     "CeraVe Resurfacing Retinol Serum",
+     "CeraVe Moisturizing Cream"
     ],
     "makeup": [
-     "Fenty Beauty Gloss Bomb Stix",
-     "Dior Lip Glow",
      "Fenty Beauty Diamond Bomb",
-     "e.l.f. Power Grip",
-     "YSL Blush 12 Honeymoon"
+     "Maybelline Fit Me",
+     "NYX Epic Ink Liner",
+     "Charlotte Tilbury Setting Spray",
+     "L'Or\u00e9al Infallible"
     ]
    }
   },
