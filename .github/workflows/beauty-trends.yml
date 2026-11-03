@@ -1,0 +1,81 @@
+name: Beauty trend scrape
+
+on:
+  schedule:
+    # Mondays (closes out last week) and Thursdays (mid-week refresh), 07:17 UTC
+    - cron: "17 7 * * 1,4"
+  workflow_dispatch:
+    inputs:
+      weeks:
+        description: "Completed weeks to keep filled (older missing weeks are backfilled)"
+        default: "6"
+      refresh:
+        description: "Rebuild weeks that already exist"
+        type: boolean
+        default: false
+  push:
+    paths:
+      - "beauty-trend-tracker/**"
+      - "!beauty-trend-tracker/data/**"
+      - ".github/workflows/beauty-trends.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: beauty-trends-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r beauty-trend-tracker/scraper/requirements.txt pytest
+      - name: Tests
+        run: python -m pytest -q beauty-trend-tracker/tests
+      - name: Scrape
+        env:
+          # Optional: a free Reddit "script" app makes reddit.com requests reliable.
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+        run: |
+          python beauty-trend-tracker/scraper/scrape.py \
+            --weeks "${{ inputs.weeks || '6' }}" \
+            ${{ inputs.refresh && '--refresh' || '' }}
+      - name: Save new data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add beauty-trend-tracker/data
+          if git diff --cached --quiet; then echo "No changes"; exit 0; fi
+          git commit -m "Update beauty trend data ($(date -u +%Y-%m-%d))"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep 5
+          done
+
+  deploy:
+    # Publishes the site on GitHub Pages. Needs Settings → Pages → Source: "GitHub Actions".
+    needs: scrape
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.pages.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: beauty-trend-tracker
+      - id: pages
+        uses: actions/deploy-pages@v4

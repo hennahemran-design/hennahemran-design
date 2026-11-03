@@ -1,0 +1,180 @@
+{
+ "updated": "2026-11-03T17:42:44+00:00",
+ "weeks": [
+  {
+   "week": "2026-W45",
+   "start": "2026-11-02",
+   "end": "2026-11-08",
+   "partial": true,
+   "generated_at": "2026-11-03T17:39:47+00:00",
+   "docs": 4533,
+   "days": 1.7,
+   "top": {
+    "skincare": [
+     "CeraVe SA Cleanser",
+     "Rom&nd Glasting Color Gloss Cream Nude Edition",
+     "Medik8 Crystal Retinal",
+     "CeraVe Resurfacing Retinol Serum",
+     "CeraVe Moisturizing Cream"
+    ],
+    "makeup": [
+     "Fenty Beauty Diamond Bomb",
+     "Maybelline Fit Me",
+     "NYX Epic Ink Liner",
+     "Charlotte Tilbury Setting Spray",
+     "L'Or\u00e9al Infallible"
+    ]
+   }
+  },
+  {
+   "week": "2026-W44",
+   "start": "2026-10-26",
+   "end": "2026-11-01",
+   "partial": false,
+   "generated_at": "2026-11-02T21:44:42+00:00",
+   "docs": 15764,
+   "days": 7.0,
+   "top": {
+    "skincare": [
+     "COSRX Snail Mucin",
+     "Aestura 365 Cream",
+     "Dieux Instant Angel",
+     "CeraVe Hydrating Cleanser",
+     "Farmacy Green Clean"
+    ],
+    "makeup": [
+     "Maybelline Fit Me",
+     "Est\u00e9e Lauder Double Wear Foundation",
+     "Dior Highlighter Palette",
+     "Dior Backstage Glow Maximizer Face Palette",
+     "Westman Atelier Contour"
+    ]
+   }
+  },
+  {
+   "week": "2026-W43",
+   "start": "2026-10-19",
+   "end": "2026-10-25",
+   "partial": false,
+   "generated_at": "2026-11-02T21:44:42+00:00",
+   "docs": 14704,
+   "days": 7.0,
+   "top": {
+    "skincare": [
+     "Illiyoon Ceramide Ato Concentrate Cream",
+     "Danessa Myricks Beauty Yummy Skin Glow Serum",
+     "Haruharu Wonder Black Rice Probiotics Barrier Essence",
+     "Neutrogena Hydro Boost",
+     "The Ordinary Azelaic Acid Suspension 10%"
+    ],
+    "makeup": [
+     "L'Or\u00e9al True Match",
+     "e.l.f. Power Grip Primer",
+     "L'Or\u00e9al Infallible",
+     "NARS Light Reflecting Foundation",
+     "Danessa Myricks Blurring Balm"
+    ]
+   }
+  },
+  {
+   "week": "2026-W42",
+   "start": "2026-10-12",
+   "end": "2026-10-18",
+   "partial": false,
+   "generated_at": "2026-11-02T21:44:42+00:00",
+   "docs": 15396,
+   "days": 7.0,
+   "top": {
+    "skincare": [
+     "La Roche-Posay Cicaplast",
+     "Aestura Atobarrier 365 Cream",
+     "Illiyoon Ceramide Ato Concentrate Cream",
+     "Byoma Milky Toner",
+     "Round Lab Dokdo Cleanser"
+    ],
+    "makeup": [
+     "Maybelline Fit Me",
+     "NARS Radiant Creamy Concealer",
+     "L'Or\u00e9al Telescopic Mascara",
+     "Fenty Beauty Gloss Bomb",
+     "Anastasia Beverly Hills Brow Wiz"
+    ]
+   }
+  },
+  {
+   "week": "2026-W41",
+   "start": "2026-10-05",
+   "end": "2026-10-11",
+   "partial": false,
+   "generated_at": "2026-11-02T21:44:42+00:00",
+   "docs": 15732,
+   "days": 7.0,
+   "top": {
+    "skincare": [
+     "CeraVe Moisturizing Cream",
+     "CeraVe Foaming Cleanser",
+     "Beauty of Joseon Relief Sun",
+     "Av\u00e8ne Cicalfate",
+     "COSRX Snail Mucin"
+    ],
+    "makeup": [
+     "L'Or\u00e9al Infallible",
+     "NYX Brow Glue",
+     "Maybelline Fit Me Matte",
+     "Rhode Pocket Blush",
+     "NYX Buttermelt Bronzer"
+    ]
+   }
+  },
+  {
+   "week": "2026-W40",
+   "start": "2026-09-28",
+   "end": "2026-10-04",
+   "partial": false,
+   "generated_at": "2026-11-02T21:44:42+00:00",
+   "docs": 15191,
+   "days": 7.0,
+   "top": {
+    "skincare": [
+     "Illiyoon Ceramide Ato Concentrate Cream",
+     "CeraVe Hydrating Cleanser",
+     "CeraVe Foaming Cleanser",
+     "Bior\u00e9 UV Aqua Rich Watery Essence",
+     "Round Lab 1025 Dokdo Cleanser"
+    ],
+    "makeup": [
+     "e.l.f. Power Grip Primer",
+     "L'Or\u00e9al Infallible",
+     "Missha BB Cream",
+     "Milani Setting Spray",
+     "Charlotte Tilbury Airbrush Flawless Hydrating Setting Spray"
+    ]
+   }
+  },
+  {
+   "week": "2026-W39",
+   "start": "2026-09-21",
+   "end": "2026-09-27",
+   "partial": false,
+   "generated_at": "2026-11-02T21:44:42+00:00",
+   "docs": 15544,
+   "days": 7.0,
+   "top": {
+    "skincare": [
+     "Torriden Dive",
+     "La Roche-Posay Anthelios",
+     "CeraVe Moisturizing Cream",
+     "Bioderma Micellar Water",
+     "Beauty of Joseon Relief Sun"
+    ],
+    "makeup": [
+     "L'Or\u00e9al Infallible",
+     "NYX Bare",
+     "Dior Backstage",
+     "L'Or\u00e9al True Match",
+     "NYX Butter Gloss"
+    ]
+   }
+  }
+ ]
+}

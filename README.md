@@ -7,3 +7,7 @@ What I'm working on:
 🚀 A self-led internship I'm building to gain hands-on market research/analytics experience
 
 📚 [Exam Round Planner](exam-round-planner/): a study planner anyone can use. Upload your classwork, rate your topics, and get a day-by-day plan with study guides, flashcards, mock exams and a tutor. **[Try it on Claude →](https://claude.ai/artifact/A2D8pjgkBdvgu7UeMyG8ua)**
+
+💄 [Beauty Trend Tracker](beauty-trend-tracker/): the top 5 trending skincare and makeup products each week, scraped from beauty communities, with the keywords people use about them (what each product is recommended for, what people like, complaints and Google searches). Past weeks are saved so you can compare trends over time. [See screenshots →](beauty-trend-tracker/#screenshots)
+
+[![Beauty Trend Tracker: top skincare products for the week](beauty-trend-tracker/screenshots/1-skincare.png)](beauty-trend-tracker/#screenshots)
