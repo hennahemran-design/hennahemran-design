@@ -1,28 +1,28 @@
 {
- "updated": "2026-11-03T17:42:44+00:00",
+ "updated": "2026-11-03T19:00:55+00:00",
  "weeks": [
   {
    "week": "2026-W45",
    "start": "2026-11-02",
    "end": "2026-11-08",
    "partial": true,
-   "generated_at": "2026-11-03T17:39:47+00:00",
-   "docs": 4533,
-   "days": 1.7,
+   "generated_at": "2026-11-03T18:56:43+00:00",
+   "docs": 4601,
+   "days": 1.8,
    "top": {
     "skincare": [
      "CeraVe SA Cleanser",
+     "SKIN1004 Centella",
      "Rom&nd Glasting Color Gloss Cream Nude Edition",
-     "Medik8 Crystal Retinal",
-     "CeraVe Resurfacing Retinol Serum",
-     "CeraVe Moisturizing Cream"
+     "La Roche-Posay Effaclar Cleanser",
+     "CeraVe Resurfacing Retinol Serum"
     ],
     "makeup": [
      "Fenty Beauty Diamond Bomb",
      "Maybelline Fit Me",
      "NYX Epic Ink Liner",
      "Charlotte Tilbury Setting Spray",
-     "L'Or\u00e9al Infallible"
+     "Charlotte Tilbury Pressed Powder"
     ]
    }
   },
