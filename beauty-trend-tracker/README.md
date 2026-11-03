@@ -2,6 +2,30 @@
 
 A website that shows the **top 5 trending skincare and makeup products each week**, and the keywords that come up with them: what people recommend each product for, what they like, what they complain about, and what they search on Google next to its name. You can go back to any past week, or look up a product or keyword to see how it moved week by week.
 
+## Screenshots
+
+These use real data from the week of Oct 26 – Nov 1, 2026: about 15,800 posts and comments from 10 beauty subreddits and Bluesky.
+
+**Top 5 skincare products**, each with its 9-week trend and the change against its 4-week average:
+
+![Top skincare products for the week, led by COSRX Snail Mucin](screenshots/1-skincare.png)
+
+**One product up close.** What people recommend it for, what they like, words trending alongside it, Google searches, tone, and quotes that link to the original posts:
+
+![Maybelline Fit Me card with keywords, Google searches and quotes](screenshots/2-product-card.png)
+
+**Trending keywords.** Skin needs, praise and complaints rising against the 4 weeks before, and new two-word phrases (Halloween looks and "chainsaw mascara" that week):
+
+![Trending keywords and rising phrases](screenshots/3-trending-keywords.png)
+
+**Look up past weeks.** Search a product or keyword to chart it week by week:
+
+![Weekly buzz for snail mucin from Sep 21 to Nov 2](screenshots/4-look-up-past-weeks.png)
+
+**On a phone:**
+
+<img src="screenshots/5-phone.png" alt="The skincare tab at phone width" width="300">
+
 ## What you see
 
 - **Skincare / Makeup tabs.** The 5 products with the most buzz this week, weighted toward products that are growing. Each card shows:
