@@ -1,28 +1,28 @@
 {
- "updated": "2026-11-03T19:00:55+00:00",
+ "updated": "2026-11-05T15:36:09+00:00",
  "weeks": [
   {
    "week": "2026-W45",
    "start": "2026-11-02",
    "end": "2026-11-08",
    "partial": true,
-   "generated_at": "2026-11-03T18:56:43+00:00",
-   "docs": 4601,
-   "days": 1.8,
+   "generated_at": "2026-11-05T15:31:13+00:00",
+   "docs": 7382,
+   "days": 3.6,
    "top": {
     "skincare": [
+     "Vanicream Gentle Facial Cleanser",
      "CeraVe SA Cleanser",
-     "SKIN1004 Centella",
-     "Rom&nd Glasting Color Gloss Cream Nude Edition",
-     "La Roche-Posay Effaclar Cleanser",
-     "CeraVe Resurfacing Retinol Serum"
+     "CeraVe Moisturizing Cream",
+     "Neutrogena Hydroboost Body Gel Cream",
+     "Neutrogena Hydro Boost"
     ],
     "makeup": [
-     "Fenty Beauty Diamond Bomb",
-     "Maybelline Fit Me",
-     "NYX Epic Ink Liner",
-     "Charlotte Tilbury Setting Spray",
-     "Charlotte Tilbury Pressed Powder"
+     "Danessa Myricks Yummy Skin Liquid Blurring Balm Powder",
+     "Saie Supersuede Eyeshadow",
+     "Hourglass Veil",
+     "Saie Eyeshadow",
+     "Huda Beauty Easy Blur Primer"
     ]
    }
   },
