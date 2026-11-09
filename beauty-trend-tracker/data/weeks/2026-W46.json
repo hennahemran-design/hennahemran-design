@@ -1,0 +1,2142 @@
+{
+ "week": "2026-W46",
+ "start": "2026-11-09",
+ "end": "2026-11-15",
+ "partial": true,
+ "generated_at": "2026-11-09T17:35:36+00:00",
+ "stats": {
+  "posts": 1023,
+  "comments": 996,
+  "subreddits": {
+   "Bluesky": 654,
+   "Sephora": 267,
+   "MakeupAddiction": 239,
+   "SkincareAddiction": 222,
+   "30PlusSkinCare": 191,
+   "AsianBeauty": 130,
+   "SkincareAddicts": 130,
+   "BeautyGuruChatter": 88,
+   "Ulta": 75,
+   "drugstoreMUA": 17,
+   "MakeupRehab": 6
+  },
+  "sources": {
+   "reddit_archive": 1365,
+   "reddit": 0,
+   "bluesky": 677
+  },
+  "products_found": 33,
+  "compared_weeks": [
+   "2026-W42",
+   "2026-W43",
+   "2026-W44",
+   "2026-W45"
+  ],
+  "days_covered": 1.0
+ },
+ "skincare": [
+  {
+   "rank": 1,
+   "key": "skin1004|centella tone brightening capsule",
+   "name": "SKIN1004 Centella Tone Brightening Capsule",
+   "brand": "SKIN1004",
+   "category": "skincare",
+   "score": 4.69,
+   "trend_score": 7.69,
+   "mentions": 4,
+   "threads": 4,
+   "upvotes": 4,
+   "baseline": 0.91,
+   "change_pct": 415,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 9.03
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 16.48
+    },
+    {
+     "week": "2026-W46",
+     "score": 4.69
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "acne",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "water gel",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "hydro boost",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "boost water",
+      "count": 2,
+      "lift": 252.5
+     },
+     {
+      "term": "milky toner",
+      "count": 2,
+      "lift": 202.0
+     },
+     {
+      "term": "toner serum",
+      "count": 2,
+      "lift": 168.3
+     },
+     {
+      "term": "moisturizer",
+      "count": 2,
+      "lift": 11.3
+     }
+    ],
+    "search_terms": [
+     "skin1004 centella tone brightening capsule ampoule",
+     "skin1004 centella tone brightening capsule ampoule review",
+     "skin1004 centella tone brightening capsule cream",
+     "skin1004 centella tone brightening capsule ampoule 100ml",
+     "skin1004 centella tone brightening capsule ampoule ingredients",
+     "skin1004 centella tone brightening capsule cream 75ml",
+     "skin1004 centella tone brightening capsule ampoule 30ml",
+     "skin1004 centella tone brightening capsule ampoule 50ml",
+     "skin 1004 centella tone brightening capsule ampoule price in bangladesh",
+     "skin1004 madagascar centella tone brightening capsule ampoule for sensitive skin",
+     "skin1004 madagascar centella tone brightening capsule ampoule for oily skin",
+     "skin1004 madagascar centella tone brightening capsule ampoule for all skin types"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.25,
+    "neutral": 0.75,
+    "negative": 0.0,
+    "n": 4
+   },
+   "quotes": [
+    {
+     "text": "…my current routine: Cleanser: cetaphil Toner: Anua Milky Toner Serum: SKIN1004 Centella Tone Brightening Capsule Moisturizer: Neutrogena Hydro Boost Water Gel Sunscreen: SKIN1004 Hyalu-Cica SPF 50+ im hoping to achieve that healthy, glowy, hydrated look while…",
+     "url": "https://www.reddit.com/r/SkincareAddicts/comments/1xroh36/28f_my_skin_went_from_clear_to_oily_puffy/",
+     "score": 1,
+     "sub": "SkincareAddicts",
+     "kind": "post"
+    },
+    {
+     "text": "…my current routine: Cleanser: cetaphil Toner: Anua Milky Toner Serum: SKIN1004 Centella Tone Brightening Capsule Moisturizer: Neutrogena Hydro Boost Water Gel Sunscreen: SKIN1004 Hyalu-Cica SPF 50+ im hoping to achieve that healthy, glowy, hydrated look while…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrol9i/routine_help_28f_my_skin_went_from_clear_to_oily/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…Green clean for years and they’ve never failed me. I’m currently using Skin1004 centella cleansing oil and it works fine too.",
+     "url": "https://www.reddit.com/r/Sephora/comments/1xrgo9g/a_mascara_that_wont_make_my_lashes_fall_out/19scxcxdbpaww/",
+     "score": 1,
+     "sub": "Sephora",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddicts": 1,
+    "SkincareAddiction": 1,
+    "Sephora": 1,
+    "AsianBeauty": 1
+   }
+  },
+  {
+   "rank": 2,
+   "key": "avène|cicalfate+",
+   "name": "Avène Cicalfate+",
+   "brand": "Avène",
+   "category": "skincare",
+   "score": 3.52,
+   "trend_score": 5.68,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 3,
+   "baseline": 0.28,
+   "change_pct": 1159,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 3.37
+    },
+    {
+     "week": "2026-W40",
+     "score": 4.37
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.69
+    },
+    {
+     "week": "2026-W45",
+     "score": 5.14
+    },
+    {
+     "week": "2026-W46",
+     "score": 3.52
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "acne",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "people_like": [],
+    "complaints": [
+     {
+      "label": "white cast",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "trending_alongside": [
+     {
+      "term": "alternatives",
+      "count": 3,
+      "lift": 202.0
+     },
+     {
+      "term": "daily",
+      "count": 3,
+      "lift": 44.9
+     }
+    ],
+    "search_terms": [
+     "avène cicalfate+ restorative protective cream",
+     "avène cicalfate+ serum",
+     "avène cicalfate+ before or after moisturizer",
+     "avène cicalfate+ restorative cream",
+     "avène cicalfate+ intensive skin restorative serum",
+     "avène cicalfate+ remodeling scar gel",
+     "avène cicalfate+ hydrating skin recovery emulsion",
+     "avène cicalfate+ intensive restorative serum",
+     "avène cicalfate+ cream",
+     "avene cicalfate for perioral dermatitis",
+     "avene cicalfate for eczema",
+     "avene cicalfate for rosacea"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.333,
+    "neutral": 0.667,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "[Product Request] any alternatives to Avène Cicalfate+ for daily use? its just a bit too much for daytime use because of white cast but its the only thing that works for my acne , if anyone knows something similar that is good for everyday lmk",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrs5e1/product_request_any_alternatives_to_avène/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "any alternatives to Avène Cicalfate+ for daily use? [removed]",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrrzy2/any_alternatives_to_avène_cicalfate_for_daily_use/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "alternatives to Avène Cicalfate+ for daily use? [removed]",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrrynf/alternatives_to_avène_cicalfate_for_daily_use/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 3
+   }
+  },
+  {
+   "rank": 3,
+   "key": "bioderma|micellar",
+   "name": "Bioderma Micellar",
+   "brand": "Bioderma",
+   "category": "skincare",
+   "score": 2.87,
+   "trend_score": 4.08,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 12,
+   "baseline": 0.53,
+   "change_pct": 440,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 11.44
+    },
+    {
+     "week": "2026-W40",
+     "score": 2.17
+    },
+    {
+     "week": "2026-W41",
+     "score": 9.01
+    },
+    {
+     "week": "2026-W42",
+     "score": 3.92
+    },
+    {
+     "week": "2026-W43",
+     "score": 5.97
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.45
+    },
+    {
+     "week": "2026-W45",
+     "score": 2.55
+    },
+    {
+     "week": "2026-W46",
+     "score": 2.87
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "gentle",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [],
+    "search_terms": [
+     "bioderma micellar water",
+     "bioderma micellar water vs garnier micellar water",
+     "bioderma micellar water costco",
+     "bioderma micellar cleansing oil",
+     "bioderma micellar water ingredients",
+     "bioderma micellar water travel size",
+     "bioderma micellar water blue vs pink",
+     "bioderma micellar water 28.7 oz",
+     "bioderma micellar water near me",
+     "bioderma sensibio forte cream",
+     "bioderma sensibio forte moisturizer",
+     "bioderma sensibio forte 40ml"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…tle fabric acts like a physical exfoliator. On makeup days, I will use bioderma micellar (Pink cap) \\[\\~15$\\] to wipe makeup, also using a cloth, or a cotton pad. I use a cloth which wpuld be the same one i use as a hot compress later on. Afterwards, i begin w…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrqlm8/before_and_after_fungal_acne_safe_routine_for/",
+     "score": 10,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…breakout) * Avene Cicalfate (around eyes) * Acne patches **Night:** * Bioderma Micellar Water * Cle de Peau Cleanser * Round Lab Moisturizer * Avene Cicalfate (around eyes) * Acne patches or acne cream Has anyone dealt with this combination of barrier damage,…",
+     "url": "https://www.reddit.com/r/SkincareAddicts/comments/1xrl1wj/help_eczema_breakout/",
+     "score": 2,
+     "sub": "SkincareAddicts",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 1,
+    "SkincareAddicts": 1
+   }
+  },
+  {
+   "rank": 4,
+   "key": "vanicream|gentle",
+   "name": "Vanicream Gentle",
+   "brand": "Vanicream",
+   "category": "skincare",
+   "score": 2.95,
+   "trend_score": 4.07,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 13,
+   "baseline": 0.76,
+   "change_pct": 289,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 5.98
+    },
+    {
+     "week": "2026-W40",
+     "score": 3.52
+    },
+    {
+     "week": "2026-W41",
+     "score": 3.62
+    },
+    {
+     "week": "2026-W42",
+     "score": 4.45
+    },
+    {
+     "week": "2026-W43",
+     "score": 3.79
+    },
+    {
+     "week": "2026-W44",
+     "score": 4.04
+    },
+    {
+     "week": "2026-W45",
+     "score": 8.97
+    },
+    {
+     "week": "2026-W46",
+     "score": 2.95
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "acne",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [],
+    "complaints": [
+     {
+      "label": "broke me out",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "trending_alongside": [
+     {
+      "term": "cleanser",
+      "count": 2,
+      "lift": 26.6
+     }
+    ],
+    "search_terms": [
+     "vanicream gentle facial cleanser",
+     "vanicream gentle body wash",
+     "vanicream gentle cleanser",
+     "vanicream gentle facial cleanser vs cerave foaming facial cleanser",
+     "vanicream gentle facial cleanser vs cetaphil gentle skin cleanser",
+     "vanicream gentle facial cleanser near me",
+     "vanicream gentle facial cleanser vs cerave hydrating facial cleanser",
+     "vanicream gentle facial cleanser for sensitive skin",
+     "vanicream gentle facial moisturizer",
+     "vanicream gentle facial cleanser ingredients",
+     "vanicream gentle wash for baby",
+     "vanicream gentle cleanser for sensitive skin"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.5,
+    "neutral": 0.5,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…use as a hot compress to pat my face. It feels soothing imo. 2. I use vanicream gentle facial cleanser \\[\\~10$\\] in circular motions on my face (10-20 seconds) Then i go with my warm/hot cloth to wipe the soap away focusing on my chin and esp on my nose. Ultim…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrqlm8/before_and_after_fungal_acne_safe_routine_for/",
+     "score": 10,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "[Product Question] substitute for Vanicream gentle cleanser skin type: acne prone, clogged and congested skin. Would these be a good or similar switch from the Vanicream gentle cleanser? The vanicream one isn't available in my country. Has anyone tried them?",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xrpg9l/product_question_substitute_for_vanicream_gentle/",
+     "score": 3,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 2
+   }
+  },
+  {
+   "rank": 5,
+   "key": "bioré|uv",
+   "name": "Bioré UV",
+   "brand": "Bioré",
+   "category": "skincare",
+   "score": 2.9,
+   "trend_score": 4.04,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 18,
+   "baseline": 0.66,
+   "change_pct": 336,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 3.61
+    },
+    {
+     "week": "2026-W40",
+     "score": 10.81
+    },
+    {
+     "week": "2026-W41",
+     "score": 8.3
+    },
+    {
+     "week": "2026-W42",
+     "score": 8.42
+    },
+    {
+     "week": "2026-W43",
+     "score": 3.63
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.35
+    },
+    {
+     "week": "2026-W45",
+     "score": 4.21
+    },
+    {
+     "week": "2026-W46",
+     "score": 2.9
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "dry skin",
+      "count": 2,
+      "share": 1.0
+     },
+     {
+      "label": "oily skin",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "hot / humid weather",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [
+     {
+      "label": "glowy / dewy",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "packaging",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "lighter",
+      "count": 2,
+      "lift": 183.6
+     },
+     {
+      "term": "seems",
+      "count": 2,
+      "lift": 84.2
+     },
+     {
+      "term": "sunscreen",
+      "count": 2,
+      "lift": 13.1
+     }
+    ],
+    "search_terms": [
+     "bioré uv aqua rich watery essence",
+     "bioré uv aqua rich",
+     "bioré uv aqua rich spf 50",
+     "bioré uv aqua rich weightless moisturizer spf 50",
+     "bioré uv aqua rich watery essence spf 50+",
+     "bioré uv aqua rich watery essence spf50+ pa++++",
+     "bioré uv aqua rich daily hydrating facial moisturizer spf 50",
+     "bioré uv aqua rich aqua protect mist",
+     "bioré uv aqua rich airy hold cream",
+     "biore uv for oily skin",
+     "biore uv for face",
+     "biore uv for kids"
+    ]
+   },
+   "sentiment": {
+    "positive": 1.0,
+    "neutral": 0.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…be more for normal skin and feel a little lighter. It's the same with the Biore UV - I can't stand the essence because it feels super thick and makes me look oily, but the gel (the upright bottle!) is perfect for me. From a quick google it seems like essences…",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xrov1q/what_is_the_difference_between_these_two/19sdj891m68x0/",
+     "score": 17,
+     "sub": "AsianBeauty",
+     "kind": "comment"
+    },
+    {
+     "text": "…in humid conditions than in dry ones. if it still fights you after that, Biore UV Aqua Rich watery essence or Round Lab’s sunscreen are lighter and layer better on dry skin. good luck finding one that fits.",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xqsdmz/feel_like_im_going_crazy_w_the_anessa_sunscreen/19sd7lakgatb4/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "AsianBeauty": 2
+   }
+  }
+ ],
+ "makeup": [
+  {
+   "rank": 1,
+   "key": "maybelline|lash sensational sky high",
+   "name": "Maybelline Lash Sensational Sky High",
+   "brand": "Maybelline",
+   "category": "makeup",
+   "score": 5.31,
+   "trend_score": 9.63,
+   "mentions": 4,
+   "threads": 4,
+   "upvotes": 94,
+   "baseline": 0.69,
+   "change_pct": 674,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 3.19
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 12.03
+    },
+    {
+     "week": "2026-W42",
+     "score": 6.79
+    },
+    {
+     "week": "2026-W43",
+     "score": 2.45
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 9.98
+    },
+    {
+     "week": "2026-W46",
+     "score": 5.31
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "buildable",
+      "count": 2,
+      "share": 0.5
+     },
+     {
+      "label": "smudge / water-proof",
+      "count": 2,
+      "share": 0.5
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "multiplying buildable",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "lengthening defining",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "lashsensational skyhigh",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "defining curling",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "curling multiplying",
+      "count": 2,
+      "lift": 336.7
+     },
+     {
+      "term": "volumizing lengthening",
+      "count": 2,
+      "lift": 252.5
+     },
+     {
+      "term": "count mascara",
+      "count": 2,
+      "lift": 252.5
+     },
+     {
+      "term": "black count",
+      "count": 2,
+      "lift": 252.5
+     },
+     {
+      "term": "waterproof",
+      "count": 2,
+      "lift": 72.1
+     },
+     {
+      "term": "eyes",
+      "count": 2,
+      "lift": 19.8
+     }
+    ],
+    "search_terms": [
+     "maybelline lash sensational sky high mascara",
+     "maybelline lash sensational sky high waterproof mascara",
+     "maybelline lash sensational sky high waterproof",
+     "maybelline lash sensational sky high mascara blackest black vs very black",
+     "maybelline lash sensational sky high washable mascara",
+     "maybelline lash sensational sky high mascara review",
+     "maybelline lash sensational sky high mascara near me",
+     "maybelline lash sensational sky high mascara tubing",
+     "maybelline lash sensational sky high lengthening mascara",
+     "maybelline lash sensational sky high for lengthening",
+     "maybelline lash sensational sky high in true brown",
+     "maybelline lash sensational sky high in burgundy haze"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 4
+   },
+   "quotes": [
+    {
+     "text": "I’m almost 30 and want to look more mature. Is it my face or makeup that makes me look young? Close ups are video screenshots so it makes my skin smoother. No intentional filters used, just filmed on front cam iPhone 14. Also I just sprayed a setting spray so…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrgyk2/im_almost_30_and_want_to_look_more_mature_is_it/",
+     "score": 93,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "Could anyone recommend a mascara that holds a curl on naturally straight lashes and can withstand me using eye drops every 30 minutes? A big ask... But I have very straight eyelashes, and I used to be okay curling them, then using 'Maybelline Lash Sensational…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrtr0g/could_anyone_recommend_a_mascara_that_holds_a/",
+     "score": 1,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "Maybelline Lash Sensational Sky High Washable Mascara Makeup, Volumizing, Lengthening, Defining, Curling, Multiplying, Buildable Formula, Blackest Black, 1 Count#mascara#Maybelline#LashSensational#SkyHigh#makeup",
+     "url": "https://bsky.app/profile/ronaldcrespo.bsky.social/post/3mzvhc77xec2v",
+     "score": 0,
+     "sub": "Bluesky",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "Bluesky": 2,
+    "MakeupAddiction": 2
+   }
+  },
+  {
+   "rank": 2,
+   "key": "revlon|colorstay",
+   "name": "Revlon Colorstay",
+   "brand": "Revlon",
+   "category": "makeup",
+   "score": 4.37,
+   "trend_score": 6.68,
+   "mentions": 4,
+   "threads": 3,
+   "upvotes": 7,
+   "baseline": 1.13,
+   "change_pct": 288,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 7.59
+    },
+    {
+     "week": "2026-W40",
+     "score": 6.47
+    },
+    {
+     "week": "2026-W41",
+     "score": 13.04
+    },
+    {
+     "week": "2026-W42",
+     "score": 4.24
+    },
+    {
+     "week": "2026-W43",
+     "score": 9.29
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.52
+    },
+    {
+     "week": "2026-W45",
+     "score": 15.46
+    },
+    {
+     "week": "2026-W46",
+     "score": 4.37
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "oily skin",
+      "count": 2,
+      "share": 0.5
+     },
+     {
+      "label": "dark circles",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "people_like": [
+     {
+      "label": "smudge / water-proof",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "oily",
+      "count": 2,
+      "lift": 23.0
+     }
+    ],
+    "search_terms": [
+     "revlon colorstay foundation",
+     "revlon colorstay lipstick",
+     "revlon colorstay eyeliner",
+     "revlon colorstay lip liner",
+     "revlon colorstay brow pencil",
+     "revlon colorstay multi liner",
+     "revlon colorstay creme eyeshadow",
+     "revlon colorstay concealer",
+     "revlon colorstay satin ink",
+     "revlon colorstay forever scarlet",
+     "revlon colorstay for dry skin",
+     "revlon colorstay forever pink"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 4
+   },
+   "quotes": [
+    {
+     "text": "Revlon Colorstay Lipliner in shade Red is on sale for 99 cents!",
+     "url": "https://www.reddit.com/r/Ulta/comments/1xrk0qg/revlon_colorstay_lipliner_in_shade_red_is_on_sale/",
+     "score": 3,
+     "sub": "Ulta",
+     "kind": "post"
+    },
+    {
+     "text": "…ones, but panda eyes are definitely a no-no as well so I came across the revlon colorstay full time mascara (non-waterproof version) and I LOVED it I was able to wear this one for eight hours without having dark circles. it did not flake and it separated my la…",
+     "url": "https://www.reddit.com/r/drugstoreMUA/comments/1xrrkv3/non_clumping_easy_to_remove_mascara/",
+     "score": 2,
+     "sub": "drugstoreMUA",
+     "kind": "post"
+    },
+    {
+     "text": "Revlon Colorstay Combination/Oily is really close. I find both the finish and the wear very similar.",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrcfsd/whats_the_next_best_thing_to_estée_lauder_double/19sdcl3zu7ncy/",
+     "score": 1,
+     "sub": "MakeupAddiction",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2,
+    "Ulta": 1,
+    "drugstoreMUA": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "danessa myricks|blurring balm",
+   "name": "Danessa Myricks Blurring Balm",
+   "brand": "Danessa Myricks",
+   "category": "makeup",
+   "score": 4.04,
+   "trend_score": 5.83,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 11,
+   "baseline": 1.26,
+   "change_pct": 220,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 7.86
+    },
+    {
+     "week": "2026-W40",
+     "score": 5.8
+    },
+    {
+     "week": "2026-W41",
+     "score": 5.35
+    },
+    {
+     "week": "2026-W42",
+     "score": 9.09
+    },
+    {
+     "week": "2026-W43",
+     "score": 16.22
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.81
+    },
+    {
+     "week": "2026-W45",
+     "score": 7.24
+    },
+    {
+     "week": "2026-W46",
+     "score": 4.04
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "oily skin",
+      "count": 3,
+      "share": 1.0
+     },
+     {
+      "label": "dry skin",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "people_like": [
+     {
+      "label": "matte finish",
+      "count": 1,
+      "share": 0.333
+     },
+     {
+      "label": "glowy / dewy",
+      "count": 1,
+      "share": 0.333
+     },
+     {
+      "label": "long-lasting",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "setting spray",
+      "count": 2,
+      "lift": 134.7
+     },
+     {
+      "term": "oily",
+      "count": 3,
+      "lift": 45.9
+     },
+     {
+      "term": "powder",
+      "count": 2,
+      "lift": 26.9
+     }
+    ],
+    "search_terms": [
+     "danessa myricks blurring balm powder",
+     "danessa myricks blurring balm mini",
+     "danessa myricks blurring balm universal",
+     "danessa myricks blurring balm how to use",
+     "danessa myricks blurring balm universal vs universal radiant",
+     "danessa myricks blurring balm dupe",
+     "danessa myricks blurring balm spray",
+     "danessa myricks blurring balm vs water powder serum",
+     "danessa myricks blurring balm ulta",
+     "danessa myricks blurring balm for dry skin",
+     "danessa myricks blurring balm for oily skin",
+     "danessa myricks blurring balm for combination skin"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "The holy trinity for oily skin (it’s Danessa) I got the Danessa Myricks Blurring Water Powder Serum, Blurring Balm Powder, and Setting Spray at the start of the sale. I have gone out two times now using these products and 10+ hours later, my skin was mostly st…",
+     "url": "https://www.reddit.com/r/Sephora/comments/1xrk54n/the_holy_trinity_for_oily_skin_its_danessa/",
+     "score": 7,
+     "sub": "Sephora",
+     "kind": "post"
+    },
+    {
+     "text": "I’ve begun using Danessa Myricks blurring balm (not the radiant one). I put it on after all my skincare has dried down some and I put it on the spots that get oily for me. It’s been a godsend. It really keeps the oil at bay all day for me.",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrrvlx/product_recommendations_that_are_a_quick_fix_for/19sdmuyjbzrup/",
+     "score": 3,
+     "sub": "MakeupAddiction",
+     "kind": "comment"
+    },
+    {
+     "text": "…ny of these products I would love to hear your thoughts. Danessa myricks liquid blurring balm - I have dry skin but get really oily with makeup, and usually never uses a setting spray so we’ll see. Danessa myricks blurring balm powder - I really wanted the tin…",
+     "url": "https://www.reddit.com/r/Sephora/comments/1xrwmjz/pick_apart_my_sale_haul/",
+     "score": 1,
+     "sub": "Sephora",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "Sephora": 2,
+    "MakeupAddiction": 1
+   }
+  },
+  {
+   "rank": 4,
+   "key": "colourpop|contour",
+   "name": "ColourPop Contour",
+   "brand": "ColourPop",
+   "category": "makeup",
+   "score": 3.54,
+   "trend_score": 6.05,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 97,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 3.54
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "sun protection",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "laguna beach",
+      "count": 2,
+      "lift": 673.3
+     }
+    ],
+    "search_terms": [
+     "colourpop contour stick",
+     "colourpop contour palette",
+     "colourpop contour stix",
+     "colourpop contour liquid",
+     "colourpop contour powder",
+     "colourpop contour brush",
+     "colourpop contour stick review",
+     "colourpop contour stix laguna beach",
+     "colourpop contour stick ulta",
+     "is colourpop contour stick acne safe",
+     "is colourpop worth it"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…Bare Glow 2aN blush pallet Fall In Love 2aN Glast highlighter in Shell Colorpop contour stick in Laguna Beach IHADA SPF powder KOSE setting spray EYES Maybelline Lash Sensational 2aN Better Me Eyeshadow pallet in Fairy (sparkle all over, dark pink on outer and…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrgyk2/im_almost_30_and_want_to_look_more_mature_is_it/",
+     "score": 93,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…ist: BASE: Haus Labs concealer 11, NARS blush in Orgasm (old formula), Colorpop contour in Laguna Beach. EYES/BROWS: Makeup by Mario Cool tone mattes pallet. For brows as well. LIPS: MAC Stone and Cool Spice. clear gloss I know I have a rounder face and do my…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrkwir/my_sophisticated_mature_smoked_out_eye_plus_a/",
+     "score": 4,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2
+   }
+  },
+  {
+   "rank": 5,
+   "key": "mac|stone",
+   "name": "MAC Stone",
+   "brand": "MAC",
+   "category": "makeup",
+   "score": 3.54,
+   "trend_score": 5.64,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 97,
+   "baseline": 0.36,
+   "change_pct": 890,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W38",
+     "score": null
+    },
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 6.24
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 3.77
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 3.54
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [],
+    "search_terms": [
+     "mac stone lip liner",
+     "mac stone lipstick",
+     "mac stone lip liner dupe",
+     "mac stone dupe",
+     "mac stone lip liner dupe nyx",
+     "mac stone photography",
+     "mac stone liner",
+     "mac stone lipstick dupe",
+     "mac stoneridge",
+     "mac stone for darker skin",
+     "mac stone on pale skin",
+     "mac stone on olive skin"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…ows are recently dyed. No gel or fill but I’d usually use ELF clear gel LIP MAC stone 2aN lip tint Mahogany",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrgyk2/im_almost_30_and_want_to_look_more_mature_is_it/",
+     "score": 93,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…ES/BROWS: Makeup by Mario Cool tone mattes pallet. For brows as well. LIPS: MAC Stone and Cool Spice. clear gloss I know I have a rounder face and do my makeup in a youthful trendy manner. And I got plenty of advice so thank you! I also got plenty of comment s…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xrkwir/my_sophisticated_mature_smoked_out_eye_plus_a/",
+     "score": 4,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2
+   }
+  }
+ ],
+ "trending_keywords": [
+  {
+   "label": "sun protection",
+   "count": 67,
+   "expected": 39.7,
+   "change_pct": 69,
+   "group": "recommended_for"
+  },
+  {
+   "label": "fine lines & wrinkles",
+   "count": 42,
+   "expected": 22.1,
+   "change_pct": 90,
+   "group": "recommended_for"
+  },
+  {
+   "label": "blackheads",
+   "count": 14,
+   "expected": 9.2,
+   "change_pct": 52,
+   "group": "recommended_for"
+  },
+  {
+   "label": "gentle",
+   "count": 42,
+   "expected": 33.2,
+   "change_pct": 27,
+   "group": "people_like"
+  },
+  {
+   "label": "drying",
+   "count": 21,
+   "expected": 15.0,
+   "change_pct": 40,
+   "group": "complaints"
+  },
+  {
+   "label": "fungal acne",
+   "count": 9,
+   "expected": 5.5,
+   "change_pct": 62,
+   "group": "recommended_for"
+  },
+  {
+   "label": "glowy / dewy",
+   "count": 58,
+   "expected": 50.2,
+   "change_pct": 16,
+   "group": "people_like"
+  },
+  {
+   "label": "worth the hype",
+   "count": 21,
+   "expected": 16.8,
+   "change_pct": 25,
+   "group": "people_like"
+  },
+  {
+   "label": "sensitive skin",
+   "count": 44,
+   "expected": 38.1,
+   "change_pct": 16,
+   "group": "recommended_for"
+  },
+  {
+   "label": "packaging",
+   "count": 29,
+   "expected": 24.6,
+   "change_pct": 18,
+   "group": "people_like"
+  },
+  {
+   "label": "sheer / light coverage",
+   "count": 13,
+   "expected": 10.2,
+   "change_pct": 28,
+   "group": "people_like"
+  },
+  {
+   "label": "hydrating",
+   "count": 64,
+   "expected": 58.8,
+   "change_pct": 9,
+   "group": "people_like"
+  },
+  {
+   "label": "events / weddings",
+   "count": 11,
+   "expected": 8.9,
+   "change_pct": 23,
+   "group": "recommended_for"
+  },
+  {
+   "label": "acne",
+   "count": 112,
+   "expected": 106.0,
+   "change_pct": 6,
+   "group": "recommended_for"
+  }
+ ],
+ "emerging_terms": [
+  {
+   "label": "shade cloth",
+   "count": 48,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "sun screen",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "sun shade",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "mesh tarp",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "customized size",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "beyond customized",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "tarp sun",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "sun screens",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "grommets protection",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "protection mesh",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "shade beyond",
+   "count": 25,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "outdoor patio",
+   "count": 24,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "customized shade",
+   "count": 23,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "pergola cover",
+   "count": 23,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "cover canopy",
+   "count": 23,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "grommets outdoor",
+   "count": 23,
+   "expected": 0.0,
+   "change_pct": null
+  }
+ ],
+ "keyword_counts": {
+  "recommended_for": {
+   "fine lines & wrinkles": 42,
+   "dark circles": 32,
+   "sensitive skin": 44,
+   "acne": 112,
+   "lips": 6,
+   "hormonal acne": 7,
+   "redness / rosacea": 28,
+   "large pores": 24,
+   "blackheads": 14,
+   "eczema": 6,
+   "oily skin": 45,
+   "dullness / glow": 15,
+   "fungal acne": 9,
+   "damaged barrier": 37,
+   "hyperpigmentation": 13,
+   "sun protection": 67,
+   "cold weather": 9,
+   "beginners": 3,
+   "dehydrated skin": 6,
+   "texture": 27,
+   "hot / humid weather": 28,
+   "dry skin": 28,
+   "combination skin": 10,
+   "olive / undertone match": 13,
+   "under makeup": 4,
+   "fair skin": 9,
+   "events / weddings": 11,
+   "no-makeup look": 6,
+   "mature skin": 2,
+   "hooded eyes": 7,
+   "oily lids": 1,
+   "deep skin tones": 2
+  },
+  "people_like": {
+   "results / it works": 41,
+   "hydrating": 64,
+   "gentle": 42,
+   "fragrance-free": 6,
+   "glowy / dewy": 58,
+   "pigmented": 21,
+   "blendable": 12,
+   "affordable": 39,
+   "matte finish": 29,
+   "holy grail": 10,
+   "repurchase": 11,
+   "great dupe": 13,
+   "no white cast": 2,
+   "packaging": 29,
+   "long-lasting": 13,
+   "worth the hype": 21,
+   "smudge / water-proof": 13,
+   "fast-absorbing": 2,
+   "lightweight": 8,
+   "natural / skin-like": 4,
+   "sheer / light coverage": 13,
+   "buildable": 4,
+   "full coverage": 4,
+   "non-greasy": 4,
+   "smells nice": 1
+  },
+  "complaints": {
+   "irritation / stinging": 49,
+   "drying": 21,
+   "greasy / sticky": 18,
+   "broke me out": 12,
+   "white cast": 7,
+   "formula change": 5,
+   "too expensive": 6,
+   "pilling": 6,
+   "shade range": 8,
+   "fragrance": 11,
+   "cakey / patchy": 8,
+   "oxidizes": 3,
+   "fades fast": 1,
+   "overhyped": 5,
+   "creases": 1
+  }
+ },
+ "term_counts": {
+  "shade cloth": 48,
+  "sun screen": 25,
+  "sun shade": 25,
+  "mesh tarp": 25,
+  "customized size": 25,
+  "beyond customized": 25,
+  "tarp sun": 25,
+  "sun screens": 25,
+  "grommets protection": 25,
+  "protection mesh": 25,
+  "shade beyond": 25,
+  "outdoor patio": 24,
+  "customized shade": 23,
+  "pergola cover": 23,
+  "cover canopy": 23,
+  "grommets outdoor": 23,
+  "shade fabric": 23,
+  "vicllax customized": 23,
+  "screen fabric": 23,
+  "garden pergola": 23,
+  "patio garden": 23,
+  "fabric sun": 23,
+  "outdoor sun": 23,
+  "reinforced grommets": 23,
+  "heritage foundation": 19,
+  "acne prone": 16,
+  "hyaluronic acid": 15,
+  "azelaic acid": 14,
+  "eye cream": 12,
+  "oil cleanser": 11,
+  "light therapy": 11,
+  "micellar water": 10,
+  "red light": 10,
+  "human hair": 10,
+  "hair extensions": 10,
+  "fine lines": 9,
+  "white cast": 9,
+  "salicylic acid": 9,
+  "dark circles": 9,
+  "setting spray": 9,
+  "advent calendar": 9,
+  "sebaceous filaments": 8,
+  "fungal acne": 8,
+  "gentle cleanser": 8,
+  "cleansing oil": 8,
+  "care routine": 8,
+  "personal care": 8,
+  "pink blush": 8,
+  "anti aging": 7,
+  "product request": 7,
+  "current routine": 7,
+  "benzoyl peroxide": 7,
+  "therapy mask": 7,
+  "hair care": 7,
+  "remy hair": 7,
+  "patio sand": 7,
+  "wethebesthiphopandrnb upcoming": 7,
+  "nowplaying hot": 7,
+  "hiphop rnb": 7,
+  "radio hiphop": 7,
+  "rnb wethebesthiphopandrnb": 7,
+  "hot radio": 7,
+  "dolly babe": 7,
+  "around eyes": 6,
+  "glycolic acid": 6,
+  "nothing else": 6,
+  "full size": 6,
+  "hair mask": 6,
+  "cleansing balm": 6,
+  "waterproof mascara": 6,
+  "kose softymo": 6,
+  "holy grail": 6,
+  "sale haul": 6,
+  "bisou balm": 6,
+  "mental health": 6,
+  "patio black": 6,
+  "thanks advance": 5,
+  "toner serum": 5,
+  "hypochlorous acid": 5,
+  "shower shoes": 5,
+  "moisturizing cream": 5,
+  "game changer": 5,
+  "vitamin serum": 5,
+  "please tell": 5,
+  "staying power": 5,
+  "might help": 5,
+  "dry sensitive": 5,
+  "wear sunscreen": 5,
+  "acid serum": 5,
+  "blurring balm": 5,
+  "body lotion": 5,
+  "cream blush": 5,
+  "setting powder": 5,
+  "take care": 5,
+  "eye shadow": 5,
+  "cosmetic storage": 5,
+  "paidlink amazonaffiliate": 5,
+  "cruelty free": 5,
+  "bsky social": 5,
+  "inch pcs": 5,
+  "extensions human": 5,
+  "tape hair": 5,
+  "sunscreen reinforcedgrommets": 5,
+  "sunscreen shade": 5,
+  "making blush": 5,
+  "set pcs": 5,
+  "wear full": 4,
+  "hormonal acne": 4,
+  "filaments removed": 4,
+  "fragrance free": 4,
+  "daily sunscreen": 4,
+  "advice needed": 4,
+  "night shifts": 4,
+  "acne safe": 4,
+  "facial cleanser": 4,
+  "evening routine": 4,
+  "puffy acne-prone": 4,
+  "oily puffy": 4,
+  "milky toner": 4,
+  "clear oily": 4,
+  "lactic acid": 4,
+  "less often": 4,
+  "moisturizing lotion": 4,
+  "air dry": 4,
+  "come back": 4,
+  "zinc oxide": 4,
+  "daily moisturizing": 4,
+  "gentle moisturizer": 4,
+  "cold sore": 4,
+  "hot water": 4,
+  "cleansing balms": 4,
+  "glucan serum": 4,
+  "beta glucan": 4,
+  "came back": 4,
+  "spot treatment": 4,
+  "frizzy hair": 4,
+  "brightening results": 4,
+  "hair type": 4,
+  "tsubaki hair": 4,
+  "color payoff": 4,
+  "hand cream": 4,
+  "remove mascara": 4,
+  "foaming cleanser": 4,
+  "dark spots": 4,
+  "deep set": 4,
+  "water based": 4,
+  "birth control": 4,
+  "tubing mascara": 4,
+  "foundation concealer": 4,
+  "put sunscreen": 4,
+  "pressed powder": 4,
+  "balm powder": 4,
+  "full sized": 4,
+  "customer service": 4,
+  "tinted moisturizer": 4,
+  "full coverage": 4,
+  "liquid liner": 4,
+  "moonstone mischief": 4,
+  "clean girl": 4,
+  "high end": 4,
+  "pot concealer": 4,
+  "body oil": 4,
+  "sky high": 4,
+  "lash sensational": 4,
+  "natural hair": 4,
+  "profit margin": 4,
+  "bathroom dresser": 4,
+  "storage box": 4,
+  "straight remy": 4,
+  "hair pcs": 4,
+  "pcs inch": 4,
+  "canopy turquoise": 4,
+  "outdoor sunscreen": 4,
+  "patio mocha": 4,
+  "truth serum": 4,
+  "blush flirtydeals": 4,
+  "flirtydeals com": 4,
+  "porn lesbian": 4,
+  "lesbian porn": 4,
+  "com brazzers": 4,
+  "girlfriend blush": 4,
+  "radio pink": 4,
+  "blush dolly": 4,
+  "babe tune": 4,
+  "brushes set": 4,
+  "xanthelasma cholestrol": 3,
+  "concealing xanthelasma": 3,
+  "hours without": 3,
+  "iso advice": 3,
+  "continuing tret": 3,
+  "large pores": 3,
+  "dermatologist told": 3,
+  "white bumps": 3,
+  "little spots": 3,
+  "hydrating cleanser": 3,
+  "self conscious": 3,
+  "alternatives cicalfate": 3,
+  "needed removed": 3,
+  "help regarding": 3,
+  "regarding ointment": 3,
+  "acne scars": 3,
+  "product reccomendations": 3,
+  "sleep schedule": 3,
+  "serum moisturizer": 3,
+  "boost water": 3,
+  "acne marks": 3,
+  "routine especially": 3,
+  "acid toner": 3,
+  "please share": 3,
+  "reusable cloth": 3,
+  "biggest insecurity": 3,
+  "greatly appreciated": 3,
+  "acid spray": 3,
+  "wash feet": 3,
+  "dry feet": 3,
+  "normal dry": 3,
+  "peptide serum": 3,
+  "disposable ones": 3,
+  "cream spf": 3,
+  "daily exfoliant": 3,
+  "adding azelaic": 3,
+  "let sit": 3,
+  "immune system": 3,
+  "peel pads": 3,
+  "moisture barrier": 3,
+  "light medium": 3,
+  "brightening crystal": 3,
+  "crystal serum": 3,
+  "longevity sticky": 3,
+  "honest reviews": 3,
+  "ingu brightening": 3,
+  "sensitive oily": 3,
+  "sunscreen blue": 3,
+  "mizumi sunscreen": 3,
+  "jelly tint": 3,
+  "sticky drying": 3,
+  "cons dupes": 3,
+  "real brightening": 3,
+  "damaged frizzy": 3,
+  "washing hair": 3,
+  "couple hours": 3,
+  "price point": 3,
+  "cotton pads": 3,
+  "big deal": 3,
+  "double cleanse": 3,
+  "softymo speedy": 3,
+  "castor oil": 3,
+  "foam cleanser": 3,
+  "sensitive acne": 3,
+  "live without": 3,
+  "oil control": 3,
+  "chemical peels": 3,
+  "moisturizer spf": 3,
+  "physical exfoliation": 3,
+  "big fan": 3,
+  "full disclosure": 3,
+  "medical advice": 3,
+  "around mouth": 3,
+  "place start": 3,
+  "let dry": 3,
+  "gel cleanser": 3,
+  "perfume sampler": 3,
+  "last minute": 3,
+  "glowy finish": 3,
+  "powder melt": 3,
+  "serum foundation": 3,
+  "color correcting": 3,
+  "medium coverage": 3,
+  "eye liner": 3,
+  "fara homidi": 3,
+  "profit margins": 3,
+  "shea butter": 3,
+  "long lasting": 3,
+  "hair clip": 3,
+  "liquid lipsticks": 3,
+  "gel liner": 3,
+  "skims advent": 3,
+  "eye shadows": 3,
+  "cream eye": 3,
+  "say worth": 3,
+  "perfume samples": 3,
+  "lash serum": 3,
+  "prestige brands": 3,
+  "full price": 3,
+  "sensational sky": 3,
+  "black mascara": 3,
+  "advent calendars": 3,
+  "came across": 3,
+  "double wear": 3,
+  "tape extensions": 3,
+  "inner corner": 3,
+  "retail price": 3,
+  "pdrn collagen": 3,
+  "overnight mask": 3,
+  "pore minimizer": 3,
+  "mask light": 3,
+  "led mirror": 3,
+  "travels beautifully": 3,
+  "essential travels": 3,
+  "blue infrared": 3,
+  "care products": 3,
+  "care tool": 3,
+  "body care": 3,
+  "may vary": 3,
+  "packaging may": 3,
+  "broad spectrum": 3,
+  "sunscreen spf": 3,
+  "extensions hair": 3,
+  "doores hair": 3,
+  "wennalife tape": 3,
+  "weft tape": 3,
+  "weft seamless": 3,
+  "remy human": 3,
+  "umbrellas sunscreen": 3,
+  "canopy blue": 3,
+  "canopy graphite": 3,
+  "sunscreen uvprotection": 3,
+  "canopy mocha": 3,
+  "canopy dark": 3,
+  "dark green": 3,
+  "turquoise sunscreen": 3,
+  "shadecloth sunscreen": 3,
+  "black sunscreen": 3,
+  "meshtarp sunscreen": 3,
+  "lash enhancing": 3,
+  "dana white": 3,
+  "upcoming dolly": 3,
+  "babe pink": 3,
+  "count mascara": 3,
+  "black count": 3,
+  "volumizing lengthening": 3,
+  "mascara waterproof": 3
+ },
+ "all_products": {
+  "maybelline|lash sensational sky high": [
+   5.31,
+   4,
+   "makeup",
+   "Maybelline Lash Sensational Sky High"
+  ],
+  "skin1004|centella tone brightening capsule": [
+   4.69,
+   4,
+   "skincare",
+   "SKIN1004 Centella Tone Brightening Capsule"
+  ],
+  "revlon|colorstay": [
+   4.37,
+   3,
+   "makeup",
+   "Revlon Colorstay"
+  ],
+  "danessa myricks|blurring balm": [
+   4.04,
+   3,
+   "makeup",
+   "Danessa Myricks Blurring Balm"
+  ],
+  "colourpop|contour": [
+   3.54,
+   2,
+   "makeup",
+   "ColourPop Contour"
+  ],
+  "mac|stone": [
+   3.54,
+   2,
+   "makeup",
+   "MAC Stone"
+  ],
+  "avène|cicalfate+": [
+   3.52,
+   3,
+   "skincare",
+   "Avène Cicalfate+"
+  ],
+  "ysl|lash": [
+   3.1,
+   2,
+   "makeup",
+   "YSL Lash"
+  ],
+  "dior|backstage": [
+   3.05,
+   2,
+   "makeup",
+   "Dior Backstage"
+  ],
+  "vanicream|gentle": [
+   2.95,
+   2,
+   "skincare",
+   "Vanicream Gentle"
+  ],
+  "bioré|uv": [
+   2.9,
+   2,
+   "skincare",
+   "Bioré UV"
+  ],
+  "bioderma|micellar": [
+   2.87,
+   2,
+   "skincare",
+   "Bioderma Micellar"
+  ],
+  "dior|skin tint": [
+   2.85,
+   2,
+   "makeup",
+   "Dior Skin Tint"
+  ],
+  "anua|heartleaf": [
+   2.58,
+   2,
+   "skincare",
+   "Anua Heartleaf"
+  ],
+  "hourglass|ambient": [
+   2.58,
+   2,
+   "makeup",
+   "Hourglass Ambient"
+  ],
+  "cerave|foaming": [
+   2.52,
+   2,
+   "skincare",
+   "CeraVe Foaming"
+  ],
+  "bioderma|atoderm": [
+   2.45,
+   2,
+   "skincare",
+   "Bioderma Atoderm"
+  ],
+  "avène|cicalfate": [
+   2.45,
+   2,
+   "skincare",
+   "Avène Cicalfate"
+  ],
+  "cerave|hydrating cleanser": [
+   2.35,
+   2,
+   "skincare",
+   "CeraVe Hydrating Cleanser"
+  ],
+  "anua|milky toner": [
+   2.35,
+   2,
+   "skincare",
+   "Anua Milky Toner"
+  ],
+  "neutrogena|hydro boost water gel": [
+   2.35,
+   2,
+   "skincare",
+   "Neutrogena Hydro Boost Water Gel"
+  ],
+  "skin1004|hyalu-cica spf 50+": [
+   2.35,
+   2,
+   "skincare",
+   "SKIN1004 Hyalu-Cica SPF 50+"
+  ],
+  "anua|azelaic": [
+   2.35,
+   2,
+   "skincare",
+   "Anua Azelaic"
+  ],
+  "e.l.f.|skin bright icon vitamin c": [
+   2.35,
+   2,
+   "skincare",
+   "e.l.f. Skin Bright Icon Vitamin C"
+  ],
+  "clinique|take": [
+   2.35,
+   2,
+   "skincare",
+   "Clinique Take"
+  ],
+  "torriden|dive": [
+   2.35,
+   2,
+   "skincare",
+   "Torriden Dive"
+  ],
+  "e.l.f.|camo liquid bronzer contour": [
+   2.35,
+   2,
+   "makeup",
+   "e.l.f. Camo Liquid Bronzer Contour"
+  ],
+  "cerave|resurfacing retinol serum": [
+   2.27,
+   2,
+   "skincare",
+   "CeraVe Resurfacing Retinol Serum"
+  ],
+  "clinique|beyond perfecting foundation": [
+   2.17,
+   2,
+   "makeup",
+   "Clinique Beyond Perfecting Foundation"
+  ],
+  "byoma|milky toner 15": [
+   2.0,
+   2,
+   "skincare",
+   "Byoma Milky Toner 15"
+  ],
+  "biodance|collagen mist 21": [
+   2.0,
+   2,
+   "skincare",
+   "Biodance Collagen Mist 21"
+  ],
+  "biodance|overnight mask 23": [
+   2.0,
+   2,
+   "skincare",
+   "Biodance Overnight Mask 23"
+  ],
+  "maybelline|lashsensational skyhigh": [
+   2.0,
+   2,
+   "makeup",
+   "Maybelline Lashsensational Skyhigh"
+  ]
+ }
+}

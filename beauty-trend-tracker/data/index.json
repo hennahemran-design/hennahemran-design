@@ -1,28 +1,53 @@
 {
- "updated": "2026-11-05T15:36:09+00:00",
+ "updated": "2026-11-09T17:45:27+00:00",
  "weeks": [
+  {
+   "week": "2026-W46",
+   "start": "2026-11-09",
+   "end": "2026-11-15",
+   "partial": true,
+   "generated_at": "2026-11-09T17:35:36+00:00",
+   "docs": 2019,
+   "days": 1.0,
+   "top": {
+    "skincare": [
+     "SKIN1004 Centella Tone Brightening Capsule",
+     "Av\u00e8ne Cicalfate+",
+     "Bioderma Micellar",
+     "Vanicream Gentle",
+     "Bior\u00e9 UV"
+    ],
+    "makeup": [
+     "Maybelline Lash Sensational Sky High",
+     "Revlon Colorstay",
+     "Danessa Myricks Blurring Balm",
+     "ColourPop Contour",
+     "MAC Stone"
+    ]
+   }
+  },
   {
    "week": "2026-W45",
    "start": "2026-11-02",
    "end": "2026-11-08",
-   "partial": true,
-   "generated_at": "2026-11-05T15:31:13+00:00",
-   "docs": 7382,
-   "days": 3.6,
+   "partial": false,
+   "generated_at": "2026-11-09T17:35:36+00:00",
+   "docs": 15170,
+   "days": 7.0,
    "top": {
     "skincare": [
-     "Vanicream Gentle Facial Cleanser",
-     "CeraVe SA Cleanser",
-     "CeraVe Moisturizing Cream",
+     "SKIN1004 Centella",
+     "La Roche-Posay Cicaplast Baume B5",
+     "Paula's Choice BHA",
      "Neutrogena Hydroboost Body Gel Cream",
      "Neutrogena Hydro Boost"
     ],
     "makeup": [
-     "Danessa Myricks Yummy Skin Liquid Blurring Balm Powder",
-     "Saie Supersuede Eyeshadow",
-     "Hourglass Veil",
-     "Saie Eyeshadow",
-     "Huda Beauty Easy Blur Primer"
+     "Maybelline Fit Me",
+     "Makeup by Mario F4",
+     "NYX Bare",
+     "Fenty Beauty Diamond Bomb",
+     "L'Or\u00e9al Infallible"
     ]
    }
   },
