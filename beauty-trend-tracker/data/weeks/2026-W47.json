@@ -1,0 +1,2085 @@
+{
+ "week": "2026-W47",
+ "start": "2026-11-16",
+ "end": "2026-11-22",
+ "partial": true,
+ "generated_at": "2026-11-16T17:05:11+00:00",
+ "stats": {
+  "posts": 844,
+  "comments": 627,
+  "subreddits": {
+   "Bluesky": 582,
+   "Sephora": 222,
+   "30PlusSkinCare": 156,
+   "MakeupAddiction": 148,
+   "SkincareAddiction": 99,
+   "AsianBeauty": 88,
+   "Ulta": 75,
+   "MakeupRehab": 48,
+   "BeautyGuruChatter": 29,
+   "drugstoreMUA": 24,
+   "SkincareAddicts": 0
+  },
+  "sources": {
+   "reddit_archive": 889,
+   "reddit": 0,
+   "bluesky": 611
+  },
+  "products_found": 24,
+  "compared_weeks": [
+   "2026-W43",
+   "2026-W44",
+   "2026-W45",
+   "2026-W46"
+  ],
+  "days_covered": 1.0
+ },
+ "skincare": [
+  {
+   "rank": 1,
+   "key": "cerave|hydrating cleanser",
+   "name": "CeraVe Hydrating Cleanser",
+   "brand": "CeraVe",
+   "category": "skincare",
+   "score": 5.07,
+   "trend_score": 8.03,
+   "mentions": 4,
+   "threads": 4,
+   "upvotes": 9,
+   "baseline": 1.36,
+   "change_pct": 274,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 11.19
+    },
+    {
+     "week": "2026-W41",
+     "score": 7.31
+    },
+    {
+     "week": "2026-W42",
+     "score": 11.01
+    },
+    {
+     "week": "2026-W43",
+     "score": 10.11
+    },
+    {
+     "week": "2026-W44",
+     "score": 15.31
+    },
+    {
+     "week": "2026-W45",
+     "score": 7.22
+    },
+    {
+     "week": "2026-W46",
+     "score": 5.34
+    },
+    {
+     "week": "2026-W47",
+     "score": 5.07
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "oily skin",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "people_like": [
+     {
+      "label": "hydrating",
+      "count": 1,
+      "share": 0.25
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "youtube com",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "via tiktok",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "tiktok showcase",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "skincareroutine tiktokshowcase",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "showcase head",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "routine starts",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "hydratingcleanser hyaluronicacid",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "com shorts",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "ceraveskincare hydratingcleanser",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "available via",
+      "count": 2,
+      "lift": 245.3
+     }
+    ],
+    "search_terms": [
+     "cerave hydrating cleanser bar",
+     "cerave hydrating cleanser ingredients",
+     "cerave hydrating cleanser review",
+     "cerave hydrating cleanser vs foaming cleanser",
+     "cerave hydrating cleanser travel size",
+     "cerave hydrating cleanser walmart",
+     "cerave hydrating cleanser foaming",
+     "cerave hydrating cleanser reddit",
+     "cerave hydrating cleanser cream to foam",
+     "cerave hydrating cleanser for oily skin",
+     "cerave hydrating cleanser for dry skin",
+     "cerave hydrating cleanser for tattoo"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.5,
+    "neutral": 0.5,
+    "negative": 0.0,
+    "n": 4
+   },
+   "quotes": [
+    {
+     "text": "…ve experimented with the CeraVe Foaming Cleanser (for oily skin) and the CeraVe Hydrating Cleanser. Interestingly, even when my skin was still DRY, I felt like my skin was actually more comfortable using the foaming cleanser, whereas the hydrating one seemed t…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xxo0u7/routine_help_my_skin_has_suddenly_gone_from_dry/",
+     "score": 5,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "CeraVe Hydrating Cleanser A good skincare routine starts with a good cleanser! It's available via my TikTok Showcase. Head over and check it out! youtube.com/shorts/2V2ZY... #CeraVe #CeraVeSkincare #HydratingCleanser #HyaluronicAcid #Skincare #SkincareRoutine…",
+     "url": "https://bsky.app/profile/chasejlondon.bsky.social/post/3n2grol25ps2e",
+     "score": 2,
+     "sub": "Bluesky",
+     "kind": "post"
+    },
+    {
+     "text": "…t needs to be passed on. The only tolerable one so far I’ve tried is the Cerave hydrating cleanser.",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xxrar6/new_cleanser_recommendations_please/",
+     "score": 1,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "Bluesky": 2,
+    "30PlusSkinCare": 1,
+    "SkincareAddiction": 1
+   }
+  },
+  {
+   "rank": 2,
+   "key": "skin1004|centella asiatica serum",
+   "name": "SKIN1004 Centella Asiatica Serum",
+   "brand": "SKIN1004",
+   "category": "skincare",
+   "score": 3.79,
+   "trend_score": 5.64,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 7,
+   "baseline": 0.91,
+   "change_pct": 316,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 9.03
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 16.48
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.79
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "hydrating",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "complaints": [
+     {
+      "label": "broke me out",
+      "count": 3,
+      "share": 1.0
+     },
+     {
+      "label": "irritation / stinging",
+      "count": 2,
+      "share": 0.667
+     }
+    ],
+    "trending_alongside": [
+     {
+      "term": "wondering milk",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "retinol boost",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "purging phase",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "product fyi",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "normal purging",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "moist originote",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "milk cleanser",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "likely adverse",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "hyalureca moist",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "foamy facial",
+      "count": 2,
+      "lift": 327.1
+     }
+    ],
+    "search_terms": [
+     "skin1004 madagascar centella asiatica serum",
+     "skin 1004 centella asiatica ampoule serum",
+     "skin1004 madagascar centella asiatica facial serum",
+     "skin1004 madagascar centella asiatica facial serum 30ml",
+     "skin1004 centella asiatica probiotics barrier repair serum 95ml",
+     "centella asiatica serum skin1004 reddit",
+     "skin1004 madagascar centella asiatica facial serum ingredients",
+     "skin1004 madagascar centella asiatica ampoule serum",
+     "skin1004 madagascar centella asiatica ampoule facial serum",
+     "what is skin1004 madagascar centella asiatica ampoule facial serum",
+     "can i use vitamin c serum with centella asiatica",
+     "is centella asiatica good for skin"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 0.667,
+    "negative": 0.333,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "…wondering: milk cleanser (double cleanse), cetaphil foamy facial wash, Skin1004 centella asiatica serum, Skin1004 retinol boost serum (NEW), and hyalureca moist by originote",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xxdory/having_a_retinol_purge_what_do_i_need_to_do/",
+     "score": 5,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    },
+    {
+     "text": "…Hada labo intense hydration serum Cetaphil daily hydrating moisturiser Skin1004 Centella SPF50 PM Skin1004 Centella ampoule foam (leaves my skin feeling a bit tight but unsure what else to use as I know this one doesn’t break me out) Azaleic acid/tretinoin (al…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xxr473/product_request_skin_struggles_to_retain_moisture/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…wondering: milk cleanser (double cleanse), cetaphil foamy facial wash, Skin1004 centella asiatica serum, Skin1004 retinol boost serum (NEW), and hyalureca moist by originote.",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xxdgw6/having_a_retinol_purge_what_do_i_need_to_do/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 1,
+    "30PlusSkinCare": 1,
+    "AsianBeauty": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "beauty of joseon|revive eye serum",
+   "name": "Beauty of Joseon Revive Eye Serum",
+   "brand": "Beauty of Joseon",
+   "category": "skincare",
+   "score": 3.52,
+   "trend_score": 5.53,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 3,
+   "baseline": 0.42,
+   "change_pct": 735,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 4.07
+    },
+    {
+     "week": "2026-W41",
+     "score": 3.79
+    },
+    {
+     "week": "2026-W42",
+     "score": 3.62
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 4.35
+    },
+    {
+     "week": "2026-W45",
+     "score": 4.11
+    },
+    {
+     "week": "2026-W46",
+     "score": 3.35
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.52
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "fine lines & wrinkles",
+      "count": 2,
+      "share": 0.667
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "turned recently",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "starting notice",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "notice fine",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "little darker",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "ginseng",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "retinal",
+      "count": 3,
+      "lift": 245.3
+     },
+     {
+      "term": "fine lines",
+      "count": 2,
+      "lift": 81.8
+     },
+     {
+      "term": "eyes",
+      "count": 2,
+      "lift": 36.3
+     }
+    ],
+    "search_terms": [
+     "beauty of joseon revive eye serum (ginseng + retinal)",
+     "beauty of joseon revive eye serum ginseng + retinal review",
+     "beauty of joseon revive eye serum reviews",
+     "beauty of joseon revive eye serum (retinal)",
+     "beauty of joseon revive eye serum reddit",
+     "beauty of joseon revive eye serum ginseng + retinal 1.01 oz",
+     "beauty of joseon revive eye serum how to use",
+     "beauty of joseon revive eye serum ingredients",
+     "beauty of joseon revive eye serum ginseng + retinal 30ml",
+     "beauty of joseon revive eye serum for dark circles",
+     "beauty of joseon revive eye serum for face",
+     "beauty of joseon revive eye serum for milia"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.667,
+    "neutral": 0.333,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "[routine help] eye fine lines Is the beauty of joseon revive eye serum with ginseng and Retinal any good? I've turned 26 recently and starting to notice fine lines and a it's a little darker under my eyes. I've used 0.2 retinol from the ordinary but my skin di…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xxop80/routine_help_eye_fine_lines/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "[routine help] fine line eyes Is the beauty of joseon revive eye serum with ginseng and Retinal any good? I've turned 26 recently and starting to notice fine lines and a it's a little darker under my eyes. I've used 0.2 retinol from the ordinary but my skin di…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xxonme/routine_help_fine_line_eyes/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "Does the beauty of joseon revive eye serum with retinal work? [removed]",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1xxojah/does_the_beauty_of_joseon_revive_eye_serum_with/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 3
+   }
+  },
+  {
+   "rank": 4,
+   "key": "skin1004|retinol boost ampoule",
+   "name": "SKIN1004 Retinol Boost Ampoule",
+   "brand": "SKIN1004",
+   "category": "skincare",
+   "score": 2.62,
+   "trend_score": 3.99,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 6,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 2.62
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "acne",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "people_like": [],
+    "complaints": [
+     {
+      "label": "broke me out",
+      "count": 2,
+      "share": 1.0
+     },
+     {
+      "label": "irritation / stinging",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "trending_alongside": [
+     {
+      "term": "wondering milk",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "significant breakout",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "purging phase",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "product fyi",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "normal purging",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "moist originote",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "milk cleanser",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "likely adverse",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "hyalureca moist",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "foamy facial",
+      "count": 2,
+      "lift": 490.7
+     }
+    ],
+    "search_terms": [
+     "skin1004 retinol boosting ampoule",
+     "skin1004 retinol boosting shot ampoule",
+     "skin1004 retinol 0.2 boosting ampoule",
+     "how to start using retinol serum",
+     "how to open ampoule serum",
+     "can retinol serum be used with hyaluronic acid"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "Having a Retinol Purge, what do i need to do? Recently, I added the SKIN1004 Retinol Boost Ampoule (0.2%) into my nighttime skincare routine. I've only used it once, about two days ago, but since then, I've experienced a sudden and significant breakout. Should…",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xxdory/having_a_retinol_purge_what_do_i_need_to_do/",
+     "score": 5,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    },
+    {
+     "text": "Having a Retinol Purge, What do i need to do? Recently, I added the SKIN1004 Retinol Boost Ampoule (0.2%) into my nighttime skincare routine. I've only used it once, about two days ago, but since then, I've experienced a sudden and significant breakout. Should…",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xxdgw6/having_a_retinol_purge_what_do_i_need_to_do/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "30PlusSkinCare": 1,
+    "AsianBeauty": 1
+   }
+  },
+  {
+   "rank": 5,
+   "key": "skin1004|retinol boost serum",
+   "name": "SKIN1004 Retinol Boost Serum",
+   "brand": "SKIN1004",
+   "category": "skincare",
+   "score": 2.62,
+   "trend_score": 3.99,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 6,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 2.62
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "acne",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "people_like": [],
+    "complaints": [
+     {
+      "label": "broke me out",
+      "count": 2,
+      "share": 1.0
+     },
+     {
+      "label": "irritation / stinging",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "trending_alongside": [
+     {
+      "term": "wondering milk",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "significant breakout",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "purging phase",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "product fyi",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "normal purging",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "moist originote",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "milk cleanser",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "likely adverse",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "hyalureca moist",
+      "count": 2,
+      "lift": 490.7
+     },
+     {
+      "term": "foamy facial",
+      "count": 2,
+      "lift": 490.7
+     }
+    ],
+    "search_terms": []
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "Having a Retinol Purge, what do i need to do? Recently, I added the SKIN1004 Retinol Boost Ampoule (0.2%) into my nighttime skincare routine. I've only used it once, about two days ago, but since then, I've experienced a sudden and significant breakout. Should…",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1xxdory/having_a_retinol_purge_what_do_i_need_to_do/",
+     "score": 5,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    },
+    {
+     "text": "Having a Retinol Purge, What do i need to do? Recently, I added the SKIN1004 Retinol Boost Ampoule (0.2%) into my nighttime skincare routine. I've only used it once, about two days ago, but since then, I've experienced a sudden and significant breakout. Should…",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1xxdgw6/having_a_retinol_purge_what_do_i_need_to_do/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "30PlusSkinCare": 1,
+    "AsianBeauty": 1
+   }
+  }
+ ],
+ "makeup": [
+  {
+   "rank": 1,
+   "key": "essence|silky blur",
+   "name": "essence Silky Blur",
+   "brand": "essence",
+   "category": "makeup",
+   "score": 3.79,
+   "trend_score": 5.99,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 6,
+   "baseline": 0.56,
+   "change_pct": 579,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 2.93
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 5.91
+    },
+    {
+     "week": "2026-W43",
+     "score": 4.88
+    },
+    {
+     "week": "2026-W44",
+     "score": 6.06
+    },
+    {
+     "week": "2026-W45",
+     "score": 4.7
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.79
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "hydrating",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [],
+    "search_terms": [
+     "essence silky blur concealer",
+     "essence silky blur foundation",
+     "essence silky blur powder",
+     "essence silky blur concealer swatches",
+     "essence silky blur hydrating longwear concealer",
+     "essence silky blur concealer nearby",
+     "essence silky blur setting powder",
+     "essence silky blur concealer near me",
+     "essence silky blur concealer walmart",
+     "essence silky blur foundation for oily skin",
+     "essence silky blur concealer in store",
+     "essence silky blur concealer in pakistan"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.667,
+    "neutral": 0.333,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "Essence silky blur or Catrice true skin. Alot of people recommend the NYX Bare With Me but I feel that the coverage and lasting power is poor.",
+     "url": "https://www.reddit.com/r/drugstoreMUA/comments/1xxomji/makeup_recommendations_concealers/19sq2dsz3zcit/",
+     "score": 3,
+     "sub": "drugstoreMUA",
+     "kind": "comment"
+    },
+    {
+     "text": "Eyes: Essence Silky Blur Concealer- 01 Peripera Eyeshadow Palette: Burgundy but with Peach Flower Flormar Extreme Tattoo Eye Stick: Burgundy Lykd Eye Pencil: Burgundy Maybelline Lash Sensational Waterproof Mascara Base: Maybelline Lifter Plump Foundation: 112…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xxm47v/loooooove_my_eye_makeup_today/19spvtetysi6c/",
+     "score": 2,
+     "sub": "MakeupAddiction",
+     "kind": "comment"
+    },
+    {
+     "text": "Essence Silky Blur is my favorite at any price point tbh",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xxom3q/makeup_recommendations_concealers/19sq89o6uz62o/",
+     "score": 1,
+     "sub": "MakeupAddiction",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2,
+    "drugstoreMUA": 1
+   }
+  },
+  {
+   "rank": 2,
+   "key": "rare beauty|soft pinch tinted lip oil",
+   "name": "Rare Beauty Soft Pinch Tinted Lip Oil",
+   "brand": "Rare Beauty",
+   "category": "makeup",
+   "score": 3.4,
+   "trend_score": 5.61,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 4,
+   "baseline": 0.09,
+   "change_pct": 3786,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 8.56
+    },
+    {
+     "week": "2026-W40",
+     "score": 5.86
+    },
+    {
+     "week": "2026-W41",
+     "score": 3.21
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 2.45
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.4
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "packaging",
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "label": "glowy / dewy",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "writing research",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "research paper",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "optimal packaging",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "milano hydra",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "hydra lipgloss",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "empty packaging",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "comparing three",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "gloss bomb",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "bomb universal",
+      "count": 2,
+      "lift": 245.3
+     },
+     {
+      "term": "luminizer",
+      "count": 2,
+      "lift": 245.3
+     }
+    ],
+    "search_terms": [
+     "rare beauty soft pinch tinted lip oil wonder",
+     "rare beauty soft pinch tinted lip oil serenity",
+     "rare beauty soft pinch tinted lip oil honesty",
+     "rare beauty soft pinch tinted lip oil delight",
+     "rare beauty soft pinch tinted lip oil hope",
+     "rare beauty soft pinch tinted lip oil stick",
+     "rare beauty soft pinch tinted lip oil stain",
+     "rare beauty soft pinch tinted lip oil mini",
+     "rare beauty soft pinch tinted lip oil swatches",
+     "rare beauty soft pinch tinted lip oil in delight",
+     "rare beauty soft pinch tinted lip oil in hope",
+     "rare beauty soft pinch tinted lip oil in wonder"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "…ials Palette Face & Cheek Cream Palette \\[Harmony 2\\] x3/15. 6. ⁠⁠⁠⁠Rare Beauty Soft Pinvh Dewy Liquid Blush \\[Happy\\] x4/15. 7. ⁠⁠⁠⁠Huda Beauty Rose Quartz x28/45. 8. ⁠⁠⁠⁠✅ Charlotte Tilbury Kissing Fallen From the Lipstick Tree \\[Icon Baby\\] - Panned. X19. 9…",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xxl6yr/10_by_winter_update_4/19spvodnd6gwz/",
+     "score": 4,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    },
+    {
+     "text": "…what's the most optimal packaging. I'm comparing three lip glosses: Rare Beauty soft pinch tinted lip oil, Fenty Beauty gloss bomb universal lip luminizer and KIKO Milano 3D hydra lipgloss. If anyone has an empty packaging of the lipgloss, could you please wei…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xxof9r/lip_gloss_empties/",
+     "score": 0,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…what's the most optimal packaging. I'm comparing three lip glosses: Rare Beauty soft pinch tinted lip oil, Fenty Beauty gloss bomb universal lip luminizer and KIKO Milano 3D hydra lipgloss. If anyone has an empty packaging of the lipgloss, could yo [removed]",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xxoc4e/hi_im_writing_a_research_paper_on_lip_glosses_and/",
+     "score": 0,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2,
+    "MakeupRehab": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "fenty beauty|gloss bomb universal lip luminizer",
+   "name": "Fenty Beauty Gloss Bomb Universal Lip Luminizer",
+   "brand": "Fenty Beauty",
+   "category": "makeup",
+   "score": 3.4,
+   "trend_score": 5.14,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 4,
+   "baseline": 0.56,
+   "change_pct": 510,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 5.76
+    },
+    {
+     "week": "2026-W40",
+     "score": 4.35
+    },
+    {
+     "week": "2026-W41",
+     "score": 5.37
+    },
+    {
+     "week": "2026-W42",
+     "score": 15.98
+    },
+    {
+     "week": "2026-W43",
+     "score": 9.3
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 6.3
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.4
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "packaging",
+      "count": 2,
+      "share": 0.667
+     },
+     {
+      "label": "glowy / dewy",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "writing research",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "research paper",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "pinch tinted",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "optimal packaging",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "milano hydra",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "hydra lipgloss",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "empty packaging",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "comparing three",
+      "count": 2,
+      "lift": 327.1
+     },
+     {
+      "term": "kiko milano",
+      "count": 2,
+      "lift": 163.6
+     },
+     {
+      "term": "glosses",
+      "count": 2,
+      "lift": 196.3
+     }
+    ],
+    "search_terms": [
+     "fenty beauty gloss bomb universal lip luminizer in fenty glow",
+     "fenty beauty gloss bomb universal lip luminizer in fu$$y",
+     "fenty beauty gloss bomb universal lip luminizer hot chocolit",
+     "fenty beauty gloss bomb universal lip luminizer fussy",
+     "fenty beauty gloss bomb universal lip luminizer riri",
+     "fenty beauty gloss bomb universal lip luminizer 2ml",
+     "fenty beauty gloss bomb universal lip luminizer shades",
+     "fenty beauty gloss bomb universal lip luminizer rose amber",
+     "fenty beauty gloss bomb universal lip luminizer swatches",
+     "fenty beauty gloss bomb universal lip luminizer in fu $$ y",
+     "fenty beauty gloss bomb universal lip luminizer in hot chocolit",
+     "fenty beauty gloss bomb universal lip luminizer in glass slipper"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "…. ⁠⁠⁠⁠Clio Chiffon Blur Tint \\[22 Red Flush Plum\\] x13/15. 10. ⁠⁠⁠⁠FENTY Beauty Gloss Bomb Universal Lip Luminizer \\[01 FENTY Glow\\] - Pan. X26.",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xxl6yr/10_by_winter_update_4/19spvodnd6gwz/",
+     "score": 4,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    },
+    {
+     "text": "Lip gloss empties! Hi. I'm writing a research paper on lip glosses and what's the most optimal packaging. I'm comparing three lip glosses: Rare Beauty soft pinch tinted lip oil, Fenty Beauty gloss bomb universal lip luminizer and KIKO Milano 3D hydra lipgloss.…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xxof9r/lip_gloss_empties/",
+     "score": 0,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "Hi. I'm writing a research paper on lip glosses and what's the most optimal packaging. I'm comparing three lip glosses: Rare Beauty soft pinch tinted lip oil, Fenty Beauty gloss bomb universal lip luminizer and KIKO Milano 3D hydra lipgloss. If anyone has an e…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1xxoc4e/hi_im_writing_a_research_paper_on_lip_glosses_and/",
+     "score": 0,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2,
+    "MakeupRehab": 1
+   }
+  },
+  {
+   "rank": 4,
+   "key": "fenty beauty|glow",
+   "name": "Fenty Beauty Glow",
+   "brand": "Fenty Beauty",
+   "category": "makeup",
+   "score": 3.15,
+   "trend_score": 4.84,
+   "mentions": 3,
+   "threads": 2,
+   "upvotes": 6,
+   "baseline": 0.3,
+   "change_pct": 949,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 8.67
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 2.91
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.92
+    },
+    {
+     "week": "2026-W45",
+     "score": 2.58
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.15
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "olive / undertone match",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "gloss",
+      "count": 2,
+      "lift": 29.7
+     }
+    ],
+    "search_terms": [
+     "fenty beauty glow drops",
+     "fenty beauty glow stick",
+     "fenty beauty glow recipe eye patches",
+     "fenty beauty glow body",
+     "fenty beauty glow recipe",
+     "fenty beauty glow enhancer",
+     "fenty beauty glow serum",
+     "fenty beauty glow lip gloss",
+     "fenty beauty glow recipe huda beauty",
+     "fenty beauty glow in extra",
+     "does fenty beauty have free shipping",
+     "is the fenty beauty foundation good"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.667,
+    "neutral": 0.333,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "…um\\] x13/15. 10. ⁠⁠⁠⁠FENTY Beauty Gloss Bomb Universal Lip Luminizer \\[01 FENTY Glow\\] - Pan. X26.",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xxl6yr/10_by_winter_update_4/19spvodnd6gwz/",
+     "score": 4,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    },
+    {
+     "text": "This is my favorite lip gloss stick. I have been through 4 Is it Fussy, 2 Blazed Donut, 1 Fenty Glow and working on Lust Bunny now (as well as another Is it Fussy and Blazed Donut) I wear it daily. Takes about 3-4 months to finish a tube. I might be addicted a…",
+     "url": "https://www.reddit.com/r/Sephora/comments/1xxmoan/has_anyone_ever_finished_one_of_these_how_long/19sq7gjuf31wk/",
+     "score": 1,
+     "sub": "Sephora",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "Sephora": 2,
+    "MakeupRehab": 1
+   }
+  },
+  {
+   "rank": 5,
+   "key": "hince|raw",
+   "name": "Hince Raw",
+   "brand": "Hince",
+   "category": "makeup",
+   "score": 2.95,
+   "trend_score": 4.5,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 12,
+   "baseline": 0.21,
+   "change_pct": 1319,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W39",
+     "score": 2.87
+    },
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 2.69
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 2.85
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 2.97
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 2.95
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "texture",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [
+     {
+      "label": "glowy / dewy",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "tint grape",
+      "count": 2,
+      "lift": 1472.0
+     },
+     {
+      "term": "gel tint",
+      "count": 2,
+      "lift": 490.7
+     }
+    ],
+    "search_terms": [
+     "hince raw glow gel tint",
+     "hince raw glow dewy ball",
+     "hince raw fig",
+     "hince raw glow gel tint swatch",
+     "hince raw rose",
+     "hince raw coco",
+     "hince raw glow lip tint",
+     "hince raw grape",
+     "hince raw peach",
+     "hince raw lilac",
+     "hince raw in red",
+     "how to feed raw"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…en Peptide Lip Treatment in Cocoa Crème - **Finish 75%:** ***18 uses.*** 💄Hince Raw Gel Tint in Raw Grape - **30/50 uses.** ✅~~La Glace Bye Girl Lip Tint Remover - Pan~~ **Panned 09 Oct** ✅~~L’Oreal Glycolic-Bright Peeling Toner - Pan~~ **Panned 15 Oct** 🌸Perf…",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xxl6yr/10_by_winter_update_4/19sptkmi2a2ao/",
+     "score": 8,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    },
+    {
+     "text": "…ing it with the 3CE Velvet Tint and my other Laka mini in 111 Mellow. The Hince Raw Glow Gel Tint in Raw Grape and Clarins lip oil in Plum will come in when I want a change of texture!",
+     "url": "https://www.reddit.com/r/MakeupRehab/comments/1xxberu/use_your_stash_1_lip_a_week_law_1629_nov_2026/19spiifyje70h/",
+     "score": 4,
+     "sub": "MakeupRehab",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "MakeupRehab": 2
+   }
+  }
+ ],
+ "trending_keywords": [
+  {
+   "label": "packaging",
+   "count": 31,
+   "expected": 17.5,
+   "change_pct": 77,
+   "group": "people_like"
+  },
+  {
+   "label": "fine lines & wrinkles",
+   "count": 28,
+   "expected": 16.5,
+   "change_pct": 69,
+   "group": "recommended_for"
+  },
+  {
+   "label": "beginners",
+   "count": 9,
+   "expected": 3.8,
+   "change_pct": 140,
+   "group": "recommended_for"
+  },
+  {
+   "label": "fragrance-free",
+   "count": 9,
+   "expected": 4.1,
+   "change_pct": 117,
+   "group": "people_like"
+  },
+  {
+   "label": "hydrating",
+   "count": 55,
+   "expected": 43.8,
+   "change_pct": 26,
+   "group": "people_like"
+  },
+  {
+   "label": "drying",
+   "count": 16,
+   "expected": 11.5,
+   "change_pct": 39,
+   "group": "complaints"
+  },
+  {
+   "label": "smudge / water-proof",
+   "count": 10,
+   "expected": 8.1,
+   "change_pct": 23,
+   "group": "people_like"
+  },
+  {
+   "label": "lightweight",
+   "count": 9,
+   "expected": 7.4,
+   "change_pct": 21,
+   "group": "people_like"
+  },
+  {
+   "label": "glowy / dewy",
+   "count": 39,
+   "expected": 35.9,
+   "change_pct": 9,
+   "group": "people_like"
+  },
+  {
+   "label": "eczema",
+   "count": 8,
+   "expected": 6.9,
+   "change_pct": 16,
+   "group": "recommended_for"
+  },
+  {
+   "label": "repurchase",
+   "count": 8,
+   "expected": 7.8,
+   "change_pct": 2,
+   "group": "people_like"
+  }
+ ],
+ "emerging_terms": [
+  {
+   "label": "heritage foundation",
+   "count": 26,
+   "expected": 3.2,
+   "change_pct": 703
+  },
+  {
+   "label": "mini fridge",
+   "count": 11,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "thermoelectric cooler",
+   "count": 9,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "yashe mini",
+   "count": 9,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "fridge liter",
+   "count": 9,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "office dorm",
+   "count": 8,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "liter cans",
+   "count": 7,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "paidlink amazonaffiliate",
+   "count": 7,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "cyber monday",
+   "count": 7,
+   "expected": 0.3,
+   "change_pct": null
+  },
+  {
+   "label": "beef tallow",
+   "count": 6,
+   "expected": 0.3,
+   "change_pct": null
+  },
+  {
+   "label": "cute packaging",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "else order",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "goal finish",
+   "count": 5,
+   "expected": 0.3,
+   "change_pct": null
+  },
+  {
+   "label": "gift cards",
+   "count": 6,
+   "expected": 0.7,
+   "change_pct": 756
+  },
+  {
+   "label": "kiko milano",
+   "count": 5,
+   "expected": 0.3,
+   "change_pct": null
+  },
+  {
+   "label": "hit pan",
+   "count": 8,
+   "expected": 1.6,
+   "change_pct": 399
+  }
+ ],
+ "keyword_counts": {
+  "recommended_for": {
+   "sensitive skin": 21,
+   "acne": 36,
+   "damaged barrier": 12,
+   "texture": 19,
+   "oily skin": 17,
+   "hormonal acne": 2,
+   "eczema": 8,
+   "redness / rosacea": 13,
+   "large pores": 5,
+   "hyperpigmentation": 10,
+   "fine lines & wrinkles": 28,
+   "combination skin": 6,
+   "dry skin": 13,
+   "cold weather": 10,
+   "sun protection": 24,
+   "beginners": 9,
+   "olive / undertone match": 8,
+   "dehydrated skin": 5,
+   "hot / humid weather": 19,
+   "no-makeup look": 5,
+   "dark circles": 13,
+   "lips": 1,
+   "fair skin": 3,
+   "events / weddings": 4,
+   "mature skin": 1,
+   "deep skin tones": 3,
+   "dullness / glow": 3
+  },
+  "people_like": {
+   "pigmented": 15,
+   "affordable": 28,
+   "results / it works": 29,
+   "hydrating": 55,
+   "gentle": 23,
+   "long-lasting": 10,
+   "glowy / dewy": 39,
+   "fragrance-free": 9,
+   "blendable": 6,
+   "great dupe": 9,
+   "no white cast": 2,
+   "packaging": 31,
+   "smudge / water-proof": 10,
+   "lightweight": 9,
+   "matte finish": 21,
+   "sheer / light coverage": 5,
+   "holy grail": 7,
+   "repurchase": 8,
+   "worth the hype": 8,
+   "full coverage": 6,
+   "natural / skin-like": 3,
+   "buildable": 2,
+   "smells nice": 1,
+   "non-greasy": 1
+  },
+  "complaints": {
+   "irritation / stinging": 29,
+   "broke me out": 11,
+   "greasy / sticky": 4,
+   "drying": 16,
+   "fragrance": 7,
+   "creases": 2,
+   "white cast": 1,
+   "shade range": 4,
+   "overhyped": 6,
+   "formula change": 1,
+   "too expensive": 1,
+   "cakey / patchy": 4,
+   "pilling": 1
+  }
+ },
+ "term_counts": {
+  "heritage foundation": 26,
+  "hyaluronic acid": 12,
+  "fine lines": 11,
+  "mini fridge": 11,
+  "thermoelectric cooler": 9,
+  "yashe mini": 9,
+  "fridge liter": 9,
+  "hit pan": 8,
+  "office dorm": 8,
+  "cleansing oil": 7,
+  "gift card": 7,
+  "pressed powder": 7,
+  "credit card": 7,
+  "cyber monday": 7,
+  "liter cans": 7,
+  "paidlink amazonaffiliate": 7,
+  "care routine": 6,
+  "flower knows": 6,
+  "full coverage": 6,
+  "full size": 6,
+  "gift cards": 6,
+  "tubing mascara": 6,
+  "eye shadow": 6,
+  "beef tallow": 6,
+  "acid serum": 5,
+  "azelaic acid": 5,
+  "salicylic acid": 5,
+  "thanks advance": 5,
+  "acne prone": 5,
+  "hydrating cleanser": 5,
+  "throw away": 5,
+  "cute packaging": 5,
+  "eye cream": 5,
+  "travel size": 5,
+  "setting spray": 5,
+  "else order": 5,
+  "nail polish": 5,
+  "kiko milano": 5,
+  "goal finish": 5,
+  "glycolic acid": 4,
+  "cream removed": 4,
+  "foaming cleanser": 4,
+  "moisturizing cream": 4,
+  "body wash": 4,
+  "bottle submerged": 4,
+  "submerged sea": 4,
+  "sea water": 4,
+  "trouser pocket": 4,
+  "sunscreen bottle": 4,
+  "body oil": 4,
+  "dry sensitive": 4,
+  "weight loss": 4,
+  "mascara primer": 4,
+  "eyeshadow palette": 4,
+  "hand cream": 4,
+  "dark circles": 4,
+  "long lasting": 4,
+  "usage goals": 4,
+  "body butter": 4,
+  "portable thermoelectric": 4,
+  "cooler refrigerators": 4,
+  "dorm room": 4,
+  "beverage office": 4,
+  "cosmetic storage": 4,
+  "cans small": 4,
+  "small refrigerator": 4,
+  "app item": 4,
+  "vercel app": 4,
+  "live deal": 4,
+  "deal qa-affiliate-blush": 4,
+  "qa-affiliate-blush vercel": 4,
+  "price varies": 4,
+  "high frequency": 4,
+  "national science": 4,
+  "science foundation": 4,
+  "media touhou": 4,
+  "touhou source": 4,
+  "ingredients products": 3,
+  "barrier repair": 3,
+  "redness cheeks": 3,
+  "needed removed": 3,
+  "anti-aging without": 3,
+  "long run": 3,
+  "without retinol": 3,
+  "closed comedones": 3,
+  "oil cleanser": 3,
+  "current routine": 3,
+  "revive eye": 3,
+  "eye serum": 3,
+  "ponds cold": 3,
+  "cold cream": 3,
+  "away removed": 3,
+  "burn scar": 3,
+  "old burn": 3,
+  "moisturizer spf": 3,
+  "limited edition": 3,
+  "double cleanse": 3,
+  "shower gel": 3,
+  "vitamin serum": 3,
+  "loose powder": 3,
+  "eyeshadow palettes": 3,
+  "hair oil": 3,
+  "hydrating serum": 3,
+  "dry patches": 3,
+  "bonus points": 3,
+  "fragrance free": 3,
+  "med spa": 3,
+  "nasolabial folds": 3,
+  "hitting pan": 3,
+  "meteorites pressed": 3,
+  "customer service": 3,
+  "everyone else": 3,
+  "matches removed": 3,
+  "properly determine": 3,
+  "color matches": 3,
+  "undertone color": 3,
+  "liquid foundation": 3,
+  "cyber fest": 3,
+  "gloss bomb": 3,
+  "bomb universal": 3,
+  "bullet lipsticks": 3,
+  "liquid eyeliner": 3,
+  "waterproof mascara": 3,
+  "shade name": 3,
+  "silky blur": 3,
+  "fluffy brush": 3,
+  "goal hit": 3,
+  "cream goal": 3,
+  "next update": 3,
+  "eye palette": 3,
+  "brow glue": 3,
+  "palette goal": 3,
+  "tallow balm": 3,
+  "drink office": 3,
+  "car blackcompact": 3,
+  "blackcompact refrigerators": 3,
+  "display cases": 3,
+  "light therapy": 3,
+  "bathroom dresser": 3,
+  "storage box": 3,
+  "frequency facial": 3,
+  "facial machine": 3,
+  "bsky social": 3,
+  "sexy friend": 3,
+  "rub sunscreen": 3,
+  "follow sexy": 3,
+  "back advertisement": 3,
+  "side effects": 3,
+  "jim o'neill": 3,
+  "side effect": 3,
+  "making blush": 3,
+  "media zenless": 3,
+  "zone zero": 3,
+  "zero source": 3,
+  "zenless zone": 3
+ },
+ "all_products": {
+  "cerave|hydrating cleanser": [
+   5.07,
+   4,
+   "skincare",
+   "CeraVe Hydrating Cleanser"
+  ],
+  "skin1004|centella asiatica serum": [
+   3.79,
+   3,
+   "skincare",
+   "SKIN1004 Centella Asiatica Serum"
+  ],
+  "essence|silky blur": [
+   3.79,
+   3,
+   "makeup",
+   "essence Silky Blur"
+  ],
+  "beauty of joseon|revive eye serum": [
+   3.52,
+   3,
+   "skincare",
+   "Beauty of Joseon Revive Eye Serum"
+  ],
+  "rare beauty|soft pinch tinted lip oil": [
+   3.4,
+   3,
+   "makeup",
+   "Rare Beauty Soft Pinch Tinted Lip Oil"
+  ],
+  "fenty beauty|gloss bomb universal lip luminizer": [
+   3.4,
+   3,
+   "makeup",
+   "Fenty Beauty Gloss Bomb Universal Lip Luminizer"
+  ],
+  "l'oréal|telescopic": [
+   3.19,
+   2,
+   "makeup",
+   "L'Oréal Telescopic"
+  ],
+  "fenty beauty|glow": [
+   3.15,
+   2,
+   "makeup",
+   "Fenty Beauty Glow"
+  ],
+  "hince|raw": [
+   2.95,
+   2,
+   "makeup",
+   "Hince Raw"
+  ],
+  "mac|eyeshadow identification": [
+   2.85,
+   2,
+   "makeup",
+   "MAC Eyeshadow Identification"
+  ],
+  "skin1004|retinol boost ampoule": [
+   2.62,
+   2,
+   "skincare",
+   "SKIN1004 Retinol Boost Ampoule"
+  ],
+  "skin1004|retinol boost serum": [
+   2.62,
+   2,
+   "skincare",
+   "SKIN1004 Retinol Boost Serum"
+  ],
+  "cetaphil|foamy facial wash": [
+   2.62,
+   2,
+   "skincare",
+   "Cetaphil Foamy Facial Wash"
+  ],
+  "maybelline|fit me concealer": [
+   2.62,
+   2,
+   "makeup",
+   "Maybelline Fit Me Concealer"
+  ],
+  "nyx|bare": [
+   2.62,
+   2,
+   "makeup",
+   "NYX Bare"
+  ],
+  "e.l.f.|hydrating": [
+   2.52,
+   2,
+   "makeup",
+   "e.l.f. Hydrating"
+  ],
+  "huda beauty|cyber fest": [
+   2.52,
+   2,
+   "makeup",
+   "Huda Beauty Cyber Fest"
+  ],
+  "the ordinary|multipeptide": [
+   2.35,
+   2,
+   "skincare",
+   "The Ordinary Multipeptide"
+  ],
+  "clinique|facial soap": [
+   2.35,
+   2,
+   "skincare",
+   "Clinique Facial Soap"
+  ],
+  "l'oréal|infallible": [
+   2.35,
+   2,
+   "makeup",
+   "L'Oréal Infallible"
+  ],
+  "nyx|ultimate": [
+   2.35,
+   2,
+   "makeup",
+   "NYX Ultimate"
+  ],
+  "biodance|collagen": [
+   2.17,
+   2,
+   "skincare",
+   "Biodance Collagen"
+  ],
+  "la roche-posay|sensitive moisturizer": [
+   2.17,
+   2,
+   "skincare",
+   "La Roche-Posay Sensitive Moisturizer"
+  ],
+  "la roche-posay|toleriane double repair": [
+   2.0,
+   2,
+   "skincare",
+   "La Roche-Posay Toleriane Double Repair"
+  ]
+ }
+}

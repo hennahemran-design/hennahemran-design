@@ -1,28 +1,53 @@
 {
- "updated": "2026-11-12T16:05:21+00:00",
+ "updated": "2026-11-16T17:16:39+00:00",
  "weeks": [
+  {
+   "week": "2026-W47",
+   "start": "2026-11-16",
+   "end": "2026-11-22",
+   "partial": true,
+   "generated_at": "2026-11-16T17:05:11+00:00",
+   "docs": 1471,
+   "days": 1.0,
+   "top": {
+    "skincare": [
+     "CeraVe Hydrating Cleanser",
+     "SKIN1004 Centella Asiatica Serum",
+     "Beauty of Joseon Revive Eye Serum",
+     "SKIN1004 Retinol Boost Ampoule",
+     "SKIN1004 Retinol Boost Serum"
+    ],
+    "makeup": [
+     "essence Silky Blur",
+     "Rare Beauty Soft Pinch Tinted Lip Oil",
+     "Fenty Beauty Gloss Bomb Universal Lip Luminizer",
+     "Fenty Beauty Glow",
+     "Hince Raw"
+    ]
+   }
+  },
   {
    "week": "2026-W46",
    "start": "2026-11-09",
    "end": "2026-11-15",
-   "partial": true,
-   "generated_at": "2026-11-12T16:00:16+00:00",
-   "docs": 4338,
-   "days": 3.7,
+   "partial": false,
+   "generated_at": "2026-11-16T17:05:11+00:00",
+   "docs": 12012,
+   "days": 7.0,
    "top": {
     "skincare": [
-     "La Roche-Posay Toleriane Double Repair Face Moisturizer",
-     "Neutrogena Ultra Sheer Dry-Touch Sunscreen Lotion SPF",
-     "CeraVe Night Cream",
-     "Laneige Cream Skin Toner",
-     "CeraVe Moisturizer Bodymoisturizer Facemoisturizer Dryskin"
+     "Vanicream Gentle Facial Cleanser",
+     "CeraVe PM Moisturizer",
+     "Haruharu Wonder Black Rice Hyaluronic Toner",
+     "The Ordinary Niacinamide",
+     "La Roche-Posay Toleriane Double Repair Face Moisturizer"
     ],
     "makeup": [
-     "CLIO Kill Cover Cushion",
-     "Dior Lip Glow",
-     "Maybelline Lash Sensational",
-     "e.l.f. Camo Liquid Bronzer Contour",
-     "Danessa Myricks Yummy Skin"
+     "Hourglass Ambient Lighting Edit",
+     "Physicians Formula Butter Bronzer",
+     "Dior Skin Tint",
+     "Tarte Shape Tape",
+     "CLIO Kill Lash Superproof Mascara"
     ]
    }
   },
