@@ -1,28 +1,28 @@
 {
- "updated": "2026-11-16T17:16:39+00:00",
+ "updated": "2026-11-19T16:41:18+00:00",
  "weeks": [
   {
    "week": "2026-W47",
    "start": "2026-11-16",
    "end": "2026-11-22",
    "partial": true,
-   "generated_at": "2026-11-16T17:05:11+00:00",
-   "docs": 1471,
-   "days": 1.0,
+   "generated_at": "2026-11-19T16:36:36+00:00",
+   "docs": 6789,
+   "days": 3.7,
    "top": {
     "skincare": [
      "CeraVe Hydrating Cleanser",
-     "SKIN1004 Centella Asiatica Serum",
-     "Beauty of Joseon Revive Eye Serum",
-     "SKIN1004 Retinol Boost Ampoule",
-     "SKIN1004 Retinol Boost Serum"
+     "Cetaphil Gentle Cleanser",
+     "Beauty of Joseon Relief Sun Aqua Fresh",
+     "La Roche-Posay Anthelios",
+     "Beauty of Joseon Glow Replenishing Rice"
     ],
     "makeup": [
-     "essence Silky Blur",
-     "Rare Beauty Soft Pinch Tinted Lip Oil",
-     "Fenty Beauty Gloss Bomb Universal Lip Luminizer",
-     "Fenty Beauty Glow",
-     "Hince Raw"
+     "NYX Bare",
+     "e.l.f. Halo Glow Contour Wand",
+     "Chanel Water Tint",
+     "NYX Ultimate",
+     "L'Or\u00e9al Lumi Glotion"
     ]
    }
   },
