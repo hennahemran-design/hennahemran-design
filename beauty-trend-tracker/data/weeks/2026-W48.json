@@ -1,0 +1,1930 @@
+{
+ "week": "2026-W48",
+ "start": "2026-11-23",
+ "end": "2026-11-29",
+ "partial": true,
+ "generated_at": "2026-11-23T19:17:00+00:00",
+ "stats": {
+  "posts": 974,
+  "comments": 947,
+  "subreddits": {
+   "Bluesky": 609,
+   "MakeupAddiction": 270,
+   "30PlusSkinCare": 237,
+   "Sephora": 172,
+   "AsianBeauty": 150,
+   "SkincareAddicts": 127,
+   "BeautyGuruChatter": 115,
+   "drugstoreMUA": 110,
+   "SkincareAddiction": 100,
+   "Ulta": 17,
+   "MakeupRehab": 14
+  },
+  "sources": {
+   "reddit_archive": 1312,
+   "reddit": 0,
+   "bluesky": 626
+  },
+  "products_found": 21,
+  "compared_weeks": [
+   "2026-W44",
+   "2026-W45",
+   "2026-W46",
+   "2026-W47"
+  ],
+  "days_covered": 1.0
+ },
+ "skincare": [
+  {
+   "rank": 1,
+   "key": "cerave|foaming cleanser",
+   "name": "CeraVe Foaming Cleanser",
+   "brand": "CeraVe",
+   "category": "skincare",
+   "score": 3.52,
+   "trend_score": 5.26,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 3,
+   "baseline": 0.7,
+   "change_pct": 403,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 11.67
+    },
+    {
+     "week": "2026-W41",
+     "score": 19.9
+    },
+    {
+     "week": "2026-W42",
+     "score": 6.45
+    },
+    {
+     "week": "2026-W43",
+     "score": 4.41
+    },
+    {
+     "week": "2026-W44",
+     "score": 3.72
+    },
+    {
+     "week": "2026-W45",
+     "score": 8.63
+    },
+    {
+     "week": "2026-W46",
+     "score": 4.31
+    },
+    {
+     "week": "2026-W47",
+     "score": 2.92
+    },
+    {
+     "week": "2026-W48",
+     "score": 3.52
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "oily skin",
+      "count": 1,
+      "share": 0.333
+     },
+     {
+      "label": "acne",
+      "count": 1,
+      "share": 0.333
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "moisture surge",
+      "count": 2,
+      "lift": 427.1
+     },
+     {
+      "term": "current routine",
+      "count": 2,
+      "lift": 160.2
+     },
+     {
+      "term": "green",
+      "count": 2,
+      "lift": 98.6
+     }
+    ],
+    "search_terms": [
+     "cerave foaming cleanser bar",
+     "cerave foaming cleanser for oily skin",
+     "cerave foaming cleanser ingredients",
+     "cerave foaming cleanser vs hydrating cleanser",
+     "cerave foaming cleanser travel size",
+     "cerave foaming cleanser for normal to oily skin",
+     "cerave foaming cleanser walmart",
+     "cerave foaming cleanser review",
+     "cerave foaming cleanser for dry skin",
+     "cerave foaming cleanser for tattoo",
+     "cerave foaming cleanser for combination skin",
+     "cerave foaming cleanser for normal to oily skin 236ml"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "…ish Clearing 2% BHA Toner \\- Cetaphil Daily Facial Moisturizer Night: \\- CeraVe Foaming Facial Cleanser (normal to oily skin) \\- Thayers Blemish Clearing 2% BHA Toner \\- Cetaphil Daily Facial Moisturizer (PM) (Or sprinkling in retinol serum) This has been the…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1y3p0kk/routine_help_wanted_to_post_my_routine_to_see_if/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…t of scars, visible pores, and dark spots left. My current routine is: * CeraVe Foaming Cleanser (green one) * Clinique Moisture Surge * Sunscreen every day I also used a serum from The Ordinary every night for a while, and my skin got better. But after some t…",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1y3qjgs/what_can_i_do_about_my_acne_scars_and_uneven_skin/",
+     "score": 1,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    },
+    {
+     "text": "…t of scars, visible pores, and dark spots left. My current routine is: * CeraVe Foaming Cleanser (green one) * Clinique Moisture Surge * Sunscreen every day I also used a serum from The Ordinary every night for a while, and my skin got better. But after some t…",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1y3qvlr/acne_scars_and_uneven_skin_tone/",
+     "score": 1,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "30PlusSkinCare": 2,
+    "SkincareAddiction": 1
+   }
+  },
+  {
+   "rank": 2,
+   "key": "la roche-posay|anthelios",
+   "name": "La Roche-Posay Anthelios",
+   "brand": "La Roche-Posay",
+   "category": "skincare",
+   "score": 3.35,
+   "trend_score": 5.0,
+   "mentions": 3,
+   "threads": 3,
+   "upvotes": 2,
+   "baseline": 0.6,
+   "change_pct": 460,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 4.05
+    },
+    {
+     "week": "2026-W41",
+     "score": 7.92
+    },
+    {
+     "week": "2026-W42",
+     "score": 3.19
+    },
+    {
+     "week": "2026-W43",
+     "score": 5.44
+    },
+    {
+     "week": "2026-W44",
+     "score": 4.97
+    },
+    {
+     "week": "2026-W45",
+     "score": 3.72
+    },
+    {
+     "week": "2026-W46",
+     "score": 4.17
+    },
+    {
+     "week": "2026-W47",
+     "score": 3.9
+    },
+    {
+     "week": "2026-W48",
+     "score": 3.35
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "sun protection",
+      "count": 2,
+      "share": 0.667
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "spf",
+      "count": 2,
+      "lift": 44.2
+     },
+     {
+      "term": "sunscreen",
+      "count": 3,
+      "lift": 24.0
+     }
+    ],
+    "search_terms": [
+     "la roche-posay anthelios uvmune 400",
+     "la roche-posay anthelios mineral spf 50",
+     "la roche-posay anthelios sunscreen spf 50",
+     "la roche-posay anthelios spf 50+",
+     "la roche-posay anthelios uvmune",
+     "la roche-posay anthelios uvmune 400 spf50+",
+     "la roche-posay anthelios mineral",
+     "la roche-posay anthelios spf 60",
+     "la roche-posay anthelios melt-in milk",
+     "la roche posay anthelios for kids",
+     "la roche posay anthelios for face",
+     "la roche posay anthelios for body"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 3
+   },
+   "quotes": [
+    {
+     "text": "…elaic Acid Treatment • La Roche Posay Lipikar AP+M Moisturizer • La Roche Posay Anthelios SPF 50 Sunscreen PM • CeraVe Hydrating Facial Cleanser • BYOMA Hydrating Milky Toner • Good Molecules 10% Azelaic Acid Treatment • La Roche Posay Lipikar AP+M Moisturizer…",
+     "url": "https://www.reddit.com/r/SkincareAddiction/comments/1y3nrdp/routine_help_facial_redness/",
+     "score": 1,
+     "sub": "SkincareAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…leriane cleanser Mixsoon Hyaluronic acid serum Aestura atobarrier 365 cream LRP anthelios melt in milk sunscreen Pm: La Roche Posay toleriane cleanser 0.025% tretinoin or 15% azelaic acid gel (i alternate between the two nightly) Aestura atobarrier 365 cream P…",
+     "url": "https://www.reddit.com/r/SkincareAddicts/comments/1y3cow5/help/",
+     "score": 1,
+     "sub": "SkincareAddicts",
+     "kind": "post"
+    },
+    {
+     "text": "La Roche-Posay Anthelios Ultra Light Fluid Sunscreen for Face SPF 60, 1.7ozlarocheposayantheliosultra",
+     "url": "https://bsky.app/profile/zachreb.bsky.social/post/3n2xk37qoeb2p",
+     "score": 0,
+     "sub": "Bluesky",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "SkincareAddiction": 1,
+    "SkincareAddicts": 1,
+    "Bluesky": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "illiyoon|ato cream",
+   "name": "Illiyoon Ato Cream",
+   "brand": "Illiyoon",
+   "category": "skincare",
+   "score": 3.51,
+   "trend_score": 5.68,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 209,
+   "baseline": 0.26,
+   "change_pct": 1256,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 4.49
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 2.85
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 2.85
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 4.4
+    },
+    {
+     "week": "2026-W48",
+     "score": 3.51
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "oily skin",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "texture",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "damaged barrier",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [],
+    "search_terms": [
+     "illiyoon ato cream ingredients",
+     "illiyoon ato cream vs aestura ato cream",
+     "illiyoon ato cream vs lotion",
+     "illiyoon ato cream review",
+     "illiyoon ato cream 500ml",
+     "illiyoon ato cream vs gel",
+     "illiyoon ato cream concentrate",
+     "illiyoon ato cream reformulation",
+     "illiyoon ato cream incidecoder",
+     "illiyoon ceramide ato cream for oily skin",
+     "illiyoon ceramide ato cream for face",
+     "illiyoon ceramide ato cream for eczema"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.5,
+    "neutral": 0.5,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…alright but it has fragrance and is expensive for what it is ❌ TONERS Naturie Hatomugi Lotion - tried and true. on my third bottle. i like to layer this one or two times before moisturizer. then if i feel dry during the day, spritz some on my face ✅ Recipeo (…",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1y390kw/my_2026_empties/",
+     "score": 208,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    },
+    {
+     "text": "…ntly on sale at ulta and I’m pretty interested. Any pros & cons versus Illiyoon ato cream?",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1y3qesr/has_anyone_used_cosrx_skin_barrier_moisture_cream/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "AsianBeauty": 2
+   }
+  },
+  {
+   "rank": 4,
+   "key": "laneige|cream skin",
+   "name": "Laneige Cream Skin",
+   "brand": "Laneige",
+   "category": "skincare",
+   "score": 3.51,
+   "trend_score": 5.14,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 209,
+   "baseline": 0.82,
+   "change_pct": 330,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 3.34
+    },
+    {
+     "week": "2026-W41",
+     "score": 7.05
+    },
+    {
+     "week": "2026-W42",
+     "score": 6.3
+    },
+    {
+     "week": "2026-W43",
+     "score": 3.79
+    },
+    {
+     "week": "2026-W44",
+     "score": 9.73
+    },
+    {
+     "week": "2026-W45",
+     "score": 4.75
+    },
+    {
+     "week": "2026-W46",
+     "score": 2.96
+    },
+    {
+     "week": "2026-W47",
+     "score": 5.39
+    },
+    {
+     "week": "2026-W48",
+     "score": 3.51
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "texture",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [
+     {
+      "label": "hydrating",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "affordable",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "repurchase",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "lotion",
+      "count": 2,
+      "lift": 87.4
+     }
+    ],
+    "search_terms": [
+     "laneige cream skin toner",
+     "laneige cream skin toner & moisturizer",
+     "laneige cream skin mist",
+     "laneige cream skin cerapeptide toner & moisturizer",
+     "laneige cream skin refiner",
+     "laneige cream skin cerapeptide refiner",
+     "laneige cream skin milky toner",
+     "laneige cream skin cerapeptide mist",
+     "laneige cream skin cerapeptide",
+     "laneige cream skin for oily skin",
+     "laneige cream skin for acne",
+     "laneige cream skin for dry"
+    ]
+   },
+   "sentiment": {
+    "positive": 1.0,
+    "neutral": 0.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…e lotion/toner, which i’m not a fan of the texture so wont repurchase ❌ Laneige Cream Skin toner mist - for a hydrating toner, it does its job though i’d rather buy other more affordable options. it’s more moist than naturie but still watery, which i like. no…",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1y390kw/my_2026_empties/",
+     "score": 208,
+     "sub": "AsianBeauty",
+     "kind": "post"
+    },
+    {
+     "text": "I was going to recommend the Laneige Cream Skin Refiner then saw you've already tried it. Maybe the Hada Labo Gokujyun Premium Lotion? I have a similar skin type to you and it's always been a safe choice for me.",
+     "url": "https://www.reddit.com/r/AsianBeauty/comments/1y2n7ca/im_so_sick_of_wasting_money/19t1t0ytmzybk/",
+     "score": 1,
+     "sub": "AsianBeauty",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "AsianBeauty": 2
+   }
+  },
+  {
+   "rank": 5,
+   "key": "bioderma|oil cleanser",
+   "name": "Bioderma Oil Cleanser",
+   "brand": "Bioderma",
+   "category": "skincare",
+   "score": 2.72,
+   "trend_score": 4.2,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 9,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W48",
+     "score": 2.72
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "sun protection",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [],
+    "search_terms": [
+     "bioderma oil cleanser face",
+     "bioderma oil cleanser ingredients",
+     "bioderma oil cleanser review",
+     "bioderma oil cleanser chemist warehouse",
+     "bioderma oil cleanser shoppers",
+     "bioderma oil cleanser body",
+     "bioderma oil cleanser prix maroc",
+     "bioderma oil cleanser sensibio",
+     "bioderma oil cleanser boots",
+     "bioderma oil cleanser for acne prone skin",
+     "bioderma oil cleanser for face",
+     "bioderma oil cleanser for oily skin"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.5,
+    "neutral": 0.5,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…Choice Anti Aging Sunscreen Naked and Thriving Restore eye cream PM: Sulawahsoo Oil Makeup remover (if needed) Bioderma Oil Cleanser Either AHA/BHA toner or Beauty Josen Ginseng Toner Trader Joe’s HA Trader Joe’s Dewy Skin Naked and Thriving Illuminate or Rest…",
+     "url": "https://www.reddit.com/r/30PlusSkinCare/comments/1y38oj8/skin_regimen_recs_frustrated_and_dull/",
+     "score": 8,
+     "sub": "30PlusSkinCare",
+     "kind": "post"
+    },
+    {
+     "text": "…less traumatic. I had a really simple routine for a while, i got this bioderma oil cleanser for the body and used it on my face too and then moisturizer and spf 🫠",
+     "url": "https://bsky.app/profile/anarchymarshmallow.bsky.social/post/3n2xrvyk4os2i",
+     "score": 1,
+     "sub": "Bluesky",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "30PlusSkinCare": 1,
+    "Bluesky": 1
+   }
+  }
+ ],
+ "makeup": [
+  {
+   "rank": 1,
+   "key": "nyx|buttermelt",
+   "name": "NYX Buttermelt",
+   "brand": "NYX",
+   "category": "makeup",
+   "score": 3.49,
+   "trend_score": 5.21,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 99,
+   "baseline": 0.69,
+   "change_pct": 409,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 10.74
+    },
+    {
+     "week": "2026-W41",
+     "score": 16.62
+    },
+    {
+     "week": "2026-W42",
+     "score": 12.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 11.55
+    },
+    {
+     "week": "2026-W44",
+     "score": 5.03
+    },
+    {
+     "week": "2026-W45",
+     "score": 7.43
+    },
+    {
+     "week": "2026-W46",
+     "score": 2.17
+    },
+    {
+     "week": "2026-W47",
+     "score": 4.57
+    },
+    {
+     "week": "2026-W48",
+     "score": 3.49
+    }
+   ],
+   "keywords": {
+    "recommended_for": [],
+    "people_like": [
+     {
+      "label": "pigmented",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [],
+    "search_terms": [
+     "nyx buttermelt blush",
+     "nyx buttermelt bronzer",
+     "nyx buttermelt glaze",
+     "nyx buttermelt highlighter",
+     "nyx buttermelt glaze skin tint",
+     "nyx buttermelt blush swatches",
+     "nyx buttermelt bronzer swatches",
+     "nyx buttermelt skin tint",
+     "nyx buttermelt stix",
+     "nyx buttermelt for the butta",
+     "nyx buttermelt in butta dayz",
+     "nyx buttermelt in back and butta"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.5,
+    "neutral": 0.5,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…pe Concealer in shade 12B Morphe Micro Contouring Stick in shade Structured NYX Buttermelt Bronzer in shade All Butta’d Up (used as blonzer) Rare Beauty Soft Pinch Liquid Blush in shades Believe and Spirited combined NYX Buttermelt Highlighter in shade Butta M…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1y3gvxc/fotd_editorial_y2k_mag/",
+     "score": 96,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "I recommend NYX buttermelt highlighters - they have insane payoff, just like their blushes of this line",
+     "url": "https://www.reddit.com/r/drugstoreMUA/comments/1y3cmp0/catrice_what_am_i_missing/19t2fgctjxl37/",
+     "score": 3,
+     "sub": "drugstoreMUA",
+     "kind": "comment"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 1,
+    "drugstoreMUA": 1
+   }
+  },
+  {
+   "rank": 2,
+   "key": "mac|dubonnet lipstick",
+   "name": "MAC Dubonnet Lipstick",
+   "brand": "MAC",
+   "category": "makeup",
+   "score": 2.55,
+   "trend_score": 3.85,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 4,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 2.52
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W48",
+     "score": 2.55
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "olive / undertone match",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "people_like": [
+     {
+      "label": "great dupe",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "slightly brownish",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "rich burgundy",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "everyone absolutely",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "deep rich",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "burgundy red",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "brownish undertone",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "beautiful deep",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "dupe",
+      "count": 2,
+      "lift": 213.6
+     },
+     {
+      "term": "looking",
+      "count": 2,
+      "lift": 20.7
+     }
+    ],
+    "search_terms": [
+     "mac dubonnet lipstick swatch",
+     "mac dubonnet lipstick dupe",
+     "mac dubonnet lipstick review",
+     "mac dubonnet lipstick on dark skin",
+     "mac dubonnet lipstick mini",
+     "mac dubonnet lipstick 827",
+     "mac dubonnet lipstick undertone",
+     "mac dubonnet lipstick reddit",
+     "mac dubonnet lipstick price",
+     "dubonnet mac lipstick review",
+     "is mac lipstick good for dry lips",
+     "what lip liner goes with mac whirl lipstick"
+    ]
+   },
+   "sentiment": {
+    "positive": 1.0,
+    "neutral": 0.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "Looking for a dupe for MAC Dubonnet lipstick Hi everyone! I absolutely love the shade of MAC Dubonnet. It's such a beautiful deep, rich burgundy red with a slightly brownish undertone. However, since it's from MAC's Sleek Satin line rather than the Silky Matte…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1y3irae/looking_for_a_dupe_for_mac_dubonnet_lipstick/",
+     "score": 2,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "Looking for a dupe for MAC Dubonnet lipstick Hi everyone! I absolutely love the shade of MAC Dubonnet. It's such a beautiful deep, rich burgundy red with a slightly brownish undertone. However, since it's from MAC's Sleek Satin line rather than the Silky Matte…",
+     "url": "https://www.reddit.com/r/drugstoreMUA/comments/1y3iq0y/looking_for_a_dupe_for_mac_dubonnet_lipstick/",
+     "score": 2,
+     "sub": "drugstoreMUA",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 1,
+    "drugstoreMUA": 1
+   }
+  },
+  {
+   "rank": 3,
+   "key": "mac|sleek satin line rather",
+   "name": "MAC Sleek Satin Line Rather",
+   "brand": "MAC",
+   "category": "makeup",
+   "score": 2.55,
+   "trend_score": 3.85,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 4,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 4.11
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W48",
+     "score": 2.55
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "olive / undertone match",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "people_like": [
+     {
+      "label": "matte finish",
+      "count": 2,
+      "share": 1.0
+     },
+     {
+      "label": "great dupe",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "transferring throughout",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "smudging transferring",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "slightly brownish",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "rich burgundy",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "deep rich",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "burgundy red",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "brownish undertone",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "beautiful deep",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "worried",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "silky matte",
+      "count": 2,
+      "lift": 480.5
+     }
+    ],
+    "search_terms": []
+   },
+   "sentiment": {
+    "positive": 1.0,
+    "neutral": 0.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…burgundy red with a slightly brownish undertone. However, since it's from MAC's Sleek Satin line rather than the Silky Matte line, I'm a bit worried about it smudging or transferring throughout the day. So I'm looking for a dupe in the same or a very similar s…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1y3irae/looking_for_a_dupe_for_mac_dubonnet_lipstick/",
+     "score": 2,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…burgundy red with a slightly brownish undertone. However, since it's from MAC's Sleek Satin line rather than the Silky Matte line, I'm a bit worried about it smudging or transferring throughout the day. So I'm looking for a dupe in the same or a very similar s…",
+     "url": "https://www.reddit.com/r/drugstoreMUA/comments/1y3iq0y/looking_for_a_dupe_for_mac_dubonnet_lipstick/",
+     "score": 2,
+     "sub": "drugstoreMUA",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 1,
+    "drugstoreMUA": 1
+   }
+  },
+  {
+   "rank": 4,
+   "key": "fenty beauty|matte 360n",
+   "name": "Fenty Beauty Matte 360n",
+   "brand": "Fenty Beauty",
+   "category": "makeup",
+   "score": 2.35,
+   "trend_score": 3.45,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 2,
+   "baseline": 0.0,
+   "change_pct": null,
+   "is_new": true,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W41",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W44",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W45",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W48",
+     "score": 2.35
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "oily skin",
+      "count": 2,
+      "share": 1.0
+     },
+     {
+      "label": "dehydrated skin",
+      "count": 2,
+      "share": 1.0
+     },
+     {
+      "label": "olive / undertone match",
+      "count": 2,
+      "share": 1.0
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "ref neutral",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "dehydrated oily",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "cheaper per",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "bronzing cream",
+      "count": 2,
+      "lift": 640.7
+     },
+     {
+      "term": "tone foundation",
+      "count": 2,
+      "lift": 480.5
+     },
+     {
+      "term": "eyeing",
+      "count": 2,
+      "lift": 480.5
+     },
+     {
+      "term": "neutral olive",
+      "count": 2,
+      "lift": 320.3
+     },
+     {
+      "term": "foundation shade",
+      "count": 2,
+      "lift": 320.3
+     },
+     {
+      "term": "considering",
+      "count": 2,
+      "lift": 147.8
+     },
+     {
+      "term": "bronzer",
+      "count": 2,
+      "lift": 101.2
+     }
+    ],
+    "search_terms": []
+   },
+   "sentiment": {
+    "positive": 0.0,
+    "neutral": 1.0,
+    "negative": 0.0,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "…ne here? for ref im neutral olive skin tone my foundation shade is Fenty beauty matte 360N and i have dehydrated oily skin",
+     "url": "https://www.reddit.com/r/Sephora/comments/1y3oxhi/too_faced_bronzer_vs_chanel_bronzing_cream/",
+     "score": 1,
+     "sub": "Sephora",
+     "kind": "post"
+    },
+    {
+     "text": "…ne here? for ref im neutral olive skin tone my foundation shade is Fenty beauty matte 360N and i have dehydrated oily skin",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1y3ow9h/too_faced_bronzer_vs_chanel_bronzing_cream/",
+     "score": 1,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "Sephora": 1,
+    "MakeupAddiction": 1
+   }
+  },
+  {
+   "rank": 5,
+   "key": "chanel|water",
+   "name": "Chanel Water",
+   "brand": "Chanel",
+   "category": "makeup",
+   "score": 2.45,
+   "trend_score": 3.21,
+   "mentions": 2,
+   "threads": 2,
+   "upvotes": 3,
+   "baseline": 0.69,
+   "change_pct": 253,
+   "is_new": false,
+   "history": [
+    {
+     "week": "2026-W40",
+     "score": 5.02
+    },
+    {
+     "week": "2026-W41",
+     "score": 4.44
+    },
+    {
+     "week": "2026-W42",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W43",
+     "score": 3.9
+    },
+    {
+     "week": "2026-W44",
+     "score": 5.14
+    },
+    {
+     "week": "2026-W45",
+     "score": 3.4
+    },
+    {
+     "week": "2026-W46",
+     "score": 0.0
+    },
+    {
+     "week": "2026-W47",
+     "score": 10.91
+    },
+    {
+     "week": "2026-W48",
+     "score": 2.45
+    }
+   ],
+   "keywords": {
+    "recommended_for": [
+     {
+      "label": "dry skin",
+      "count": 1,
+      "share": 0.5
+     },
+     {
+      "label": "sun protection",
+      "count": 1,
+      "share": 0.5
+     }
+    ],
+    "people_like": [],
+    "complaints": [],
+    "trending_alongside": [
+     {
+      "term": "tint",
+      "count": 2,
+      "lift": 160.2
+     }
+    ],
+    "search_terms": [
+     "chanel water fresh tint",
+     "chanel water tint",
+     "chanel water fresh complexion touch",
+     "chanel water bottle",
+     "chanel water foundation",
+     "chanel water skin tint",
+     "chanel water tint foundation",
+     "chanel water fresh blush",
+     "chanel water fresh tint dupe",
+     "chanel water blush",
+     "chanel for water",
+     "channel water form"
+    ]
+   },
+   "sentiment": {
+    "positive": 0.5,
+    "neutral": 0.0,
+    "negative": 0.5,
+    "n": 2
+   },
+   "quotes": [
+    {
+     "text": "How do you skin prep for Chanel Water Fresh Tint if you have dry skin? I just got the Chanel Water Fresh Tint cause I heard people talk about it for forever. I have dry skin prone to dry patches cause of tret. No blemishes now. No fine lines/wrinkles yet. My n…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1y3bqsi/how_do_you_skin_prep_for_chanel_water_fresh_tint/",
+     "score": 2,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    },
+    {
+     "text": "…while remaining almost completely undetectable. I have products like the Chanel Water Tint that look equally natural, but those offer virtually no coverage. The finish is absolutely gorgeous. Glowy, healthy, fresh and so flattering, without looking greasy or o…",
+     "url": "https://www.reddit.com/r/MakeupAddiction/comments/1y3liyf/dr_schrammek_bb_cream_is_magic_coming_from_a/",
+     "score": 1,
+     "sub": "MakeupAddiction",
+     "kind": "post"
+    }
+   ],
+   "subreddits": {
+    "MakeupAddiction": 2
+   }
+  }
+ ],
+ "trending_keywords": [
+  {
+   "label": "dark circles",
+   "count": 52,
+   "expected": 30.7,
+   "change_pct": 70,
+   "group": "recommended_for"
+  },
+  {
+   "label": "dullness / glow",
+   "count": 30,
+   "expected": 16.5,
+   "change_pct": 82,
+   "group": "recommended_for"
+  },
+  {
+   "label": "events / weddings",
+   "count": 16,
+   "expected": 8.3,
+   "change_pct": 93,
+   "group": "recommended_for"
+  },
+  {
+   "label": "dry skin",
+   "count": 42,
+   "expected": 28.7,
+   "change_pct": 46,
+   "group": "recommended_for"
+  },
+  {
+   "label": "lightweight",
+   "count": 17,
+   "expected": 9.5,
+   "change_pct": 79,
+   "group": "people_like"
+  },
+  {
+   "label": "formula change",
+   "count": 12,
+   "expected": 6.7,
+   "change_pct": 80,
+   "group": "complaints"
+  },
+  {
+   "label": "no-makeup look",
+   "count": 9,
+   "expected": 4.7,
+   "change_pct": 93,
+   "group": "recommended_for"
+  },
+  {
+   "label": "cakey / patchy",
+   "count": 16,
+   "expected": 10.7,
+   "change_pct": 50,
+   "group": "complaints"
+  },
+  {
+   "label": "oily skin",
+   "count": 54,
+   "expected": 44.2,
+   "change_pct": 22,
+   "group": "recommended_for"
+  },
+  {
+   "label": "beginners",
+   "count": 8,
+   "expected": 4.9,
+   "change_pct": 64,
+   "group": "recommended_for"
+  },
+  {
+   "label": "worth the hype",
+   "count": 19,
+   "expected": 14.2,
+   "change_pct": 33,
+   "group": "people_like"
+  },
+  {
+   "label": "large pores",
+   "count": 32,
+   "expected": 26.8,
+   "change_pct": 19,
+   "group": "recommended_for"
+  },
+  {
+   "label": "dehydrated skin",
+   "count": 14,
+   "expected": 10.8,
+   "change_pct": 30,
+   "group": "recommended_for"
+  },
+  {
+   "label": "texture",
+   "count": 34,
+   "expected": 29.5,
+   "change_pct": 15,
+   "group": "recommended_for"
+  }
+ ],
+ "emerging_terms": [
+  {
+   "label": "eye brightener",
+   "count": 8,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "making blush",
+   "count": 8,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "heritage foundation",
+   "count": 22,
+   "expected": 4.1,
+   "change_pct": 440
+  },
+  {
+   "label": "plastic surgery",
+   "count": 8,
+   "expected": 0.3,
+   "change_pct": null
+  },
+  {
+   "label": "recent hauls",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "raw copper",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "cosmetic surgeries",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "cosmetic surgery",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "paidlink amazonaffiliate",
+   "count": 6,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "raw powder",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "help brands",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "curb black",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "brands curb",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "tools help",
+   "count": 5,
+   "expected": 0.0,
+   "change_pct": null
+  },
+  {
+   "label": "daily basis",
+   "count": 5,
+   "expected": 0.2,
+   "change_pct": null
+  },
+  {
+   "label": "long term",
+   "count": 11,
+   "expected": 2.7,
+   "change_pct": 301
+  }
+ ],
+ "keyword_counts": {
+  "recommended_for": {
+   "texture": 34,
+   "olive / undertone match": 22,
+   "large pores": 32,
+   "acne": 92,
+   "hyperpigmentation": 29,
+   "dry skin": 42,
+   "oily skin": 54,
+   "eczema": 10,
+   "sun protection": 39,
+   "redness / rosacea": 18,
+   "damaged barrier": 27,
+   "blackheads": 8,
+   "dullness / glow": 30,
+   "sensitive skin": 26,
+   "dehydrated skin": 14,
+   "cold weather": 11,
+   "combination skin": 11,
+   "hormonal acne": 2,
+   "fine lines & wrinkles": 25,
+   "hot / humid weather": 28,
+   "events / weddings": 16,
+   "under makeup": 3,
+   "dark circles": 52,
+   "fair skin": 8,
+   "deep skin tones": 1,
+   "no-makeup look": 9,
+   "fungal acne": 1,
+   "mature skin": 2,
+   "beginners": 8,
+   "hooded eyes": 1,
+   "oily lids": 1,
+   "lips": 1
+  },
+  "people_like": {
+   "results / it works": 49,
+   "hydrating": 42,
+   "lightweight": 17,
+   "pigmented": 17,
+   "gentle": 14,
+   "glowy / dewy": 39,
+   "repurchase": 5,
+   "holy grail": 8,
+   "blendable": 20,
+   "affordable": 37,
+   "smells nice": 3,
+   "packaging": 22,
+   "worth the hype": 19,
+   "non-greasy": 2,
+   "matte finish": 30,
+   "buildable": 2,
+   "sheer / light coverage": 7,
+   "doesn't pill": 1,
+   "fragrance-free": 3,
+   "smudge / water-proof": 6,
+   "long-lasting": 19,
+   "fast-absorbing": 1,
+   "great dupe": 9,
+   "natural / skin-like": 3,
+   "full coverage": 4
+  },
+  "complaints": {
+   "broke me out": 10,
+   "oxidizes": 3,
+   "irritation / stinging": 36,
+   "drying": 12,
+   "too expensive": 6,
+   "pilling": 2,
+   "cakey / patchy": 16,
+   "shade range": 5,
+   "formula change": 12,
+   "greasy / sticky": 10,
+   "white cast": 3,
+   "fragrance": 11,
+   "creases": 1,
+   "fades fast": 5,
+   "overhyped": 7
+  }
+ },
+ "term_counts": {
+  "heritage foundation": 22,
+  "azelaic acid": 16,
+  "setting spray": 13,
+  "long term": 11,
+  "fine lines": 11,
+  "dark circles": 11,
+  "dark spots": 11,
+  "setting powder": 10,
+  "salicylic acid": 9,
+  "around mouth": 8,
+  "dry patches": 8,
+  "plastic surgery": 8,
+  "eye brightener": 8,
+  "making blush": 8,
+  "large pores": 7,
+  "current routine": 7,
+  "come back": 7,
+  "oil cleanser": 7,
+  "shade match": 7,
+  "hyaluronic acid": 7,
+  "copper peptides": 7,
+  "bsky social": 7,
+  "micellar water": 6,
+  "hair removal": 6,
+  "sebaceous filaments": 6,
+  "eye cream": 6,
+  "body lotion": 6,
+  "hair care": 6,
+  "thanks advance": 6,
+  "recent hauls": 6,
+  "care routine": 6,
+  "red light": 6,
+  "raw copper": 6,
+  "cream bronzer": 6,
+  "cosmetic surgeries": 6,
+  "cosmetic surgery": 6,
+  "paidlink amazonaffiliate": 6,
+  "acne scars": 5,
+  "aha bha": 5,
+  "acid serum": 5,
+  "benzoyl peroxide": 5,
+  "daily basis": 5,
+  "glycolic acid": 5,
+  "sun exposure": 5,
+  "holy grail": 5,
+  "full size": 5,
+  "raw powder": 5,
+  "small amount": 5,
+  "kojic acid": 5,
+  "care products": 5,
+  "foundation shade": 5,
+  "neutral olive": 5,
+  "price point": 5,
+  "color corrector": 5,
+  "loose powder": 5,
+  "help brands": 5,
+  "curb black": 5,
+  "brands curb": 5,
+  "tools help": 5,
+  "clogged pores": 4,
+  "taking care": 4,
+  "acne scarring": 4,
+  "facial moisturizer": 4,
+  "facial cleanser": 4,
+  "vitamin serum": 4,
+  "hair growth": 4,
+  "thick hair": 4,
+  "spf sunscreen": 4,
+  "milky toner": 4,
+  "acne marks": 4,
+  "closed comedones": 4,
+  "double cleanse": 4,
+  "acne prone": 4,
+  "social media": 4,
+  "body wash": 4,
+  "visible pores": 4,
+  "weird texture": 4,
+  "please let": 4,
+  "heavy lifting": 4,
+  "plastic surgeon": 4,
+  "eye area": 4,
+  "powder blush": 4,
+  "foundation concealer": 4,
+  "long nails": 4,
+  "full coverage": 4,
+  "eyeshadow palette": 4,
+  "del rey": 4,
+  "lana del": 4,
+  "tiny amount": 4,
+  "color correcting": 4,
+  "james charles": 4,
+  "jaclyn hill": 4,
+  "chatgpt specifically": 4,
+  "cosmetic storage": 4,
+  "olive young": 3,
+  "finally cleared": 3,
+  "cooked removed": 3,
+  "mostly around": 3,
+  "help regarding": 3,
+  "castor oil": 3,
+  "chin acne": 3,
+  "acne finally": 3,
+  "bha toner": 3,
+  "pores acne": 3,
+  "help large": 3,
+  "acne removed": 3,
+  "ingrown hairs": 3,
+  "hand foot": 3,
+  "whiteheads removed": 3,
+  "cold sore": 3,
+  "pls suggest": 3,
+  "extra large": 3,
+  "physical exfoliation": 3,
+  "tan line": 3,
+  "dry tight": 3,
+  "nasolabial folds": 3,
+  "let dry": 3,
+  "around eyes": 3,
+  "hypochlorous acid": 3,
+  "sunscreen daily": 3,
+  "acid spray": 3,
+  "cleansing oil": 3,
+  "wear sunscreen": 3,
+  "cleanser moisturizer": 3,
+  "products containing": 3,
+  "essential oils": 3,
+  "highly recommend": 3,
+  "placed order": 3,
+  "clear gel": 3,
+  "toner mist": 3,
+  "eyebrow gel": 3,
+  "low concentration": 3,
+  "fast fashion": 3,
+  "able find": 3,
+  "curly hair": 3,
+  "current products": 3,
+  "tone foundation": 3,
+  "blurring powder": 3,
+  "hauls sunscreens": 3,
+  "extremely dry": 3,
+  "foaming cleanser": 3,
+  "add routine": 3,
+  "add retinol": 3,
+  "sun spots": 3,
+  "facial fat": 3,
+  "put mascara": 3,
+  "everyone else": 3,
+  "filler cheeks": 3,
+  "done well": 3,
+  "eye creams": 3,
+  "absolutely nothing": 3,
+  "volume loss": 3,
+  "price range": 3,
+  "moisturizer spf": 3,
+  "seems help": 3,
+  "physical chemical": 3,
+  "daily routine": 3,
+  "free exchange": 3,
+  "eye shadow": 3,
+  "liquid blush": 3,
+  "brow freeze": 3,
+  "white flakes": 3,
+  "brow hairs": 3,
+  "brow wax": 3,
+  "boy brow": 3,
+  "pressed powder": 3,
+  "brow gel": 3,
+  "satin line": 3,
+  "tinted moisturizer": 3,
+  "breast implants": 3,
+  "cosmetic procedures": 3,
+  "without looking": 3,
+  "natural finish": 3,
+  "silky matte": 3,
+  "old grandma": 3,
+  "contour stick": 3,
+  "inner corners": 3,
+  "exist vacuum": 3,
+  "grandma gorgeous": 3,
+  "black women": 3,
+  "tubing mascara": 3,
+  "invisible watermark": 3,
+  "gemini chatgpt": 3,
+  "storage box": 3,
+  "bathroom dresser": 3,
+  "care routines": 3,
+  "sulfate free": 3,
+  "eye contact": 3,
+  "com brazzers": 3,
+  "flirtydeals com": 3,
+  "put sunscreen": 3,
+  "presidential library": 3,
+  "artist media": 3,
+  "concealer foundation": 3,
+  "circles blemishes": 3
+ },
+ "all_products": {
+  "cerave|foaming cleanser": [
+   3.52,
+   3,
+   "skincare",
+   "CeraVe Foaming Cleanser"
+  ],
+  "illiyoon|ato cream": [
+   3.51,
+   2,
+   "skincare",
+   "Illiyoon Ato Cream"
+  ],
+  "laneige|cream skin": [
+   3.51,
+   2,
+   "skincare",
+   "Laneige Cream Skin"
+  ],
+  "nyx|buttermelt": [
+   3.49,
+   2,
+   "makeup",
+   "NYX Buttermelt"
+  ],
+  "la roche-posay|anthelios": [
+   3.35,
+   3,
+   "skincare",
+   "La Roche-Posay Anthelios"
+  ],
+  "bioderma|oil cleanser": [
+   2.72,
+   2,
+   "skincare",
+   "Bioderma Oil Cleanser"
+  ],
+  "mac|dubonnet lipstick": [
+   2.55,
+   2,
+   "makeup",
+   "MAC Dubonnet Lipstick"
+  ],
+  "mac|sleek satin line rather": [
+   2.55,
+   2,
+   "makeup",
+   "MAC Sleek Satin Line Rather"
+  ],
+  "cerave|hydrating": [
+   2.52,
+   2,
+   "skincare",
+   "CeraVe Hydrating"
+  ],
+  "chanel|water": [
+   2.45,
+   2,
+   "makeup",
+   "Chanel Water"
+  ],
+  "la roche-posay|lipikar": [
+   2.35,
+   2,
+   "skincare",
+   "La Roche-Posay Lipikar"
+  ],
+  "the ordinary|azelaic acid": [
+   2.35,
+   2,
+   "skincare",
+   "The Ordinary Azelaic Acid"
+  ],
+  "clinique|moisture surge": [
+   2.35,
+   2,
+   "skincare",
+   "Clinique Moisture Surge"
+  ],
+  "isntree|yam root vegan milk cream": [
+   2.35,
+   2,
+   "skincare",
+   "Isntree Yam Root Vegan Milk Cream"
+  ],
+  "chanel|bronzing cream": [
+   2.35,
+   2,
+   "skincare",
+   "Chanel Bronzing Cream"
+  ],
+  "fenty beauty|matte 360n": [
+   2.35,
+   2,
+   "makeup",
+   "Fenty Beauty Matte 360n"
+  ],
+  "l'oréal|infallible": [
+   2.35,
+   2,
+   "makeup",
+   "L'Oréal Infallible"
+  ],
+  "bioderma|sensibio": [
+   2.17,
+   2,
+   "skincare",
+   "Bioderma Sensibio"
+  ],
+  "byoma|milky toner 15": [
+   2.0,
+   2,
+   "skincare",
+   "Byoma Milky Toner 15"
+  ],
+  "biodance|collagen mist 21": [
+   2.0,
+   2,
+   "skincare",
+   "Biodance Collagen Mist 21"
+  ],
+  "biodance|overnight mask 23": [
+   2.0,
+   2,
+   "skincare",
+   "Biodance Overnight Mask 23"
+  ]
+ }
+}

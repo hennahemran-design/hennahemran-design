@@ -1,28 +1,53 @@
 {
- "updated": "2026-11-19T16:41:18+00:00",
+ "updated": "2026-11-23T19:30:19+00:00",
  "weeks": [
+  {
+   "week": "2026-W48",
+   "start": "2026-11-23",
+   "end": "2026-11-29",
+   "partial": true,
+   "generated_at": "2026-11-23T19:17:00+00:00",
+   "docs": 1921,
+   "days": 1.0,
+   "top": {
+    "skincare": [
+     "CeraVe Foaming Cleanser",
+     "La Roche-Posay Anthelios",
+     "Illiyoon Ato Cream",
+     "Laneige Cream Skin",
+     "Bioderma Oil Cleanser"
+    ],
+    "makeup": [
+     "NYX Buttermelt",
+     "MAC Dubonnet Lipstick",
+     "MAC Sleek Satin Line Rather",
+     "Fenty Beauty Matte 360n",
+     "Chanel Water"
+    ]
+   }
+  },
   {
    "week": "2026-W47",
    "start": "2026-11-16",
    "end": "2026-11-22",
-   "partial": true,
-   "generated_at": "2026-11-19T16:36:36+00:00",
-   "docs": 6789,
-   "days": 3.7,
+   "partial": false,
+   "generated_at": "2026-11-23T19:17:00+00:00",
+   "docs": 12392,
+   "days": 7.0,
    "top": {
     "skincare": [
      "CeraVe Hydrating Cleanser",
-     "Cetaphil Gentle Cleanser",
-     "Beauty of Joseon Relief Sun Aqua Fresh",
-     "La Roche-Posay Anthelios",
-     "Beauty of Joseon Glow Replenishing Rice"
+     "Purito Oat-In Calming Gel Cream",
+     "CeraVe PM",
+     "Aveeno Oat Gel Moisturizer",
+     "Byoma Milky Toner"
     ],
     "makeup": [
-     "NYX Bare",
-     "e.l.f. Halo Glow Contour Wand",
+     "L'Or\u00e9al True Match",
+     "L'Or\u00e9al Infallible",
      "Chanel Water Tint",
-     "NYX Ultimate",
-     "L'Or\u00e9al Lumi Glotion"
+     "NYX Butter Gloss",
+     "Revlon Colorstay"
     ]
    }
   },
