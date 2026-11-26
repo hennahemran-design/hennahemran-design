@@ -1,28 +1,28 @@
 {
- "updated": "2026-11-23T19:30:19+00:00",
+ "updated": "2026-11-26T17:50:04+00:00",
  "weeks": [
   {
    "week": "2026-W48",
    "start": "2026-11-23",
    "end": "2026-11-29",
    "partial": true,
-   "generated_at": "2026-11-23T19:17:00+00:00",
-   "docs": 1921,
-   "days": 1.0,
+   "generated_at": "2026-11-26T17:45:12+00:00",
+   "docs": 7715,
+   "days": 3.7,
    "top": {
     "skincare": [
-     "CeraVe Foaming Cleanser",
+     "CeraVe PM Lotion Enough",
+     "La Roche-Posay Gentle Cleanser Twice",
+     "Missha BB Cream",
      "La Roche-Posay Anthelios",
-     "Illiyoon Ato Cream",
-     "Laneige Cream Skin",
-     "Bioderma Oil Cleanser"
+     "Bior\u00e9 UV Aqua Rich"
     ],
     "makeup": [
-     "NYX Buttermelt",
-     "MAC Dubonnet Lipstick",
-     "MAC Sleek Satin Line Rather",
-     "Fenty Beauty Matte 360n",
-     "Chanel Water"
+     "e.l.f. Halo Glow",
+     "Anastasia Beverly Hills Brow Wiz",
+     "L'Or\u00e9al True Match",
+     "L'Or\u00e9al Lumi Glotion",
+     "Dior Backstage Face"
     ]
    }
   },
